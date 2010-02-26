@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/2/trunk/doc/plugins/rspec/classes/Spec/Expectations
+END
+ObjectExpectations.html
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/2/trunk/doc/plugins/rspec/classes/Spec/Expectations/ObjectExpectations.html
+END
+Differs.html
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/2/trunk/doc/plugins/rspec/classes/Spec/Expectations/Differs.html
+END
+InvalidMatcherError.html
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/2/trunk/doc/plugins/rspec/classes/Spec/Expectations/InvalidMatcherError.html
+END
+ExpectationNotMetError.html
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/2/trunk/doc/plugins/rspec/classes/Spec/Expectations/ExpectationNotMetError.html
+END
+ExpectationMatcherHandler.html
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/2/trunk/doc/plugins/rspec/classes/Spec/Expectations/ExpectationMatcherHandler.html
+END
+NegativeExpectationMatcherHandler.html
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/2/trunk/doc/plugins/rspec/classes/Spec/Expectations/NegativeExpectationMatcherHandler.html
+END
+StringHelpers.html
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/2/trunk/doc/plugins/rspec/classes/Spec/Expectations/StringHelpers.html
+END

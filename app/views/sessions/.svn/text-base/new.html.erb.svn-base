@@ -1,0 +1,28 @@
+<div id="login">
+  <h1>entrar</h1>
+
+  <% form_for @user_session, :url => session_path do |f| %>
+    <%= f.error_messages :header_message => false, :message => false %>
+
+    <div class="field">
+      <%= f.label :email, "email" %>
+      <%= f.text_field :email %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password, "password" %>
+      <%= f.password_field :password %>
+    </div>
+
+    <div class="field">
+      <p>
+        <%= f.check_box :remember_me %><%= f.label :remember_me, "recordarme en este ordenador" %>
+      </p>
+    </div>
+
+    <p id="submit">
+      <%= f.submit "adelante" %>
+    </p>
+
+  <% end %>
+</div>

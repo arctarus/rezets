@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 33
+/svn/!svn/ver/97/trunk/app/models
+END
+category.rb
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/91/trunk/app/models/category.rb
+END
+user.rb
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/97/trunk/app/models/user.rb
+END
+recipe_ingredient.rb
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/87/trunk/app/models/recipe_ingredient.rb
+END
+user_session.rb
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/89/trunk/app/models/user_session.rb
+END
+comment.rb
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/70/trunk/app/models/comment.rb
+END
+invitation.rb
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/57/trunk/app/models/invitation.rb
+END
+user_recipe.rb
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/7/trunk/app/models/user_recipe.rb
+END
+recipe.rb
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/94/trunk/app/models/recipe.rb
+END
+user_mailer.rb
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/84/trunk/app/models/user_mailer.rb
+END
+ingredient.rb
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/9/trunk/app/models/ingredient.rb
+END

@@ -1,0 +1,38 @@
+<h1>confirmar invitación para rezets.com</h1>
+
+<% form_for @user do |f| %>
+  <%= f.error_messages :header_message => "hay algunos errores en el formulario",
+    :message => "comprueba los datos a continuación" %>
+
+  <%= hidden_field :invitation, :token %>
+
+  <div class="field">
+    <%= f.label :name, "nombre" %>
+    <%= f.text_field :name, :class => "text", :size => 30, :maxlength => 255 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email, "email" %>
+    <%= f.text_field :email, :class => "text", :size => 30, :maxlength => 255 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password, "contraseña" %>
+    <%= f.password_field :password, :class => "text", :size => 30, :maxlength => 255 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation, "confirmar contraseña" %>
+    <%= f.password_field :password_confirmation, :class => "text", :size => 30, :maxlength => 255 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :slug, "dirección de tu página" %>
+    <p><span class="ft">http://rezets.com/users/</span><%= f.text_field :slug, :class => "text", :size => 20, :maxlength => 255 %></p>
+  </div>
+
+  <p id="submit">
+    <%= f.submit "continuar" %>
+  </p>
+
+<% end %>

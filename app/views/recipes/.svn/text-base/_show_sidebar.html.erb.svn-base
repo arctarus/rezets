@@ -1,0 +1,34 @@
+<p style="margin-bottom:2em">
+<%= link_to "#{image_tag @recipe.author.avatar.url(:medium), :alt => "", :style => 'float:left; margin:.3em .5em 0 0'}", @recipe.author %>
+  <span class="ft"><%= _("creado hace") %></span>
+  <span class="published"><span class="value-title" title="<%= @recipe.created_at %>"> </span><%= distance_of_time_in_words_to_now @recipe.updated_at %></span><br/>
+  <span class="ft"><%= _("por") %></span>
+  <span class="author"><%= link_to @recipe.author.name, @recipe.author, :class => "url fn" %></span>
+</p>
+
+
+<% if @recipe.author.recipes.size > 1 %>
+  <h3>recetas de <%= h @recipe.author.name %></h3>
+  <ul class="simple-list">
+    <% Recipe.all(:conditions => { :author_id => @recipe.author.id }, :limit => 5, :order => "created_at desc").each do |recipe| %>
+      <% unless recipe == @recipe %>
+        <li> 
+        <%= link_to "#{h recipe.name}", user_recipe_path(recipe.author, recipe) %>
+        </li>
+      <% end %>
+    <% end %>
+  </ul>
+<% end %>
+
+<% if @recipe.category.recipes.size > 1 %>
+  <h3>recetas de <%= h @recipe.category.name %></h3>
+  <ul class="simple-list">
+    <% Recipe.all(:conditions => { :category_id => @recipe.category.id }, :limit => 5, :order => "created_at desc").each do |recipe| %>
+      <% unless recipe == @recipe %>
+        <li>
+          <%= link_to h(recipe.name), user_recipe_path(recipe.author, recipe) %>
+        </li>
+      <% end %>
+    <% end %>
+  </ul>
+<% end %>

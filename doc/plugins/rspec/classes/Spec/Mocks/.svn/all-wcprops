@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/2/trunk/doc/plugins/rspec/classes/Spec/Mocks
+END
+BaseExpectation.html
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/2/trunk/doc/plugins/rspec/classes/Spec/Mocks/BaseExpectation.html
+END
+ExampleMethods.html
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/2/trunk/doc/plugins/rspec/classes/Spec/Mocks/ExampleMethods.html
+END
+ErrorGenerator.html
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/2/trunk/doc/plugins/rspec/classes/Spec/Mocks/ErrorGenerator.html
+END
+Proxy.html
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/2/trunk/doc/plugins/rspec/classes/Spec/Mocks/Proxy.html
+END
+Methods.html
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/2/trunk/doc/plugins/rspec/classes/Spec/Mocks/Methods.html
+END
+AmbiguousReturnError.html
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/2/trunk/doc/plugins/rspec/classes/Spec/Mocks/AmbiguousReturnError.html
+END
+ArgumentExpectation.html
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/2/trunk/doc/plugins/rspec/classes/Spec/Mocks/ArgumentExpectation.html
+END
+MockExpectationError.html
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/2/trunk/doc/plugins/rspec/classes/Spec/Mocks/MockExpectationError.html
+END
+MessageExpectation.html
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/2/trunk/doc/plugins/rspec/classes/Spec/Mocks/MessageExpectation.html
+END
+OrderGroup.html
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/2/trunk/doc/plugins/rspec/classes/Spec/Mocks/OrderGroup.html
+END
+Mock.html
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/2/trunk/doc/plugins/rspec/classes/Spec/Mocks/Mock.html
+END
+ArgumentConstraints.html
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/2/trunk/doc/plugins/rspec/classes/Spec/Mocks/ArgumentConstraints.html
+END
+NegativeMessageExpectation.html
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/2/trunk/doc/plugins/rspec/classes/Spec/Mocks/NegativeMessageExpectation.html
+END
+Space.html
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/2/trunk/doc/plugins/rspec/classes/Spec/Mocks/Space.html
+END

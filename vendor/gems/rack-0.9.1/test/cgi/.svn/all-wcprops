@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/2/trunk/vendor/gems/rack-0.9.1/test/cgi
+END
+test
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/2/trunk/vendor/gems/rack-0.9.1/test/cgi/test
+END
+lighttpd.conf
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/2/trunk/vendor/gems/rack-0.9.1/test/cgi/lighttpd.conf
+END
+test.ru
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/2/trunk/vendor/gems/rack-0.9.1/test/cgi/test.ru
+END
+test.fcgi
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/2/trunk/vendor/gems/rack-0.9.1/test/cgi/test.fcgi
+END

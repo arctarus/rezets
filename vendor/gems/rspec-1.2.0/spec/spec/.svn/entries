@@ -1,0 +1,120 @@
+9
+
+dir
+100
+https://recipemonkey.googlecode.com/svn/trunk/vendor/gems/rspec-1.2.0/spec/spec
+https://recipemonkey.googlecode.com/svn
+
+
+
+2009-07-19T09:52:44.755660Z
+2
+arctarusnet
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+4a91eba8-7445-11de-927c-01e442f92a7c
+
+dsl
+dir
+
+example
+dir
+
+expectations
+dir
+
+interop
+dir
+
+matchers
+dir
+
+mocks
+dir
+
+package
+dir
+
+runner
+dir
+
+runner_spec.rb
+file
+
+
+
+
+2010-02-26T17:00:35.000000Z
+056c88ca20a9a1788d1555e4bcde0e3c
+2009-07-19T09:52:44.755660Z
+2
+arctarusnet
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+306
+
+spec_classes.rb
+file
+
+
+
+
+2010-02-26T17:00:39.000000Z
+d117bbde1949673089d3944f95409a9a
+2009-07-19T09:52:44.755660Z
+2
+arctarusnet
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2970
+

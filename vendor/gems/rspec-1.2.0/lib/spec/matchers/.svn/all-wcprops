@@ -1,0 +1,155 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-1.2.0/lib/spec/matchers
+END
+be_kind_of.rb
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-1.2.0/lib/spec/matchers/be_kind_of.rb
+END
+eql.rb
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-1.2.0/lib/spec/matchers/eql.rb
+END
+satisfy.rb
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-1.2.0/lib/spec/matchers/satisfy.rb
+END
+have.rb
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-1.2.0/lib/spec/matchers/have.rb
+END
+matcher.rb
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-1.2.0/lib/spec/matchers/matcher.rb
+END
+include.rb
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-1.2.0/lib/spec/matchers/include.rb
+END
+generated_descriptions.rb
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-1.2.0/lib/spec/matchers/generated_descriptions.rb
+END
+change.rb
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-1.2.0/lib/spec/matchers/change.rb
+END
+be.rb
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-1.2.0/lib/spec/matchers/be.rb
+END
+throw_symbol.rb
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-1.2.0/lib/spec/matchers/throw_symbol.rb
+END
+match_array.rb
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-1.2.0/lib/spec/matchers/match_array.rb
+END
+match.rb
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-1.2.0/lib/spec/matchers/match.rb
+END
+simple_matcher.rb
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-1.2.0/lib/spec/matchers/simple_matcher.rb
+END
+exist.rb
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-1.2.0/lib/spec/matchers/exist.rb
+END
+be_instance_of.rb
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-1.2.0/lib/spec/matchers/be_instance_of.rb
+END
+operator_matcher.rb
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-1.2.0/lib/spec/matchers/operator_matcher.rb
+END
+equal.rb
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-1.2.0/lib/spec/matchers/equal.rb
+END
+compatibility.rb
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-1.2.0/lib/spec/matchers/compatibility.rb
+END
+method_missing.rb
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-1.2.0/lib/spec/matchers/method_missing.rb
+END
+be_close.rb
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-1.2.0/lib/spec/matchers/be_close.rb
+END
+has.rb
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-1.2.0/lib/spec/matchers/has.rb
+END
+errors.rb
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-1.2.0/lib/spec/matchers/errors.rb
+END
+respond_to.rb
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-1.2.0/lib/spec/matchers/respond_to.rb
+END
+wrap_expectation.rb
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-1.2.0/lib/spec/matchers/wrap_expectation.rb
+END
+raise_error.rb
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-1.2.0/lib/spec/matchers/raise_error.rb
+END

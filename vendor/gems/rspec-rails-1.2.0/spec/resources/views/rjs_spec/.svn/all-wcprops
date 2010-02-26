@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-rails-1.2.0/spec/resources/views/rjs_spec
+END
+insert_html.js.rjs
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-rails-1.2.0/spec/resources/views/rjs_spec/insert_html.js.rjs
+END
+hide_div.js.rjs
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-rails-1.2.0/spec/resources/views/rjs_spec/hide_div.js.rjs
+END
+replace.js.rjs
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-rails-1.2.0/spec/resources/views/rjs_spec/replace.js.rjs
+END
+_replacement_partial.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-rails-1.2.0/spec/resources/views/rjs_spec/_replacement_partial.html.erb
+END
+hide_page_element.js.rjs
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-rails-1.2.0/spec/resources/views/rjs_spec/hide_page_element.js.rjs
+END
+replace_html.js.rjs
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-rails-1.2.0/spec/resources/views/rjs_spec/replace_html.js.rjs
+END
+visual_effect.js.rjs
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-rails-1.2.0/spec/resources/views/rjs_spec/visual_effect.js.rjs
+END
+visual_toggle_effect.js.rjs
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-rails-1.2.0/spec/resources/views/rjs_spec/visual_toggle_effect.js.rjs
+END
+replace_html_with_partial.js.rjs
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-rails-1.2.0/spec/resources/views/rjs_spec/replace_html_with_partial.js.rjs
+END
