@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/2/trunk/doc/plugins/rspec-rails/classes/Spec/Rails/Example
+END
+ControllerExampleGroup.html
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/2/trunk/doc/plugins/rspec-rails/classes/Spec/Rails/Example/ControllerExampleGroup.html
+END
+CookiesProxy.html
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/2/trunk/doc/plugins/rspec-rails/classes/Spec/Rails/Example/CookiesProxy.html
+END
+ViewExampleGroup.html
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/2/trunk/doc/plugins/rspec-rails/classes/Spec/Rails/Example/ViewExampleGroup.html
+END
+RailsExampleGroup.html
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/2/trunk/doc/plugins/rspec-rails/classes/Spec/Rails/Example/RailsExampleGroup.html
+END
+RenderObserver.html
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/2/trunk/doc/plugins/rspec-rails/classes/Spec/Rails/Example/RenderObserver.html
+END
+HelperExampleGroup.html
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/2/trunk/doc/plugins/rspec-rails/classes/Spec/Rails/Example/HelperExampleGroup.html
+END
+ModelExampleGroup.html
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/2/trunk/doc/plugins/rspec-rails/classes/Spec/Rails/Example/ModelExampleGroup.html
+END
+PickedTemplate.html
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/2/trunk/doc/plugins/rspec-rails/classes/Spec/Rails/Example/PickedTemplate.html
+END
+FunctionalExampleGroup.html
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/2/trunk/doc/plugins/rspec-rails/classes/Spec/Rails/Example/FunctionalExampleGroup.html
+END

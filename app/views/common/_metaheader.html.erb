@@ -1,0 +1,21 @@
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<title>rezets.com<%= " - " + @page_title unless @page_title.nil? %></title>
+
+<meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8"/>
+<meta name="robots" content="index,follow" />
+<meta name="keywords" content="receta, cocina, cocinar, comer, comida"/>
+<meta name="description" content="crea y comparte recetas de cocina con tus amigos"/>
+
+<% if controller.controller_name == "users" and not controller.action_name == "new" and not controller.action_name == "create" and not @user.nil? %>
+  <% if @category.nil? %>
+    <link rel="alternate" type="application/atom+xml" title="recetas de <%= @user.name%> en rezets.com" href="<%= user_path(@user, :format => :rss) %>" />
+  <% else %>
+    <link rel="alternate" type="application/atom+xml" title="recetas de <%= @user.name%> de <%= @category.name %> en rezets.com" href="<%= category_user_path(@category, @user, :format => :rss) %>" />
+  <% end %>
+<% elsif controller.controller_name == "home" and controller.action_name == "index" %>
+  <link rel="alternate" type="application/atom+xml" title="recetas recién hechas en rezets.com" href="<%= url_for(:controller => "home", :action => "feed") %>" />
+<% end %>
+
+<!--[if IE 6]>
+ <%= stylesheet_link_tag 'ie6' %>
+<![endif]-->

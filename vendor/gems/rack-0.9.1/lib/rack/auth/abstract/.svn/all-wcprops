@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/2/trunk/vendor/gems/rack-0.9.1/lib/rack/auth/abstract
+END
+handler.rb
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/2/trunk/vendor/gems/rack-0.9.1/lib/rack/auth/abstract/handler.rb
+END
+request.rb
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/2/trunk/vendor/gems/rack-0.9.1/lib/rack/auth/abstract/request.rb
+END

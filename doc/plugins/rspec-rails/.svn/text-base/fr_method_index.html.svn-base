@@ -1,0 +1,106 @@
+
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<!--
+
+    Methods
+
+  -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Methods</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="stylesheet" href="rdoc-style.css" type="text/css" />
+  <base target="docwin" />
+</head>
+<body>
+<div id="index">
+  <h1 class="section-bar">Methods</h1>
+  <div id="index-entries">
+    <a href="classes/Spec/Rails/Example/CookiesProxy.html#M000030">[] (Spec::Rails::Example::CookiesProxy)</a><br />
+    <a href="classes/Spec/Rails/Example/CookiesProxy.html#M000029">[]= (Spec::Rails::Example::CookiesProxy)</a><br />
+    <a href="classes/Spec/Rails/Example/ViewExampleGroup.html#M000054">_assigns_hash_proxy (Spec::Rails::Example::ViewExampleGroup)</a><br />
+    <a href="classes/Spec/Rails/Example/HelperExampleGroup.html#M000038">_assigns_hash_proxy (Spec::Rails::Example::HelperExampleGroup)</a><br />
+    <a href="classes/Spec/Rails/Example/ControllerExampleGroup.html#M000059">_assigns_hash_proxy (Spec::Rails::Example::ControllerExampleGroup)</a><br />
+    <a href="classes/Spec/Rails/Mocks/ModelStubber.html#M000021">as_new_record (Spec::Rails::Mocks::ModelStubber)</a><br />
+    <a href="classes/Spec/Rails/Example/FunctionalExampleGroup.html#M000051">assigns (Spec::Rails::Example::FunctionalExampleGroup)</a><br />
+    <a href="classes/Spec/Rails/Mocks/ModelStubber.html#M000019">connection (Spec::Rails::Mocks::ModelStubber)</a><br />
+    <a href="classes/Spec/Rails/Example/HelperExampleGroup/HelperObject.html#M000044">controller= (Spec::Rails::Example::HelperExampleGroup::HelperObject)</a><br />
+    <a href="classes/Spec/Rails/Example/ControllerExampleGroup.html#M000056">controller_name (Spec::Rails::Example::ControllerExampleGroup)</a><br />
+    <a href="classes/Spec/Rails/Example/FunctionalExampleGroup.html#M000050">cookies (Spec::Rails::Example::FunctionalExampleGroup)</a><br />
+    <a href="classes/Spec/Rails/Example/CookiesProxy.html#M000031">delete (Spec::Rails::Example::CookiesProxy)</a><br />
+    <a href="classes/ActiveRecord/Base.html#M000014">error_on (ActiveRecord::Base)</a><br />
+    <a href="classes/ActiveRecord/Base.html#M000013">errors_on (ActiveRecord::Base)</a><br />
+    <a href="classes/Spec/Rails/Example/HelperExampleGroup.html#M000036">eval_erb (Spec::Rails::Example::HelperExampleGroup)</a><br />
+    <a href="classes/Spec/Matchers/Change.html#M000080">evaluate_value_proc_with_ensured_evaluation_of_proxy (Spec::Matchers::Change)</a><br />
+    <a href="classes/RailsStory.html#M000002">examples_should_be_run? (RailsStory)</a><br />
+    <a href="classes/Spec/Rails/Example/RenderObserver.html#M000022">expect_render (Spec::Rails::Example::RenderObserver)</a><br />
+    <a href="classes/Spec/Example/Configuration.html#M000076">fixture_path (Spec::Example::Configuration)</a><br />
+    <a href="classes/Spec/Example/Configuration.html#M000077">fixture_path= (Spec::Example::Configuration)</a><br />
+    <a href="classes/RailsStory.html#M000001">fixture_table_names (RailsStory)</a><br />
+    <a href="classes/Spec/Rails/Example/FunctionalExampleGroup.html#M000048">flash (Spec::Rails::Example::FunctionalExampleGroup)</a><br />
+    <a href="classes/Spec/Rails/Example/HelperExampleGroup.html#M000035">flash (Spec::Rails::Example::HelperExampleGroup)</a><br />
+    <a href="classes/Spec/Rails/Example/HelperExampleGroup/HelperObject.html#M000042">flash= (Spec::Rails::Example::HelperExampleGroup::HelperObject)</a><br />
+    <a href="classes/Spec/Example/Configuration.html#M000078">global_fixtures (Spec::Example::Configuration)</a><br />
+    <a href="classes/Spec/Example/Configuration.html#M000079">global_fixtures= (Spec::Example::Configuration)</a><br />
+    <a href="classes/Spec/Rails/Matchers.html#M000064">have_rjs (Spec::Rails::Matchers)</a><br />
+    <a href="classes/Spec/Rails/Matchers.html#M000061">have_tag (Spec::Rails::Matchers)</a><br />
+    <a href="classes/Spec/Rails/Matchers.html#M000067">have_text (Spec::Rails::Matchers)</a><br />
+    <a href="classes/Spec/Rails/Example/HelperExampleGroup.html#M000034">helper (Spec::Rails::Example::HelperExampleGroup)</a><br />
+    <a href="classes/Spec/Rails/Example/HelperExampleGroup.html#M000033">helper (Spec::Rails::Example::HelperExampleGroup)</a><br />
+    <a href="classes/Spec/Rails/Example/HelperExampleGroup.html#M000032">helper_name (Spec::Rails::Example::HelperExampleGroup)</a><br />
+    <a href="classes/Spec/Rails/Matchers.html#M000068">include_text (Spec::Rails::Matchers)</a><br />
+    <a href="classes/Spec/Rails/Example/ControllerExampleGroup.html#M000055">integrate_views (Spec::Rails::Example::ControllerExampleGroup)</a><br />
+    <a href="classes/Spec/Rails/Mocks.html#M000017">mock_model (Spec::Rails::Mocks)</a><br />
+    <a href="classes/Spec/Story/Runner/ScenarioRunner.html#M000015">new (Spec::Story::Runner::ScenarioRunner)</a><br />
+    <a href="classes/Spec/Example/Configuration.html#M000071">new (Spec::Example::Configuration)</a><br />
+    <a href="classes/Spec/Rails/Example/CookiesProxy.html#M000028">new (Spec::Rails::Example::CookiesProxy)</a><br />
+    <a href="classes/Spec/Rails/Mocks/ModelStubber.html#M000020">new_record? (Spec::Rails::Mocks::ModelStubber)</a><br />
+    <a href="classes/Spec/Rails/Example/FunctionalExampleGroup.html#M000047">params (Spec::Rails::Example::FunctionalExampleGroup)</a><br />
+    <a href="classes/Spec/Rails/Example/HelperExampleGroup/HelperObject.html#M000043">params= (Spec::Rails::Example::HelperExampleGroup::HelperObject)</a><br />
+    <a href="classes/Spec/Rails/Example/ControllerExampleGroup.html#M000058">params_from (Spec::Rails::Example::ControllerExampleGroup)</a><br />
+    <a href="classes/Spec/Rails/Matchers/RedirectTo/QueryParameterParser.html#M000070">parse_query_parameters (Spec::Rails::Matchers::RedirectTo::QueryParameterParser)</a><br />
+    <a href="classes/Spec/Story/GivenScenario.html#M000016">perform (Spec::Story::GivenScenario)</a><br />
+    <a href="classes/Spec/Rails/Example/HelperExampleGroup/HelperObject.html#M000039">protect_against_forgery? (Spec::Rails::Example::HelperExampleGroup::HelperObject)</a><br />
+    <a href="classes/Spec/Rails/Example/HelperExampleGroup.html#M000037">protect_against_forgery? (Spec::Rails::Example::HelperExampleGroup)</a><br />
+    <a href="classes/ActiveRecord/Base.html#M000012">record (ActiveRecord::Base)</a><br />
+    <a href="classes/ActiveRecord/Base.html#M000011">records (ActiveRecord::Base)</a><br />
+    <a href="classes/Spec/Rails/Matchers.html#M000069">redirect_to (Spec::Rails::Matchers)</a><br />
+    <a href="classes/Spec/Rails/Example/ViewExampleGroup.html#M000052">render (Spec::Rails::Example::ViewExampleGroup)</a><br />
+    <a href="classes/Spec/Rails/Example/PickedTemplate.html#M000046">render_partial (Spec::Rails::Example::PickedTemplate)</a><br />
+    <a href="classes/Spec/Rails/Example/PickedTemplate.html#M000045">render_template (Spec::Rails::Example::PickedTemplate)</a><br />
+    <a href="classes/Spec/Rails/Matchers.html#M000060">render_template (Spec::Rails::Matchers)</a><br />
+    <a href="classes/Spec/Rails/Example/HelperExampleGroup/HelperObject.html#M000041">request= (Spec::Rails::Example::HelperExampleGroup::HelperObject)</a><br />
+    <a href="classes/ActionController/Rescue.html#M000009">rescue_action_with_fast_errors (ActionController::Rescue)</a><br />
+    <a href="classes/Spec/Rails/Example/ControllerExampleGroup.html#M000057">route_for (Spec::Rails::Example::ControllerExampleGroup)</a><br />
+    <a href="classes/ActiveRecordSafetyListener.html#M000006">scenario_failed (ActiveRecordSafetyListener)</a><br />
+    <a href="classes/ActiveRecordSafetyListener.html#M000005">scenario_pending (ActiveRecordSafetyListener)</a><br />
+    <a href="classes/ActiveRecordSafetyListener.html#M000003">scenario_started (ActiveRecordSafetyListener)</a><br />
+    <a href="classes/ActiveRecordSafetyListener.html#M000004">scenario_succeeded (ActiveRecordSafetyListener)</a><br />
+    <a href="classes/Spec/Rails/Matchers.html#M000065">send_email (Spec::Rails::Matchers)</a><br />
+    <a href="classes/Spec/Rails/Example/FunctionalExampleGroup.html#M000049">session (Spec::Rails::Example::FunctionalExampleGroup)</a><br />
+    <a href="classes/Spec/Rails/Example/HelperExampleGroup/HelperObject.html#M000040">session= (Spec::Rails::Example::HelperExampleGroup::HelperObject)</a><br />
+    <a href="classes/ActionController/Base.html#M000010">set_view_path (ActionController::Base)</a><br />
+    <a href="classes/Spec/Rails/Example/RenderObserver.html#M000026">should_not_receive (Spec::Rails::Example::RenderObserver)</a><br />
+    <a href="classes/Spec/Rails/Example/RenderObserver.html#M000025">should_receive (Spec::Rails::Example::RenderObserver)</a><br />
+    <a href="classes/Spec/Rails/Example/RenderObserver.html#M000027">stub! (Spec::Rails::Example::RenderObserver)</a><br />
+    <a href="classes/Spec/Rails/Mocks.html#M000018">stub_model (Spec::Rails::Mocks)</a><br />
+    <a href="classes/Spec/Rails/Example/RenderObserver.html#M000023">stub_render (Spec::Rails::Example::RenderObserver)</a><br />
+    <a href="classes/Spec/Rails/Example/ViewExampleGroup.html#M000053">template (Spec::Rails::Example::ViewExampleGroup)</a><br />
+    <a href="classes/Spec/Example/Configuration.html#M000074">use_instantiated_fixtures (Spec::Example::Configuration)</a><br />
+    <a href="classes/Spec/Example/Configuration.html#M000075">use_instantiated_fixtures= (Spec::Example::Configuration)</a><br />
+    <a href="classes/ActionController/Rescue.html#M000007">use_rails_error_handling! (ActionController::Rescue)</a><br />
+    <a href="classes/ActionController/Rescue.html#M000008">use_rails_error_handling? (ActionController::Rescue)</a><br />
+    <a href="classes/Spec/Example/Configuration.html#M000072">use_transactional_fixtures (Spec::Example::Configuration)</a><br />
+    <a href="classes/Spec/Example/Configuration.html#M000073">use_transactional_fixtures= (Spec::Example::Configuration)</a><br />
+    <a href="classes/Spec/Rails/Example/RenderObserver.html#M000024">warn_deprecation (Spec::Rails::Example::RenderObserver)</a><br />
+    <a href="classes/Spec/Rails/Matchers.html#M000066">with_encoded (Spec::Rails::Matchers)</a><br />
+    <a href="classes/Spec/Rails/Matchers.html#M000062">with_tag (Spec::Rails::Matchers)</a><br />
+    <a href="classes/Spec/Rails/Matchers.html#M000063">without_tag (Spec::Rails::Matchers)</a><br />
+  </div>
+</div>
+</body>
+</html>

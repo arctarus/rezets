@@ -1,0 +1,33 @@
+<li class="hrecipe clearfix">
+  <div class="recipe-data">
+    <h2 class="fn"><%= link_to recipe.name, user_recipe_path(recipe.author, recipe) %></h2>
+    <p class="category"><%= link_to recipe.category.name, recipe.category, :title => "recetas de #{recipe.category.name}" %></p>
+    <% unless controller.controller_name == "users" and controller.action_name == "show" %>
+      <p class="author">
+        <span class="ft">por</span> 
+        <span class="author vcard">
+          <%= link_to "#{image_tag recipe.author.avatar.url(:thumb), :class => "avatar", :alt => ""}", recipe.author %>
+          <%= link_to recipe.author.name, recipe.author, :class => "url fn" %>
+        </span>
+      </p>
+    <% end %>
+
+    <% if recipe.author? current_user %>
+      <p class="r-actions">
+        <%= link_to "#{image_tag 'edit.png', :alt => ''} editar", edit_user_recipe_path(recipe.author, recipe) %>
+        <%= link_to "#{image_tag 'delete.png', :alt => ''} eliminar", user_recipe_path(recipe.author, recipe), :confirm => '¿estás seguro?', :method => :delete %>
+      </p>
+    <% end %>
+
+    <%= link_to "#{image_tag recipe.photo.url(:medium), :class => 'photo', :alt => recipe.name }", user_recipe_path(recipe.author, recipe) %>
+
+    <div class="instructions"><p><%= h(truncate(recipe.directions, :length => 360)) %></p></div>
+    <div class="r-meta">
+      <p class="date">
+        <span class="ft">actualizada hace</span>
+        <span class="published">
+          <span class="value-title" title="<%= recipe.updated_at %>"></span>
+          <%= distance_of_time_in_words Time.now, recipe.updated_at %></span></p>
+    </div>
+  </div>
+</li>

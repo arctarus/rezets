@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/2/trunk/doc/plugins/rspec-rails/files/vendor/plugins/rspec-rails/lib/spec/rails
+END
+example_rb.html
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/2/trunk/doc/plugins/rspec-rails/files/vendor/plugins/rspec-rails/lib/spec/rails/example_rb.html
+END
+mocks_rb.html
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/2/trunk/doc/plugins/rspec-rails/files/vendor/plugins/rspec-rails/lib/spec/rails/mocks_rb.html
+END
+extensions_rb.html
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/2/trunk/doc/plugins/rspec-rails/files/vendor/plugins/rspec-rails/lib/spec/rails/extensions_rb.html
+END
+story_adapter_rb.html
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/!svn/ver/2/trunk/doc/plugins/rspec-rails/files/vendor/plugins/rspec-rails/lib/spec/rails/story_adapter_rb.html
+END
+version_rb.html
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/2/trunk/doc/plugins/rspec-rails/files/vendor/plugins/rspec-rails/lib/spec/rails/version_rb.html
+END
+matchers_rb.html
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/2/trunk/doc/plugins/rspec-rails/files/vendor/plugins/rspec-rails/lib/spec/rails/matchers_rb.html
+END

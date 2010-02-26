@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-1.2.0/spec/spec/example
+END
+predicate_matcher_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-1.2.0/spec/spec/example/predicate_matcher_spec.rb
+END
+example_group_class_definition_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-1.2.0/spec/spec/example/example_group_class_definition_spec.rb
+END
+subclassing_example_group_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-1.2.0/spec/spec/example/subclassing_example_group_spec.rb
+END
+example_group_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-1.2.0/spec/spec/example/example_group_spec.rb
+END
+pending_module_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-1.2.0/spec/spec/example/pending_module_spec.rb
+END
+nested_example_group_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-1.2.0/spec/spec/example/nested_example_group_spec.rb
+END
+example_group_methods_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-1.2.0/spec/spec/example/example_group_methods_spec.rb
+END
+shared_example_group_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-1.2.0/spec/spec/example/shared_example_group_spec.rb
+END
+example_methods_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-1.2.0/spec/spec/example/example_methods_spec.rb
+END
+example_group_factory_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-1.2.0/spec/spec/example/example_group_factory_spec.rb
+END
+example_matcher_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-1.2.0/spec/spec/example/example_matcher_spec.rb
+END
+helper_method_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-1.2.0/spec/spec/example/helper_method_spec.rb
+END

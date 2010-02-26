@@ -1,0 +1,11 @@
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-rails-1.2.0/spec/resources/views/view_spec/foo
+END
+show.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-rails-1.2.0/spec/resources/views/view_spec/foo/show.html.erb
+END

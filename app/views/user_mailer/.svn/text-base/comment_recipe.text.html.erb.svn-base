@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    Hola <%= h @user.name %>!<br/>
+    <br/>
+    <%= @subject %>:<br/>
+    <br/>
+    <div class="body">
+      <%= simple_format(h(@comment.body)) %>
+    </div>
+    <br/>
+    * Puedes ver este comentario en <%= link_to "#{@comment.recipe.name} por #{@comment.recipe.author.name}" , "http://rezets.com/#{user_recipe_path(@comment.recipe.author, @comment.recipe)}#comment-#{@comment.id}" %>,<br/>
+    * o puedes añadir un <%= link_to "nuevo comentario", "http://rezets.com/#{user_recipe_path(@comment.recipe.author, @comment.recipe)}#comment-new" %>.<br/>
+    <br/>
+    ---<br/>
+    <%= link_to 'rezets.com', "http://rezets.com" %><br/>
+    comparte tus recetas
+  </body>
+</html> 

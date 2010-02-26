@@ -1,0 +1,73 @@
+<% form_for @recipe, 
+    :url => @recipe.new_record? ? @recipe : user_recipe_path(@recipe.author,@recipe),
+    :html => { :multipart => true } do |f| %>
+    <%= f.error_messages :header_message => "hay algunos errores en el formulario",
+      :message => "comprueba los datos a continuación" %>
+
+  <div class="field">
+    <%= error_messages_for :name %>
+    <%= f.text_field :name, :class => "title" %>
+  </div>
+
+   <div class="field">
+    <%= f.label :category_id, "categoría" %>
+    <%= f.select :category_id, @categories.collect {|c| [c.name,c.id] } %>
+  </div>
+
+  <div class="field">
+    <%= image_tag @recipe.photo.url(:thumb), :style => "float:left; margin-right:1em" unless @recipe.photo.url == "/photos/original/missing.png" %>
+    <%= f.label :photo, "foto" %>
+    <%= f.file_field :photo %>
+  </div>
+
+  <div class="field">
+    <%= f.label :num_persons, "número de personas" %>
+    <%= f.text_field :num_persons, :class => "number", :maxlength => 3 %>
+  </div>
+  
+  <fieldset class="ingredients" style="clear:both">
+    <legend>ingredientes</legend>
+    <table id="recipe_ingredients">
+      <thead>
+      <tr>
+        <th>opt</th>
+        <th>cantidad</th>
+        <th>unidad</th>
+        <th>ingrediente</th>
+        <th>comentario</th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody id="recipe_ingredients_body">
+        <%= render :partial => "ingredient", :collection => @recipe.recipe_ingredients %>
+      </tbody>
+  </table>
+
+      <p id="addingredient"><%= add_ingredient_link "añadir nuevo ingrediente" %></p>
+
+  </fieldset>
+
+  <div class="field">
+    <%= f.label :cook_time, "tiempo de preparación " %>
+    <%= f.text_field :cook_time, :class => "number", :maxlength => 3 %>
+    <span class="ft">minutos</span>
+  </div>
+
+  <div class="field">
+    <%= f.label :directions, "preparación" %>
+    <%= error_messages_for :directions %>
+    <%= f.text_area :directions %>
+  </div>
+
+  <p id="submit">
+    <% if controller.action_name == "new" %>
+      <%= f.submit 'crear' %>
+        <% else %>
+      <%= f.submit 'actualizar' %>
+    <% end %>
+    <%= link_to 'cancelar', current_user, 
+        :confirm => "saldrás de formulario y perderás los datos que no hayas guardado ¿estás seguro?",
+      :class => "cancel" %>
+  </p>
+
+<% end %>

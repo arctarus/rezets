@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-rails-1.2.0/spec/resources/controllers
+END
+action_view_base_spec_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-rails-1.2.0/spec/resources/controllers/action_view_base_spec_controller.rb
+END
+redirect_spec_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-rails-1.2.0/spec/resources/controllers/redirect_spec_controller.rb
+END
+controller_spec_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-rails-1.2.0/spec/resources/controllers/controller_spec_controller.rb
+END
+application.rb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-rails-1.2.0/spec/resources/controllers/application.rb
+END
+example.txt
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-rails-1.2.0/spec/resources/controllers/example.txt
+END
+rjs_spec_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-rails-1.2.0/spec/resources/controllers/rjs_spec_controller.rb
+END
+render_spec_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-rails-1.2.0/spec/resources/controllers/render_spec_controller.rb
+END

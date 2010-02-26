@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-rails-1.2.0/generators/rspec_controller/templates
+END
+controller_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-rails-1.2.0/generators/rspec_controller/templates/controller_spec.rb
+END
+view_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-rails-1.2.0/generators/rspec_controller/templates/view_spec.rb
+END
+helper_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-rails-1.2.0/generators/rspec_controller/templates/helper_spec.rb
+END

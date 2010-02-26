@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/98/trunk/spec/controllers
+END
+categories_controller_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/6/trunk/spec/controllers/categories_controller_spec.rb
+END
+comments_controller_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/75/trunk/spec/controllers/comments_controller_spec.rb
+END
+sessions_controller_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/6/trunk/spec/controllers/sessions_controller_spec.rb
+END
+invitations_controller_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/57/trunk/spec/controllers/invitations_controller_spec.rb
+END
+login_controller_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/9/trunk/spec/controllers/login_controller_spec.rb
+END
+recipes_controller_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/98/trunk/spec/controllers/recipes_controller_spec.rb
+END
+ingredients_controller_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/39/trunk/spec/controllers/ingredients_controller_spec.rb
+END
+recipes_controller_spec.rb.backup
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/2/trunk/spec/controllers/recipes_controller_spec.rb.backup
+END
+recipes_routing_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/2/trunk/spec/controllers/recipes_routing_spec.rb
+END

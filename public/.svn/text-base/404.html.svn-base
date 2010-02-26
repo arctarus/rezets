@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <title>rezets.com - página no encontrada</title>
+  <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8"/>
+  <meta name="robots" content="index,follow" />
+  <meta name="keywords" content="receta, cocina, cocinar, comer, comida"/>
+  <meta name="description" content="crea y comparte recetas de cocina con tus amigos"/>
+  <!--[if IE 6]>
+    < link href="/stylesheets/ie6.css?1252530035" media="screen" rel="stylesheet" type="text/css" />
+  <![endif]-->
+  <link href="/stylesheets/base.css?1255383311" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/stylesheets/rezets.css?1254682624" media="screen" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <div id="overwrapper">
+    <div class="wrapper">  
+
+      <div id="header">    
+        <ul class="toolbar">
+          <li class="last"><a href="/session/login">entrar</a></li>
+        </ul>
+        <div class="search">
+          <form action="/search" id="cse-search-box">
+          <div>
+            <input type="hidden" name="cx" value="011826889935766686610:dhg3fyde3gc" />
+            <input type="hidden" name="cof" value="FORID:10" />
+            <input type="hidden" name="ie" value="UTF-8" />
+            <input type="text" name="q" size="31" />
+            <input type="submit" name="sa" value="buscar" />
+          </div>
+        </form>
+      </div> <!-- search -->
+
+      <div style="text-align:left">
+        <span class="tagline">comparte tus recetas</span>
+        <p class="logo">
+          <a href="http://www.rezets.com" title="comparte tus recetas"><strong>rezets</strong>.com <span class="version">v0.1</span></a>
+        </p>
+        <ul class="main-links">
+          <li><a href="/">inicio</a></li>
+          <li><a href="/recipes">recetas</a></li>
+          <li class="last"><a href="/categories">categorías</a></li>
+        </ul>
+      </div>
+
+    </div> <!-- header -->
+
+    <div class="msg error_static">
+      <h1>página no encontrada</h1>
+      <p class="subtitle">¡parece que has seguido un enlace defectuoso o escrito mal la dirección!</p>
+      <p>si piensas que es un error nuestro, por favor, <a href="/feedback">contacta con nosotros</a>.</p>
+      <p>también puedes:</p>
+      <ul class="decorated-list">
+        <li>volver a la <a href="/" title="comparte tus recetas">página principal</a>.</li>
+        <li>descubir más <a href="/recipes">recetas</a>.</li>
+      </ul>
+    </div>
+
+  </div> <!-- wrapper -->
+</div>
+
+  <div id="footer">
+    <div class="wrapper">
+      <ul>
+        <li class="first"><strong>rezets</strong>.com</li>
+        <li style="border:none"><a href="/about">acerca de</a></li>
+        <li><a href="/feedback">contactar</a></li>
+      </ul>
+    </div>
+  </div>
+
+</body>
+</html>

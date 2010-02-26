@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-rails-1.2.0/spec/resources/helpers
+END
+plugin_application_helper.rb
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-rails-1.2.0/spec/resources/helpers/plugin_application_helper.rb
+END
+explicit_helper.rb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-rails-1.2.0/spec/resources/helpers/explicit_helper.rb
+END
+more_explicit_helper.rb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-rails-1.2.0/spec/resources/helpers/more_explicit_helper.rb
+END
+view_spec_helper.rb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-rails-1.2.0/spec/resources/helpers/view_spec_helper.rb
+END
+addition_helper.rb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-rails-1.2.0/spec/resources/helpers/addition_helper.rb
+END

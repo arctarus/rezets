@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-1.2.0/spec/spec/interop/test/unit/resources
+END
+spec_with_errors.rb
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-1.2.0/spec/spec/interop/test/unit/resources/spec_with_errors.rb
+END
+test_case_with_errors.rb
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-1.2.0/spec/spec/interop/test/unit/resources/test_case_with_errors.rb
+END
+spec_with_options_hash.rb
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-1.2.0/spec/spec/interop/test/unit/resources/spec_with_options_hash.rb
+END
+test_case_that_passes.rb
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-1.2.0/spec/spec/interop/test/unit/resources/test_case_that_passes.rb
+END
+spec_that_passes.rb
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-1.2.0/spec/spec/interop/test/unit/resources/spec_that_passes.rb
+END
+spec_that_fails.rb
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-1.2.0/spec/spec/interop/test/unit/resources/spec_that_fails.rb
+END
+test_case_that_fails.rb
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-1.2.0/spec/spec/interop/test/unit/resources/test_case_that_fails.rb
+END
+testsuite_adapter_spec_with_test_unit.rb
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-1.2.0/spec/spec/interop/test/unit/resources/testsuite_adapter_spec_with_test_unit.rb
+END

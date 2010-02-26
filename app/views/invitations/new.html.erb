@@ -1,0 +1,49 @@
+<h1>enviar invitación para rezets.com</h1>
+
+<% if current_user.id == 1 %>
+    <p><%= link_to "ver todas las invitaciones", invitations_path %></p>
+<% end %>
+
+<% if @remaining_invitations > 0 or current_user.id == 1 %>
+
+  <p>Escribe la dirección de la persona a la que desees invitar a rezets.com y le haremos llegar un email con el texto que escribas y un enlace para que pueda darse de alta. Puedes personalizar el mensaje incluido a continuación y contarle a tus amigos porque te gusta rezets.com.</p>
+
+  <p style="margin-top:1em">Dispones de <strong>10</strong> invitaciones para enviar a tus amigos de las cuales te restan <strong><%= @remaining_invitations %></strong>.</p>
+
+  <% form_for @invitation do |f| %>
+    <%= f.error_messages :header_message => "hay algunos errores en el formulario",
+      :message => "comprueba los datos a continuación" %>
+
+    <div class="field">
+      <%= f.label :email, "email" %>
+      <%= f.text_field :email, :size => 30, :maxlength => 255 %>
+    </div>
+
+    <div class="field">
+      <%= label :mail, :subject, "asunto" %>
+      <%= text_field :mail, :subject, :value => "#{current_user.name} te ha invitado a rezets.com" %>
+    </div>
+
+    <% message = "Hola!\n\nQuiero invitarte a rezets.com.\n\nrezets.com es una nueva web de recetas de cocina en la que puedes guardar todas esas recetas que tienes repartidas en papelitos, libretas o carpetas y compartirlas con tus amigos.\n\nEstoy seguro de que te resultará muy útil.\n\n#{current_user.name}" %>
+    <div class="field">
+      <%= label :mail, :message, "mensaje" %>
+      <%= text_area :mail, :message, :value => message %>
+    </div>
+
+    <p id="submit">
+      <%= f.submit 'enviar' %>
+      <%= link_to 'cancelar', current_user, 
+          :confirm => "saldrás de formulario y perderás los datos que no hayas guardado ¿estás seguro?",
+        :class => "cancel" %>
+    </p>
+
+  <% end %>
+
+<% else %>
+
+  <div class="msg info">
+    <p>¡lo sentimos pero has agotado todas tus invitaciones!</p>
+    <p>muchas gracias por dar a conocer rezets.com a tus amigos, gracias a ti hoy somos un poquito más grandes. Cuando pongamos dispongamos de más invitaciones te informaremos de ello.</p>
+  </div>
+
+<% end %>
