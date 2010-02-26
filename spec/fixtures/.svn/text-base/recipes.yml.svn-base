@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  id: 1
+  name: Garbanzos con espinacas
+  directions: cuece un poco los garbanzos luego echale las espinacas
+  cook_time: 1
+
+two:
+  id: 2
+  name: Fideua
+  directions: haz el sofrito echale los fideos
+  cook_time: 1

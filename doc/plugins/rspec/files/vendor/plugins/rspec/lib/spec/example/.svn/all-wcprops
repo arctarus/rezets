@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/2/trunk/doc/plugins/rspec/files/vendor/plugins/rspec/lib/spec/example
+END
+example_group_methods_rb.html
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/!svn/ver/2/trunk/doc/plugins/rspec/files/vendor/plugins/rspec/lib/spec/example/example_group_methods_rb.html
+END
+errors_rb.html
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/2/trunk/doc/plugins/rspec/files/vendor/plugins/rspec/lib/spec/example/errors_rb.html
+END
+shared_example_group_rb.html
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/2/trunk/doc/plugins/rspec/files/vendor/plugins/rspec/lib/spec/example/shared_example_group_rb.html
+END
+example_matcher_rb.html
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/2/trunk/doc/plugins/rspec/files/vendor/plugins/rspec/lib/spec/example/example_matcher_rb.html
+END
+example_methods_rb.html
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/2/trunk/doc/plugins/rspec/files/vendor/plugins/rspec/lib/spec/example/example_methods_rb.html
+END
+example_group_factory_rb.html
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/!svn/ver/2/trunk/doc/plugins/rspec/files/vendor/plugins/rspec/lib/spec/example/example_group_factory_rb.html
+END
+module_inclusion_warnings_rb.html
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/!svn/ver/2/trunk/doc/plugins/rspec/files/vendor/plugins/rspec/lib/spec/example/module_inclusion_warnings_rb.html
+END
+module_reopening_fix_rb.html
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/2/trunk/doc/plugins/rspec/files/vendor/plugins/rspec/lib/spec/example/module_reopening_fix_rb.html
+END
+pending_rb.html
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/2/trunk/doc/plugins/rspec/files/vendor/plugins/rspec/lib/spec/example/pending_rb.html
+END
+example_group_rb.html
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/2/trunk/doc/plugins/rspec/files/vendor/plugins/rspec/lib/spec/example/example_group_rb.html
+END
+configuration_rb.html
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/2/trunk/doc/plugins/rspec/files/vendor/plugins/rspec/lib/spec/example/configuration_rb.html
+END

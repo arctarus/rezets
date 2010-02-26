@@ -1,0 +1,80 @@
+<div class="sidebar sidebar-home">
+  <h2><span><%= _("categories") %></span></h2>
+
+  <% unless @categories.blank? %>
+    <ul>
+      <% @categories.each do |category| %>
+        <li><%= link_to category.name, category %> <span class="counter">(<%= category.recipes.size %>)</span></li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
+
+<div class="main last-recipes">
+  <h2><%= _("freshly made recipes") %></h2>
+
+  <% unless @recipes.blank? %>
+    <ul>
+      <% @recipes.each_with_index do |recipe, index| %>
+        <li class="clearfix<%= " top" if index == 0 %><%= " bottom" if (index + 1) == @recipes.size %>" >
+        <%= link_to "#{image_tag recipe.photo.url(:medium), :class => 'photo', :alt => h(recipe.name)}", user_recipe_path(recipe.author,recipe) %>
+          <h3><%= link_to h(recipe.name), user_recipe_path(recipe.author,recipe) %></h3>
+          <p><%= link_to recipe.category.name, recipe.category %></p>
+          <p>
+            <span class="ft">por</span>
+            <%= image_tag recipe.author.avatar.url(:thumb), :class => "avatar", :alt => "" %>
+            <%= link_to h(recipe.author.name), recipe.author %>
+          </p>
+          <p style="margin-bottom:.5em"><%= h(truncate(recipe.directions, :length => 220)) %></p>
+          <p><span class="ft"><%= _("created at") %></span> <%= distance_of_time_in_words_to_now recipe.updated_at %></span></p>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <p><%= _("see more") %> <%= link_to _("recipes"), recipes_path %> <span class="icon">&rarr;</span></p>
+
+  <p style="margin-top:2em"><%= link_to _("subscribe to the latest recipes rezets.com"), url_for(:controller => "home", :action => "feed"), :class => "feed-link" %></p>
+
+
+  <!-- last comments -->
+  <% unless @comments.blank? %>
+    <div class="last-comments">
+      <h2><%= _("recent comments") %></h2>
+      <ul class="comments">
+        <% @comments.each do |comment| %>
+          <li class="comment">
+          <%= link_to "#{image_tag comment.user.avatar.url(:medium), :class => "avatar", :alt => ""}", comment.user %>
+          <div class="inner-comment">
+          <h3>
+            <%= link_to h(comment.user.name), comment.user %> 
+            <span class="ft"><%= _("says about") %></span> 
+            <%= link_to h(comment.recipe.name), user_recipe_path(comment.recipe.author,comment.recipe) %>
+          </h3>
+          <p><%= h truncate(comment.body, :length => 300) %></p>
+          <p class="created-time"><abbr class="timestamp" title="<%= Time.now %>" class="timestamp"><%= _("about") %> <%= distance_of_time_in_words_to_now comment.updated_at %></abbr></p>
+        </div>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <% unless @users.blank? %>
+    <div class="last-chefs">
+      <h2><%= _("recent cooks") %></h2>
+      <ul class="clearfix">
+        <% for user in @users %>
+          <li>
+          <%= link_to "#{image_tag user.avatar.url(:medium), :class => 'avatar', :height => "30px", :width => "30px"}", user %>
+          <%= link_to truncate(user.name, :length => 13), user %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<br class="clear" />
+
+</div>

@@ -1,0 +1,11 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-1.2.0/lib/spec/matchers/extensions
+END
+instance_exec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-1.2.0/lib/spec/matchers/extensions/instance_exec.rb
+END

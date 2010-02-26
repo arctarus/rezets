@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/2/trunk/doc/plugins/rspec/classes
+END
+Test.html
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/2/trunk/doc/plugins/rspec/classes/Test.html
+END
+Class.html
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/2/trunk/doc/plugins/rspec/classes/Class.html
+END
+RspecCommandError.html
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/2/trunk/doc/plugins/rspec/classes/RspecCommandError.html
+END
+Symbol.html
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/2/trunk/doc/plugins/rspec/classes/Symbol.html
+END
+Object.html
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/2/trunk/doc/plugins/rspec/classes/Object.html
+END
+String.html
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/2/trunk/doc/plugins/rspec/classes/String.html
+END
+Autotest.html
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/2/trunk/doc/plugins/rspec/classes/Autotest.html
+END
+RCov.html
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/2/trunk/doc/plugins/rspec/classes/RCov.html
+END
+Spec.html
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/2/trunk/doc/plugins/rspec/classes/Spec.html
+END
+Regexp.html
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/2/trunk/doc/plugins/rspec/classes/Regexp.html
+END

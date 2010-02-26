@@ -1,0 +1,30 @@
+<% if @category.nil? %>
+  <h1>recetas por categorías</h1>
+<% else %>
+  <h1>recetas de <%= @category.name %></h1>
+<% end %>
+
+<div class="sidebar sidebar-categories">
+  <%= render :partial => "sidebar" %>
+</div>
+
+<div class="main">
+  <% if @recipes.blank? %>
+    <div class="msg blank">
+      <h2>aún no tenemos ninguna receta de <%= @category.name %></h2>
+      <p>puedes <%= link_to "añadir una receta", new_user_recipe_path(current_user) %> tú mismo si conoces alguna que quieras compartir con tus amigos.</p>
+    </div>
+  <% else %>
+    <ul class="recipes">
+      <% @recipes.each do |recipe| %>
+        <%= render :partial => "recipes/recipe", :locals => {
+          :recipe => recipe } %>
+      <% end %>
+    </ul>
+
+    <%= will_paginate @recipes %>
+
+  <% end %>
+
+  <br class="clear" />
+</div>

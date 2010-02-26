@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/svn/!svn/ver/75/trunk/app/helpers
+END
+users_helper.rb
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/7/trunk/app/helpers/users_helper.rb
+END
+application_helper.rb
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/2/trunk/app/helpers/application_helper.rb
+END
+categories_helper.rb
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/7/trunk/app/helpers/categories_helper.rb
+END
+comments_helper.rb
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/75/trunk/app/helpers/comments_helper.rb
+END
+sessions_helper.rb
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/7/trunk/app/helpers/sessions_helper.rb
+END
+invitations_helper.rb
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/57/trunk/app/helpers/invitations_helper.rb
+END
+home_helper.rb
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/2/trunk/app/helpers/home_helper.rb
+END
+login_helper.rb
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/9/trunk/app/helpers/login_helper.rb
+END
+recipes_helper.rb
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/63/trunk/app/helpers/recipes_helper.rb
+END
+ingredients_helper.rb
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/37/trunk/app/helpers/ingredients_helper.rb
+END
+errors_helper.rb
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/13/trunk/app/helpers/errors_helper.rb
+END

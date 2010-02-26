@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-rails-1.2.0/spec/spec/rails/matchers
+END
+redirect_to_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-rails-1.2.0/spec/spec/rails/matchers/redirect_to_spec.rb
+END
+should_change_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-rails-1.2.0/spec/spec/rails/matchers/should_change_spec.rb
+END
+have_text_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-rails-1.2.0/spec/spec/rails/matchers/have_text_spec.rb
+END
+include_text_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-rails-1.2.0/spec/spec/rails/matchers/include_text_spec.rb
+END
+ar_be_valid_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-rails-1.2.0/spec/spec/rails/matchers/ar_be_valid_spec.rb
+END
+errors_on_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-rails-1.2.0/spec/spec/rails/matchers/errors_on_spec.rb
+END
+render_template_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-rails-1.2.0/spec/spec/rails/matchers/render_template_spec.rb
+END
+assert_select_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-rails-1.2.0/spec/spec/rails/matchers/assert_select_spec.rb
+END

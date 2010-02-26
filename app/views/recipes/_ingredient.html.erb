@@ -1,0 +1,19 @@
+<% new_or_existing = ingredient.new_record? ? 'new' : 'existing' %>
+<% prefix = "recipe[#{new_or_existing}_recipe_ingredients_attributes][]" %>
+  
+<% fields_for prefix, ingredient do |rif| %>
+    <tr class="ingredient">
+      <td>
+        <% if new_or_existing == 'existing'%>
+          <%= rif.check_box :optional %>
+        <% else %>
+          <input type="checkbox" value="1" name="recipe[new_recipe_ingredients_attributes][][optional]" id="recipe_new_recipe_ingredients_attributes__optional"/>
+        <% end %>
+      </td>
+      <td><%= rif.text_field :value, :size => 4, :maxlength => 11 %></td>
+      <td><%= rif.text_field :value_type, :size => 6, :maxlength => 25, :maxlength => 255 %></td>
+      <td><%= rif.text_field :name, :size => 20, :maxlength => 255 %></td>
+      <td><%= rif.text_field :comment, :size => 20, :maxlength => 255 %></td>
+      <td><%= link_to_function "eliminar" , "$(this).up('.ingredient').remove()" %></td>
+    </tr>
+<% end %>

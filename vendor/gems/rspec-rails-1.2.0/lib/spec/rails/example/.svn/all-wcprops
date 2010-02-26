@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-rails-1.2.0/lib/spec/rails/example
+END
+cookies_proxy.rb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-rails-1.2.0/lib/spec/rails/example/cookies_proxy.rb
+END
+routing_example_group.rb
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-rails-1.2.0/lib/spec/rails/example/routing_example_group.rb
+END
+view_example_group.rb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-rails-1.2.0/lib/spec/rails/example/view_example_group.rb
+END
+render_observer.rb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-rails-1.2.0/lib/spec/rails/example/render_observer.rb
+END
+helper_example_group.rb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-rails-1.2.0/lib/spec/rails/example/helper_example_group.rb
+END
+model_example_group.rb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-rails-1.2.0/lib/spec/rails/example/model_example_group.rb
+END
+routing_helpers.rb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-rails-1.2.0/lib/spec/rails/example/routing_helpers.rb
+END
+functional_example_group.rb
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-rails-1.2.0/lib/spec/rails/example/functional_example_group.rb
+END
+controller_example_group.rb
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-rails-1.2.0/lib/spec/rails/example/controller_example_group.rb
+END
+assigns_hash_proxy.rb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/2/trunk/vendor/gems/rspec-rails-1.2.0/lib/spec/rails/example/assigns_hash_proxy.rb
+END

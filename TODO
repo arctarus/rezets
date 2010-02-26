@@ -1,0 +1,24 @@
+v0.1
+ok * fotos para recetas
+ok * avatares para usuarios
+ok * mejoras en form guardar recetas
+ok   * cambiar quantity de int a float
+ok   * nuevos campos recetas: num personas
+ok * navegación categorías
+ok * revisión home: últimos usuarios, usuarios destacados, categorías, ingredientes
+ok * slugs de recetas
+ok * slugs de usuarios
+ok * mejoras en sistema de autentificación de usuario
+ok * mejoras rn gestión de sesiones de usuario
+
+v0.2
+* guardar recetas de otros usuarios
+* eliminar recetas de otros usuarios
+* seguir a otros chefs
+* comentar recetas
+* internacionalización
+
+v0.3
+* enviar recetas a twitter, facebook, email
+
+version 1.0

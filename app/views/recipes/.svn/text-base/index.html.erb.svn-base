@@ -1,0 +1,43 @@
+<h1>recetas de cocina</h1>
+
+<div class="explore-sidebar">
+</div>
+
+<div class="explore">
+
+  <div id="recipe-<%= @featured_recipe.id %>" class="hrecipe featured-recipe">
+
+    <h2 class="fn"><%= link_to h(@featured_recipe.name), user_recipe_path(@featured_recipe.author, @featured_recipe) %></h2>
+    <p class="category"><%= link_to @featured_recipe.category.name, @featured_recipe.category %></p>
+    
+    <p class="author">
+      <span class="ft">por</span> 
+      <span class="author vcard">
+        <%= link_to "#{image_tag @featured_recipe.author.avatar.url(:thumb), :class => "avatar", :alt => ""}", @featured_recipe.author %>
+        <%= link_to @featured_recipe.author.name, @featured_recipe.author, :class => "url fn" %>
+      </span>
+    </p>
+        
+    <%= link_to "#{image_tag @featured_recipe.photo.url(:large), :class => 'photo', :alt => h(@featured_recipe.name)}", 
+		user_recipe_path(@featured_recipe.author, @featured_recipe),
+      	:title => h(@featured_recipe.name) %>
+
+  </div>
+
+
+</div>    
+
+<%= render :partial => "sidebar" %>
+<br class="clear" />
+
+<% unless @ingredients.blank? %>
+  <h2>ingredientes más populares</h2>
+      <p style="text-align:center">
+      <% @ingredients.each do |i| %>
+        <% unless i.name.blank? %>
+          <span style="font-size:<%= 12 + (i.count.to_i * 2) %>px">
+            <%= link_to i.name, i %></span><span class="ft">,</span>
+        <% end %>
+      <% end %>
+      </p>
+<% end %>

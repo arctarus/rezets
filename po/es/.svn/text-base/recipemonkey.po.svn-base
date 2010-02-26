@@ -1,0 +1,333 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: recipemonkey 0.1\n"
+"POT-Creation-Date: 2010-02-06 19:33+0100\n"
+"PO-Revision-Date: 2010-02-06 14:58+0100\n"
+"Last-Translator: sdas <sdas>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: app/models/user_recipe.rb:-
+msgid "user recipe"
+msgstr "usuario receta"
+
+#: app/models/user_recipe.rb:- app/models/comment.rb:-
+msgid "User"
+msgstr "Usuario"
+
+#: app/models/user_recipe.rb:- app/models/comment.rb:-
+#: app/models/recipe_ingredient.rb:-
+msgid "Recipe"
+msgstr "Receta"
+
+#: app/models/user_recipe.rb:- app/models/user.rb:- app/models/comment.rb:-
+#: app/models/recipe.rb:- app/models/invitation.rb:-
+#: app/models/ingredient.rb:- app/models/category.rb:-
+#: app/models/recipe_ingredient.rb:-
+msgid "Created at"
+msgstr "Creado el"
+
+#: app/models/user_recipe.rb:- app/models/user.rb:- app/models/comment.rb:-
+#: app/models/recipe.rb:- app/models/invitation.rb:-
+#: app/models/ingredient.rb:- app/models/category.rb:-
+#: app/models/recipe_ingredient.rb:-
+msgid "Updated at"
+msgstr "Actualizado el"
+
+#: app/models/user.rb:-
+msgid "user"
+msgstr "usuario"
+
+#: app/models/user.rb:- app/models/recipe.rb:- app/models/ingredient.rb:-
+#: app/models/category.rb:-
+msgid "Name"
+msgstr "Nombre"
+
+#: app/models/user.rb:- app/models/invitation.rb:-
+msgid "Email"
+msgstr "Email"
+
+#: app/models/user.rb:- app/models/recipe.rb:- app/models/category.rb:-
+msgid "Slug"
+msgstr "Slug"
+
+#: app/models/user.rb:-
+msgid "Avatar file name"
+msgstr "Nombre de fichero del avatar"
+
+#: app/models/user.rb:-
+msgid "Avatar content type"
+msgstr "Tipo de contenido del avatar"
+
+#: app/models/user.rb:-
+msgid "Avatar file size"
+msgstr "Tamaño de archivo del avatar"
+
+#: app/models/user.rb:-
+msgid "Crypted password"
+msgstr "contraseña encriptada"
+
+#: app/models/user.rb:-
+msgid "Password salt"
+msgstr "Sal de contraseña"
+
+#: app/models/user.rb:-
+msgid "Persistence token"
+msgstr "Token de persistencia"
+
+#: app/models/user.rb:-
+msgid "Single access token"
+msgstr "Token de acceso único"
+
+#: app/models/user.rb:-
+msgid "Perishable token"
+msgstr "Token perecedero"
+
+#: app/models/user.rb:-
+msgid "Login count"
+msgstr "Contador de inicio de sesión"
+
+#: app/models/user.rb:-
+msgid "Failed login count"
+msgstr "Contador de inicio sesión fallido"
+
+#: app/models/user.rb:-
+msgid "Last request at"
+msgstr "Última solicitud en"
+
+#: app/models/user.rb:-
+msgid "Current login at"
+msgstr "Actual inicio de sesión en"
+
+#: app/models/user.rb:-
+msgid "Last login at"
+msgstr "Último inicio de sesión en"
+
+#: app/models/user.rb:-
+msgid "Current login ip"
+msgstr "Ip actual de sesión"
+
+#: app/models/user.rb:-
+msgid "Last login ip"
+msgstr "Ip de último inicio de sesión"
+
+#: app/models/comment.rb:-
+msgid "comment"
+msgstr "comentario"
+
+#: app/models/comment.rb:-
+msgid "Body"
+msgstr "Cuerpo"
+
+#: app/models/recipe.rb:-
+msgid "recipe"
+msgstr "receta"
+
+#: app/models/recipe.rb:-
+msgid "Directions"
+msgstr "Instrucciones"
+
+#: app/models/recipe.rb:-
+msgid "Cook time"
+msgstr "Tiempo de cocina"
+
+#: app/models/recipe.rb:-
+msgid "Photo file name"
+msgstr "Nombre de fichero de foto"
+
+#: app/models/recipe.rb:-
+msgid "Photo content type"
+msgstr "Tipo de contenido de foto"
+
+#: app/models/recipe.rb:-
+msgid "Photo file size"
+msgstr "Tamaño de fichero de foto"
+
+#: app/models/recipe.rb:-
+msgid "Category"
+msgstr "Categoria"
+
+#: app/models/recipe.rb:-
+msgid "Num persons"
+msgstr "Núm personas"
+
+#: app/models/recipe.rb:-
+msgid "Author"
+msgstr "Autor"
+
+#: app/models/invitation.rb:-
+msgid "invitation"
+msgstr "invitación"
+
+#: app/models/invitation.rb:-
+msgid "Sender"
+msgstr "Remitente"
+
+#: app/models/invitation.rb:-
+msgid "Receiver"
+msgstr "Receptor"
+
+#: app/models/invitation.rb:-
+msgid "Token"
+msgstr ""
+
+#: app/models/ingredient.rb:-
+msgid "ingredient"
+msgstr "ingredient"
+
+#: app/models/category.rb:-
+msgid "category"
+msgstr "categoria"
+
+#: app/models/recipe_ingredient.rb:-
+msgid "recipe ingredient"
+msgstr "receta ingrediente"
+
+#: app/models/recipe_ingredient.rb:-
+msgid "Ingredient"
+msgstr "Ingrediente"
+
+#: app/models/recipe_ingredient.rb:-
+msgid "Value"
+msgstr "Valor"
+
+#: app/models/recipe_ingredient.rb:-
+msgid "Value type"
+msgstr "Tipo de valor"
+
+#: app/models/recipe_ingredient.rb:-
+msgid "Comment"
+msgstr "Comentario"
+
+#: app/models/recipe_ingredient.rb:-
+msgid "Optional"
+msgstr "Opcional"
+
+#: app/controllers/home_controller.rb:14 app/views/home/_header.html.erb:6
+msgid "share your recipes"
+msgstr "comparte tus recetas"
+
+#: app/controllers/home_controller.rb:28
+msgid "about rezets.com"
+msgstr "sobre rezets.com"
+
+#: app/controllers/home_controller.rb:32
+msgid "contact with us"
+msgstr "contacta con nosotros"
+
+#: app/controllers/home_controller.rb:37
+msgid "thanks for your help"
+msgstr "gracias por tu ayuda"
+
+#: app/controllers/recipes_controller.rb:15
+msgid "recetas de cocina"
+msgstr "recetas de cocina"
+
+#: app/controllers/recipes_controller.rb:27
+msgid "hrecipe"
+msgstr ""
+
+#: app/controllers/recipes_controller.rb:38
+msgid "receta nueva"
+msgstr ""
+
+#: app/controllers/recipes_controller.rb:63
+msgid "Receta creada correctamente."
+msgstr "Receta creada correctamente."
+
+#: app/views/home/_header.html.erb:14
+msgid "discover new recipes"
+msgstr "descubre nuevas recetas"
+
+#: app/views/home/_header.html.erb:15
+msgid "create your own cookbook"
+msgstr "crea tu propio libro de cocina"
+
+#: app/views/home/_header.html.erb:16
+msgid "share your recipes with your friends"
+msgstr "comparte tus recetas con tus amigos"
+
+#: app/views/home/index.html.erb:2 app/views/common/_header.html.erb:34
+msgid "categories"
+msgstr "categorias"
+
+#: app/views/home/index.html.erb:14
+msgid "freshly made recipes"
+msgstr "recetas recién hechas"
+
+#: app/views/home/index.html.erb:29
+msgid "created at"
+msgstr "creado el"
+
+#: app/views/home/index.html.erb:35
+msgid "see more"
+msgstr "ver más"
+
+#: app/views/home/index.html.erb:35 app/views/common/_header.html.erb:33
+msgid "recipes"
+msgstr "recetas"
+
+#: app/views/home/index.html.erb:37
+msgid "subscribe to the latest recipes rezets.com"
+msgstr "suscribirse a las últimas recetas de rezets.com"
+
+#: app/views/home/index.html.erb:43
+msgid "recent comments"
+msgstr "últimos comentarios"
+
+#: app/views/home/index.html.erb:51
+msgid "says about"
+msgstr "dice sobre"
+
+#: app/views/home/index.html.erb:55 app/views/common/_footer.html.erb:5
+msgid "about"
+msgstr "sobre"
+
+#: app/views/home/index.html.erb:66
+msgid "recent cooks"
+msgstr "últimos cocineros"
+
+#: app/views/recipes/_show_sidebar.html.erb:3
+msgid "creado hace"
+msgstr "created at"
+
+#: app/views/recipes/_show_sidebar.html.erb:5
+msgid "por"
+msgstr "by"
+
+#: app/views/common/_header.html.erb:6
+msgid "login"
+msgstr "entrar"
+
+#: app/views/common/_header.html.erb:14
+msgid "edit profile"
+msgstr "editar perfil"
+
+#: app/views/common/_header.html.erb:16
+msgid "invite friends"
+msgstr "invitar amigos"
+
+#: app/views/common/_header.html.erb:18
+msgid "logout"
+msgstr "salir"
+
+#: app/views/common/_header.html.erb:32
+msgid "start"
+msgstr "inicio"
+
+#: app/views/common/_footer.html.erb:6
+msgid "contact"
+msgstr "contactar"
+
+#: app/views/common/_footer.html.erb:10
+msgid "languages"
+msgstr "idiomas"
+

@@ -1,0 +1,22 @@
+<h1>contacta con nosotros</h1>
+
+<% form_tag url_for(:controller => "home", :action => "send_feedback") do %>
+
+  <div class="field">
+    <%= label_tag "feedback[name]", "nombre" %>
+    <%= text_field_tag "feedback[name]", nil, :size => 30, :maxlength => 50 %>
+  </div>
+
+  <div class="field">
+    <%= label_tag "feedback[email]", "email" %>
+    <%= text_field_tag "feedback[email]", nil, :size => 30, :maxlength => 50 %>
+  </div>
+
+  <div class="field">
+    <%= label_tag "feedback[message]", "mensaje" %>
+    <%= text_area_tag "feedback[message]", nil %>
+  </div>
+
+  <p id="submit"><%= submit_tag "enviar" %></p>
+
+<% end %>
