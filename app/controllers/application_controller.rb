@@ -14,10 +14,10 @@ class ApplicationController < ActionController::Base
   before_init_gettext :default_locale
 
   def default_locale
-    if cookies["lang"].nil? or cookies["lang"].empty?
+    if request.subdomains.blank?
       set_locale "es"
     else
-      set_locale cookies["lang"]
+      set_locale request.subdomains.first
     end
   end
     
