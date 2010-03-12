@@ -1,4 +1,4 @@
-public/system
+public/system/**/*
 log/*.log
 tmp/**/*
 config/database.yml
