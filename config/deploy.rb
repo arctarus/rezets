@@ -1,4 +1,4 @@
-set :application, "test.com"
+set :application, "rezets"
 set :scm, :git
 set :user, "arctarus"
 set :use_sudo, false
@@ -6,8 +6,12 @@ set :use_sudo, false
 
 set :repository,  "git@67.23.21.106:rezets"
 set :branch, "master"
-set :deploy_via, :checkout
+set :deploy_via, :remote_cache
+set :git_shallow_clone, 1
+set :ssh_options, { :forward_agent => true }
 set :deploy_to, "/home/arctarus/public_html/#{application}"
+
+default_run_options[:pty] = true
 
 role :web, "67.23.21.106"                          # Your HTTP server, Apache/etc
 role :app, "67.23.21.106"                          # This may be the same as your `Web` server
