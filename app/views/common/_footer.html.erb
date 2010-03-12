@@ -19,8 +19,8 @@
 %>
 <p>
 <%= _("languages") %>:
-  <%= link_to_unless locale.to_s == "en", "english", :controller => :home, :action => :locale, :id => "en" %> <span class="ft">|</span>
-  <%= link_to_unless locale.to_s == "es", "español", :controller => :home, :action => :locale, :id => "es" %>
+  <%= link_to_unless locale.to_s == "en", "english", "http://en.rezets.com" %> <span class="ft">|</span>
+  <%= link_to_unless locale.to_s != "en", "español", "http://rezets.com" %>
 </p>
 
 </div>
