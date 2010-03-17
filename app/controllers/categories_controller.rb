@@ -19,7 +19,7 @@ class CategoriesController < ApplicationController
     @category = Category.find_by_slug params[:id]
     @recipes = Recipe.all(:conditions => {
       :category_id => @category.id },
-      :order => "created_at desc").paginate(:page => params[:page], :per_page => 5)
+      :order => "created_at desc").paginate(:page => params[:page], :per_page => 10)
     @categories = Category.all(:order => "name asc")
     @categories.delete_if {|c| c.recipes.size <= 0 }
     @page_title = "recetas de #{@category.name}"
