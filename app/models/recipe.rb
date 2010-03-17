@@ -22,14 +22,14 @@ class Recipe < ActiveRecord::Base
     :reject_if => proc { |attrs| attrs.all? { |k,v| v.blank? } }
 
   has_attached_file :photo,
-    :path => ":rails_root/public/system/:class/:attachment/:id/:style/:slug.:extension",
-    :url => "/system/:class/:id/:attachment/:style/:to_param.:extension",
+    :path => ":rails_root/public/system/:class/:id/:attachment/:style/:slug.:extension",
+    :url => "/system/:class/:id/:attachment/:style/:slug.:extension",
     :styles => {
       :large => "500>x500",
       :medium => "200>x200",
       :thumb => "70>x70" }
       
-  Paperclip.interpolates :to_param do |attachment, style|
+  Paperclip.interpolates :slug do |attachment, style|
     attachment.instance.slug
   end
 
