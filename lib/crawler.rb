@@ -89,14 +89,14 @@ class Crawler
  
 	# Saves the xml file to disc. This could also be used to ping the webmaster tools
 	def save_file(xml)
-		File.open(RAILS_ROOT + '/public/sitemap.xml', "w+") do |f|
+		File.open(RAILS_ROOT + '/public/system/rsm.xml', "w+") do |f|
 			f.write(xml)	
 		end		
 	end
  
 	# Notify google of the new sitemap
 	def update_google
-	    sitemap_uri = @starting_url + '/sitemap.xml'
+	    sitemap_uri = @starting_url + '/system/rsm.xml'
 	    escaped_sitemap_uri = URI.escape(sitemap_uri)
 	    Net::HTTP.get('www.google.com',
 	                  '/webmasters/sitemaps/ping?sitemap=' +
