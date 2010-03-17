@@ -12,12 +12,6 @@ class CommentsController < ApplicationController
     @comment = Comment.new(params[:comment])
     respond_to do |format|
       if @comment.save
-        users = @recipe.comments.collect {|c| c.user}.uniq
-        users << @recipe.author unless users.include? @recipe.author
-        users.delete(current_user)
-        users.each do |user|
-          UserMailer.deliver_comment_recipe(@comment, user)
-        end
         format.html { redirect_to user_recipe_path(@recipe.author,@recipe) + "#comment-#{@comment.id}" }
         format.xml { render :xml => @comment, :status => :created, :location => @comment }
       else
