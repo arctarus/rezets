@@ -1,3 +1,5 @@
+require 'capistrano_database'
+
 set :application, "rezets"
 set :scm, :git
 set :user, "arctarus"
