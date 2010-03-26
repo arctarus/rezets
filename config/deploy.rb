@@ -1,4 +1,4 @@
-require 'capistrano_database'
+require 'config/deploy/capistrano_database'
 
 set :application, "rezets"
 set :scm, :git
