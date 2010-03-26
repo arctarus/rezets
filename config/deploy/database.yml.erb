@@ -41,10 +41,10 @@ production:
   adapter: mysql
   encoding: utf8
   reconnect: false
-  database: #{application}
+  database: <%= db_name %>
   pool: 5
-  username: #{user}
-  password: #{Capistrano::CLI.ui.ask("Enter MySQL database password: ")}
+  username: <%= db_user %>
+  password: <%= Capistrano::CLI.ui.ask("Enter MySQL database password: ") %>
   socket: /var/run/mysqld/mysqld.sock
 
 cucumber:
