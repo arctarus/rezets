@@ -1,6 +1,8 @@
 require 'config/deploy/capistrano_database'
 
 set :application, "rezets"
+set :db_name, 'rm'
+set :db_user, 'rezets'
 set :scm, :git
 set :user, "arctarus"
 set :use_sudo, false
