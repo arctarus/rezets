@@ -1,4 +1,6 @@
 public/system/**/*
+public/sitemap_index.xml.gz
+public/sitemap1.xml.gz
 log/*.log
 tmp/**/*
 config/database.yml
