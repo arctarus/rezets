@@ -68,3 +68,6 @@ Rails::Initializer.run do |config|
   config.i18n.default_locale = :es
 
 end
+
+WillPaginate::ViewHelpers.pagination_options[:prev_label]=I18n.t("pagination.prev")
+WillPaginate::ViewHelpers.pagination_options[:next_label]=I18n.t("pagination.next")
