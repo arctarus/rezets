@@ -2,12 +2,13 @@
   <h1 class="fn"><%=link_to h(@recipe.name), user_recipe_path(@recipe.author,@recipe) %></h1>
   <p class="category"><%= link_to @recipe.category.name, @recipe.category %></p> 
 
-<% if @recipe.author? current_user %>
   <p class="actions">
-    <%= link_to "#{image_tag 'edit.png', :alt => ''} editar", edit_user_recipe_path(@recipe.author, @recipe), :class => "edit" %>
-    <%= link_to "#{image_tag 'delete.png', :alt => ''} eliminar", user_recipe_path(@recipe.author, @recipe), :confirm => '¿estás seguro?', :method => :delete, :class => "delete" %>
+    <% if @recipe.author? current_user %>
+      <%= link_to "#{image_tag 'edit.png', :alt => ''} editar", edit_user_recipe_path(@recipe.author, @recipe), :class => "edit" %>
+      <%= link_to "#{image_tag 'delete.png', :alt => ''} eliminar", user_recipe_path(@recipe.author, @recipe), :confirm => '¿estás seguro?', :method => :delete, :class => "action-link" %>
+    <% end %>
+    <%= link_to_function "#{image_tag 'print.png', :alt => ''} imprimir", 'javascript:print()', :class => 'action-link' %>
   </p>
-<% end %>
 </div>
 
 <div id="recipe-sidebar" class="sidebar">
