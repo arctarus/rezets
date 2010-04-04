@@ -118,7 +118,8 @@ class RecipesController < ApplicationController
     def find_recipe
       recipe_id = params[:id].split("-").first
       @author = User.find_by_slug params[:user_id]
-      @recipe = Recipe.find_by_id_and_author_id(recipe_id, @author.id)
+      @recipe = Recipe.find_by_id_and_author_id(recipe_id, @author.id, 
+        :include => :ingredients)
     end
 
 end

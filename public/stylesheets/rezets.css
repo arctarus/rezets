@@ -125,7 +125,7 @@ div.vcard h1 {margin-bottom:0}
 div.hrecipe-main {width:62%}
 div.hrecipe-head h1 {margin-bottom:0}
 div.hrecipe-head p.category {font-size:2em}
-div.hrecipe-head p.actions a.delete {margin-left:1em}
+div.hrecipe-head p.actions a.action-link {margin-left:1em}
 div.hrecipe p.author {margin-bottom:.5em}
 div.hrecipe-main h2 {margin-top:1.5em; margin-bottom:.3em}
 div.hrecipe-main h2.clear {margin-top:.2em; padding-top:1.2em}
