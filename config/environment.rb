@@ -43,17 +43,19 @@ Rails::Initializer.run do |config|
   
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.default_url_options = {
-    :host => "rezets.com"
+    :host => APP_CONFIG['app_domain']
   }
-  config.action_mailer.smtp_settings = {
-    :enable_starttls_auto  => APP_CONFIG['outgoing']['enable_starttls_auto'],
-    :address               => APP_CONFIG['outgoing']['host'],
-    :port                  => APP_CONFIG['outgoing']['port'],
-    :domain                => APP_CONFIG['outgoing']['from'],
-    :user_name             => APP_CONFIG['outgoing']['user'],
-    :password              => APP_CONFIG['outgoing']['pass'],
-    :authentication        => APP_CONFIG['outgoing']['auth'].to_sym
-  }
+  if APP_CONFIG['allow_outgoing_email']
+    config.action_mailer.smtp_settings = {
+      :enable_starttls_auto  => APP_CONFIG['outgoing']['enable_starttls_auto'],
+      :address               => APP_CONFIG['outgoing']['host'],
+      :port                  => APP_CONFIG['outgoing']['port'],
+      :domain                => APP_CONFIG['outgoing']['from'],
+      :user_name             => APP_CONFIG['outgoing']['user'],
+      :password              => APP_CONFIG['outgoing']['pass'],
+      :authentication        => APP_CONFIG['outgoing']['auth'].to_sym
+    }
+  end
 
   # Activate observers that should always be running
   # config.active_record.observers = :cacher, :garbage_collector, :forum_observer
