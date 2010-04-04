@@ -4,7 +4,7 @@
 
   <p class="actions">
     <% if @recipe.author? current_user %>
-      <%= link_to "#{image_tag 'edit.png', :alt => ''} editar", edit_user_recipe_path(@recipe.author, @recipe), :class => "edit" %>
+      <%= link_to "#{image_tag 'edit.png', :alt => ''} editar", edit_user_recipe_path(@recipe.author, @recipe), :class => "action-link" %>
       <%= link_to "#{image_tag 'delete.png', :alt => ''} eliminar", user_recipe_path(@recipe.author, @recipe), :confirm => '¿estás seguro?', :method => :delete, :class => "action-link" %>
     <% end %>
     <%= link_to_function "#{image_tag 'print.png', :alt => ''} imprimir", 'javascript:print()', :class => 'action-link' %>
