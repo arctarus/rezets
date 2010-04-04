@@ -1,10 +1,11 @@
 <% unless current_user.nil? and @comments.blank? %>
 
+  <div class="comments">
+
   <hr style="margin-top:3em" />
   <h2>comentarios</h2>
 
   <% unless @comments.blank? %>
-    <div class="comments">
       <% @comments.each do |comment| %>
         <div id="comment-<%= comment.id %>" class="comment">
           <%= link_to "#{image_tag comment.user.avatar.url(:medium), :class => "avatar", :alt => ""}", comment.user %>
@@ -15,7 +16,6 @@
           </div>
         </div>
       <% end %>
-    </div>
   <% end %>
 
   <% unless current_user.nil? %>
@@ -35,5 +35,7 @@
     </div>
   </div>
   <% end %>
+  
+  </div>
 
 <% end %>

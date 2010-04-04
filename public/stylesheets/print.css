@@ -1,0 +1,11 @@
+a {color:#000; text-decoration:none}
+.logo {margin-top:0; font-weight:bold; font-size:1.4em}
+.logo a {color:#000; text-decoration:none}
+.logo a span.version {font-weight:normal; font-size:.4em}
+.tagline {font-size:.6em}
+h1 {margin-bottom:0}
+p.category {margin-top:0; margin-bottom:.5em}
+h2 {color:#380}
+h2 span {color:#777}
+#recipe-sidebar, .main-links, .toolbar, .search, .actions, #footer, .comments {display:none}
+.ingredients {margin:0}
