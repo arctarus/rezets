@@ -1,4 +1,6 @@
 class Recipe < ActiveRecord::Base
+  require 'watermark'
+
   has_many :user_recipes
   has_many :users,              :through => :user_recipes
   has_many :recipe_ingredients, :dependent => :destroy
@@ -9,8 +11,7 @@ class Recipe < ActiveRecord::Base
 
   validates_presence_of :name, :directions, :category, :author, :message => "no puede quedar en blanco"
   validates_presence_of :photo_file_name, :message => "es imprescindible que pongas una bien bonita :D"
-  validates_uniqueness_of :photo_file_name
-
+# validates_attachment_dimensions :image, :minimum => 300, :maximum => 900
   validates_length_of :name, :minimum => 5
 
   after_update :save_recipe_ingredients
@@ -22,12 +23,29 @@ class Recipe < ActiveRecord::Base
     :reject_if => proc { |attrs| attrs.all? { |k,v| v.blank? } }
 
   has_attached_file :photo,
+    :processors => [:watermark],
     :path => ":rails_root/public/system/:class/:id/:attachment/:style/:slug.:extension",
     :url => "/system/:class/:id/:attachment/:style/:slug.:extension",
     :styles => {
-      :large => "500>x500",
+      :large => {
+        :geometry => "500>x500",
+        :watermark_path => "#{RAILS_ROOT}/public/images/watermark.png",
+        :position => "Center",
+        :watermark => "20x100" },
       :medium => "200>x200",
       :thumb => "70>x70" }
+
+  named_scope :by_author, lambda {|recipe_id, author_id|
+    {:conditions => 
+      ["id != ? AND author_id = ?", recipe_id, author_id],
+      :limit => 5,
+      :order => "created_at desc"}}
+
+  named_scope :by_category, lambda {|recipe_id, category_id|
+    {:conditions => 
+      ["id != ? AND category_id = ?", recipe_id, category_id],
+    :limit => 5,
+    :order => "created_at desc"}}
       
   Paperclip.interpolates :slug do |attachment, style|
     attachment.instance.slug
@@ -91,6 +109,11 @@ class Recipe < ActiveRecord::Base
     end
 
     self.slug = str.split(//u).reject { |e| e.length > 1 }.join.strip.gsub(/[^a-z0-9]+/i, '-').downcase 
+  end
+
+  def title
+    _("%{recipe} by %{author}") % {
+      :recipe => name, :author => author.name}
   end
   
 end

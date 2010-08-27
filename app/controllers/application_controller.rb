@@ -12,13 +12,16 @@ class ApplicationController < ActionController::Base
   filter_parameter_logging :password, :password_confirmation
 
   before_init_gettext :default_locale
+  I18n.default_locale = "es"
 
   def default_locale
     if request.subdomains.blank?
-      set_locale "es"
+      @locale = "es"
     else
-      set_locale request.subdomains.first
+      @locale = request.subdomains.first
     end
+    set_locale = @locale
+    params[:lang] = @locale
   end
     
  private
@@ -35,8 +38,8 @@ class ApplicationController < ActionController::Base
     def require_user
       unless current_user
         store_location
-        flash[:notice] = "You must be logged in to access this page"
-        redirect_to new_user_session_url
+        flash[:notice] = _("You must be logged in to access this page")
+        redirect_to new_session_url
         return false
       end
     end
@@ -44,7 +47,7 @@ class ApplicationController < ActionController::Base
     def require_no_user
       if current_user
         store_location
-        flash[:notice] = "You must be logged out to access this page"
+        flash[:notice] = _("You must be logged out to access this page")
         redirect_to account_url
         return false
       end

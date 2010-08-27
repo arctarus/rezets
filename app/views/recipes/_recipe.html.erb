@@ -13,10 +13,10 @@
     <% end %>
 
     <% if recipe.author? current_user %>
-      <p class="r-actions">
-        <%= link_to "#{image_tag 'edit.png', :alt => ''} editar", edit_user_recipe_path(recipe.author, recipe) %>
-        <%= link_to "#{image_tag 'delete.png', :alt => ''} eliminar", user_recipe_path(recipe.author, recipe), :confirm => '¿estás seguro?', :method => :delete %>
-      </p>
+      <ul class="action-links">
+        <li><%= link_to _('edit'), edit_user_recipe_path(recipe.author, recipe), :class => "action-link edit" %></li>
+        <li><%= link_to _('delete'), user_recipe_path(recipe.author, recipe), :confirm => '¿estás seguro?', :method => :delete, :class => "action-link delete" %></li>
+      </ul>
     <% end %>
 
     <%= link_to "#{image_tag recipe.photo.url(:medium), :class => 'photo', :alt => recipe.name }", user_recipe_path(recipe.author, recipe) %>

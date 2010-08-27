@@ -2,17 +2,12 @@ class HomeController < ApplicationController
   layout 'base'
 
   def index
-    unless current_user.nil?
-      redirect_to current_user
-    else
-      @recipes = Recipe.all(:order => "created_at desc", :limit => 5)
-      @categories = Category.all(:order => "name")
-      @categories.delete_if {|c| c.recipes.blank? }
-      @users = User.all(:order => "created_at desc", :limit => 8)
-      @comments = Comment.all(:order => "created_at desc", :limit => 5)
-      @page_identifier = "home"
-      @page_title = _("share your recipes")
-    end
+    @recipes = Recipe.all(:order => "created_at desc", :limit => 5, :include => :author)
+    @categories = Category.with_recipes
+    @users = User.all(:order => "created_at desc", :limit => 8)
+    @comments = Comment.all(:order => "created_at desc", :limit => 5, :include => :user)
+    @page_identifier = "home"
+    @page_title = _("share your recipes")
   end
 
   def feed
@@ -39,11 +34,6 @@ class HomeController < ApplicationController
   end
   
   def search
-  end
-
-  def locale
-    cookies["lang"] = params[:id]
-    redirect_to :action => :index
   end
 
  end

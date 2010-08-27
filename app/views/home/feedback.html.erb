@@ -3,20 +3,20 @@
 <% form_tag url_for(:controller => "home", :action => "send_feedback") do %>
 
   <div class="field">
-    <%= label_tag "feedback[name]", "nombre" %>
+    <%= label_tag "feedback[name]", _("name") %>
     <%= text_field_tag "feedback[name]", nil, :size => 30, :maxlength => 50 %>
   </div>
 
   <div class="field">
-    <%= label_tag "feedback[email]", "email" %>
+    <%= label_tag "feedback[email]", _("email") %>
     <%= text_field_tag "feedback[email]", nil, :size => 30, :maxlength => 50 %>
   </div>
 
   <div class="field">
-    <%= label_tag "feedback[message]", "mensaje" %>
+    <%= label_tag "feedback[message]", _("message") %>
     <%= text_area_tag "feedback[message]", nil %>
   </div>
 
-  <p id="submit"><%= submit_tag "enviar" %></p>
+  <p id="submit"><%= submit_tag _("send") %></p>
 
 <% end %>
