@@ -2,20 +2,19 @@ class RecipesController < ApplicationController
   layout 'base'
   
   before_filter :require_user, :only => [:new, :create, :edit, :update, :destroy, :save, :remove]  
-  before_filter :find_recipe, :only => [:show, :edit, :update, :destroy]
+  before_filter :find_recipe, :only => [:show, :edit, :update, :destroy, :email, :email_send]
 
   # GET /recipes
   # GET /recipes.xml
   def index
     @featured_recipe = Recipe.random
-#   @ingredients = Ingredient.most_popular.all(:limit => 30)
-#   @ingredients.sort! {|x,y| x.name <=> y.name }
-    @categories = Category.all(:order => "name asc")
+#   @ingredients = Ingredient.most_popular.all(:limit => 30, :order => "name asc")
+    @categories = Category.all(:order => "name asc", :include => :recipes)
     @categories.delete_if {|c| c.recipes.blank? }
-    @page_title = _("recetas de cocina")
+    @page_title = _("recipes")
     respond_to do |format|
-      format.html { render } # index.html.erb
-      format.xml  { render :xml => @recipes }
+      format.html # index.html.erb
+      format.xml { render :xml => @recipes }
     end
   end
 
@@ -24,8 +23,11 @@ class RecipesController < ApplicationController
   def show
     @comments = @recipe.comments.paginate(:page => params[:page], :per_page => 20)
     @comment = Comment.new unless current_user.nil?
-    @page_title = _("#{@recipe.name} por #{@recipe.author.name}")
+    @page_title = @recipe.title
     @page_class = "hrecipe"
+    @recipes_same_author = Recipe.by_author(@recipe.id,@recipe.author.id)
+    @recipes_same_category = Recipe.by_category(@recipe.id, @recipe.category.id)
+    @print = params[:print].to_i == 1
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @recipe }
@@ -35,7 +37,7 @@ class RecipesController < ApplicationController
   # GET /recipes/new
   # GET /recipes/new.xml
   def new
-    @page_title = _("receta nueva")
+    @page_title = _("new recipe")
     @categories = Category.all(:order => "name asc")
     @recipe = Recipe.new
     @recipe.recipe_ingredients.build
@@ -49,7 +51,7 @@ class RecipesController < ApplicationController
   # GET /recipes/1/edit
   def edit
     @categories = Category.all(:order => "name asc")
-    @page_title = _("editando #{@recipe.name}")
+    @page_title = _("editing %{recipe}") % {:recipe => @recipe.name}
   end
 
   # POST /recipes
@@ -60,7 +62,7 @@ class RecipesController < ApplicationController
     @recipe.users << current_user
     respond_to do |format|
       if @recipe.save
-        flash[:notice] = _('Receta creada correctamente.')
+        flash[:notice] = _('recipe created')
         format.html { redirect_to current_user }
         format.xml  { render :xml => @recipe, :status => :created, :location => @recipe }
       else
@@ -77,7 +79,7 @@ class RecipesController < ApplicationController
     @recipe.updated_at = Time.now
     respond_to do |format|
       if @recipe.update_attributes(params[:recipe])
-        flash[:notice] = 'receta actualizada correctamente.'
+        flash[:notice] = _('recipe update')
         format.html { redirect_to(current_user) }
         format.xml  { head :ok }
       else
@@ -99,6 +101,50 @@ class RecipesController < ApplicationController
     end
   end
 
+  # GET /user/arctarus/recipes/1-perdices/email
+  def email
+    if request.xhr?
+      render :update do |page|
+        page << "if (!$('email-container')){"
+        page.insert_html :before, 'action-links', 
+          "<div id=\"email-container\"></div>"
+        page.insert_html :top, 'email-container', email(@recipe)
+        page << "}"
+        page << "var cos = $('send-email').positionedOffset();"
+        page << "$('email-container').setStyle({left:cos[0] + 'px'})";
+      end
+    end
+  end
+
+  # POST /user/arctarus/recipes/1-perdices/email
+  def email_send
+    if request.xhr?
+      if (current_user.nil? and params[:email][:name].blank?) or params[:email][:recipients].blank?
+        render :update do |page|
+          page.select('#email-container p.error').each do |error|
+            error.remove
+          end
+          page.remove "ajax-indicator"
+          if current_user.nil? and params[:email][:name].blank?
+            page.insert_html :before, 'email_name',
+              '<p class="error">' + _("please, enter your name") + '</p>'
+          end
+          if params[:email][:recipients].blank?
+            page.insert_html :before, 'email_recipients',
+              '<p class="error">' + _("please, enter the email address for a friend") + '</p>'
+          end
+        end
+      else
+        UserMailer.deliver_recipe(@recipe, params[:email], current_user)
+        render :update do |page|
+          page.replace_html "send-email-wrapper", email_send
+        end
+      end
+    else
+      redirect_to user_recipe_path(@recipe.author,@recipe)
+    end
+  end
+
   # POST /recipes/1/save
 # def save
 #   recipe = Recipe.find params[:id]
@@ -106,7 +152,7 @@ class RecipesController < ApplicationController
 #   redirect_to user
 # end
 
-# # POST /recipes/1/save
+# # POST /recipes/1/remove
 # def remove
 #   recipe = Recipe.find params[:id]
 #   current_user.recipes.delete(recipe)

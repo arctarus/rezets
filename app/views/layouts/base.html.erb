@@ -4,9 +4,22 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
 <head>
   <%= render :partial => "common/metaheader" %>
-  <%= stylesheet_link_tag 'base', 'rezets' %>
-  <%= stylesheet_link_tag 'print', :media => 'print' %>
   <%= javascript_include_tag 'prototype', 'application' %>
+  <% if @print %>
+    <%= stylesheet_link_tag 'print' %>
+    <%= stylesheet_link_tag 'print', :media => 'print' %>
+    <style type="text/css">
+      @print {
+        .print {display:none}
+      }
+    </style>
+    <script type="text/javascript">
+      document.observe('dom:loaded', function(){print();});
+    </script>
+  <% else %>
+    <%= stylesheet_link_tag 'base', 'rezets' %>
+    <%= stylesheet_link_tag 'print', :media => 'print' %>
+  <% end %>
 </head>
 <body>
   

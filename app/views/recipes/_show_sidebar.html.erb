@@ -1,34 +1,44 @@
-<p style="margin-bottom:2em">
+<p style="margin-bottom:3em">
 <%= link_to "#{image_tag @recipe.author.avatar.url(:medium), :alt => "", :style => 'float:left; margin:.3em .5em 0 0'}", @recipe.author %>
-  <span class="ft"><%= _("creado hace") %></span>
+  <span class="ft"><%= _("created at") %></span>
   <span class="published"><span class="value-title" title="<%= @recipe.created_at %>"> </span><%= distance_of_time_in_words_to_now @recipe.updated_at %></span><br/>
-  <span class="ft"><%= _("por") %></span>
+  <span class="ft"><%= _("by") %></span>
   <span class="author"><%= link_to @recipe.author.name, @recipe.author, :class => "url fn" %></span>
 </p>
 
-
 <% if @recipe.author.recipes.size > 1 %>
-  <h3>recetas de <%= h @recipe.author.name %></h3>
+  <h3><%= _("%{author}'s recipes") % {:author => h(@recipe.author.name)} %></h3>
   <ul class="simple-list">
-    <% Recipe.all(:conditions => { :author_id => @recipe.author.id }, :limit => 5, :order => "created_at desc").each do |recipe| %>
-      <% unless recipe == @recipe %>
-        <li> 
-        <%= link_to "#{h recipe.name}", user_recipe_path(recipe.author, recipe) %>
-        </li>
-      <% end %>
+    <% @recipes_same_author.each do |recipe| %>
+      <li class="clearfix" style="margin:.8em .5em .8em 0;line-height:1.3em">
+      <%= link_to "#{image_tag recipe.photo.url(:thumb), :style => 'float:left; margin-right:.5em'}", user_recipe_path(recipe.author, recipe),
+          :title => recipe.title %>
+        <div style="margin-left:76px">
+        <%= link_to h(recipe.name), user_recipe_path(recipe.author, recipe), :style => 'font-size:1.1em' %><br/>
+        <%= link_to recipe.category.name, category_path(recipe.category) %><br/>
+        <%= _("created at") %> <%= distance_of_time_in_words_to_now recipe.updated_at %>
+      </div>
+      </li>
     <% end %>
   </ul>
 <% end %>
 
 <% if @recipe.category.recipes.size > 1 %>
-  <h3>recetas de <%= h @recipe.category.name %></h3>
+  <h3><%= _("%{category} recipes") % {:category => h(@recipe.category.name)} %></h3>
   <ul class="simple-list">
-    <% Recipe.all(:conditions => { :category_id => @recipe.category.id }, :limit => 5, :order => "created_at desc").each do |recipe| %>
-      <% unless recipe == @recipe %>
-        <li>
-          <%= link_to h(recipe.name), user_recipe_path(recipe.author, recipe) %>
+    <% @recipes_same_category.each do |recipe| %>
+        <li class="clearfix" style="margin:.8em .5em .8em 0">
+        <%= link_to "#{image_tag recipe.photo.url(:thumb), :style => 'float:left; margin-right:.5em'}", 
+          user_recipe_path(recipe.author, recipe), :title => recipe.title %>
+        <div style="margin-left:76px">
+          <%= link_to h(recipe.name), user_recipe_path(recipe.author, recipe), :style => 'font-size:1.1em' %><br/>
+          <%= _("by") %> 
+          <%= image_tag recipe.author.avatar.url(:thumb), :class => 'avatar' %>
+          <%= link_to recipe.author.name, user_path(recipe.author), 
+            :title => _("%{author}'s recipes") % {:author => recipe.author.name}%><br/>
+            <%= _("created at") %> <%= distance_of_time_in_words_to_now recipe.updated_at %>
+          </div>
         </li>
-      <% end %>
     <% end %>
   </ul>
 <% end %>

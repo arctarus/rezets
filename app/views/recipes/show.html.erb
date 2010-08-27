@@ -1,27 +1,35 @@
 <div class="hrecipe-head">
-  <h1 class="fn"><%=link_to h(@recipe.name), user_recipe_path(@recipe.author,@recipe) %></h1>
-  <p class="category"><%= link_to @recipe.category.name, @recipe.category %></p> 
+  <h1 class="fn"><%=link_to h(@recipe.name), user_recipe_path(@recipe.author,@recipe), :title => "receta de #{@recipe.name.downcase} por #{@recipe.author.name}" %></h1>
+  <p class="category"><%= link_to @recipe.category.name, @recipe.category, :title => "recetas de #{@recipe.category.name}" %></p> 
 
-  <p class="actions">
+  <ul id="action-links" class="action-links">
     <% if @recipe.author? current_user %>
-      <%= link_to "#{image_tag 'edit.png', :alt => ''} editar", edit_user_recipe_path(@recipe.author, @recipe), :class => "action-link" %>
-      <%= link_to "#{image_tag 'delete.png', :alt => ''} eliminar", user_recipe_path(@recipe.author, @recipe), :confirm => '¿estás seguro?', :method => :delete, :class => "action-link" %>
+      <li><%= link_to _('edit'), edit_user_recipe_path(@recipe.author, @recipe), :class => "action-link edit" %></li>
+      <li><%= link_to _('delete'), user_recipe_path(@recipe.author, @recipe), :confirm => '¿estás seguro?', :method => :delete, :class => "action-link delete" %></li>
     <% end %>
-    <%= link_to_function "#{image_tag 'print.png', :alt => ''} imprimir", 'javascript:print()', :class => 'action-link' %>
-  </p>
-</div>
-
-<div id="recipe-sidebar" class="sidebar">
-  <%= render :partial => "show_sidebar" %>  
+    <li>
+      <%= link_to_function _('print'), "window.open(this.href)",
+          :href => user_recipe_path(@recipe.author,@recipe, :print => 1),
+          :class => 'action-link print' %>
+    </li>
+    <li id="send-email"><%= link_to_remote _('send by email'), 
+      :url => email_user_recipe_path(@recipe.author,@recipe),
+      :method => :get,
+      :html => {:class => 'action-link send-email', :href => email_user_recipe_path(@recipe.author,@recipe)} %></li>
+      <li><%= link_to "twitter", "http://twitter.com/home?status=#{twitter(@recipe)}", :class => 'action-link twitter' %></li>
+  </ul>
 </div>
 
 <div class="hrecipe-main">
-  <%= image_tag @recipe.photo.url(:large), :class => "photo", :alt => @recipe.name %>
+  <%= image_tag @recipe.photo.url(:large), 
+      :class => "photo",
+      :alt   => @recipe.title,
+      :title => @recipe.title %>
 
 <% unless @recipe.recipe_ingredients.blank? %>
-  <h2 class="clearfix">ingredientes
+  <h2 class="clearfix"><%= _("ingredients") %>
     <% unless @recipe.num_persons.blank? %>
-      <span class="num-persons">(para <span class="yield"><%=h @recipe.num_persons %></span> personas)</span>
+      <span class="num-persons">(<%= _("for %{num} people") % {:num => "<span class=\"yield\">#{h @recipe.num_persons}</span>"} %>)</span>
     <% end %>
   </h2>
   <% if @recipe.recipe_ingredients.size <=  5 %>
@@ -73,7 +81,7 @@
   <% end %>
 <% end %>
 
-<h2 class="clear">preparación
+<h2 class="clear"><%= _("directions") %>
   <% unless @recipe.cook_time.blank? %>
     <span class="duration">(<span class="value-title" title="@recipe.cook_time"></span><%=h @recipe.cook_time %> min)</span>
   <% end %>
@@ -87,3 +95,9 @@
 <%= will_paginate @comments %>
 
 </div>
+
+<div id="recipe-sidebar">
+  <%= render :partial => "show_sidebar" %>  
+</div>
+
+<br class="clear" style="margin-top:6em" />

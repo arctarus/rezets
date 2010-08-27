@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
   def create
     @user_session = UserSession.new(params[:user_session])
     if @user_session.save
-      flash[:notice] = "¡bienvenido!"
+      flash[:notice] = _("welcome!")
       redirect_back_or_default @user_session.user
     else
       render :action => "new"
@@ -21,7 +21,7 @@ class SessionsController < ApplicationController
   
   def destroy
     current_user_session.destroy
-    flash[:notice] = "¡hasta pronto!"
+    flash[:notice] = _("see you soon!")
     redirect_back_or_default :controller => "home", :action => "index"
   end
 
