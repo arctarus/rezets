@@ -21,8 +21,8 @@
           <h3><%= link_to h(recipe.name), user_recipe_path(recipe.author,recipe) %></h3>
           <p><%= link_to recipe.category.name, recipe.category %></p>
           <p>
-            <span class="ft">por</span>
-            <%= image_tag recipe.author.avatar.url(:thumb), :class => "avatar", :alt => "" %>
+            <span class="ft"><%= _("by") %></span>
+            <%= image_tag recipe.author.avatar.url(:thumb), :class => "avatar", :alt => recipe.author.name, :title => recipe.author.name %>
             <%= link_to h(recipe.author.name), recipe.author %>
           </p>
           <p style="margin-bottom:.5em"><%= h(truncate(recipe.directions, :length => 220)) %></p>

@@ -1,0 +1,57 @@
+<p><%= _("Hi!") %></p>
+<% if @message.blank? %>
+  <p><%= _("%{user} has shared a %{recipe} recipe with you!") % {:user => @user_name, :recipe => @recipe.name.downcase } %></p>
+<% else %>
+  <p><%= _("%{user} has shared a %{recipe} recipe with you and says:") % {:user => @user_name, :recipe => @recipe.name.downcase } %></p>
+  <%= simple_format(h(@message)) %>
+<% end %>
+
+<p>
+  <span style="font-size:1.4em"><%= link_to @recipe.name.capitalize,
+    user_recipe_url(@recipe.author,@recipe) %></span><br/>
+  <%= link_to @recipe.category.name, category_path(@recipe.category) %><br/>
+  por <%= link_to "#{image_tag root_url + @recipe.author.avatar.url(:thumb), :alt => @recipe.author.name, :style => 'border:none; vertical-align:middle'}", user_path(@recipe.author) %>
+  <%= link_to @recipe.author.name, user_path(@recipe.author) %> |
+  <%= _("updated %{time} ago") % {:time => distance_of_time_in_words_to_now(@recipe.updated_at)} %>
+</p>
+
+<%= link_to "#{image_tag "#{root_url}#{@recipe.photo.url(:large)}",
+  :class => "photo", :alt => @recipe.name, :style => 'border:none'}", user_recipe_url(@recipe.author,@recipe) %>
+
+  <p style="margin-top:1em; font-size:1.3em;"><span style="color:#380"><%= _("ingredients") %></span>
+  (para <%=h @recipe.num_persons %> personas)
+</p>
+
+<% @recipe.recipe_ingredients.each do |ri| %>
+  ·
+  <% unless ri.value.blank? %>
+    <%= round ri.value %>
+  <% end %>
+  <% unless ri.value_type.blank? %>
+    <%= h ri.value_type %> de
+  <% end %>
+  <%= h ri.ingredient.name %>
+  <%= h ri.comment %>
+  <% if ri.optional %>
+    <span class="ft">(opcional)</span>
+  <% end %>
+  <br/>
+<% end %>
+
+<p style="margin-top:1em; font-size:1.3em;"><span style="color:#380"><%= _("directions") %></span>
+(<%=h @recipe.cook_time %> min)
+</p>
+<div class="instructions">
+  <%= simple_format(h(@recipe.directions)) %>
+</div>
+<br/>
+<p><%= _("now you can,") %></p>
+<p>
+· <%= link_to _("comment on the recipe"), user_recipe_url(@recipe.author, @recipe) %><br/>
+· <%= link_to _("see more %{author}'s recipes") % {:author => @recipe.author.name}, user_url(@recipe.author.name) %><br/>
+· <%= link_to _("discover new recipes"), recipes_url %>
+</p>
+
+--<br/>
+<%= link_to 'rezets.com', root_url, :title => _("share your recipes") %><br/>
+<%= _("share your recipes") %>

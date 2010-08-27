@@ -5,22 +5,11 @@
     <li style="border:none"><%= link_to _("about"), :controller => "home", :action => "about" %></li>
     <li><%= link_to _("contact"), :controller => "home", :action => "feedback" %></li>
   </ul>
-<%#
-  <p style="float:left; margin-left:.5em">recetas</p>
-  <div style="float:left; margin-left:4.2em">
-    <% Category.all(:order => "name asc").in_groups_of(5).each do |categories_group| % >
-  <ul>
-      <% categories_group.each_with_index do |category, index| %
-      <li <%= 'class="first"' if index == 0 % > > <%= link_to category.name, category, :title => "recetas de #{category.name}" % ></li>
-      <% end % >
-  </ul>
-  <% end % >
-</div>
-%>
-<p>
+  <p>
+  <%= cookies["lang"] %><br/>
 <%= _("languages") %>:
-  <%= link_to_unless locale.to_s == "en", "english", "http://en.rezets.com" %> <span class="ft">|</span>
-  <%= link_to_unless locale.to_s != "en", "español", "http://rezets.com" %>
+  <%= link_to_unless @locale == "en", "english", "http://en.#{APP_CONFIG['app_domain']}" %> <span class="ft">|</span>
+  <%= link_to_unless @locale == "es", "español", "http://es.#{APP_CONFIG['app_domain']}" %>
 </p>
 
 </div>

@@ -14,7 +14,7 @@
       <% end %>
     </h1>
     <% if current_user == @user %>
-      <p><%= link_to 'crear una receta nueva', new_user_recipe_path(current_user) %></p>
+      <p><%= link_to _('create a new recipe'), new_user_recipe_path(current_user) %></p>
     <% end %>
 
   </div>

@@ -3,7 +3,7 @@
   <div class="comments">
 
   <hr style="margin-top:3em" />
-  <h2>comentarios</h2>
+  <h2><%= _("comments") %></h2>
 
   <% unless @comments.blank? %>
       <% @comments.each do |comment| %>
@@ -12,7 +12,11 @@
           <div class="inner-comment">
             <h3><%= link_to comment.user.name, comment.user %></h3>
             <%= simple_format(h(comment.body)) %>
-            <p class="created-time"><abbr class="timestamp" title="<%= Time.now %>" class="timestamp">hace <%= distance_of_time_in_words Time.now, comment.updated_at %></abbr></p>
+            <p class="created-time">
+              <abbr class="timestamp" title="<%= Time.now %>" class="timestamp">
+                <%= _("%{time} ago") % {:time => distance_of_time_in_words(Time.now, comment.updated_at) } %>
+              </abbr>
+            </p>
           </div>
         </div>
       <% end %>
