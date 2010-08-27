@@ -4,6 +4,8 @@
   =home
   =login-form
   =hrecipe
+  =paginator
+  =email
 */
 
 img.avatar {vertical-align:middle}
@@ -13,7 +15,7 @@ ul.decorated-list {font-size:1.3em; padding-left:1.2em}
 /* layout*/
 body {background:#380}
 #overwrapper {border-top:5px solid #380; padding-bottom:3em; background:#FFF}
-.wrapper {position:relative; max-width:850px; min-width:700px; margin:0 auto}
+.wrapper {position:relative; max-width:900px; min-width:700px; margin:0 auto}
 .single {width:70%}
 .single p {margin-bottom:1em; text-align:justify}
 
@@ -35,7 +37,7 @@ ul.toolbar li.last {margin:0; border:none; padding:0}
 
 /*=footer*/
 #footer {padding:0 0 1em; border-bottom:5px solid #380; background:#FFF; zoom:1}
-#footer .wrapper {max-width:850px; min-width:700px; border-top:1px solid #CCC; padding:1em 0}
+#footer .wrapper {max-width:900px; min-width:700px; border-top:1px solid #CCC; padding:1em 0}
 #footer ul {list-style:none; margin-left:.5em}
 #footer ul li {display:inline; margin-left:1em; border-left:1px dotted #CCC; padding-left:1em}
 #footer ul li.first {margin-left:0; border-left:none; padding-left:0}
@@ -95,7 +97,7 @@ div.basic-freedoms {margin:1em 0; padding:1.6em 4em; color:#FFF;
     -moz-border-radius:10px; 
     -webkit-border-radius:10px; 
     text-align:left;
-    background:#380 url('/images/bck_home_header.png') no-repeat 95% bottom}
+    background:#380}
 div.basic-freedoms p {margin-bottom:0; font-size:1.6em}
 div.basic-freedoms p.title {font-size:2.4em}
 .last-comments {margin-top:6em}
@@ -105,7 +107,7 @@ div.last-comments ul li {margin:2em 0}
 .last-recipes ul li {margin:3em 0; padding:0}
 .last-recipes ul li.top {margin-top:1em}
 .last-recipes ul li.bottom {margin-bottom:1em}
-.last-recipes ul li img.photo {float:left; margin-right:1em; border:2px solid #000}
+.last-recipes ul li img.photo {float:left; margin-right:1em; border:1px solid #AAA; padding:2px}
 .sidebar-home ul {margin:1em 0}
 .sidebar-home ul li {font-size:1.3em}
 div.last-chefs {margin-top:6em}
@@ -122,22 +124,34 @@ div.vcard h1 {margin-bottom:0}
 .feed-link {padding:.2px 0 2px 20px; background:url('/images/feed16.png') top left no-repeat}
 
 /*=hrecipe*/
-div.hrecipe-main {width:62%}
+div.hrecipe {position:relative}
+div.hrecipe-main {width:58%}
 div.hrecipe-head h1 {margin-bottom:0}
 div.hrecipe-head p.category {font-size:2em}
-div.hrecipe-head p.actions a.action-link {margin-right:1em}
 div.hrecipe p.author {margin-bottom:.5em}
 div.hrecipe-main h2 {margin-top:1.5em; margin-bottom:.3em}
 div.hrecipe-main h2.clear {margin-top:.2em; padding-top:1.2em}
 div.hrecipe-main h2.fn {margin:0}
-div.hrecipe-main img.photo {border:2px solid #000}
+div.hrecipe-main img.photo {border:1px solid #AAA; padding:2px}
 div.hrecipe-main ul.ingredients {float:left; width:23em; list-style-type:disc; padding-left:1.5em}
 div.hrecipe-main ul.ingredients li {font-size:1.3em}
 div.hrecipe-main span.duration,
 div.hrecipe-main span.num-persons {color:#666; font-size:.8em}
 div.instructions p {margin-bottom:1em}
 div.ingredient input {display:inline}
-#recipe-sidebar {float:right; width:30%; background:#5f5f5}
+#recipe-sidebar {position:absolute; top:0; right:0; width:35%; background:#5f5f5}
+#recipe-sidebar ul {list-style:none}
+ul.action-links {margin:.1em 0 .6em; font-size:1.2em}
+ul.action-links li {margin-right:1em; line-height:1em; display:inline}
+ul.action-links li a {padding:1px 0 1px 18px;}
+.edit {background:url('/images/action-links.png') top left no-repeat}
+.delete {background:url('/images/action-links.png') 0 -50px no-repeat}
+.print {background:url('/images/action-links.png') 0 -100px no-repeat}
+.send-email {padding-left:20px; background:url('/images/action-links.png') 0 -150px no-repeat}
+.twitter {background:url('/images/action-links.png') 0 -200px no-repeat}
+#feed {background:url('/images/action-links.png') 0 -250px no-repeat}
+#prev {background:url('/images/action-links.png') 0 -300px no-repeat}
+#next {background:url('/images/action-links.png') 0 -350px no-repeat}
 
 /*=comments*/
 .comment {margin-top:3em}
@@ -156,7 +170,7 @@ div.ingredient input {display:inline}
 div.main {width:70%}
 ul.recipes {margin-left:0; list-style-type:none}
 li.hrecipe {margin:1.5em 0 4em; font-size:1em}
-li.hrecipe img.photo {float:left; margin:.3em 1em 1em 0; border:2px solid #000}
+li.hrecipe img.photo {float:left; margin:0 1em 1em 0; border:1px solid #AAA; padding:2px}
 p.category {font-size:1.6em}
 
 /*=pagination*/
@@ -187,3 +201,19 @@ table#recipe_ingredients td {margin:0;padding:.2em 0}
 #new-invitation {width:610px}
 
 span.new {font-weight:bold; background:#ffeeaa}
+
+/*=paginator*/
+.prev_page img, .next_page img {vertical-align:middle}
+
+/*=email*/
+#email-container {position:absolute; width:275px; border:1px solid #380; padding:1em 2em; background:#FFF}
+#email-container p.title {font-size:1.3em; font-weight:bold; color:#380}
+#email-container p.close-email-container {position:relative; float:right; left:4%; font-size:1.1em}
+#email-container p.close-email-container a {text-decoration:underline}
+#email-container p.hint {font-size:.9em}
+#email-container p.error {background:none; margin-bottom:0; border:0; padding:0; font-size:.9em}
+#email-container a.cancel-form {margin-left:8em}
+#email-container .ajax-indicator {position:absolute; margin-top:3px; margin-left:5px}
+#email-container .ajax-indicator img {vertical-align:middle}
+#email-container textarea {width:20em; height:8em}
+#email-container p#submit input {font-size:1.1em}
