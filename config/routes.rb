@@ -38,8 +38,27 @@ ActionController::Routing::Routes.draw do |map|
   map.connect 'feed', :controller => "home", :action => "feed"
   map.connect 'locale', :controller => "home", :action => "home"
 
-  map.resources :recipes, :member => { :save => :post, :remove => :delete }, :has_many => [ :comments ]
-  map.resources :users, :member => { :changepassword => :get, :updatepassword => :post, :feed => :get }, :has_many => [ :recipes ]
+  map.resources :recipes,
+    :member => {
+      :save       => :post,
+      :remove     => :delete
+    },
+    :has_many => [ :comments ]
+  map.resources :users,
+    :member => {
+      :changepassword => :get,
+      :updatepassword => :post,
+      :feed => :get },
+    :has_many => [ :recipes ]
+
+  map.resources :users do |users|
+    users.resources :recipes, 
+      :member => {
+        :email      => :get,
+        :email_send => :post
+    }
+  end
+
   map.resources :comments
   map.resources :ingredients
   map.resources :categories, :has_many => [ :users ]

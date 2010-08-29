@@ -6,8 +6,8 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: recipemonkey 0.1\n"
-"POT-Creation-Date: 2010-02-06 19:33+0100\n"
+"Project-Id-Version: recipemonkey 0.2\n"
+"POT-Creation-Date: 2010-08-10 20:06+0200\n"
 "PO-Revision-Date: 2009-11-09 22:31+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,48 +16,207 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: app/models/user_recipe.rb:-
-msgid "user recipe"
+#: app/controllers/application_controller.rb:41
+msgid "You must be logged in to access this page"
 msgstr ""
 
-#: app/models/user_recipe.rb:- app/models/comment.rb:-
+#: app/controllers/application_controller.rb:50
+msgid "You must be logged out to access this page"
+msgstr ""
+
+#: app/controllers/home_controller.rb:10 app/views/home/_header.html.erb:6
+#: app/views/user_mailer/recipe.text.html.erb:57
+#: app/views/user_mailer/recipe.text.html.erb:58
+msgid "share your recipes"
+msgstr ""
+
+#: app/controllers/home_controller.rb:23
+msgid "about rezets.com"
+msgstr ""
+
+#: app/controllers/home_controller.rb:27
+msgid "contact with us"
+msgstr ""
+
+#: app/controllers/home_controller.rb:32
+msgid "thanks for your help"
+msgstr ""
+
+#: app/controllers/recipes_controller.rb:14
+#: app/views/common/_header.html.erb:33 app/views/home/index.html.erb:35
+msgid "recipes"
+msgstr ""
+
+#: app/controllers/recipes_controller.rb:40
+msgid "new recipe"
+msgstr ""
+
+#: app/controllers/recipes_controller.rb:54
+msgid "editing %{recipe}"
+msgstr ""
+
+#: app/controllers/recipes_controller.rb:65
+msgid "recipe created"
+msgstr ""
+
+#: app/controllers/recipes_controller.rb:82
+msgid "recipe update"
+msgstr ""
+
+#: app/controllers/recipes_controller.rb:131
+msgid "please, enter your name"
+msgstr ""
+
+#: app/controllers/recipes_controller.rb:135
+msgid "please, enter the email address for a friend"
+msgstr ""
+
+#: app/controllers/sessions_controller.rb:15
+msgid "welcome!"
+msgstr ""
+
+#: app/controllers/sessions_controller.rb:24
+msgid "see you soon!"
+msgstr ""
+
+#: app/helpers/recipes_helper.rb:28
+msgid "tasty and substance %{recipe} recipe %{url}"
+msgstr ""
+
+#: app/models/category.rb:-
+msgid "comment"
+msgstr ""
+
+#: app/models/category.rb:-
+msgid "Body"
+msgstr ""
+
+#: app/models/category.rb:- app/models/user_recipe.rb:-
 msgid "User"
 msgstr ""
 
-#: app/models/user_recipe.rb:- app/models/comment.rb:-
-#: app/models/recipe_ingredient.rb:-
+#: app/models/category.rb:- app/models/recipe_ingredient.rb:-
+#: app/models/user_recipe.rb:-
 msgid "Recipe"
 msgstr ""
 
-#: app/models/user_recipe.rb:- app/models/user.rb:- app/models/comment.rb:-
-#: app/models/recipe.rb:- app/models/invitation.rb:-
-#: app/models/ingredient.rb:- app/models/category.rb:-
-#: app/models/recipe_ingredient.rb:-
+#: app/models/category.rb:- app/models/ingredient.rb:-
+#: app/models/invitation.rb:- app/models/recipe.rb:-
+#: app/models/recipe_ingredient.rb:- app/models/user.rb:-
+#: app/models/user_recipe.rb:-
 msgid "Created at"
 msgstr ""
 
-#: app/models/user_recipe.rb:- app/models/user.rb:- app/models/comment.rb:-
-#: app/models/recipe.rb:- app/models/invitation.rb:-
-#: app/models/ingredient.rb:- app/models/category.rb:-
-#: app/models/recipe_ingredient.rb:-
+#: app/models/category.rb:- app/models/ingredient.rb:-
+#: app/models/invitation.rb:- app/models/recipe.rb:-
+#: app/models/recipe_ingredient.rb:- app/models/user.rb:-
+#: app/models/user_recipe.rb:-
 msgid "Updated at"
+msgstr ""
+
+#: app/models/category.rb:-
+msgid "category"
+msgstr ""
+
+#: app/models/category.rb:- app/models/ingredient.rb:- app/models/recipe.rb:-
+#: app/models/user.rb:-
+msgid "Name"
+msgstr ""
+
+#: app/models/category.rb:- app/models/recipe.rb:- app/models/user.rb:-
+msgid "Slug"
+msgstr ""
+
+#: app/models/ingredient.rb:-
+msgid "ingredient"
+msgstr ""
+
+#: app/models/invitation.rb:-
+msgid "invitation"
+msgstr ""
+
+#: app/models/invitation.rb:-
+msgid "Sender"
+msgstr ""
+
+#: app/models/invitation.rb:-
+msgid "Receiver"
+msgstr ""
+
+#: app/models/invitation.rb:- app/models/user.rb:-
+msgid "Email"
+msgstr ""
+
+#: app/models/invitation.rb:-
+msgid "Token"
+msgstr ""
+
+#: app/models/recipe.rb:-
+msgid "recipe"
+msgstr ""
+
+#: app/models/recipe.rb:-
+msgid "Directions"
+msgstr ""
+
+#: app/models/recipe.rb:-
+msgid "Cook time"
+msgstr ""
+
+#: app/models/recipe.rb:-
+msgid "Photo file name"
+msgstr ""
+
+#: app/models/recipe.rb:-
+msgid "Photo content type"
+msgstr ""
+
+#: app/models/recipe.rb:-
+msgid "Photo file size"
+msgstr ""
+
+#: app/models/recipe.rb:-
+msgid "Category"
+msgstr ""
+
+#: app/models/recipe.rb:-
+msgid "Num persons"
+msgstr ""
+
+#: app/models/recipe.rb:-
+msgid "Author"
+msgstr ""
+
+#: app/models/recipe.rb:112
+msgid "%{recipe} by %{author}"
+msgstr ""
+
+#: app/models/recipe_ingredient.rb:-
+msgid "recipe ingredient"
+msgstr ""
+
+#: app/models/recipe_ingredient.rb:-
+msgid "Ingredient"
+msgstr ""
+
+#: app/models/recipe_ingredient.rb:-
+msgid "Value"
+msgstr ""
+
+#: app/models/recipe_ingredient.rb:-
+msgid "Value type"
+msgstr ""
+
+#: app/models/recipe_ingredient.rb:-
+msgid "Comment"
+msgstr ""
+
+#: app/models/recipe_ingredient.rb:-
+msgid "Optional"
 msgstr ""
 
 #: app/models/user.rb:-
 msgid "user"
-msgstr ""
-
-#: app/models/user.rb:- app/models/recipe.rb:- app/models/ingredient.rb:-
-#: app/models/category.rb:-
-msgid "Name"
-msgstr ""
-
-#: app/models/user.rb:- app/models/invitation.rb:-
-msgid "Email"
-msgstr ""
-
-#: app/models/user.rb:- app/models/recipe.rb:- app/models/category.rb:-
-msgid "Slug"
 msgstr ""
 
 #: app/models/user.rb:-
@@ -120,191 +279,39 @@ msgstr ""
 msgid "Last login ip"
 msgstr ""
 
-#: app/models/comment.rb:-
-msgid "comment"
+#: app/models/user_mailer.rb:25
+msgid "%{user} has commented on your %{recipe} recipe"
 msgstr ""
 
-#: app/models/comment.rb:-
-msgid "Body"
+#: app/models/user_mailer.rb:28
+msgid "%{user} has commented on his %{recipe} recipe"
 msgstr ""
 
-#: app/models/recipe.rb:-
-msgid "recipe"
+#: app/models/user_mailer.rb:31
+msgid "%{user} has commented on %{author}'s %{recipe} recipe"
 msgstr ""
 
-#: app/models/recipe.rb:-
-msgid "Directions"
+#: app/models/user_mailer.rb:47
+msgid "%{user} has sent you a %{recipe} recipe"
 msgstr ""
 
-#: app/models/recipe.rb:-
-msgid "Cook time"
+#: app/models/user_recipe.rb:-
+msgid "user recipe"
 msgstr ""
 
-#: app/models/recipe.rb:-
-msgid "Photo file name"
-msgstr ""
-
-#: app/models/recipe.rb:-
-msgid "Photo content type"
-msgstr ""
-
-#: app/models/recipe.rb:-
-msgid "Photo file size"
-msgstr ""
-
-#: app/models/recipe.rb:-
-msgid "Category"
-msgstr ""
-
-#: app/models/recipe.rb:-
-msgid "Num persons"
-msgstr ""
-
-#: app/models/recipe.rb:-
-msgid "Author"
-msgstr ""
-
-#: app/models/invitation.rb:-
-msgid "invitation"
-msgstr ""
-
-#: app/models/invitation.rb:-
-msgid "Sender"
-msgstr ""
-
-#: app/models/invitation.rb:-
-msgid "Receiver"
-msgstr ""
-
-#: app/models/invitation.rb:-
-msgid "Token"
-msgstr ""
-
-#: app/models/ingredient.rb:-
-msgid "ingredient"
-msgstr ""
-
-#: app/models/category.rb:-
-msgid "category"
-msgstr ""
-
-#: app/models/recipe_ingredient.rb:-
-msgid "recipe ingredient"
-msgstr ""
-
-#: app/models/recipe_ingredient.rb:-
-msgid "Ingredient"
-msgstr ""
-
-#: app/models/recipe_ingredient.rb:-
-msgid "Value"
-msgstr ""
-
-#: app/models/recipe_ingredient.rb:-
-msgid "Value type"
-msgstr ""
-
-#: app/models/recipe_ingredient.rb:-
-msgid "Comment"
-msgstr ""
-
-#: app/models/recipe_ingredient.rb:-
-msgid "Optional"
-msgstr ""
-
-#: app/controllers/home_controller.rb:14 app/views/home/_header.html.erb:6
-msgid "share your recipes"
-msgstr ""
-
-#: app/controllers/home_controller.rb:28
-msgid "about rezets.com"
-msgstr ""
-
-#: app/controllers/home_controller.rb:32
-msgid "contact with us"
-msgstr ""
-
-#: app/controllers/home_controller.rb:37
-msgid "thanks for your help"
-msgstr ""
-
-#: app/controllers/recipes_controller.rb:15
-msgid "recetas de cocina"
-msgstr ""
-
-#: app/controllers/recipes_controller.rb:27
-msgid "hrecipe"
-msgstr ""
-
-#: app/controllers/recipes_controller.rb:38
-msgid "receta nueva"
-msgstr ""
-
-#: app/controllers/recipes_controller.rb:63
-msgid "Receta creada correctamente."
-msgstr ""
-
-#: app/views/home/_header.html.erb:14
-msgid "discover new recipes"
-msgstr ""
-
-#: app/views/home/_header.html.erb:15
-msgid "create your own cookbook"
-msgstr ""
-
-#: app/views/home/_header.html.erb:16
-msgid "share your recipes with your friends"
-msgstr ""
-
-#: app/views/home/index.html.erb:2 app/views/common/_header.html.erb:34
-msgid "categories"
-msgstr ""
-
-#: app/views/home/index.html.erb:14
-msgid "freshly made recipes"
-msgstr ""
-
-#: app/views/home/index.html.erb:29
-msgid "created at"
-msgstr ""
-
-#: app/views/home/index.html.erb:35
-msgid "see more"
-msgstr ""
-
-#: app/views/home/index.html.erb:35 app/views/common/_header.html.erb:33
-msgid "recipes"
-msgstr ""
-
-#: app/views/home/index.html.erb:37
-msgid "subscribe to the latest recipes rezets.com"
-msgstr ""
-
-#: app/views/home/index.html.erb:43
-msgid "recent comments"
-msgstr ""
-
-#: app/views/home/index.html.erb:51
-msgid "says about"
-msgstr ""
-
-#: app/views/home/index.html.erb:55 app/views/common/_footer.html.erb:5
+#: app/views/common/_footer.html.erb:5 app/views/home/index.html.erb:55
 msgid "about"
 msgstr ""
 
-#: app/views/home/index.html.erb:66
-msgid "recent cooks"
+#: app/views/common/_footer.html.erb:6
+msgid "contact"
 msgstr ""
 
-#: app/views/recipes/_show_sidebar.html.erb:3
-msgid "creado hace"
+#: app/views/common/_footer.html.erb:10
+msgid "languages"
 msgstr ""
 
-#: app/views/recipes/_show_sidebar.html.erb:5
-msgid "por"
-msgstr ""
-
-#: app/views/common/_header.html.erb:6
+#: app/views/common/_header.html.erb:6 app/views/home/_header.html.erb:2
 msgid "login"
 msgstr ""
 
@@ -324,10 +331,181 @@ msgstr ""
 msgid "start"
 msgstr ""
 
-#: app/views/common/_footer.html.erb:6
-msgid "contact"
+#: app/views/common/_header.html.erb:34 app/views/home/index.html.erb:2
+msgid "categories"
 msgstr ""
 
-#: app/views/common/_footer.html.erb:10
-msgid "languages"
+#: app/views/common/_search.html.erb:8
+msgid "search"
+msgstr ""
+
+#: app/views/home/_header.html.erb:14
+#: app/views/user_mailer/recipe.text.html.erb:53
+msgid "discover new recipes"
+msgstr ""
+
+#: app/views/home/_header.html.erb:15
+msgid "create your own cookbook"
+msgstr ""
+
+#: app/views/home/_header.html.erb:16
+msgid "share your recipes with your friends"
+msgstr ""
+
+#: app/views/home/feedback.html.erb:6
+msgid "name"
+msgstr ""
+
+#: app/views/home/feedback.html.erb:11 app/views/recipes/_email.html.erb:19
+msgid "email"
+msgstr ""
+
+#: app/views/home/feedback.html.erb:16 app/views/recipes/_email.html.erb:29
+msgid "message"
+msgstr ""
+
+#: app/views/home/feedback.html.erb:20 app/views/recipes/_email.html.erb:34
+msgid "send"
+msgstr ""
+
+#: app/views/home/index.html.erb:14
+msgid "freshly made recipes"
+msgstr ""
+
+#: app/views/home/index.html.erb:24 app/views/recipes/_show_sidebar.html.erb:5
+#: app/views/recipes/_show_sidebar.html.erb:35
+msgid "by"
+msgstr ""
+
+#: app/views/home/index.html.erb:29 app/views/recipes/_show_sidebar.html.erb:3
+#: app/views/recipes/_show_sidebar.html.erb:19
+#: app/views/recipes/_show_sidebar.html.erb:39
+msgid "created at"
+msgstr ""
+
+#: app/views/home/index.html.erb:35
+msgid "see more"
+msgstr ""
+
+#: app/views/home/index.html.erb:37
+msgid "subscribe to the latest recipes rezets.com"
+msgstr ""
+
+#: app/views/home/index.html.erb:43
+msgid "recent comments"
+msgstr ""
+
+#: app/views/home/index.html.erb:51
+msgid "says about"
+msgstr ""
+
+#: app/views/home/index.html.erb:66
+msgid "recent cooks"
+msgstr ""
+
+#: app/views/recipes/_comments.html.erb:6
+msgid "comments"
+msgstr ""
+
+#: app/views/recipes/_comments.html.erb:17
+msgid "%{time} ago"
+msgstr ""
+
+#: app/views/recipes/_show_sidebar.html.erb:10
+#: app/views/recipes/_show_sidebar.html.erb:38
+msgid "%{author}'s recipes"
+msgstr ""
+
+#: app/views/recipes/_show_sidebar.html.erb:27
+msgid "%{category} recipes"
+msgstr ""
+
+#: app/views/recipes/show.html.erb:7
+msgid "edit"
+msgstr ""
+
+#: app/views/recipes/show.html.erb:8
+msgid "delete"
+msgstr ""
+
+#: app/views/recipes/show.html.erb:11
+msgid "print"
+msgstr ""
+
+#: app/views/recipes/show.html.erb:15 app/views/recipes/_email.html.erb:6
+msgid "send by email"
+msgstr ""
+
+#: app/views/recipes/show.html.erb:30
+#: app/views/user_mailer/recipe.text.html.erb:21
+msgid "ingredients"
+msgstr ""
+
+#: app/views/recipes/show.html.erb:32
+msgid "for %{num} people"
+msgstr ""
+
+#: app/views/recipes/show.html.erb:84
+#: app/views/user_mailer/recipe.text.html.erb:41
+msgid "directions"
+msgstr ""
+
+#: app/views/recipes/_email_send.html.erb:3
+msgid "recipe sent"
+msgstr ""
+
+#: app/views/recipes/_email_send.html.erb:4
+msgid "ok!"
+msgstr ""
+
+#: app/views/recipes/_email.html.erb:3
+msgid "close"
+msgstr ""
+
+#: app/views/recipes/_email.html.erb:13
+msgid "your name"
+msgstr ""
+
+#: app/views/recipes/_email.html.erb:20
+msgid "can include several comma-separated"
+msgstr ""
+
+#: app/views/recipes/_email.html.erb:24
+msgid "add a message?"
+msgstr ""
+
+#: app/views/recipes/_email.html.erb:35
+msgid "cancel"
+msgstr ""
+
+#: app/views/user_mailer/recipe.text.html.erb:1
+msgid "Hi!"
+msgstr ""
+
+#: app/views/user_mailer/recipe.text.html.erb:3
+msgid "%{user} has shared a %{recipe} recipe with you!"
+msgstr ""
+
+#: app/views/user_mailer/recipe.text.html.erb:5
+msgid "%{user} has shared a %{recipe} recipe with you and says:"
+msgstr ""
+
+#: app/views/user_mailer/recipe.text.html.erb:15
+msgid "updated %{time} ago"
+msgstr ""
+
+#: app/views/user_mailer/recipe.text.html.erb:49
+msgid "now you can,"
+msgstr ""
+
+#: app/views/user_mailer/recipe.text.html.erb:51
+msgid "comment on the recipe"
+msgstr ""
+
+#: app/views/user_mailer/recipe.text.html.erb:52
+msgid "see more %{author}'s recipes"
+msgstr ""
+
+#: app/views/users/show.html.erb:17
+msgid "create a new recipe"
 msgstr ""

@@ -25,6 +25,7 @@ Rails::Initializer.run do |config|
   config.gem "paperclip"
   config.gem "authlogic"
   config.gem 'sitemap_generator', :lib => false, :source => 'http://gemcutter.org'
+  config.gem 'haml'
 
   # gems to gettext
   config.gem "locale"
@@ -45,7 +46,7 @@ Rails::Initializer.run do |config|
   config.action_mailer.default_url_options = {
     :host => APP_CONFIG['app_domain']
   }
-  if APP_CONFIG['allow_outgoing_email']
+# if APP_CONFIG['allow_outgoing_email']
     config.action_mailer.smtp_settings = {
       :enable_starttls_auto  => APP_CONFIG['outgoing']['enable_starttls_auto'],
       :address               => APP_CONFIG['outgoing']['host'],
@@ -55,7 +56,7 @@ Rails::Initializer.run do |config|
       :password              => APP_CONFIG['outgoing']['pass'],
       :authentication        => APP_CONFIG['outgoing']['auth'].to_sym
     }
-  end
+# end
 
   # Activate observers that should always be running
   # config.active_record.observers = :cacher, :garbage_collector, :forum_observer
@@ -67,9 +68,9 @@ Rails::Initializer.run do |config|
 
   # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
   # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
-  config.i18n.default_locale = :es
+  config.i18n.default_locale = :en
 
 end
 
-WillPaginate::ViewHelpers.pagination_options[:prev_label]=I18n.t("pagination.prev")
+WillPaginate::ViewHelpers.pagination_options[:previous_label]=I18n.t("pagination.prev")
 WillPaginate::ViewHelpers.pagination_options[:next_label]=I18n.t("pagination.next")
