@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: recipemonkey 0.2\n"
-"POT-Creation-Date: 2010-08-10 20:06+0200\n"
+"POT-Creation-Date: 2010-08-29 19:02+0200\n"
 "PO-Revision-Date: 2009-11-09 22:31+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,8 +25,8 @@ msgid "You must be logged out to access this page"
 msgstr ""
 
 #: app/controllers/home_controller.rb:10 app/views/home/_header.html.erb:6
+#: app/views/user_mailer/recipe.text.html.erb:56
 #: app/views/user_mailer/recipe.text.html.erb:57
-#: app/views/user_mailer/recipe.text.html.erb:58
 msgid "share your recipes"
 msgstr ""
 
@@ -63,11 +63,11 @@ msgstr ""
 msgid "recipe update"
 msgstr ""
 
-#: app/controllers/recipes_controller.rb:131
+#: app/controllers/recipes_controller.rb:130
 msgid "please, enter your name"
 msgstr ""
 
-#: app/controllers/recipes_controller.rb:135
+#: app/controllers/recipes_controller.rb:134
 msgid "please, enter the email address for a friend"
 msgstr ""
 
@@ -187,7 +187,7 @@ msgstr ""
 msgid "Author"
 msgstr ""
 
-#: app/models/recipe.rb:112
+#: app/models/recipe.rb:115
 msgid "%{recipe} by %{author}"
 msgstr ""
 
@@ -340,7 +340,7 @@ msgid "search"
 msgstr ""
 
 #: app/views/home/_header.html.erb:14
-#: app/views/user_mailer/recipe.text.html.erb:53
+#: app/views/user_mailer/recipe.text.html.erb:52
 msgid "discover new recipes"
 msgstr ""
 
@@ -411,6 +411,14 @@ msgstr ""
 msgid "%{time} ago"
 msgstr ""
 
+#: app/views/recipes/_recipe.html.erb:17 app/views/recipes/show.html.erb:7
+msgid "edit"
+msgstr ""
+
+#: app/views/recipes/_recipe.html.erb:18 app/views/recipes/show.html.erb:8
+msgid "delete"
+msgstr ""
+
 #: app/views/recipes/_show_sidebar.html.erb:10
 #: app/views/recipes/_show_sidebar.html.erb:38
 msgid "%{author}'s recipes"
@@ -418,14 +426,6 @@ msgstr ""
 
 #: app/views/recipes/_show_sidebar.html.erb:27
 msgid "%{category} recipes"
-msgstr ""
-
-#: app/views/recipes/show.html.erb:7
-msgid "edit"
-msgstr ""
-
-#: app/views/recipes/show.html.erb:8
-msgid "delete"
 msgstr ""
 
 #: app/views/recipes/show.html.erb:11
@@ -450,11 +450,11 @@ msgstr ""
 msgid "directions"
 msgstr ""
 
-#: app/views/recipes/_email_send.html.erb:3
+#: app/views/recipes/_email_send.html.erb:1
 msgid "recipe sent"
 msgstr ""
 
-#: app/views/recipes/_email_send.html.erb:4
+#: app/views/recipes/_email_send.html.erb:2
 msgid "ok!"
 msgstr ""
 
@@ -494,15 +494,15 @@ msgstr ""
 msgid "updated %{time} ago"
 msgstr ""
 
-#: app/views/user_mailer/recipe.text.html.erb:49
+#: app/views/user_mailer/recipe.text.html.erb:48
 msgid "now you can,"
 msgstr ""
 
-#: app/views/user_mailer/recipe.text.html.erb:51
+#: app/views/user_mailer/recipe.text.html.erb:50
 msgid "comment on the recipe"
 msgstr ""
 
-#: app/views/user_mailer/recipe.text.html.erb:52
+#: app/views/user_mailer/recipe.text.html.erb:51
 msgid "see more %{author}'s recipes"
 msgstr ""
 
