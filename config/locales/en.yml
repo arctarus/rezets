@@ -2,4 +2,6 @@
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-    home_title: share your recipes
+  pagination:
+    next: 'siguiente <img src="/images/next.png" alt="">'
+    prev: '<img src="/images/prev.png" alt=""> anterior'
