@@ -1,4 +1,5 @@
 # from http://github.com/ng/paperclip-watermarking-app with modifications
+require 'pp'
 
 module Paperclip
   class Watermark < Processor
@@ -8,6 +9,7 @@ module Paperclip
     def initialize(file, options = {}, attachment = nil)
        super
        geometry = options[:geometry]
+       geometry = geometry.nil? ? "500>x500" : geometry
        @file = file
        @crop = geometry.nil? ? false : geometry[-1,1] == '#'
        @target_geometry = Geometry.parse geometry
