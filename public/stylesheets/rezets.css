@@ -103,7 +103,7 @@ div.basic-freedoms p.title {font-size:2.4em}
 .last-comments {margin-top:6em}
 div.last-comments ul {margin:1.5em 0; list-style:none}
 div.last-comments ul li {margin:2em 0}
-.last-recipes ul {margin:0}
+.last-recipes ul {margin:0; list-style:none}
 .last-recipes ul li {margin:3em 0; padding:0}
 .last-recipes ul li.top {margin-top:1em}
 .last-recipes ul li.bottom {margin-bottom:1em}
