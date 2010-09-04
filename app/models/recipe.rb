@@ -24,16 +24,16 @@ class Recipe < ActiveRecord::Base
 
   has_attached_file :photo,
     :processors => [:watermark],
-    :path => ":rails_root/public/system/:class/:id/:attachment/:style/:slug.:extension",
-    :url => "/system/:class/:id/:attachment/:style/:slug.:extension",
-    :styles => {
-      :large => {
-        :geometry => "500>x500",
+    :path       => ":rails_root/public/system/:class/:id/:attachment/:style/:slug.:extension",
+    :url        => "/system/:class/:id/:attachment/:style/:slug.:extension",
+    :styles     => {
+      :large  => {
+        :geometry       => "500>x500",
         :watermark_path => "#{RAILS_ROOT}/public/images/watermark.png",
-        :position => "Center",
-        :watermark => "20x100" },
+        :position       => "Center",
+        :watermark      => "20x100"},
       :medium => "200>x200",
-      :thumb => "70>x70" }
+      :thumb  => "70>x70" }
 
   named_scope :by_author, lambda {|recipe_id, author_id|
     {:conditions => 
