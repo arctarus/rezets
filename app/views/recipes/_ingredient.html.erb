@@ -14,6 +14,6 @@
       <td><%= rif.text_field :value_type, :size => 6, :maxlength => 25, :maxlength => 255 %></td>
       <td><%= rif.text_field :name, :size => 20, :maxlength => 255 %></td>
       <td><%= rif.text_field :comment, :size => 20, :maxlength => 255 %></td>
-      <td><%= link_to_function "eliminar" , "$(this).up('.ingredient').remove()" %></td>
+      <td><%= link_to_function _("remove") , "$(this).up('.ingredient').remove()" %></td>
     </tr>
 <% end %>

@@ -28,18 +28,18 @@
     <%= round ri.value %>
   <% end %>
   <% unless ri.value_type.blank? %>
-    <%= h ri.value_type %> de
+    <%= h ri.value_type %> <%= _("of") %>
   <% end %>
   <%= h ri.ingredient.name %>
   <%= h ri.comment %>
   <% if ri.optional %>
-    <span class="ft">(opcional)</span>
+    <span class="ft">(<%= _("optional") %>)</span>
   <% end %>
   <br/>
 <% end %>
 
 <p style="margin-top:1em; font-size:1.3em;"><span style="color:#380"><%= _("directions") %></span>
-(<%=h @recipe.cook_time %> min)
+(<%=h @recipe.cook_time %> <%= _("min") %>)
 </p>
 <div class="instructions">
   <%= simple_format(h(@recipe.directions)) %>

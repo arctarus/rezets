@@ -4,7 +4,7 @@
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
   </head>
   <body>
-    <p><%=h @name %> nos dice:</p>
+    <p><%= _("%{user} tell us:") % {:user => h(@name)} %></p>
     <div class="body">
       <%= simple_format(h(@message)) %>
     </div>

@@ -4,7 +4,7 @@
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
   </head>
   <body>
-    Hola <%= h @user.name %>!<br/>
+    <%= _("Hello %{user}!") % {:user => h(@user.name)} %><br/>
     <br/>
     <%= @subject %>:<br/>
     <br/>
@@ -12,11 +12,13 @@
       <%= simple_format(h(@comment.body)) %>
     </div>
     <br/>
-    * Puedes ver este comentario en <%= link_to "#{@comment.recipe.name} por #{@comment.recipe.author.name}" , "http://rezets.com/#{user_recipe_path(@comment.recipe.author, @comment.recipe)}#comment-#{@comment.id}" %>,<br/>
-    * o puedes añadir un <%= link_to "nuevo comentario", "http://rezets.com/#{user_recipe_path(@comment.recipe.author, @comment.recipe)}#comment-new" %>.<br/>
+    * <%= _("You can see this comment in %{recipe}") % {
+      :recipe => link_to(_("%{recipe} by %{author}") % {:recipe => @comment.recipe.name, :author => @comment.recipe.author.name}), "http://rezets.com/#{user_recipe_path(@comment.recipe.author, @comment.recipe)}#comment-#{@comment.id}" %>,<br/>
+
+    * <%= _("or you can add a %{newcomment}") % {:newcomment => link_to _("new comment"), "http://rezets.com/#{user_recipe_path(@comment.recipe.author, @comment.recipe)}#comment-new"} %>.<br/>
     <br/>
     ---<br/>
     <%= link_to 'rezets.com', "http://rezets.com" %><br/>
-    comparte tus recetas
+    <%= _("share your recipes") %>
   </body>
 </html> 

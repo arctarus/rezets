@@ -2,7 +2,7 @@
   <div id="user-<%= @user.id %>" class="vcard">
     <%= link_to "#{image_tag @user.avatar.url(:large), :class => "avatar", :alt => ""}", @user %>
     <h1>
-      <%= link_to "recetas de #{@user.name}", @user %>
+      <%= link_to _("#{@user.name}'s recipes"), @user %>
       <% if @category.nil? %>
         <span class="counter">(<%= @total_recipes %>)</span>
       <% else %>
@@ -30,16 +30,19 @@
     
     <% if current_user.nil? or @user != current_user %>
       <div class="msg blank">
-        <h2><%= @user.name %> todavía no tiene ninguna receta</h2>
-        <p>puedes <%= link_to "explorar más recetas", recipes_path %> o buscar <%= link_to "recetas por categorias", categories_path %>.</p>
+        <h2><%= _("%{user} still hasn't any recipe") % {:user => @user.name} %></h2>
+        <p><%= ("you can %{explore} or search %{bycategory}.") % {
+          :explore => link_to(_("explore more recipes"), recipes_path),
+          :bycategory => link_to(_("recipes by categories"), categories_path)} %></p>
       </div>
     <% else %>
       <div class="msg welcome">
-        <h1>¡Bienvenido a rezets.com!</h1>
-        <p>Si estás aquí es porque eres uno de los afortunados que han recibido una invitación para disfrutar de este nuevo servicio.</p>
-        <p>Como verás todavía andamos en paños menores así que te rogaría que si vieras alguna cosilla que no funciona o algo no te gusta nos lo hicieras saber.</p>
-        <p>Para comenzar a disfrutar de rezets.com sólo tienes que <%= link_to "crear una receta", new_recipe_path %>.</p>
-        <p>¡Gracias!</p>
+        <h1><%= _("Welcome to rezets.com!") %></h1>
+        <p><%= _("If you're here because you are one of the lucky ones who have been invited to enjoy this new service.") %></p>
+        <p><%= _("As you can see we are walking in his underwear so I would ask you if you saw a little something that does not work or you do not like something we have know.") %></p>
+        <p><%= _("As you can see we are walking in his underwear so I would ask you if you saw a little something that does not work or you do not like something we have know.") %></p>
+      <p><%= _("To start enjoying rezets.com simply %{create_recipe}.") % {:create_recipe => link_to(_("create a new recipe"), new_recipe_path)} %></p>
+      <p><%= _("Thanks!") %></p>
       </div>
     <% end %>
 
@@ -55,15 +58,15 @@
 
     <% if @user == current_user %>
       <% if @category.nil? %>
-        <p><%= link_to "suscribirse a tus propias recetas", user_path(@user, :format => :rss), :class => "feed-link" %></p>
+        <p><%= link_to _("subscribe to your own recipes"), user_path(@user, :format => :rss), :class => "feed-link" %></p>
       <% else %>
-        <p><%= link_to "suscribirse a tus propias recetas de #{@category.name}", category_user_path(@category, @user, :format => :rss), :class => "feed-link" %></p>
+        <p><%= link_to _("subscribe to your own %{category} recipes") % {:category => @category.name}, category_user_path(@category, @user, :format => :rss), :class => "feed-link" %></p>
       <% end %>
     <% else %>
       <% if @category.nil? %>
-        <p><%= link_to "suscribirse a las recetas de #{@user.name}", user_path(@user, :format => :rss), :class => "feed-link" %></p>
+        <p><%= link_to _("subscribe to %{user}'s recipes") % {:user => @user.name}, user_path(@user, :format => :rss), :class => "feed-link" %></p>
       <% else %>
-        <p><%= link_to "suscribirse a las recetas de #{@user.name} de #{@category.name}", category_user_path(@category, @user, :format => :rss), :class => "feed-link" %></p>
+        <p><%= link_to _("subscribe to %{user}'s %{category} recipes") % {:user => @user.name, :category => @category.name}, category_user_path(@category, @user, :format => :rss), :class => "feed-link" %></p>
       <% end %>
     <% end %>
 

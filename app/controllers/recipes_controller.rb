@@ -8,7 +8,6 @@ class RecipesController < ApplicationController
   # GET /recipes.xml
   def index
     @featured_recipe = Recipe.random
-#   @ingredients = Ingredient.most_popular.all(:limit => 30, :order => "name asc")
     @categories = Category.all(:order => "name asc", :include => :recipes)
     @categories.delete_if {|c| c.recipes.blank? }
     @page_title = _("recipes")

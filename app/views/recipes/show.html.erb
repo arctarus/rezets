@@ -1,11 +1,16 @@
 <div class="hrecipe-head">
-  <h1 class="fn"><%=link_to h(@recipe.name), user_recipe_path(@recipe.author,@recipe), :title => "receta de #{@recipe.name.downcase} por #{@recipe.author.name}" %></h1>
-  <p class="category"><%= link_to @recipe.category.name, @recipe.category, :title => "recetas de #{@recipe.category.name}" %></p> 
+  <h1 class="fn"><%=link_to h(@recipe.name), user_recipe_path(@recipe.author,@recipe), 
+    :title => _("#{@recipe.name.downcase} recipe by #{@recipe.author.name}") %></h1>
+
+  <p class="category"><%= link_to @recipe.category.name, @recipe.category, 
+    :title => _("#{@recipe.category.name} recipes") %></p> 
 
   <ul id="action-links" class="action-links">
     <% if @recipe.author? current_user %>
       <li><%= link_to _('edit'), edit_user_recipe_path(@recipe.author, @recipe), :class => "action-link edit" %></li>
-      <li><%= link_to _('delete'), user_recipe_path(@recipe.author, @recipe), :confirm => '¿estás seguro?', :method => :delete, :class => "action-link delete" %></li>
+      <li><%= link_to _('delete'), user_recipe_path(@recipe.author, @recipe), 
+        :confirm => _("are you sure?"), :method => :delete, :class => "action-link delete" %></li>
+
     <% end %>
     <li>
       <%= link_to_function _('print'), "window.open(this.href)",
@@ -16,7 +21,12 @@
       :url => email_user_recipe_path(@recipe.author,@recipe),
       :method => :get,
       :html => {:class => 'action-link send-email', :href => email_user_recipe_path(@recipe.author,@recipe)} %></li>
-      <li><%= link_to "twitter", "http://twitter.com/home?status=#{twitter(@recipe)}", :class => 'action-link twitter' %></li>
+    <li><%= link_to "twitter", "http://twitter.com/home?status=#{twitter(@recipe)}", 
+            :class => 'action-link twitter',
+            :title => _('share recipe on twitter') %></li>
+    <li><%= link_to "facebook", "http://www.facebook.com/sharer.php?u=#{recipe_url(@recipe)}",
+            :class => 'action-link facebook',
+            :title => _('share recipe on facebook') %></li> 
   </ul>
 </div>
 
@@ -42,12 +52,12 @@
           <% end %>
           <% unless ri.value_type.blank? %>
             <span class="type"><%= h ri.value_type %></span>
-            <span class="ft">de</span>
+            <span class="ft"><%= _("of") %></span>
           <% end %>
           <%= h ri.ingredient.name %>
           <%= h ri.comment %>
           <% if ri.optional %>
-            <span class="ft">(opcional)</span>
+            <span class="ft">(<%= _("optional") %>)</span>
           <% end %>
         </li>
       <% end %>      
@@ -65,12 +75,12 @@
               <% end %>
               <% unless ri.value_type.blank? %>
                 <span class="type"><%= h ri.value_type %></span>
-                <span class="ft">de</span>
+                <span class="ft"><%= _("of") %></span>
               <% end %>
               <%= h ri.ingredient.name %>
               <%= h ri.comment %>
               <% if ri.optional %>
-                <span class="ft">(opcional)</span>
+                <span class="ft">(<%= _("optional") %>)</span>
               <% end %>
             </li>
           <% end %>
@@ -83,7 +93,7 @@
 
 <h2 class="clear"><%= _("directions") %>
   <% unless @recipe.cook_time.blank? %>
-    <span class="duration">(<span class="value-title" title="@recipe.cook_time"></span><%=h @recipe.cook_time %> min)</span>
+    <span class="duration">(<span class="value-title" title="@recipe.cook_time"></span><%=h @recipe.cook_time %> <%= _("min") %>)</span>
   <% end %>
 </h2>
 
@@ -100,4 +110,4 @@
   <%= render :partial => "show_sidebar" %>  
 </div>
 
-<br class="clear" style="margin-top:6em" />
+<br class="clear" style="margin-top:2em" />
