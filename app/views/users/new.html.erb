@@ -1,38 +1,38 @@
-<h1>confirmar invitación para rezets.com</h1>
+<h1><%= _("confirm invitation to rezets.com") %></h1>
 
 <% form_for @user do |f| %>
-  <%= f.error_messages :header_message => "hay algunos errores en el formulario",
-    :message => "comprueba los datos a continuación" %>
+  <%= f.error_messages :header_message => _("there are some errors in the form"),
+    :message => _("check the following data") %>
 
   <%= hidden_field :invitation, :token %>
 
   <div class="field">
-    <%= f.label :name, "nombre" %>
+    <%= f.label :name, _("name") %>
     <%= f.text_field :name, :class => "text", :size => 30, :maxlength => 255 %>
   </div>
 
   <div class="field">
-    <%= f.label :email, "email" %>
+    <%= f.label :email, _("email") %>
     <%= f.text_field :email, :class => "text", :size => 30, :maxlength => 255 %>
   </div>
 
   <div class="field">
-    <%= f.label :password, "contraseña" %>
+    <%= f.label :password, _("password") %>
     <%= f.password_field :password, :class => "text", :size => 30, :maxlength => 255 %>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation, "confirmar contraseña" %>
+    <%= f.label :password_confirmation, _("confirm password") %>
     <%= f.password_field :password_confirmation, :class => "text", :size => 30, :maxlength => 255 %>
   </div>
 
   <div class="field">
-    <%= f.label :slug, "dirección de tu página" %>
+    <%= f.label :slug, _("address of your page in rezets.com") %>
     <p><span class="ft">http://rezets.com/users/</span><%= f.text_field :slug, :class => "text", :size => 20, :maxlength => 255 %></p>
   </div>
 
   <p id="submit">
-    <%= f.submit "continuar" %>
+    <%= f.submit _("continue") %>
   </p>
 
 <% end %>

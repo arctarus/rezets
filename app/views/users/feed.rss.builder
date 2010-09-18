@@ -1,8 +1,8 @@
 xml.instruct! :xml, :version => "1.0"
 xml.rss :version => "2.0" do
   xml.channel do
-    xml.title "recetas de #{@user.name} en rezets.com"
-    xml.description "últimas recetas de #{@user.name}"
+    xml.title _("#{@user.name}'s recipes on rezets.com")
+    xml.description _("#{@user.name}'s latests recipes")
     xml.link user_url(@user)
  
     for recipe in @recipes

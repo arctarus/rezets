@@ -4,17 +4,17 @@
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
   </head>
   <body>
-    <p><%=h @user.name %> te ha invitado a unirte a rezets.com y te dice:</p>
+    <p><%= _("%{user} has invited you to join to rezets.com and says you:") % {:user => h(@user.name)} %></p>
     <div class="body">
       <%= simple_format(h(@message)) %>
 
       <br/>
-      <p>Puedes comenzar por:</p>
-      <p><%= link_to "darte de alta rezets.com", "http://www.rezets.com#{new_user_path}/#{@invitation.token}" %></p>
+      <p><%= _("You can start by:") %></p>
+      <p><%= link_to _("sign up rezets.com"), "http://www.rezets.com#{new_user_path}/#{@invitation.token}" %></p>
 
-      <p><%= link_to "ver la página de #{@user.name}", "http://www.rezets.com#{user_path(@user)}" %></p>
+      <p><%= link_to _("see %{user} page") % {:user => @user.name}, "http://www.rezets.com#{user_path(@user)}" %></p>
 
-      </p><%= link_to "descubrir nuevas recetas", "http://www.rezets.com/recipes" %></p>
+      </p><%= link_to _("discover new recipes"), "http://www.rezets.com/recipes" %></p>
     </div>
   </body>
 </html> 

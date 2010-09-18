@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: recipemonkey 0.2\n"
-"POT-Creation-Date: 2010-08-29 19:02+0200\n"
+"POT-Creation-Date: 2010-09-18 12:21+0200\n"
 "PO-Revision-Date: 2010-02-06 14:58+0100\n"
 "Last-Translator: sdas <sdas>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,7 +23,9 @@ msgstr "Debes estar logado para acceder a esta página"
 msgid "You must be logged out to access this page"
 msgstr "Debes estar deslogado para acceder a esta página"
 
-#: app/controllers/home_controller.rb:10 app/views/home/_header.html.erb:6
+#: app/controllers/home_controller.rb:10 app/views/common/_header.html.erb:27
+#: app/views/home/_header.html.erb:25
+#: app/views/user_mailer/comment_recipe.text.html.erb:22
 #: app/views/user_mailer/recipe.text.html.erb:56
 #: app/views/user_mailer/recipe.text.html.erb:57
 msgid "share your recipes"
@@ -41,32 +43,33 @@ msgstr "contacta con nosotros"
 msgid "thanks for your help"
 msgstr "gracias por tu ayuda"
 
-#: app/controllers/recipes_controller.rb:14
+#: app/controllers/recipes_controller.rb:13
 #: app/views/common/_header.html.erb:33 app/views/home/index.html.erb:35
+#: app/views/recipes/index.html.erb:1
 msgid "recipes"
 msgstr "recetas"
 
-#: app/controllers/recipes_controller.rb:40
+#: app/controllers/recipes_controller.rb:39 app/views/recipes/new.html.erb:1
 msgid "new recipe"
 msgstr "receta nueva"
 
-#: app/controllers/recipes_controller.rb:54
+#: app/controllers/recipes_controller.rb:53
 msgid "editing %{recipe}"
 msgstr "editando %{recipe}"
 
-#: app/controllers/recipes_controller.rb:65
+#: app/controllers/recipes_controller.rb:64
 msgid "recipe created"
 msgstr "receta creada"
 
-#: app/controllers/recipes_controller.rb:82
+#: app/controllers/recipes_controller.rb:81
 msgid "recipe update"
 msgstr "receta actualizada"
 
-#: app/controllers/recipes_controller.rb:130
+#: app/controllers/recipes_controller.rb:129
 msgid "please, enter your name"
 msgstr "por favor, escribe tu nombre"
 
-#: app/controllers/recipes_controller.rb:134
+#: app/controllers/recipes_controller.rb:133
 msgid "please, enter the email address for a friend"
 msgstr "por favor, escribe la dirección de email de un amigo"
 
@@ -78,11 +81,27 @@ msgstr "¡bienvenido!"
 msgid "see you soon!"
 msgstr "¡hasta pronto!"
 
+#: app/helpers/invitations_helper.rb:4
+msgid ""
+"Hi!\n"
+"\n"
+"I want to invite you to rezets.com.\n"
+"\n"
+"rezets.com is a new cooking recipe site where you can save all those recipes "
+"that you spread on pieces of paper, notebooks and folders and share them "
+"with your friends.\n"
+"\n"
+"I'm sure it will be very useful.\n"
+"\n"
+"%{user}"
+msgstr "Hola!\n\nQuiero invitarte a rezets.com.\n\nrezets.com es una nueva web de recetas de cocina en la que puedes guardar todas esas recetas que tienes repartidas en papelitos, libretas o carpetas y compartirlas con tus amigos.\n\nEstoy seguro de que te resultará muy útil.\n\n%{user}"
+
 #: app/helpers/recipes_helper.rb:28
 msgid "tasty and substance %{recipe} recipe %{url}"
 msgstr "receta de %{recipe} rica y con fundamento %{url}"
 
-#: app/models/category.rb:-
+#: app/models/category.rb:- app/views/recipes/_comments.html.erb:36
+#: app/views/recipes/_form.html.erb:38
 msgid "comment"
 msgstr "comentario"
 
@@ -113,7 +132,7 @@ msgstr "Creado hace"
 msgid "Updated at"
 msgstr "Actualizado el"
 
-#: app/models/category.rb:-
+#: app/models/category.rb:- app/views/recipes/_form.html.erb:13
 msgid "category"
 msgstr "categoría"
 
@@ -126,7 +145,7 @@ msgstr "Nombre"
 msgid "Slug"
 msgstr "Slug"
 
-#: app/models/ingredient.rb:-
+#: app/models/ingredient.rb:- app/views/recipes/_form.html.erb:37
 msgid "ingredient"
 msgstr "ingrediente"
 
@@ -187,6 +206,7 @@ msgid "Author"
 msgstr "Autor"
 
 #: app/models/recipe.rb:115
+#: app/views/user_mailer/comment_recipe.text.html.erb:16
 msgid "%{recipe} by %{author}"
 msgstr "%{recipe} por %{author}"
 
@@ -214,7 +234,7 @@ msgstr "Comentario"
 msgid "Optional"
 msgstr "Opcional"
 
-#: app/models/user.rb:-
+#: app/models/user.rb:- app/views/invitations/index.html.erb:9
 msgid "user"
 msgstr "usuario"
 
@@ -236,7 +256,7 @@ msgstr "contraseña encriptada"
 
 #: app/models/user.rb:-
 msgid "Password salt"
-msgstr "Sal de contraseña"
+msgstr "Salto de contraseña"
 
 #: app/models/user.rb:-
 msgid "Persistence token"
@@ -298,31 +318,70 @@ msgstr "%{user} te ha enviado una receta de %{recipe}"
 msgid "user recipe"
 msgstr "usuario receta"
 
-#: app/views/common/_footer.html.erb:5 app/views/home/index.html.erb:55
+#: app/views/categories/_sidebar.html.erb:1
+#: app/views/common/_header.html.erb:34 app/views/home/index.html.erb:2
+#: app/views/recipes/_sidebar.html.erb:1 app/views/users/_sidebar.html.erb:2
+msgid "categories"
+msgstr "categorías"
+
+#: app/views/categories/_sidebar.html.erb:5
+#: app/views/categories/show.html.erb:4
+#: app/views/recipes/_show_sidebar.html.erb:27
+#: app/views/recipes/_sidebar.html.erb:8
+msgid "%{category} recipes"
+msgstr "recetas de %{category}"
+
+#: app/views/categories/_sidebar.html.erb:8
+#: app/views/users/_sidebar.html.erb:13
+msgid "all"
+msgstr "todas"
+
+#: app/views/categories/show.html.erb:2 app/views/users/show.html.erb:36
+msgid "recipes by categories"
+msgstr "recetas por categorías"
+
+#: app/views/categories/show.html.erb:14
+msgid "we do not have any %{category} recipe"
+msgstr "todavía no tenemos ninguna receta de %{category}"
+
+#: app/views/categories/show.html.erb:15
+msgid ""
+"you can %{add_recipe} yourself if you know some you want to share with your "
+"friends."
+msgstr ""
+"puedes añadir una receta tu mismo si conoces alguna que quieras compartir "
+"con tus amigos."
+
+#: app/views/categories/show.html.erb:16
+msgid "add a recipe"
+msgstr "añadir una receta"
+
+#: app/views/common/_footer.html.erb:5
 msgid "about"
 msgstr "sobre"
 
 #: app/views/common/_footer.html.erb:6
+msgid "blog"
+msgstr "blog"
+
+#: app/views/common/_footer.html.erb:7
 msgid "contact"
 msgstr "contactar"
 
-#: app/views/common/_footer.html.erb:10
-msgid "languages"
-msgstr "idiomas"
-
-#: app/views/common/_header.html.erb:6 app/views/home/_header.html.erb:2
+#: app/views/common/_header.html.erb:6 app/views/home/_header.html.erb:6
 msgid "login"
 msgstr "entrar"
 
-#: app/views/common/_header.html.erb:14
+#: app/views/common/_header.html.erb:14 app/views/home/_header.html.erb:14
+#: app/views/users/edit.html.erb:1
 msgid "edit profile"
 msgstr "editar perfil"
 
-#: app/views/common/_header.html.erb:16
+#: app/views/common/_header.html.erb:16 app/views/home/_header.html.erb:16
 msgid "invite friends"
 msgstr "invitar amigos"
 
-#: app/views/common/_header.html.erb:18
+#: app/views/common/_header.html.erb:18 app/views/home/_header.html.erb:18
 msgid "logout"
 msgstr "salir"
 
@@ -330,40 +389,42 @@ msgstr "salir"
 msgid "start"
 msgstr "inicio"
 
-#: app/views/common/_header.html.erb:34 app/views/home/index.html.erb:2
-msgid "categories"
-msgstr "categorias"
-
 #: app/views/common/_search.html.erb:8
 msgid "search"
 msgstr "buscar"
 
-#: app/views/home/_header.html.erb:14
+#: app/views/home/_header.html.erb:33
+#: app/views/user_mailer/invitation.text.html.erb:17
 #: app/views/user_mailer/recipe.text.html.erb:52
 msgid "discover new recipes"
 msgstr "descubre nuevas recetas"
 
-#: app/views/home/_header.html.erb:15
+#: app/views/home/_header.html.erb:34
 msgid "create your own cookbook"
 msgstr "crea tu propio libro de cocina"
 
-#: app/views/home/_header.html.erb:16
+#: app/views/home/_header.html.erb:35
 msgid "share your recipes with your friends"
 msgstr "comparte tus recetas con tus amigos"
 
-#: app/views/home/feedback.html.erb:6
+#: app/views/home/feedback.html.erb:6 app/views/users/edit.html.erb:8
+#: app/views/users/new.html.erb:10
 msgid "name"
 msgstr "nombre"
 
-#: app/views/home/feedback.html.erb:11 app/views/recipes/_email.html.erb:19
+#: app/views/home/feedback.html.erb:11 app/views/invitations/index.html.erb:6
+#: app/views/recipes/_email.html.erb:19 app/views/sessions/new.html.erb:8
+#: app/views/users/edit.html.erb:13 app/views/users/new.html.erb:15
 msgid "email"
 msgstr "email"
 
-#: app/views/home/feedback.html.erb:16 app/views/recipes/_email.html.erb:29
+#: app/views/home/feedback.html.erb:16 app/views/invitations/new.html.erb:29
+#: app/views/recipes/_email.html.erb:29
 msgid "message"
 msgstr "mensaje"
 
-#: app/views/home/feedback.html.erb:20 app/views/recipes/_email.html.erb:34
+#: app/views/home/feedback.html.erb:20 app/views/invitations/index.html.erb:5
+#: app/views/invitations/new.html.erb:34 app/views/recipes/_email.html.erb:34
 msgid "send"
 msgstr "enviar"
 
@@ -371,16 +432,18 @@ msgstr "enviar"
 msgid "freshly made recipes"
 msgstr "recetas recién hechas"
 
-#: app/views/home/index.html.erb:24 app/views/recipes/_show_sidebar.html.erb:5
+#: app/views/home/index.html.erb:24 app/views/recipes/_recipe.html.erb:9
+#: app/views/recipes/_show_sidebar.html.erb:5
 #: app/views/recipes/_show_sidebar.html.erb:35
+#: app/views/recipes/index.html.erb:13
 msgid "by"
 msgstr "por"
 
-#: app/views/home/index.html.erb:29 app/views/recipes/_show_sidebar.html.erb:3
+#: app/views/home/index.html.erb:29
 #: app/views/recipes/_show_sidebar.html.erb:19
 #: app/views/recipes/_show_sidebar.html.erb:39
-msgid "created at"
-msgstr "creado hace"
+msgid "created %{time} ago"
+msgstr "creado hace %{time}"
 
 #: app/views/home/index.html.erb:35
 msgid "see more"
@@ -398,56 +461,200 @@ msgstr "últimos comentarios"
 msgid "says about"
 msgstr "dice sobre"
 
+#: app/views/home/index.html.erb:55 app/views/recipes/_comments.html.erb:17
+msgid "%{time} ago"
+msgstr "hace %{time}"
+
 #: app/views/home/index.html.erb:66
 msgid "recent cooks"
 msgstr "últimos cocineros"
+
+#: app/views/invitations/index.html.erb:1
+msgid "send invite"
+msgstr "enviar invitación"
+
+#: app/views/invitations/index.html.erb:7
+msgid "envoy"
+msgstr "enviado"
+
+#: app/views/invitations/index.html.erb:8
+msgid "received"
+msgstr "receptor"
+
+#: app/views/invitations/new.html.erb:1
+msgid "send invitation to rezets.com"
+msgstr "enviar invitación a rezets.com"
+
+#: app/views/invitations/new.html.erb:4
+msgid "see all invitations"
+msgstr "ver todas las invitaciones"
+
+#: app/views/invitations/new.html.erb:9
+msgid ""
+"Write the address of the person you want to invite to rezets.com and we will "
+"send an email with the text you typed and a link so it can register. You can "
+"customize the message included below and tell your friends because you like "
+"rezets.com."
+msgstr ""
+"Escribe la dirección de la persona a la que quieres invitar a rezets.com y "
+"nosotros le haremos llegar un email con el texto que escribas y un enlace "
+"para que pueda registrarse. Puedes personalizar el mensaje de abajo y "
+"decirle a tus amigos por qué e gusta rezets.com"
+
+#: app/views/invitations/new.html.erb:11
+msgid ""
+"You have %{num_invitations} invitations to send to your friends which will "
+"remain %{remaining_invitations}."
+msgstr ""
+"Tienes %{num_invitations} invitaciones para enviar a tus amigos de la cuales "
+"te quedan %{remaining_invitations}"
+
+#: app/views/invitations/new.html.erb:15 app/views/recipes/_form.html.erb:4
+#: app/views/users/new.html.erb:4
+msgid "there are some errors in the form"
+msgstr "hay algún error en el formulario"
+
+#: app/views/invitations/new.html.erb:35 app/views/recipes/_form.html.erb:69
+#: app/views/recipes/_email.html.erb:35
+msgid "cancel"
+msgstr "cancelar"
+
+#: app/views/invitations/new.html.erb:45
+msgid "Sorry but you've exhausted all your invitations!"
+msgstr "¡lo sentimos pero has agotado todas tus invitaciones!"
+
+#: app/views/invitations/new.html.erb:46
+msgid ""
+"thank you very much to publicize rezets.com your friends, thanks to you "
+"today we are a little larger. When you say we have more invitations will "
+"inform you of this."
+msgstr "muchas gracias por dar a conocer rezets.com a tus amigos, gracias a ti hoy somos un poquito más grandes. Cuando pongamos dispongamos de más invitaciones te informaremos de ello."
 
 #: app/views/recipes/_comments.html.erb:6
 msgid "comments"
 msgstr "comentarios"
 
-#: app/views/recipes/_comments.html.erb:17
-msgid "%{time} ago"
-msgstr "hace %{time}"
+#: app/views/recipes/_form.html.erb:5 app/views/users/new.html.erb:5
+msgid "check the following data"
+msgstr "comprueba los dato siguientes"
 
-#: app/views/recipes/_recipe.html.erb:17 app/views/recipes/show.html.erb:7
+#: app/views/recipes/_form.html.erb:20
+msgid "photo"
+msgstr "foto"
+
+#: app/views/recipes/_form.html.erb:25
+msgid "number of people"
+msgstr "número de personas"
+
+#: app/views/recipes/_form.html.erb:30 app/views/recipes/show.html.erb:40
+#: app/views/user_mailer/recipe.text.html.erb:21
+msgid "ingredients"
+msgstr "ingredientes"
+
+#: app/views/recipes/_form.html.erb:34
+msgid "opt"
+msgstr "opt"
+
+#: app/views/recipes/_form.html.erb:35
+msgid "amount"
+msgstr "cantidad"
+
+#: app/views/recipes/_form.html.erb:36
+msgid "unit"
+msgstr "unidad"
+
+#: app/views/recipes/_form.html.erb:47
+msgid "add new ingredient"
+msgstr "añadir nuevo ingrediente"
+
+#: app/views/recipes/_form.html.erb:52
+msgid "preparation time"
+msgstr "tiempo de preparación"
+
+#: app/views/recipes/_form.html.erb:54
+msgid "minutes"
+msgstr "minutos"
+
+#: app/views/recipes/_form.html.erb:58 app/views/recipes/show.html.erb:94
+#: app/views/user_mailer/recipe.text.html.erb:41
+msgid "directions"
+msgstr "instrucciones"
+
+#: app/views/recipes/_form.html.erb:65
+msgid "create"
+msgstr "crear"
+
+#: app/views/recipes/_form.html.erb:67
+msgid "update"
+msgstr "actualizada"
+
+#: app/views/recipes/_ingredient.html.erb:17
+msgid "remove"
+msgstr "eliminar"
+
+#: app/views/recipes/_recipe.html.erb:5
+msgid "{category} recipes"
+msgstr "recetas de %{category}"
+
+#: app/views/recipes/_recipe.html.erb:19 app/views/recipes/show.html.erb:10
 msgid "edit"
 msgstr "editar"
 
-#: app/views/recipes/_recipe.html.erb:18 app/views/recipes/show.html.erb:8
+#: app/views/recipes/_recipe.html.erb:20 app/views/recipes/show.html.erb:11
 msgid "delete"
 msgstr "borrar"
+
+#: app/views/recipes/_recipe.html.erb:21 app/views/recipes/show.html.erb:12
+msgid "are you sure?"
+msgstr "¿estás seguro?"
+
+#: app/views/recipes/_show_sidebar.html.erb:3
+msgid "created"
+msgstr "creado"
 
 #: app/views/recipes/_show_sidebar.html.erb:10
 #: app/views/recipes/_show_sidebar.html.erb:38
 msgid "%{author}'s recipes"
 msgstr "recetas de %{author}"
 
-#: app/views/recipes/_show_sidebar.html.erb:27
-msgid "%{category} recipes"
-msgstr "recetas de %{category}"
+#: app/views/recipes/edit.html.erb:1
+msgid "editing"
+msgstr "editando"
 
-#: app/views/recipes/show.html.erb:11
+#: app/views/recipes/show.html.erb:16
 msgid "print"
 msgstr "imprimir"
 
-#: app/views/recipes/show.html.erb:15 app/views/recipes/_email.html.erb:6
+#: app/views/recipes/show.html.erb:20 app/views/recipes/_email.html.erb:6
 msgid "send by email"
 msgstr "enviar por email"
 
-#: app/views/recipes/show.html.erb:30
-#: app/views/user_mailer/recipe.text.html.erb:21
-msgid "ingredients"
-msgstr "ingredientes"
+#: app/views/recipes/show.html.erb:26
+msgid "share recipe on twitter"
+msgstr "compartir receta en twitter"
 
-#: app/views/recipes/show.html.erb:32
+#: app/views/recipes/show.html.erb:29
+msgid "share recipe on facebook"
+msgstr "compartir receta en facebook"
+
+#: app/views/recipes/show.html.erb:42
 msgid "for %{num} people"
 msgstr "para %{num} personas"
 
-#: app/views/recipes/show.html.erb:84
-#: app/views/user_mailer/recipe.text.html.erb:41
-msgid "directions"
-msgstr "instrucciones"
+#: app/views/recipes/show.html.erb:55 app/views/recipes/show.html.erb:78
+#: app/views/user_mailer/recipe.text.html.erb:31
+msgid "of"
+msgstr "de"
+
+#: app/views/recipes/show.html.erb:60 app/views/recipes/show.html.erb:83
+#: app/views/user_mailer/recipe.text.html.erb:36
+msgid "optional"
+msgstr "opcional"
+
+#: app/views/recipes/show.html.erb:96
+#: app/views/user_mailer/recipe.text.html.erb:42
+msgid "min"
+msgstr "min"
 
 #: app/views/recipes/_email_send.html.erb:1
 msgid "recipe sent"
@@ -473,9 +680,58 @@ msgstr "puedes incluir varios separados por punto y coma"
 msgid "add a message?"
 msgstr "¿añadir un mensaje?"
 
-#: app/views/recipes/_email.html.erb:35
-msgid "cancel"
-msgstr "cancelar"
+#: app/views/sessions/new.html.erb:2
+msgid "sign in"
+msgstr "entrar"
+
+#: app/views/sessions/new.html.erb:13
+#: app/views/users/changepassword.html.erb:7 app/views/users/new.html.erb:20
+msgid "password"
+msgstr "contraseña"
+
+#: app/views/sessions/new.html.erb:19
+msgid "remember me on this computer"
+msgstr "recordarme en este ordenador"
+
+#: app/views/sessions/new.html.erb:24
+msgid "come on in"
+msgstr "adelante"
+
+#: app/views/user_mailer/comment_recipe.text.html.erb:7
+msgid "Hello %{user}!"
+msgstr "¡Hola %{use}!"
+
+#: app/views/user_mailer/comment_recipe.text.html.erb:15
+msgid "You can see this comment in %{recipe}"
+msgstr "Puedes ver este comentario en %{recipe}"
+
+#: app/views/user_mailer/comment_recipe.text.html.erb:18
+msgid "or you can add a %{newcomment}"
+msgstr "o puedes añadir un %{newcomment}"
+
+#: app/views/user_mailer/comment_recipe.text.html.erb:18
+msgid "new comment"
+msgstr "nuevo comentario"
+
+#: app/views/user_mailer/feedback.text.html.erb:7
+msgid "%{user} tell us:"
+msgstr "%{user} nos dice:"
+
+#: app/views/user_mailer/invitation.text.html.erb:7
+msgid "%{user} has invited you to join to rezets.com and says you:"
+msgstr "%{user} te ha invitado a unirte a rezets.com y te dice:"
+
+#: app/views/user_mailer/invitation.text.html.erb:12
+msgid "You can start by:"
+msgstr "Puedes empezar por:"
+
+#: app/views/user_mailer/invitation.text.html.erb:13
+msgid "sign up rezets.com"
+msgstr "darte de alta en rezets.com"
+
+#: app/views/user_mailer/invitation.text.html.erb:15
+msgid "see %{user} page"
+msgstr "ver la página de %{user}"
 
 #: app/views/user_mailer/recipe.text.html.erb:1
 msgid "Hi!"
@@ -505,6 +761,92 @@ msgstr "comentar la receta"
 msgid "see more %{author}'s recipes"
 msgstr "ver más recetas de %{author}"
 
-#: app/views/users/show.html.erb:17
+#: app/views/users/changepassword.html.erb:1 app/views/users/edit.html.erb:3
+msgid "change password"
+msgstr "cambiar contraseña"
+
+#: app/views/users/changepassword.html.erb:12 app/views/users/new.html.erb:25
+msgid "confirm password"
+msgstr "confirmar contraseña"
+
+#: app/views/users/changepassword.html.erb:17
+msgid "change"
+msgstr "cambiar"
+
+#: app/views/users/edit.html.erb:18
+msgid "avatar"
+msgstr "avatar"
+
+#: app/views/users/edit.html.erb:23
+msgid "save"
+msgstr "guardar"
+
+#: app/views/users/new.html.erb:1
+msgid "confirm invitation to rezets.com"
+msgstr "confirmar invitación a rezets.com"
+
+#: app/views/users/new.html.erb:30
+msgid "address of your page in rezets.com"
+msgstr "dirección de tu página en rezets.com"
+
+#: app/views/users/new.html.erb:35
+msgid "continue"
+msgstr "continuar"
+
+#: app/views/users/show.html.erb:17 app/views/users/show.html.erb:44
 msgid "create a new recipe"
 msgstr "crear una receta nueva"
+
+#: app/views/users/show.html.erb:33
+msgid "%{user} still hasn't any recipe"
+msgstr "%{user} todavía no tiene ninguna receta"
+
+#: app/views/users/show.html.erb:35
+msgid "explore more recipes"
+msgstr "explora más recetas"
+
+#: app/views/users/show.html.erb:40
+msgid "Welcome to rezets.com!"
+msgstr "¡Bienvenido a rezets.com!"
+
+#: app/views/users/show.html.erb:41
+msgid ""
+"If you're here because you are one of the lucky ones who have been invited "
+"to enjoy this new service."
+msgstr ""
+"Si estás aquí es porque eres uno de los afortunados que han recibido una "
+"invitación para disfrutar de este nuevo servicio."
+
+#: app/views/users/show.html.erb:42 app/views/users/show.html.erb:43
+msgid ""
+"As you can see we are walking in his underwear so I would ask you if you saw "
+"a little something that does not work or you do not like something we have "
+"know."
+msgstr ""
+"Como verás todavía andamos en paños menores así que te rogaría que si vieras "
+"alguna cosilla que no funciona o algo no te gusta nos lo hicieras saber."
+
+#: app/views/users/show.html.erb:44
+msgid "To start enjoying rezets.com simply %{create_recipe}."
+msgstr ""
+"Para comenzar a disfrutar de rezets.com sólo tienes que crear una receta."
+
+#: app/views/users/show.html.erb:45
+msgid "Thanks!"
+msgstr "¡Gracias!"
+
+#: app/views/users/show.html.erb:61
+msgid "subscribe to your own recipes"
+msgstr "suscribirse a tus propias recetas"
+
+#: app/views/users/show.html.erb:63
+msgid "subscribe to your own %{category} recipes"
+msgstr "suscribirse a tus propias recetas de %{category}"
+
+#: app/views/users/show.html.erb:67
+msgid "subscribe to %{user}'s recipes"
+msgstr "suscribirse a las recetas de %{user}"
+
+#: app/views/users/show.html.erb:69
+msgid "subscribe to %{user}'s %{category} recipes"
+msgstr "suscribirse a las recetas de %{user} de %{category}"

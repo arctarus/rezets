@@ -26,7 +26,7 @@
             <%= link_to h(recipe.author.name), recipe.author %>
           </p>
           <p style="margin-bottom:.5em"><%= h(truncate(recipe.directions, :length => 220)) %></p>
-          <p><span class="ft"><%= _("created at") %></span> <%= distance_of_time_in_words_to_now recipe.updated_at %></span></p>
+          <p><span class="ft"><%= _("created %{time} ago") % {:time => distance_of_time_in_words_to_now(recipe.created_at)} %></span></p>
         </li>
       <% end %>
     </ul>
@@ -52,7 +52,7 @@
             <%= link_to h(comment.recipe.name), user_recipe_path(comment.recipe.author,comment.recipe) %>
           </h3>
           <p><%= h truncate(comment.body, :length => 300) %></p>
-          <p class="created-time"><abbr class="timestamp" title="<%= Time.now %>" class="timestamp"><%= _("about") %> <%= distance_of_time_in_words_to_now comment.updated_at %></abbr></p>
+          <p class="created-time"><abbr class="timestamp" title="<%= Time.now %>" class="timestamp"><%= _("%{time} ago") % {:time => distance_of_time_in_words_to_now(comment.updated_at)} %></abbr></p>
         </div>
           </li>
         <% end %>
