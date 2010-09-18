@@ -149,6 +149,7 @@ ul.action-links li a {padding:1px 0 1px 18px;}
 .print {background:url('/images/action-links.png') 0 -100px no-repeat}
 .send-email {padding-left:20px; background:url('/images/action-links.png') 0 -150px no-repeat}
 .twitter {background:url('/images/action-links.png') 0 -200px no-repeat}
+.facebook {background:url('/images/action-links.png') 0 -400px no-repeat}
 #feed {background:url('/images/action-links.png') 0 -250px no-repeat}
 #prev {background:url('/images/action-links.png') 0 -300px no-repeat}
 #next {background:url('/images/action-links.png') 0 -350px no-repeat}

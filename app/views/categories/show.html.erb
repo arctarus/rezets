@@ -1,7 +1,7 @@
 <% if @category.nil? %>
-  <h1>recetas por categorías</h1>
+  <h1><%= _("recipes by categories") %></h1>
 <% else %>
-  <h1>recetas de <%= @category.name %></h1>
+  <h1><%= _("%{category} recipes") % {:category => @category.name} %></h1>
 <% end %>
 
 <div class="sidebar sidebar-categories">
@@ -11,8 +11,9 @@
 <div class="main">
   <% if @recipes.blank? %>
     <div class="msg blank">
-      <h2>aún no tenemos ninguna receta de <%= @category.name %></h2>
-      <p>puedes <%= link_to "añadir una receta", new_user_recipe_path(current_user) %> tú mismo si conoces alguna que quieras compartir con tus amigos.</p>
+      <h2><%= _("we do not have any %{category} recipe") % {:category => @category.name} %></h2>
+      <p><%= _("you can %{add_recipe} yourself if you know some you want to share with your friends.") % {
+        :add_recipe => link_to(_("add a recipe"), new_user_recipe_path(current_user))} %></p>
     </div>
   <% else %>
     <ul class="recipes">

@@ -14,7 +14,7 @@
             <%= simple_format(h(comment.body)) %>
             <p class="created-time">
               <abbr class="timestamp" title="<%= Time.now %>" class="timestamp">
-                <%= _("%{time} ago") % {:time => distance_of_time_in_words(Time.now, comment.updated_at) } %>
+                <%= _("%{time} ago") % {:time => distance_of_time_in_words_to_now(comment.updated_at) } %>
               </abbr>
             </p>
           </div>
@@ -33,7 +33,7 @@
           <%= f.text_area :body %>
         </div>
         <p id="submit">
-          <%= f.submit 'comentar' %>
+          <%= f.submit _('comment') %>
         </p>
       <% end %>
     </div>

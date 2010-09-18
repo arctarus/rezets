@@ -1,7 +1,8 @@
 <p style="margin-bottom:3em">
 <%= link_to "#{image_tag @recipe.author.avatar.url(:medium), :alt => "", :style => 'float:left; margin:.3em .5em 0 0'}", @recipe.author %>
-  <span class="ft"><%= _("created at") %></span>
-  <span class="published"><span class="value-title" title="<%= @recipe.created_at %>"> </span><%= distance_of_time_in_words_to_now @recipe.updated_at %></span><br/>
+<span class="published"><%= _("created %{time} ago") % {
+  :time => _('<span class="value-title" title="%{created}">%{distance_time}</span>') % {
+  :created => @recipe.created_at,:distance_time => distance_of_time_in_words_to_now(@recipe.created_at)}} %></span><br/>
   <span class="ft"><%= _("by") %></span>
   <span class="author"><%= link_to @recipe.author.name, @recipe.author, :class => "url fn" %></span>
 </p>
@@ -16,7 +17,7 @@
         <div style="margin-left:76px">
         <%= link_to h(recipe.name), user_recipe_path(recipe.author, recipe), :style => 'font-size:1.1em' %><br/>
         <%= link_to recipe.category.name, category_path(recipe.category) %><br/>
-        <%= _("created at") %> <%= distance_of_time_in_words_to_now recipe.updated_at %>
+        <%= _("created %{time} ago") % {:time => distance_of_time_in_words_to_now(recipe.updated_at)} %>
       </div>
       </li>
     <% end %>
@@ -36,7 +37,7 @@
           <%= image_tag recipe.author.avatar.url(:thumb), :class => 'avatar' %>
           <%= link_to recipe.author.name, user_path(recipe.author), 
             :title => _("%{author}'s recipes") % {:author => recipe.author.name}%><br/>
-            <%= _("created at") %> <%= distance_of_time_in_words_to_now recipe.updated_at %>
+            <%= _("created %{time} ago") % {:time => distance_of_time_in_words_to_now(recipe.updated_at)} %>
           </div>
         </li>
     <% end %>
