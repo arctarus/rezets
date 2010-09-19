@@ -27,10 +27,8 @@
     <div class="instructions"><p><%= h(truncate(recipe.directions, :length => 360)) %></p></div>
     <div class="r-meta">
       <p class="date">
-        <span class="ft"><%= ("updated at") %></span>
-        <span class="published">
-          <span class="value-title" title="<%= recipe.updated_at %>"></span>
-          <%= distance_of_time_in_words_to_now recipe.updated_at %></span></p>
+      <span class="published"><%= _("updated %{time} ago") % {
+        :time => "<span class=\"value-title\" title=\"#{recipe.updated_at}\">#{distance_of_time_in_words_to_now(recipe.updated_at)}</span>"} %></span></p>
     </div>
   </div>
 </li>
