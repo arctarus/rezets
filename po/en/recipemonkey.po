@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: recipemonkey 0.2\n"
-"POT-Creation-Date: 2010-09-19 13:01+0200\n"
+"POT-Creation-Date: 2010-09-19 13:16+0200\n"
 "PO-Revision-Date: 2009-11-09 22:31+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -99,6 +99,10 @@ msgstr ""
 
 #: app/helpers/recipes_helper.rb:28
 msgid "tasty and substance %{recipe} recipe %{url}"
+msgstr ""
+
+#: app/helpers/recipes_helper.rb:33 app/views/recipes/show.html.erb:3
+msgid "%{recipe} recipe by %{author}"
 msgstr ""
 
 #: app/models/category.rb:- app/views/recipes/_form.html.erb:38
@@ -327,7 +331,7 @@ msgstr ""
 #: app/views/categories/_sidebar.html.erb:5
 #: app/views/categories/show.html.erb:4
 #: app/views/recipes/_show_sidebar.html.erb:27
-#: app/views/recipes/_sidebar.html.erb:8
+#: app/views/recipes/_sidebar.html.erb:8 app/views/recipes/show.html.erb:7
 msgid "%{category} recipes"
 msgstr ""
 
@@ -546,7 +550,7 @@ msgstr ""
 msgid "number of people"
 msgstr ""
 
-#: app/views/recipes/_form.html.erb:30 app/views/recipes/show.html.erb:40
+#: app/views/recipes/_form.html.erb:30 app/views/recipes/show.html.erb:41
 #: app/views/user_mailer/recipe.text.html.erb:21
 msgid "ingredients"
 msgstr ""
@@ -575,7 +579,7 @@ msgstr ""
 msgid "minutes"
 msgstr ""
 
-#: app/views/recipes/_form.html.erb:58 app/views/recipes/show.html.erb:94
+#: app/views/recipes/_form.html.erb:58 app/views/recipes/show.html.erb:95
 #: app/views/user_mailer/recipe.text.html.erb:41
 msgid "directions"
 msgstr ""
@@ -596,15 +600,15 @@ msgstr ""
 msgid "{category} recipes"
 msgstr ""
 
-#: app/views/recipes/_recipe.html.erb:19 app/views/recipes/show.html.erb:10
+#: app/views/recipes/_recipe.html.erb:19 app/views/recipes/show.html.erb:11
 msgid "edit"
 msgstr ""
 
-#: app/views/recipes/_recipe.html.erb:20 app/views/recipes/show.html.erb:11
+#: app/views/recipes/_recipe.html.erb:20 app/views/recipes/show.html.erb:12
 msgid "delete"
 msgstr ""
 
-#: app/views/recipes/_recipe.html.erb:21 app/views/recipes/show.html.erb:12
+#: app/views/recipes/_recipe.html.erb:21 app/views/recipes/show.html.erb:13
 msgid "are you sure?"
 msgstr ""
 
@@ -622,37 +626,37 @@ msgstr ""
 msgid "editing"
 msgstr ""
 
-#: app/views/recipes/show.html.erb:16
+#: app/views/recipes/show.html.erb:17
 msgid "print"
 msgstr ""
 
-#: app/views/recipes/show.html.erb:20 app/views/recipes/_email.html.erb:6
+#: app/views/recipes/show.html.erb:21 app/views/recipes/_email.html.erb:6
 msgid "send by email"
 msgstr ""
 
-#: app/views/recipes/show.html.erb:26
+#: app/views/recipes/show.html.erb:27
 msgid "share recipe on twitter"
 msgstr ""
 
-#: app/views/recipes/show.html.erb:29
+#: app/views/recipes/show.html.erb:30
 msgid "share recipe on facebook"
 msgstr ""
 
-#: app/views/recipes/show.html.erb:42
+#: app/views/recipes/show.html.erb:43
 msgid "for %{num} people"
 msgstr ""
 
-#: app/views/recipes/show.html.erb:55 app/views/recipes/show.html.erb:78
+#: app/views/recipes/show.html.erb:56 app/views/recipes/show.html.erb:79
 #: app/views/user_mailer/recipe.text.html.erb:31
 msgid "of"
 msgstr ""
 
-#: app/views/recipes/show.html.erb:60 app/views/recipes/show.html.erb:83
+#: app/views/recipes/show.html.erb:61 app/views/recipes/show.html.erb:84
 #: app/views/user_mailer/recipe.text.html.erb:36
 msgid "optional"
 msgstr ""
 
-#: app/views/recipes/show.html.erb:96
+#: app/views/recipes/show.html.erb:97
 #: app/views/user_mailer/recipe.text.html.erb:42
 msgid "min"
 msgstr ""
