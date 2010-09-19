@@ -1,4 +1,5 @@
 <div class="hrecipe-head">
+
   <h1 class="fn"><%=link_to h(@recipe.name), user_recipe_path(@recipe.author,@recipe), 
     :title => _("%{recipe} recipe by %{author}") % {
     :recipe => @recipe.name.downcase, :author => @recipe.author.name} %></h1>
