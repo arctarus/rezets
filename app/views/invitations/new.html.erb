@@ -22,7 +22,7 @@
 
     <div class="field">
       <%= label :mail, :subject, "asunto" %>
-      <%= text_field :mail, :subject, :value => "#{current_user.name} te ha invitado a rezets.com" %>
+      <%= text_field :mail, :subject, :value => _("%{user} has invite you to rezets.com") % {:user => current_user.name}%>
     </div>
 
     <div class="field">

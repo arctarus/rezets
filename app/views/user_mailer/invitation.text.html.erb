@@ -10,11 +10,9 @@
 
       <br/>
       <p><%= _("You can start by:") %></p>
-      <p><%= link_to _("sign up rezets.com"), "http://www.rezets.com#{new_user_path}/#{@invitation.token}" %></p>
-
-      <p><%= link_to _("see %{user} page") % {:user => @user.name}, "http://www.rezets.com#{user_path(@user)}" %></p>
-
-      </p><%= link_to _("discover new recipes"), "http://www.rezets.com/recipes" %></p>
+      <p><%= link_to _("sign up rezets.com"), new_user_url + '/' + @invitation.token %></p>
+      <p><%= link_to _("see %{user} page") % {:user => @user.name}, user_url(@user) %></p>
+      </p><%= link_to _("discover new recipes"), recipes_url %></p>
     </div>
   </body>
 </html> 
