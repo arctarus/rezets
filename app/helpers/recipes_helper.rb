@@ -28,6 +28,13 @@ module RecipesHelper
     _("tasty and substance %{recipe} recipe %{url}") % {:recipe => recipe.name.downcase, :url => user_recipe_url(recipe.author,recipe)}
   end
 
+  def facebook_sharer_url(recipe)
+    "http://www.facebook.com/sharer.php?u=#{recipe_url(recipe)}&t=" + 
+    _("%{recipe} recipe by %{author}") % {
+      :recipe => recipe.name.downcase,
+      :author => recipe.author.name }
+  end
+
   def email_send
     render :partial => 'email_send'
   end
