@@ -56,7 +56,7 @@ div.field input.title {width:31em; font-size:1.4em}
 div.field textarea {width:38em; height:200px; padding:.2em; font-family:sans-serif; font-size:1em}
 p#submit {margin-top:2em}
 p#submit input {font-size:1.2em}
-p#submit a.cancel {margin-left:34em}
+p#submit a.cancel {margin-left:3em}
 .errorExplanation {border-color:#FBC2C4; -moz-border-radius:.5em; -webkit-border-radius:.5em; padding:1em 2em; background:#FBE3E4 }
 .errorExplanation h2 {color:#8A1F11}
 .errorExplanation ul {margin:0; list-style:none}
@@ -182,7 +182,7 @@ div.pagination span.disabled {display:none}
 
 /*=recipe index*/
 div.featured-recipe p.category {font-size:1.6em}
-div.featured-recipe img.photo {border:2px solid #000}
+div.featured-recipe img.photo {border:1px solid #AAA; padding:2px}
 
 div.explore-sidebar {float:right; width:33%}
 div.explore {margin-bottom:5em}
@@ -191,7 +191,7 @@ ul.featured-categories {margin:1em 0 0; list-style:none}
 ul.featured-categories li {float:left; margin:0 10em 2em 0}
 ul.featured-categories li.right {margin-right:0}
 ul.featured-categories h3 {margin-bottom:.3em}
-ul.featured-categories img.photo {margin-right:.5em; border:1px solid #000}
+ul.featured-categories img.photo {margin-right:.5em; border:1px solid #AAA; padding:2px}
 .sidebar-categories ul li {font-size:1.3em}
 
 

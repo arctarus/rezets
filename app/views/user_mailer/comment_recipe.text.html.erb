@@ -13,9 +13,13 @@
     </div>
     <br/>
     * <%= _("You can see this comment in %{recipe}") % {
-      :recipe => link_to(_("%{recipe} by %{author}") % {:recipe => @comment.recipe.name, :author => @comment.recipe.author.name}), "http://rezets.com/#{user_recipe_path(@comment.recipe.author, @comment.recipe)}#comment-#{@comment.id}" %>,<br/>
+        :recipe => link_to(_("%{recipe} by %{author}") % {
+          :recipe => @comment.recipe.name, 
+          :author => @comment.recipe.author.name
+      }, user_recipe_url(@comment.recipe.author, @comment.recipe) + "#comment-#{@comment.id}")} %>,<br/>
 
-    * <%= _("or you can add a %{newcomment}") % {:newcomment => link_to _("new comment"), "http://rezets.com/#{user_recipe_path(@comment.recipe.author, @comment.recipe)}#comment-new"} %>.<br/>
+      * <%= _("or you can add a %{newcomment}") % {
+        :newcomment => link_to(_("new comment"), user_recipe_url(@comment.recipe.author, @comment.recipe) + '#comment-new')} %>.<br/>
     <br/>
     ---<br/>
     <%= link_to 'rezets.com', "http://rezets.com" %><br/>

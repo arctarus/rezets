@@ -20,7 +20,7 @@ defaults: &DEFAULTS
 
 development:
   <<: *DEFAULTS
-  app_domain: en.mastropiero.org:3000
+  app_domain: mastropiero.org:3000
   allow_outgoing_email: false
 
 production:

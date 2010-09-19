@@ -2,7 +2,7 @@
   <div id="user-<%= @user.id %>" class="vcard">
     <%= link_to "#{image_tag @user.avatar.url(:large), :class => "avatar", :alt => ""}", @user %>
     <h1>
-      <%= link_to _("#{@user.name}'s recipes"), @user %>
+      <%= link_to _("%{user}'s recipes") % {:user => @user.name}, @user %>
       <% if @category.nil? %>
         <span class="counter">(<%= @total_recipes %>)</span>
       <% else %>
@@ -39,8 +39,7 @@
       <div class="msg welcome">
         <h1><%= _("Welcome to rezets.com!") %></h1>
         <p><%= _("If you're here because you are one of the lucky ones who have been invited to enjoy this new service.") %></p>
-        <p><%= _("As you can see we are walking in his underwear so I would ask you if you saw a little something that does not work or you do not like something we have know.") %></p>
-        <p><%= _("As you can see we are walking in his underwear so I would ask you if you saw a little something that does not work or you do not like something we have know.") %></p>
+        <p><%= _("As you can see we are walking in underwear so I would ask you if you saw a little something that does not work or you do not like something we have know.") %></p>
       <p><%= _("To start enjoying rezets.com simply %{create_recipe}.") % {:create_recipe => link_to(_("create a new recipe"), new_recipe_path)} %></p>
       <p><%= _("Thanks!") %></p>
       </div>
