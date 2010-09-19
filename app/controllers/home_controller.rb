@@ -2,9 +2,8 @@ class HomeController < ApplicationController
   layout 'base'
 
   def index
-    @recipes = Recipe.all(:order => "created_at desc", :limit => 5, :include => :author)
+    @recipes = Recipe.all(:order => "created_at desc", :limit => 10, :include => :author)
     @categories = Category.with_recipes
-    @users = User.all(:order => "created_at desc", :limit => 8)
     @comments = Comment.all(:order => "created_at desc", :limit => 5, :include => :user)
     @page_identifier = "home"
     @page_title = _("share your recipes")

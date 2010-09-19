@@ -17,15 +17,14 @@
     <ul>
       <% @recipes.each_with_index do |recipe, index| %>
         <li class="clearfix<%= " top" if index == 0 %><%= " bottom" if (index + 1) == @recipes.size %>" >
-        <%= link_to "#{image_tag recipe.photo.url(:medium), :class => 'photo', :alt => h(recipe.name)}", user_recipe_path(recipe.author,recipe) %>
           <h3><%= link_to h(recipe.name), user_recipe_path(recipe.author,recipe) %></h3>
+          <%= link_to "#{image_tag recipe.photo.url(:medium), :class => 'photo', :alt => h(recipe.name)}", user_recipe_path(recipe.author,recipe) %>
           <p><%= link_to recipe.category.name, recipe.category %></p>
           <p>
             <span class="ft"><%= _("by") %></span>
             <%= image_tag recipe.author.avatar.url(:thumb), :class => "avatar", :alt => recipe.author.name, :title => recipe.author.name %>
             <%= link_to h(recipe.author.name), recipe.author %>
           </p>
-          <p style="margin-bottom:.5em"><%= h(truncate(recipe.directions, :length => 220)) %></p>
           <p><span class="ft"><%= _("created %{time} ago") % {:time => distance_of_time_in_words_to_now(recipe.created_at)} %></span></p>
         </li>
       <% end %>
@@ -60,20 +59,6 @@
     </div>
   <% end %>
 
-
-  <% unless @users.blank? %>
-    <div class="last-chefs">
-      <h2><%= _("recent cooks") %></h2>
-      <ul class="clearfix">
-        <% for user in @users %>
-          <li>
-          <%= link_to "#{image_tag user.avatar.url(:medium), :class => 'avatar', :height => "30px", :width => "30px"}", user %>
-          <%= link_to truncate(user.name, :length => 13), user %>
-          </li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
 
 <br class="clear" />
 
