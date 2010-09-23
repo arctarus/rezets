@@ -24,8 +24,10 @@ class RecipesController < ApplicationController
     @comment = Comment.new unless current_user.nil?
     @page_title = @recipe.title
     @page_class = "hrecipe"
-    @recipes_same_author = Recipe.by_author(@recipe.id,@recipe.author.id)
-    @recipes_same_category = Recipe.by_category(@recipe.id, @recipe.category.id)
+    @recipes_same_author = Recipe.by_author(@recipe.author.id).
+      not_in(@recipe.id)
+    @recipes_same_category = Recipe.by_category(@recipe.category.id).
+      not_in(@recipes_same_author.map(&:id).push(@recipe.id))
     @print = params[:print].to_i == 1
     respond_to do |format|
       format.html # show.html.erb
