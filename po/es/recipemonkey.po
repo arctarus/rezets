@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: recipemonkey 0.2\n"
-"POT-Creation-Date: 2010-09-19 13:16+0200\n"
+"POT-Creation-Date: 2010-09-23 18:24+0200\n"
 "PO-Revision-Date: 2010-02-06 14:58+0100\n"
 "Last-Translator: sdas <sdas>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -49,27 +49,27 @@ msgstr "gracias por tu ayuda"
 msgid "recipes"
 msgstr "recetas"
 
-#: app/controllers/recipes_controller.rb:39 app/views/recipes/new.html.erb:1
+#: app/controllers/recipes_controller.rb:41 app/views/recipes/new.html.erb:1
 msgid "new recipe"
 msgstr "receta nueva"
 
-#: app/controllers/recipes_controller.rb:53
+#: app/controllers/recipes_controller.rb:55
 msgid "editing %{recipe}"
 msgstr "editando %{recipe}"
 
-#: app/controllers/recipes_controller.rb:64
+#: app/controllers/recipes_controller.rb:66
 msgid "recipe created"
 msgstr "receta creada"
 
-#: app/controllers/recipes_controller.rb:81
+#: app/controllers/recipes_controller.rb:83
 msgid "recipe update"
 msgstr "receta actualizada"
 
-#: app/controllers/recipes_controller.rb:129
+#: app/controllers/recipes_controller.rb:131
 msgid "please, enter your name"
 msgstr "por favor, escribe tu nombre"
 
-#: app/controllers/recipes_controller.rb:133
+#: app/controllers/recipes_controller.rb:135
 msgid "please, enter the email address for a friend"
 msgstr "por favor, escribe la dirección de email de un amigo"
 
@@ -111,7 +111,8 @@ msgstr ""
 msgid "tasty and substance %{recipe} recipe %{url}"
 msgstr "receta de %{recipe} rica y con fundamento %{url}"
 
-#: app/helpers/recipes_helper.rb:33 app/views/recipes/show.html.erb:3
+#: app/helpers/recipes_helper.rb:33 app/models/recipe.rb:116
+#: app/views/recipes/show.html.erb:3
 msgid "%{recipe} recipe by %{author}"
 msgstr "receta de %{recipe} por %{author}"
 
@@ -218,11 +219,6 @@ msgstr "Núm personas"
 #: app/models/recipe.rb:-
 msgid "Author"
 msgstr "Autor"
-
-#: app/models/recipe.rb:115
-#: app/views/user_mailer/comment_recipe.text.html.erb:16
-msgid "%{recipe} by %{author}"
-msgstr "%{recipe} por %{author}"
 
 #: app/models/recipe_ingredient.rb:-
 msgid "recipe ingredient"
@@ -340,7 +336,8 @@ msgstr "categorías"
 
 #: app/views/categories/_sidebar.html.erb:5
 #: app/views/categories/show.html.erb:4
-#: app/views/recipes/_show_sidebar.html.erb:27
+#: app/views/recipes/_show_sidebar.html.erb:20
+#: app/views/recipes/_show_sidebar.html.erb:28
 #: app/views/recipes/_sidebar.html.erb:8 app/views/recipes/show.html.erb:7
 msgid "%{category} recipes"
 msgstr "recetas de %{category}"
@@ -421,41 +418,17 @@ msgstr "crea tu propio libro de cocina"
 msgid "share your recipes with your friends"
 msgstr "comparte tus recetas con tus amigos"
 
-#: app/views/home/feedback.html.erb:6 app/views/users/edit.html.erb:8
-#: app/views/users/new.html.erb:10
-msgid "name"
-msgstr "nombre"
-
-#: app/views/home/feedback.html.erb:11 app/views/invitations/index.html.erb:6
-#: app/views/recipes/_email.html.erb:19 app/views/sessions/new.html.erb:8
-#: app/views/users/edit.html.erb:13 app/views/users/new.html.erb:15
-msgid "email"
-msgstr "email"
-
-#: app/views/home/feedback.html.erb:16 app/views/invitations/new.html.erb:29
-#: app/views/recipes/_email.html.erb:29
-msgid "message"
-msgstr "mensaje"
-
-#: app/views/home/feedback.html.erb:20 app/views/invitations/index.html.erb:5
-#: app/views/invitations/new.html.erb:34 app/views/recipes/_email.html.erb:34
-msgid "send"
-msgstr "enviar"
-
 #: app/views/home/index.html.erb:14
 msgid "freshly made recipes"
 msgstr "recetas recién hechas"
 
 #: app/views/home/index.html.erb:24 app/views/recipes/_recipe.html.erb:9
 #: app/views/recipes/_show_sidebar.html.erb:5
-#: app/views/recipes/_show_sidebar.html.erb:35
 #: app/views/recipes/index.html.erb:13
 msgid "by"
 msgstr "por"
 
 #: app/views/home/index.html.erb:29 app/views/recipes/_show_sidebar.html.erb:3
-#: app/views/recipes/_show_sidebar.html.erb:19
-#: app/views/recipes/_show_sidebar.html.erb:39
 msgid "created %{time} ago"
 msgstr "creado hace %{time}"
 
@@ -482,6 +455,27 @@ msgstr "hace %{time}"
 #: app/views/home/index.html.erb:66
 msgid "recent cooks"
 msgstr "últimos cocineros"
+
+#: app/views/home/feedback.html.erb:6 app/views/users/edit.html.erb:8
+#: app/views/users/new.html.erb:10
+msgid "name"
+msgstr "nombre"
+
+#: app/views/home/feedback.html.erb:11 app/views/invitations/index.html.erb:6
+#: app/views/recipes/_email.html.erb:19 app/views/sessions/new.html.erb:8
+#: app/views/users/edit.html.erb:13 app/views/users/new.html.erb:15
+msgid "email"
+msgstr "email"
+
+#: app/views/home/feedback.html.erb:16 app/views/invitations/new.html.erb:29
+#: app/views/recipes/_email.html.erb:29
+msgid "message"
+msgstr "mensaje"
+
+#: app/views/home/feedback.html.erb:20 app/views/invitations/index.html.erb:5
+#: app/views/invitations/new.html.erb:34 app/views/recipes/_email.html.erb:34
+msgid "send"
+msgstr "enviar"
 
 #: app/views/invitations/index.html.erb:1
 msgid "send invite"
@@ -639,7 +633,7 @@ msgid "updated %{time} ago"
 msgstr "actualizado hace %{time}"
 
 #: app/views/recipes/_show_sidebar.html.erb:10
-#: app/views/recipes/_show_sidebar.html.erb:38
+#: app/views/recipes/_show_sidebar.html.erb:39
 msgid "%{author}'s recipes"
 msgstr "recetas de %{author}"
 
@@ -725,11 +719,15 @@ msgstr "adelante"
 
 #: app/views/user_mailer/comment_recipe.text.html.erb:7
 msgid "Hello %{user}!"
-msgstr "¡Hola %{use}!"
+msgstr "¡Hola %{user}!"
 
 #: app/views/user_mailer/comment_recipe.text.html.erb:15
 msgid "You can see this comment in %{recipe}"
 msgstr "Puedes ver este comentario en %{recipe}"
+
+#: app/views/user_mailer/comment_recipe.text.html.erb:16
+msgid "%{recipe} by %{author}"
+msgstr "%{recipe} por %{author}"
 
 #: app/views/user_mailer/comment_recipe.text.html.erb:21
 msgid "or you can add a %{newcomment}"
