@@ -1,0 +1,48 @@
+.sidebar.sidebar-home
+  %h2
+    %span= _("categories")
+  - unless @categories.blank?
+    %ul
+      - @categories.each do |category|
+        %li
+          = link_to category.name, category
+          %span.counter
+            (#{category.recipes.size})
+
+.main
+  %h2= _("freshly made recipes")
+  - unless @recipes.blank?
+    %ul.last-recipes
+      - @recipes.each_with_index do |recipe, index|
+        %li{:class => "clearfix#{" top" if index == 0}#{" bottom" if (index + 1) == @recipes.size}"}
+          %h3= link_to h(recipe.name), user_recipe_path(recipe.author,recipe)
+          %p= link_to recipe.category.name, recipe.category
+          %p
+            %span.ft= _("by")
+            = image_tag recipe.author.avatar.url(:thumb), :class => "avatar", :alt => recipe.author.name, :title => recipe.author.name
+            = link_to h(recipe.author.name), recipe.author
+          %p
+            %span.ft= _("created %{time} ago") % {:time => distance_of_time_in_words_to_now(recipe.created_at)}
+          = link_to "#{image_tag recipe.photo.url(:medium), :class => 'photo', :alt => h(recipe.name)}", user_recipe_path(recipe.author,recipe)
+  %p
+    = _("see more")
+    = link_to _("recipes"), recipes_path
+    %span.icon &rarr;
+  %p{:style => "margin-top:2em"}= link_to _("subscribe to the latest recipes rezets.com"), url_for(:controller => "home", :action => "feed"), :class => "feed-link"
+  / last comments
+  - unless @comments.blank?
+    .last-comments
+      %h2= _("recent comments")
+      %ul.comments
+        - @comments.each do |comment|
+          %li.comment
+            = link_to "#{image_tag comment.user.avatar.url(:medium), :class => "avatar", :alt => ""}", comment.user
+            .inner-comment
+              %h3
+                = link_to h(comment.user.name), comment.user
+                %span.ft= _("says about")
+                = link_to h(comment.recipe.name), user_recipe_path(comment.recipe.author,comment.recipe)
+              %p= h truncate(comment.body, :length => 300)
+              %p.created-time
+                %abbr.timestamp{:title => Time.now}= _("%{time} ago") % {:time => distance_of_time_in_words_to_now(comment.updated_at)}
+  %br.clear/
