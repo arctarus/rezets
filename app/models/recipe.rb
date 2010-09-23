@@ -35,17 +35,18 @@ class Recipe < ActiveRecord::Base
       :medium => "200>x200",
       :thumb  => "70>x70" }
 
-  named_scope :by_author, lambda {|recipe_id, author_id|
-    {:conditions => 
-      ["id != ? AND author_id = ?", recipe_id, author_id],
+  named_scope :by_author, lambda {|author_id|
+    {:conditions => ["author_id = ?", author_id],
       :limit => 5,
       :order => "created_at desc"}}
 
-  named_scope :by_category, lambda {|recipe_id, category_id|
-    {:conditions => 
-      ["id != ? AND category_id = ?", recipe_id, category_id],
+  named_scope :by_category, lambda {|category_id|
+    {:conditions => ["category_id = ?", category_id],
     :limit => 5,
     :order => "created_at desc"}}
+
+  named_scope :not_in, lambda {|recipes_ids|
+    {:conditions => ["recipes.id not in (?)",recipes_ids]}}
       
   Paperclip.interpolates :slug do |attachment, style|
     attachment.instance.slug
@@ -112,8 +113,8 @@ class Recipe < ActiveRecord::Base
   end
 
   def title
-    _("%{recipe} by %{author}") % {
-      :recipe => name, :author => author.name}
+    _("%{recipe} recipe by %{author}") % {
+      :recipe => name.downcase, :author => author.name}
   end
   
 end
