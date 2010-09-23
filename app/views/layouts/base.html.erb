@@ -24,17 +24,13 @@
 <body>
   
   <div id="overwrapper">
-    <div class="wrapper">
+    <div id="header">
+      <div class="wrapper">
+        <%= render :partial => "common/header" %>
+      </div>
+    </div>
 
-      <% if controller.controller_name == "home" and controller.action_name == "index" %>
-        <div class="header-home">
-          <%= render :partial => "header" %>
-        </div>
-      <% else %>
-        <div id="header">
-          <%= render :partial => "common/header" %>
-        </div>
-      <% end %>
+    <div class="wrapper">
 
       <div <%= "id=\"#{@page_identifier}\"" unless @page_identifier.nil? %> <%= "class=\"#{@page_class}\"" unless @page_class.nil? %>>
         <% if flash[:notice] %>
