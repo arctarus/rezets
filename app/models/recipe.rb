@@ -32,8 +32,8 @@ class Recipe < ActiveRecord::Base
         :watermark_path => "#{RAILS_ROOT}/public/images/watermark.png",
         :position       => "Center",
         :watermark      => "20x100"},
-      :medium => "200>x200",
-      :thumb  => "70>x70" }
+      :medium => "300>x300",
+      :thumb  => "150>x150" }
 
   named_scope :by_author, lambda {|author_id|
     {:conditions => ["author_id = ?", author_id],

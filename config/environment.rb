@@ -24,7 +24,6 @@ Rails::Initializer.run do |config|
   config.gem "will_paginate"
   config.gem "paperclip"
   config.gem "authlogic"
-# config.gem 'sitemap_generator', :lib => false, :source => 'http://gemcutter.org'
   config.gem 'haml'
 
   # gems to gettext

@@ -11,9 +11,16 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :slug
 
   has_attached_file :avatar, :styles => {
-    :thumb => "20x20#",
-    :medium => "30x30#",
-    :large => "48x48#" }
+    :thumb => "20>x20",
+    :medium => "30>x30",
+    :large => "80>x80" }
+
+  named_scope :featured,
+    :select => "users.*, count(user_recipes.id) recipes",
+    :joins  => :user_recipes,
+    :group  => "users.id",
+    :order  => "recipes desc",
+    :limit  => 8
 
   def to_param
     slug
