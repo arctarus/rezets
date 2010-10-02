@@ -15,11 +15,7 @@ class ApplicationController < ActionController::Base
   I18n.default_locale = "es"
 
   def default_locale
-    if request.subdomains.blank?
-      @locale = "es"
-    else
-      @locale = request.subdomains.first
-    end
+    @locale = request.subdomains.blank? ? "es" : request.subdomains.first
     set_locale = @locale
     params[:lang] = @locale
   end
