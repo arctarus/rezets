@@ -1,6 +1,6 @@
 <% unless @recipes.blank? and current_user == @user %>
   <div id="user-<%= @user.id %>" class="vcard">
-    <%= link_to "#{image_tag @user.avatar.url(:large), :class => "avatar", :alt => ""}", @user %>
+    <%= link_to image_tag(@user.avatar.url(:large), :class => "avatar", :alt => ""), @user %>
     <h1>
       <%= link_to _("%{user}'s recipes") % {:user => @user.name}, @user %>
       <% if @category.nil? %>

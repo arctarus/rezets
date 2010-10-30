@@ -2,4 +2,4 @@
 - @categories.each do |category|
   %h2{:style => "margin:2em 0 .3em 0"}= link_to category.name, category
   - category.recipes.reverse[0..3].each do |recipe|
-    = link_to "#{image_tag recipe.photo.url(:thumb), :class => 'photo', :alt => recipe.name}", user_recipe_path(recipe.author, recipe), :title => recipe.title
+    = link_to image_tag(recipe.photo.url(:thumb), :class => 'photo', :alt => recipe.name), user_recipe_path(recipe.author, recipe), :title => recipe.title

@@ -5,9 +5,9 @@ class CategoriesController < ApplicationController
     @recipes = Recipe.all(:order => "created_at desc").paginate(:page => params[:page], :per_page => 10)
     @categories = Category.all(:order => "name asc")
     @categories.delete_if {|c| c.recipes.size <= 0 }
-    @page_title = "recetas por categorías"
+    @page_title = "recetas por categorias"
     if not params[:page].nil? and params[:page].to_i > 1
-      @page_title << " página #{params[:page]}"
+      @page_title << " pagina #{params[:page]}"
     end
     @page_identifier = "categories"
     render :action => "show"
