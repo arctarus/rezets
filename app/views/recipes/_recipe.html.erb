@@ -1,5 +1,5 @@
 <li class="hrecipe clearfix">
-  <%= link_to "#{image_tag recipe.photo.url(:thumb), :class => 'photo', :alt => recipe.name }", user_recipe_path(recipe.author, recipe) %>
+  <%= link_to image_tag(recipe.photo.url(:thumb), :class => 'photo', :alt => recipe.name), user_recipe_path(recipe.author, recipe) %>
   <div class="recipe-data">
     <h2 class="fn"><%= link_to recipe.name, user_recipe_path(recipe.author, recipe) %></h2>
     <p class="category"><%= link_to recipe.category.name, recipe.category, 
@@ -9,7 +9,7 @@
       <p class="author">
         <span class="ft"><%= _("by") %></span> 
         <span class="author vcard">
-          <%= link_to "#{image_tag recipe.author.avatar.url(:thumb), :class => "avatar", :alt => ""}", recipe.author %>
+          <%= link_to image_tag(recipe.author.avatar.url(:thumb), :class => "avatar", :alt => ""), recipe.author %>
           <%= link_to recipe.author.name, recipe.author, :class => "url fn" %>
         </span>
       </p>
@@ -26,8 +26,8 @@
 
     <div class="r-meta">
       <p class="date">
-      <span class="published"><%= _("updated %{time} ago") % {
-        :time => "<span class=\"value-title\" title=\"#{recipe.updated_at}\">#{distance_of_time_in_words_to_now(recipe.updated_at)}</span>"} %></span></p>
+      <span class="published">updated 
+        <span class="value-title" title="<%= recipe.updated_at %>"><%= distance_of_time_in_words_to_now(recipe.updated_at) %></span> ago</span>
     </div>
   </div>
 </li>

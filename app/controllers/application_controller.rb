@@ -1,25 +1,17 @@
-# Filters added to this controller apply to all controllers in the application.
-# Likewise, all the methods added will be available for all controllers.
-
 class ApplicationController < ActionController::Base
-  init_gettext "recipemonkey"
-  helper :all # include all helpers, all the time
-  protect_from_forgery # See ActionController::RequestForgeryProtection for details
-
-  # Scrub sensitive parameters from your log
+  protect_from_forgery
+  include FastGettext::Translation
 
   helper_method :current_user_session, :current_user
   filter_parameter_logging :password, :password_confirmation
+  before_filter :set_locale
 
-  before_init_gettext :default_locale
-  I18n.default_locale = "es"
-
-  def default_locale
-    @locale = request.subdomains.blank? ? "es" : request.subdomains.first
-    set_locale = @locale
-    params[:lang] = @locale
+  def set_locale
+    FastGettext.available_locales = ['es', 'en']
+    FastGettext.text_domain = 'rezets'
+    session[:locale] = I18n.locale = FastGettext.set_locale(params[:locale] || session[:locale] || request.env['HTTP_ACCEPT_LANGUAGE'] || 'en')
   end
-    
+
  private
     def current_user_session
       return @current_user_session if defined?(@current_user_session)
@@ -57,4 +49,6 @@ class ApplicationController < ActionController::Base
       redirect_to(session[:return_to] || default)
       session[:return_to] = nil
     end  
+
+
 end

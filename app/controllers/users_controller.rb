@@ -9,8 +9,7 @@ class UsersController < ApplicationController
     @user = User.find_by_slug params[:id]
     @page_title = "recetas de #{@user.name}"
     conditions = { :user_recipes => { :user_id => @user.id } }
-    @total_recipes = Recipe.count(:joins => :user_recipes,
-      :conditions => conditions)
+    @total_recipes = Recipe.joins(:user_recipes).where(conditions).count
     
     unless params[:category_id].nil?
       @category = Category.find_by_slug params[:category_id]
@@ -19,16 +18,11 @@ class UsersController < ApplicationController
     end
 
     order = params[:order] != "name" ? "updated_at desc" : "name asc" 
-    @recipes = Recipe.all(:joins => :user_recipes,
-      :conditions => conditions,
-      :order => order).paginate(:page => params[:page], :per_page => 10)
+    @recipes = Recipe.joins(:user_recipes).where(conditions).order(order).
+      paginate(:page => params[:page], :per_page => 10)
 
-    @categories = Category.all(
-        :joins => :recipes, 
-        :conditions => { 
-          :recipes => { :author_id => @user.id }
-    }).uniq
-    @page_title << " página #{params[:page]}" unless params[:page].nil? or params[:page].to_i == 1
+    @categories = Category.joins(:recipes).where({:recipes => { :author_id => @user.id }}).uniq
+    @page_title << " page #{params[:page]}" unless params[:page].nil? or params[:page].to_i == 1
     respond_to do |format|
       format.html
       format.rss { render :layout => false, :action => "feed" }
@@ -104,7 +98,7 @@ class UsersController < ApplicationController
     @user = User.find_by_slug params[:id]
     respond_to do |format|
       if @user.update_attributes(params[:user])
-        flash[:notice] = 'contraseña actualizada correctamente'
+        flash[:notice] = 'password updated'
         format.html { redirect_to @user }
         format.xml  { head :ok }
       else

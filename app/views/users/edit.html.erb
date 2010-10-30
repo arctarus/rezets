@@ -1,7 +1,7 @@
 <h1><%= _("edit profile") %></h1>
 
 <p><%= link_to _("change password"), changepassword_user_path %></p>
-<% form_for @user, :html => { :multipart => true } do |f| %>
+<%= form_for @user, :html => { :multipart => true } do |f| %>
   <%= f.error_messages %>
 
   <div class="field">
