@@ -8,7 +8,7 @@
   <% unless @comments.blank? %>
       <% @comments.each do |comment| %>
         <div id="comment-<%= comment.id %>" class="comment">
-          <%= link_to "#{image_tag comment.user.avatar.url(:medium), :class => "avatar", :alt => ""}", comment.user %>
+          <%= link_to image_tag(comment.user.avatar.url(:medium), :class => "avatar", :alt => ""), comment.user %>
           <div class="inner-comment">
             <h3><%= link_to comment.user.name, comment.user %></h3>
             <%= simple_format(h(comment.body)) %>
@@ -24,7 +24,7 @@
 
   <% unless current_user.nil? %>
     <div id="comment-new" class="comment">
-      <%= link_to "#{image_tag current_user.avatar.url(:medium), :class => "avatar", :alt => ""}", current_user %>
+      <%= link_to image_tag(current_user.avatar.url(:medium), :class => "avatar", :alt => ""), current_user %>
       <div class="inner-comment">
       <% form_for @comment, :url => recipe_comments_path(@recipe) do |f| %>
         <div class="field">

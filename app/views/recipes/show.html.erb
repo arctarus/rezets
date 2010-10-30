@@ -18,7 +18,7 @@
           :href => user_recipe_path(@recipe.author,@recipe, :print => 1),
           :class => 'action-link print' %>
     </li>
-    <li id="send-email"><%= link_to_remote _('send by email'), 
+    <li id="send-email"><%# link_to_remote _('send by email'), 
       :url => email_user_recipe_path(@recipe.author,@recipe),
       :method => :get,
       :html => {:class => 'action-link send-email', :href => email_user_recipe_path(@recipe.author,@recipe)} %></li>
@@ -40,7 +40,7 @@
 <% unless @recipe.recipe_ingredients.blank? %>
   <h2 class="clearfix"><%= _("ingredients") %>
     <% unless @recipe.num_persons.blank? %>
-      <span class="num-persons">(<%= _("for %{num} people") % {:num => "<span class=\"yield\">#{h @recipe.num_persons}</span>"} %>)</span>
+      <span class="num-persons">(<%= (_("for %{num} people") % {:num => "<span class=\"yield\">#{@recipe.num_persons}</span>"}).html_safe %>)</span>
     <% end %>
   </h2>
   <% if @recipe.recipe_ingredients.size <=  5 %>
@@ -99,7 +99,7 @@
 </h2>
 
 <div class="instructions">
-  <%= simple_format(h(@recipe.directions)) %>
+  <%= simple_format(@recipe.directions) %>
 </div>
 
 <%= render :partial => "comments" %>

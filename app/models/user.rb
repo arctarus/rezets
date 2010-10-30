@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
     :medium => "30>x30",
     :large => "80>x80" }
 
-  named_scope :featured,
+  scope :featured,
     :select => "users.*, count(user_recipes.id) recipes",
     :joins  => :user_recipes,
     :group  => "users.id",

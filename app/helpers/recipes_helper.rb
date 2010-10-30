@@ -8,13 +8,13 @@ module RecipesHelper
 
   def round(x)
     if x == 0.5
-      "½"
+      "1/2"
     elsif x == 0.25
-      "¼"
+      "1/4"
     elsif x == 0.3
-      "⅓"
+      "1/3"
     elsif x == 0.2
-      "⅕"
+      "1/5"
     else
       x == x.round ? x.round : x
     end
