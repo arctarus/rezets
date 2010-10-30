@@ -1,4 +1,4 @@
-require 'lib/crawler'
+##require 'lib/crawler'
  
 namespace :admin do
  

@@ -1,8 +1,6 @@
-public/system
-public/system/**/*
-public/sitemap_index.xml.gz
-public/sitemap1.xml.gz
+.bundle
+db/*.sqlite3
 log/*.log
 tmp/**/*
-tmp/restart.txt
-config/database.yml
+public/system
+public/system/**/*

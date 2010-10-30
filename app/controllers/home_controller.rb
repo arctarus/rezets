@@ -4,7 +4,7 @@ class HomeController < ApplicationController
   def index
     @recipes = Recipe.all(:order => "created_at desc", :limit => 8, :include => :author)
     @categories = Category.with_recipes
-    @users = User.featured
+#   @users = User.featured
     @page_identifier = "home"
     @page_title = _("share your recipes")
   end
