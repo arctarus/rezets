@@ -1,5 +1,6 @@
 <p style="margin-bottom:3em">
-<%= link_to "#{image_tag @recipe.author.avatar.url(:medium), :alt => "", :style => 'float:left; margin:.3em .5em 0 0'}", @recipe.author %>
+<%= link_to image_tag(@recipe.author.avatar.url(:medium), :alt => "", :style => 'float:left; margin:.3em .5em 0 0'), @recipe.author %>
+
 <span class="published"><%= _("created %{time} ago") % {
   :time => "<span class=\"value-title\" title=\"#{@recipe.created_at}\">#{distance_of_time_in_words_to_now(@recipe.created_at)}</span>"} %></span><br/>
   <span class="ft"><%= _("by") %></span>
@@ -11,10 +12,9 @@
   <ul class="simple-list">
     <% @recipes_same_author.each do |recipe| %>
       <li class="clearfix" style="margin:.8em .5em .8em 0;line-height:1.3em">
-      <%= link_to("#{image_tag recipe.photo.url(:thumb), :style => 'float:left; margin-right:.5em'}", user_recipe_path(recipe.author, recipe),
-          :title => recipe.title) %>
+      <%= link_to image_tag(recipe.photo.url(:thumb), :style => 'float:left; margin-right:.5em'), user_recipe_path(recipe.author, recipe), :title => recipe.title %>
         <div style="margin-left:76px">
-        <%= link_to(h(recipe.name), user_recipe_path(recipe.author, recipe), 
+        <%= link_to(recipe.name, user_recipe_path(recipe.author, recipe), 
           :style => 'font-size:1.1em', :title => recipe.title) %><br/>
         <%= link_to(recipe.category.name, category_path(recipe.category),
           :title => _("%{category} recipes") % {:category => recipe.category.name}) %>
@@ -29,8 +29,7 @@
   <ul class="simple-list">
     <% @recipes_same_category.each do |recipe| %>
         <li class="clearfix" style="margin:.8em .5em .8em 0">
-        <%= link_to "#{image_tag recipe.photo.url(:thumb), :style => 'float:left; margin-right:.5em'}", 
-          user_recipe_path(recipe.author, recipe), :title => recipe.title %>
+        <%= link_to image_tag(recipe.photo.url(:thumb), :style => 'float:left; margin-right:.5em'), user_recipe_path(recipe.author, recipe), :title => recipe.title %>
         <div style="margin-left:76px">
           <%= link_to h(recipe.name), user_recipe_path(recipe.author, recipe), 
             :style => 'font-size:1.1em', :title => recipe.title %><br/>

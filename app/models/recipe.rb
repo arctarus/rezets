@@ -35,17 +35,17 @@ class Recipe < ActiveRecord::Base
       :medium => "300>x300",
       :thumb  => "150>x150" }
 
-  named_scope :by_author, lambda {|author_id|
+  scope :by_author, lambda {|author_id|
     {:conditions => ["author_id = ?", author_id],
       :limit => 5,
       :order => "created_at desc"}}
 
-  named_scope :by_category, lambda {|category_id|
+  scope :by_category, lambda {|category_id|
     {:conditions => ["category_id = ?", category_id],
     :limit => 5,
     :order => "created_at desc"}}
 
-  named_scope :not_in, lambda {|recipes_ids|
+  scope :not_in, lambda {|recipes_ids|
     {:conditions => ["recipes.id not in (?)",recipes_ids]}}
       
   Paperclip.interpolates :slug do |attachment, style|
@@ -88,26 +88,26 @@ class Recipe < ActiveRecord::Base
 
   # before_save
   def slugify_name
-    accents = { 
-      ['á','à','â','ä','ã'] => 'a',
-      ['Ã','Ä','Â','À'] => 'A',
-      ['é','è','ê','ë'] => 'e',
-      ['Ë','É','È','Ê'] => 'E',
-      ['í','ì','î','ï'] => 'i',
-      ['Í','Î','Ì','Ï'] => 'I',
-      ['ó','ò','ô','ö','õ'] => 'o',
-      ['Õ','Ö','Ô','Ò','Ó'] => 'O',
-      ['ú','ù','û','ü'] => 'u',
-      ['Ú','Û','Ù','Ü'] => 'U',
-      ['ç'] => 'c', ['Ç'] => 'C',
-      ['ñ'] => 'n', ['Ñ'] => 'N'
-    }
-    str = self.name
-    accents.each do |ac,rep|
-      ac.each do |s|
-        str = str.gsub(s, rep)
-      end
-    end
+#   accents = { 
+#     ['á','à','â','ä','ã'] => 'a',
+#     ['Ã','Ä','Â','À'] => 'A',
+#     ['é','è','ê','ë'] => 'e',
+#     ['Ë','É','È','Ê'] => 'E',
+#     ['í','ì','î','ï'] => 'i',
+#     ['Í','Î','Ì','Ï'] => 'I',
+#     ['ó','ò','ô','ö','õ'] => 'o',
+#     ['Õ','Ö','Ô','Ò','Ó'] => 'O',
+#     ['ú','ù','û','ü'] => 'u',
+#     ['Ú','Û','Ù','Ü'] => 'U',
+#     ['ç'] => 'c', ['Ç'] => 'C',
+#     ['ñ'] => 'n', ['Ñ'] => 'N'
+#   }
+#   str = self.name
+#   accents.each do |ac,rep|
+#     ac.each do |s|
+#       str = str.gsub(s, rep)
+#     end
+#   end
 
     self.slug = str.split(//u).reject { |e| e.length > 1 }.join.strip.gsub(/[^a-z0-9]+/i, '-').downcase 
   end
