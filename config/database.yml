@@ -9,10 +9,10 @@ development:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: rm_dev
+  database: rezets
   pool: 5
-  username: root
-  password: w0wy8hLJ
+  username: rezets
+  password: r3z3ts
   socket: /var/run/mysqld/mysqld.sock
 
 # Warning: The database defined as "test" will be erased and
@@ -22,10 +22,10 @@ test:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: rm_test
+  database: rezets_test
   pool: 5
-  username: root
-  password: w0wy8hLJ
+  username: rezets
+  password: r3z3ts
   socket: /var/run/mysqld/mysqld.sock
 
 production:

@@ -136,7 +136,7 @@ class RecipesController < ApplicationController
           end
         end
       else
-        UserMailer.deliver_recipe(@recipe, params[:email], current_user)
+        UserMailer.recipe(@recipe, params[:email], current_user).deliver
         render :update do |page|
           page.replace_html "send-email-wrapper", email_send
         end
