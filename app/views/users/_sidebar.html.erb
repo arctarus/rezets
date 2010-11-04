@@ -5,10 +5,7 @@
     <ul>
     <% @categories.each do |category| %>
       <li><%= link_to_unless_current category.name, category_user_path(category, @user) %> 
-      <span class="counter">(<%= Category.count(:joins => :recipes, 
-          :conditions => { :id => category.id,
-          :recipes => { :author_id => @user.id }
-        }) %>)</span></li>
+      <span class="counter">(<%= Category.find(category.id).recipes.by_author(@user.id).count %>)</span></li>
     <% end %>
     <li><%= link_to_unless_current _("all"), @user %> <span class="counter">(<%= @total_recipes %>)</span></li>
     </ul>
