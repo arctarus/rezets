@@ -1,25 +1,30 @@
 class UserMailer < ActionMailer::Base
   helper :recipes
  
- def feedback(feedback)
-   recipients "rezets.com@gmail.com"
-   from       feedback['email']
-   reply_to   feedback["email"]
-   subject    _("feedback from #{feedback["name"]}")
-   sent_on    Time.now
-   body       :name => feedback["name"], :message => feedback["message"]
- end 
+  def feedback(feedback)
+    @name     = feedback["name"]
+    @message  = feedback["message"]
+    mail  :to       => 'rezets.com@gmail.com',
+          :from     => feedback['email'],
+          :reply_to => feedback["email"],
+          :subject  => _("feedback from #{feedback["name"]}"),
+          :sent_on  => Time.now
+  end 
 
- def invitation(invitation, mail, user)
-   recipients invitation.email
-   from       user.name
-   reply_to   "rezets.com@gmail.com"
-   subject    mail["subject"]
-   sent_on    Time.now
-   body       :user => user, :invitation => invitation, :message => mail["message"]
- end
+  def invitation(invitation, tmpl, user)
+    @user       = user
+    @invitation = invitation
+    @message    = mail["message"]
+    mail  :to       => invitation.email,
+          :subject  => tmpl['subject']
 
- def comment_recipe(comment, user)
+  #recipients invitation.email
+  #from       user.name
+  #reply_to   "rezets.com@gmail.com"
+  #sent_on    Time.now
+  end
+
+  def comment_recipe(comment, user)
    # el autor recibe el mail de un comentario de otro
    if user == comment.recipe.author
      _subject = _("%{user} has commented on your %{recipe} recipe") % {:user => comment.user.name, :recipe => comment.recipe.name.downcase}
@@ -37,9 +42,9 @@ class UserMailer < ActionMailer::Base
    subject    _subject
    sent_on    Time.now
    body       :subject => _subject, :user => user, :comment => comment
- end
+  end
 
- def recipe(recipe, email, current_user)
+  def recipe(recipe, email, current_user)
    user_name = email[:name].blank? ? current_user.name : email[:name]
    recipients email['recipients'].split(';')
    from       "rezets.com@gmail.com"
@@ -47,6 +52,6 @@ class UserMailer < ActionMailer::Base
    subject    _("%{user} has sent you a %{recipe} recipe") % {:user => user_name, :recipe => recipe.name.downcase}
    sent_on    Time.now
    body       :recipe => recipe, :user_name => current_user.nil? ? user_name : current_user.name, :message => email['message']
- end
+  end
 
 end

@@ -1,6 +1,6 @@
 <h1><%= _("confirm invitation to rezets.com") %></h1>
 
-<% form_for @user do |f| %>
+<%= form_for @user do |f| %>
   <%= f.error_messages :header_message => _("there are some errors in the form"),
     :message => _("check the following data") %>
 

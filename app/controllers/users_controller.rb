@@ -1,3 +1,5 @@
+# coding: utf-8
+
 class UsersController < ApplicationController
   layout 'base'
   before_filter :require_user, :only => [:edit, :update, :changepassword, :updatepassword]
@@ -41,7 +43,7 @@ class UsersController < ApplicationController
         format.xml { render :xml => @user }
       end
     else
-      render :file => "#{RAILS_ROOT}/public/404.html", :status => 404
+      render :layout => false, :file => '/public/404.html', :status => 404
     end
   end
 
