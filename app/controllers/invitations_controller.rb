@@ -1,3 +1,5 @@
+# coding: utf-8
+
 class InvitationsController < ApplicationController
   layout 'base'
   before_filter :require_user, :only => [:new, :create]
@@ -6,11 +8,11 @@ class InvitationsController < ApplicationController
   # GET /invitations.xml
   def index
     if current_user.id == 1
-      @invitations = Invitation.all(:order => "created_at desc"
-      ).paginate(:page => params[:page], :per_page => 20)
+      @invitations = Invitation.all.order('created_at desc').
+        paginate(:page => params[:page], :per_page => 20)
       @page_title = "invitaciones enviadas"
     else
-      render :file => "#{RAILS_ROOT}/public/404.html", :status => 404
+      render :layout => false, :file => '/public/404.html', :status => 404
     end
   end
 
@@ -20,7 +22,7 @@ class InvitationsController < ApplicationController
     @invitation = Invitation.new
     @page_title = "nueva invitación"
     @page_identifier = "new-invitation"
-    @remaining_invitations = 10 - Invitation.count(:conditions => {:sender_id => current_user.id})
+    @remaining_invitations = 10 - Invitation.where(:sender_id => current_user.id).count
     respond_to do |format|
       format.html # new.html.erb
       format.xml { render :xml => @invitation }
@@ -34,7 +36,7 @@ class InvitationsController < ApplicationController
     @invitation.sender = current_user
     respond_to do |format|
       if @invitation.save
-        UserMailer.deliver_invitation(@invitation, params["mail"], current_user)
+        UserMailer.invitation(@invitation, params["mail"], current_user).deliver
         flash[:notice] = "Invitación enviada correctamente a #{@invitation.email}"
         format.html { redirect_to current_user }
         format.xml { render :xml => @invitation, :status => :created, :location => @invitation }

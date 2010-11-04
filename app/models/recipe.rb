@@ -29,7 +29,7 @@ class Recipe < ActiveRecord::Base
     :styles     => {
       :large  => {
         :geometry       => "500>x500",
-        :watermark_path => "#{RAILS_ROOT}/public/images/watermark.png",
+        :watermark_path => "#{Rails.root.to_s}/public/images/watermark.png",
         :position       => "Center",
         :watermark      => "20x100"},
       :medium => "300>x300",
