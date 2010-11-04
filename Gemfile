@@ -8,8 +8,7 @@ gem 'rails', '>=3.0'
 gem 'mysql2'
 
 # web server
-# gem 'mongrel', '1.2.0.pre2'
-gem 'passenger', '>=3.0'
+gem 'mongrel', '>=1.2.0.pre2'
                
 
 # Deploy with Capistrano
@@ -31,8 +30,15 @@ gem 'passenger', '>=3.0'
 #   gem 'webrat'
 # end
 
-gem 'will_paginate'
+gem 'will_paginate', '>=3.0.pre2'
 gem "paperclip"
-gem "authlogic"
+gem "authlogic", :git => 'git://github.com/odorcicd/authlogic.git', :branch => 'rails3'
+
 gem 'haml'
+gem 'haml-rails'
 gem 'fast_gettext'
+
+group :development, :test do
+  gem 'rspec', '>=2.0'
+  gem 'rspec-rails'
+end

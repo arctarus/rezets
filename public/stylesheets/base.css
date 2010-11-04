@@ -78,3 +78,4 @@ hr.space {background:#fff;color:#fff}
 .clearfix:after {content: "."; display: block; height: 0;  clear: both; visibility: hidden;}
 .clearfix {overflow:hidden; _height:1%;}
 .clear {clear:both}
+.showgrid {background: url(/images/grid.png)}

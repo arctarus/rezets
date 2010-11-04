@@ -27,7 +27,7 @@ class HomeController < ApplicationController
   end
 
   def send_feedback
-    UserMailer.deliver_feedback(params[:feedback])
+    UserMailer.feedback(params[:feedback]).deliver
     flash[:notice] = _("thanks for your help")
     redirect_to :action => "index"
   end

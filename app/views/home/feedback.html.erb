@@ -1,6 +1,6 @@
 <h1>contacta con nosotros</h1>
 
-<% form_tag url_for(:controller => "home", :action => "send_feedback") do %>
+<%= form_tag url_for(:controller => "home", :action => "send_feedback") do %>
 
   <div class="field">
     <%= label_tag "feedback[name]", _("name") %>

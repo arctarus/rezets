@@ -13,7 +13,7 @@ defaults: &DEFAULTS
     from: rezets.com            # the domain your emails will come from, as in no_reply@app.teambox.com
     host: smtp.gmail.com        # the actual SMTP server used to deliver emails. can be a local or remote server
     user: rezets.com
-    pass: w0wy8hLJ
+    pass: sup3rd3p0r
     auth: plain                 # choose: plain, login, cram_md5    
     port: 587
     enable_starttls_auto: true
