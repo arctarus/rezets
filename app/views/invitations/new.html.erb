@@ -11,7 +11,7 @@
   <p style="margin-top:1em"><%= _("You have %{num_invitations} invitations to send to your friends which will remain %{remaining_invitations}.") % {
     :num_invitations => "<strong>10</strong>", :remaining_invitations => "<strong>#{@remaining_invitations}</strong>"} %></p>
 
-  <% form_for @invitation do |f| %>
+  <%= form_for @invitation do |f| %>
     <%= f.error_messages :header_message => _("there are some errors in the form"),
       :message => "comprueba los datos a continuación" %>
 
