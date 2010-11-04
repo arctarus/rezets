@@ -7,10 +7,7 @@
         <span class="counter">(<%= @total_recipes %>)</span>
       <% else %>
         <span class="ft">de</span> <%= link_to @category.name, @category %>
-        <span class="counter">(<%= Category.count(:joins => :recipes, 
-            :conditions => { :id => @category.id,
-            :recipes => { :author_id => @user.id }
-          }) %>)</span>
+        <span class="counter">(<%= Category.find(@category.id).recipes.by_author(@user.id).count %>)</span>
       <% end %>
     </h1>
     <% if current_user == @user %>

@@ -7,7 +7,7 @@ class CommentObserver < ActiveRecord::Observer
     users << recipe.author unless users.include? recipe.author
     users.delete(comment.user)
     users.each do |user|
-      UserMailer.deliver_comment_recipe(comment, user)
+      UserMailer.comment_recipe(comment, user).deliver
     end
   end
 

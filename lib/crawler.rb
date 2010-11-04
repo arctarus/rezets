@@ -89,7 +89,7 @@ class Crawler
  
 	# Saves the xml file to disc. This could also be used to ping the webmaster tools
 	def save_file(xml)
-		File.open(RAILS_ROOT + '/public/system/rsm.xml', "w+") do |f|
+		File.open(Rails.root.to_s + '/public/system/rsm.xml', "w+") do |f|
 			f.write(xml)	
 		end		
 	end
