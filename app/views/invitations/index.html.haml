@@ -1,0 +1,17 @@
+%p= link_to _("send invite"), new_invitation_path
+- unless @invitations.blank?
+  %table
+    %tr
+      %th= _("send")
+      %th= _("email")
+      %th= _("envoy")
+      %th= _("received")
+      %th= _("user")
+    - @invitations.each do |i|
+      %tr
+        %td= i.sender.name
+        %td= i.email
+        %td= distance_of_time_in_words_to_now i.created_at
+        %td= distance_of_time_in_words_to_now i.updated_at
+        %td= i.receiver.name unless i.receiver.nil?
+  = will_paginate @invitations
