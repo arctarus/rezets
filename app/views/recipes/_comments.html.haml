@@ -1,0 +1,25 @@
+- unless current_user.nil? and @comments.blank?
+  .comments
+    %hr{:style => "margin-top:3em"}/
+    %h2= _("comments")
+    - unless @comments.blank?
+      - @comments.each do |comment|
+        .comment{:id => "comment-#{comment.id}"}
+          = link_to image_tag(comment.user.avatar.url(:medium), :class => "avatar", :alt => ""), comment.user
+          .inner-comment
+            %h3= link_to comment.user.name, comment.user
+            = simple_format(h(comment.body))
+            %p.created-time
+              %abbr.timestamp{:title => Time.now}
+                = _("%{time} ago") % {:time => distance_of_time_in_words_to_now(comment.updated_at) }
+    - unless current_user.nil?
+      #comment-new.comment
+        = link_to image_tag(current_user.avatar.url(:medium), :class => "avatar", :alt => ""), current_user
+        .inner-comment
+          - form_for @comment, :url => recipe_comments_path(@recipe) do |f|
+            .field
+              = f.label :body, current_user.name
+              = error_messages_for :body
+              = f.text_area :body
+            %p#submit
+              = f.submit _('make a comment')
