@@ -1,0 +1,13 @@
+- unless @categories.blank?
+  %h3= _("categories")
+  - unless @categories.blank?
+    %ul
+      - @categories.each do |category|
+        %li
+          = link_to_unless_current category.name, category_user_path(category, @user)
+          %span.counter
+            (#{Category.find(category.id).recipes.by_author(@user.id).count})
+      %li
+        = link_to_unless_current _("all"), @user
+        %span.counter
+          (#{@total_recipes})
