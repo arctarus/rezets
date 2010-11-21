@@ -4,11 +4,11 @@ class UsersController < ApplicationController
   layout 'base'
   before_filter :require_user, :only => [:edit, :update, :changepassword, :updatepassword]
   before_filter :require_no_user, :only => [:new, :create]
+  before_filter :find_user, :only => [:show, :edit, :update, :changepassword, :updatepassword]
 
   # GET /user/arctarus
   # GET /user/arctarus.xml
   def show
-    @user = User.find_by_slug params[:id]
     @page_title = "recetas de #{@user.name}"
     conditions = { :user_recipes => { :user_id => @user.id } }
     @total_recipes = Recipe.joins(:user_recipes).where(conditions).count
@@ -71,14 +71,12 @@ class UsersController < ApplicationController
 
   # GET /users/arctarus/profile
   def edit
-    @user = User.find_by_slug params[:id]
     @page_title = "editar perfil de #{@user.name}"
   end
 
   # PUT /users/arctarus
   # PUT /users/arctarus/1.xml
   def update
-    @user = User.find_by_slug params[:id]
     respond_to do |format|
       if @user.update_attributes(params[:user])
         flash[:notice] = 'perfil actualizado correctamente'
@@ -92,12 +90,10 @@ class UsersController < ApplicationController
   end
 
   def changepassword
-    @user = User.find_by_slug params[:id]
     @page_title = "cambiar tu password de rezets.com"
   end
 
   def updatepassword
-    @user = User.find_by_slug params[:id]
     respond_to do |format|
       if @user.update_attributes(params[:user])
         flash[:notice] = 'password updated'
@@ -108,6 +104,12 @@ class UsersController < ApplicationController
         format.xml  { render :xml => @user.errors, :status => :unprocessable_entity }
       end
     end
+  end
+
+  private
+
+  def find_user
+    @user = User.find_by_slug params[:id]
   end
 
 end
