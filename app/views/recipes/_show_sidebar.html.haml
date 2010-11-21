@@ -1,0 +1,32 @@
+%p{:style => "margin-bottom:3em"}
+  = link_to image_tag(@recipe.author.avatar.url(:medium), :alt => "", :style => 'float:left; margin:.3em .5em 0 0'), @recipe.author
+  %span.published= _("created %{time} ago") % {                                                                                                           |
+      :time => "<span class=\"value-title\" title=\"#{@recipe.created_at}\">#{distance_of_time_in_words_to_now(@recipe.created_at)}</span>"} |
+  %br/
+  %span.ft= _("by")
+  %span.author= link_to @recipe.author.name, @recipe.author, :class => "url fn"
+- if @recipe.author.recipes.size > 1
+  %h3= _("%{author}'s recipes") % {:author => h(@recipe.author.name)}
+  %ul.simple-list
+    - @recipes_same_author.each do |recipe|
+      %li.clearfix{:style => "margin:.8em .5em .8em 0;line-height:1.3em"}
+        = link_to image_tag(recipe.photo.url(:thumb), :style => 'float:left; margin-right:.5em'), user_recipe_path(recipe.author, recipe), :title => recipe.title
+        %div{:style => "margin-left:76px"}
+          = link_to(recipe.name, user_recipe_path(recipe.author, recipe), |
+            :style => 'font-size:1.1em', :title => recipe.title)          |
+          %br/
+          = link_to(recipe.category.name, category_path(recipe.category),             |
+            :title => _("%{category} recipes") % {:category => recipe.category.name}) |
+- if @recipe.category.recipes.size > 1
+  %h3= _("%{category} recipes") % {:category => h(@recipe.category.name)}
+  %ul.simple-list
+    - @recipes_same_category.each do |recipe|
+      %li.clearfix{:style => "margin:.8em .5em .8em 0"}
+        = link_to image_tag(recipe.photo.url(:thumb), :style => 'float:left; margin-right:.5em'), user_recipe_path(recipe.author, recipe), :title => recipe.title
+        %div{:style => "margin-left:76px"}
+          = link_to h(recipe.name), user_recipe_path(recipe.author, recipe), |
+            :style => 'font-size:1.1em', :title => recipe.title              |
+          %br/
+          = image_tag recipe.author.avatar.url(:thumb), :class => 'avatar'
+          = link_to recipe.author.name, user_path(recipe.author),                |
+            :title => _("%{author}'s recipes") % {:author => recipe.author.name} |
