@@ -2,8 +2,7 @@
   %h1.fn= link_to h(@recipe.name), user_recipe_path(@recipe.author,@recipe), |
       :title => _("%{recipe} recipe by %{author}") % {                   |
       :recipe => @recipe.name.downcase, :author => @recipe.author.name}  |
-  %p.category= link_to @recipe.category.name, @recipe.category,                          |
-      :title => _("%{category} recipes") % {:category => @recipe.category.name} |
+  %p.category=  link_to @recipe.category.name, @recipe.category,:title => _("%{category} recipes") % {:category => @recipe.category.name}
   %ul#action-links.action-links
     - if @recipe.author? current_user
       %li= link_to _('edit'), edit_user_recipe_path(@recipe.author, @recipe), :class => "action-link edit"
@@ -17,9 +16,7 @@
     %li= link_to "twitter", "http://twitter.com/home?status=#{twitter(@recipe)}", |
         :class => 'action-link twitter',                                         |
         :title => _('share recipe on twitter')                                   |
-    %li= link_to "facebook", facebook_sharer_url(@recipe), |
-        :class => 'action-link facebook',                 |
-        :title => _('share recipe on facebook')           |
+    %li= link_to "facebook", facebook_sharer_url(@recipe), :class => 'action-link facebook', :title => _('share recipe on facebook')
 .hrecipe-main
   = image_tag @recipe.photo.url(:large), |
     :class => "photo",                   |
