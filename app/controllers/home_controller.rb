@@ -2,9 +2,9 @@ class HomeController < ApplicationController
   layout 'base'
 
   def index
-    @recipes = Recipe.all(:order => "created_at desc", :limit => 8, :include => :author)
-    @categories = Category.with_recipes
-#   @users = User.featured
+    @recipes = Recipe.order("created_at desc").limit(8)
+    @categories = Category.with_recipes.order("name asc")
+    @users = User.featured
     @page_identifier = "home"
     @page_title = _("share your recipes")
   end
