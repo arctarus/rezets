@@ -10,14 +10,14 @@
             (#{category.recipes.size})
 
 / last comments
-- unless @users.blank?
+- unless @users.count.empty?
   .users
     %h2= _("featured users")
     %ul.users-list
-      - @users.each do |user|
+      - @users.order("num_recipes desc").each do |user|
         %li.user
           %p
-            = link_to "#{image_tag user.avatar.url(:medium), :class => "avatar", :alt => ""}", user
+            = link_to image_tag(user.avatar.url(:medium), :class => "avatar", :alt => ""), user
             = link_to h(user.name), user
             #{user.recipes.count} recetas
           %p{:style => "font-size:1.2em"}
