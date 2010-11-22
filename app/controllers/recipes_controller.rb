@@ -7,9 +7,9 @@ class RecipesController < ApplicationController
   # GET /recipes
   # GET /recipes.xml
   def index
-    @featured_recipe = Recipe.random
-    @categories = Category.all(:order => "name asc", :include => :recipes)
-    @categories.delete_if {|c| c.recipes.blank? }
+    @categories = Category.order("name asc")
+    @categories.with_recipes
+
     @page_title = _("recipes")
     respond_to do |format|
       format.html # index.html.erb
