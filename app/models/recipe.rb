@@ -1,5 +1,7 @@
 class Recipe < ActiveRecord::Base
   require 'watermark'
+  cattr_reader :per_page
+  @@per_page = 10
 
   has_many :user_recipes
   has_many :users,              :through => :user_recipes
@@ -36,25 +38,18 @@ class Recipe < ActiveRecord::Base
       :thumb  => "150>x150" }
 
   scope :by_author, lambda {|author_id|
-    {:conditions => ["author_id = ?", author_id],
-      :limit => 5,
-      :order => "created_at desc"}}
+    where("author_id = ?", author_id).
+    order("created_at desc")}
 
   scope :by_category, lambda {|category_id|
-    {:conditions => ["category_id = ?", category_id],
-    :limit => 5,
-    :order => "created_at desc"}}
+    where("category_id = ?", category_id).
+    order("created_at desc")}
 
   scope :not_in, lambda {|recipes_ids|
-    {:conditions => ["recipes.id not in (?)",recipes_ids]}}
+    where("recipes.id not in (?)",recipes_ids)}
       
   Paperclip.interpolates :slug do |attachment, style|
     attachment.instance.slug
-  end
-
-  def self.random
-    ids = Recipe.all.collect {|r| r.id }
-    Recipe.find(ids[rand(ids.size)]) unless ids.blank?
   end
 
   def new_recipe_ingredients_attributes=(ri_attr)
@@ -79,7 +74,7 @@ class Recipe < ActiveRecord::Base
   end
 
   def author?(user)
-    return self.author == user
+    author == user
   end
 
   def to_param
