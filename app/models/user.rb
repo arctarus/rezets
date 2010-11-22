@@ -16,10 +16,9 @@ class User < ActiveRecord::Base
     :large  => "80>x80" }
 
   scope :featured,
-    select('users.*, count(user_recipes.id) recipes').
+    select('users.*, count(user_recipes.id) num_recipes').
     joins(:user_recipes).
     group('users.id').
-    order('recipes desc').
     limit(8)
 
   def to_param
