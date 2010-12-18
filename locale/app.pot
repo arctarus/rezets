@@ -1,0 +1,694 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: version 0.0.1\n"
+"POT-Creation-Date: 2010-12-18 18:10+0100\n"
+"PO-Revision-Date: 2009-11-09 22:31+0100\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: app/mailers/user_mailer.rb:10
+msgid "\"feedback from #{feedback[\"name\"]}\""
+msgstr ""
+
+#: app/views/recipes/_show_sidebar.html.haml:9
+#: app/views/recipes/_show_sidebar.html.haml:33
+msgid "%{author}'s recipes"
+msgstr ""
+
+#: app/views/categories/_sidebar.html.erb:5
+#: app/views/recipes/_show_sidebar.html.haml:19
+#: app/views/recipes/_show_sidebar.html.haml:21
+#: app/views/recipes/show.html.haml:5 app/views/categories/show.html.haml:4
+msgid "%{category} recipes"
+msgstr ""
+
+#: app/views/user_mailer/comment_recipe.text.html.erb:16
+msgid "%{recipe} by %{author}"
+msgstr ""
+
+#: app/models/recipe.rb:111 app/helpers/recipes_helper.rb:33
+#: app/views/recipes/show.html.haml:4
+msgid "%{recipe} recipe by %{author}"
+msgstr ""
+
+#: app/views/home/index.html.haml:19 app/views/recipes/_comments.html.haml:14
+msgid "%{time} ago"
+msgstr ""
+
+#: app/mailers/user_mailer.rb:36
+msgid "%{user} has commented on %{author}'s %{recipe} recipe"
+msgstr ""
+
+#: app/mailers/user_mailer.rb:33
+msgid "%{user} has commented on his %{recipe} recipe"
+msgstr ""
+
+#: app/mailers/user_mailer.rb:30
+msgid "%{user} has commented on your %{recipe} recipe"
+msgstr ""
+
+#: app/views/invitations/new.html.erb:25
+msgid "%{user} has invite you to rezets.com"
+msgstr ""
+
+#: app/views/user_mailer/invitation.html.erb:7
+msgid "%{user} has invited you to join to rezets.com and says you:"
+msgstr ""
+
+#: app/mailers/user_mailer.rb:52
+msgid "%{user} has sent you a %{recipe} recipe"
+msgstr ""
+
+#: app/views/user_mailer/recipe.text.html.haml:5
+msgid "%{user} has shared a %{recipe} recipe with you and says:"
+msgstr ""
+
+#: app/views/user_mailer/recipe.text.html.haml:3
+msgid "%{user} has shared a %{recipe} recipe with you!"
+msgstr ""
+
+#: app/views/users/show.html.haml:25
+msgid "%{user} still hasn't any recipe"
+msgstr ""
+
+#: app/views/user_mailer/feedback.text.html.erb:7
+msgid "%{user} tell us:"
+msgstr ""
+
+#: app/views/users/show.html.haml:5
+msgid "%{user}'s recipes"
+msgstr ""
+
+#: app/views/users/show.html.haml:30
+msgid ""
+"As you can see we are walking in underwear so I would ask you if you saw a "
+"little something that does not work or you do not like something we have "
+"know."
+msgstr ""
+
+#: app/views/home/about_en.html.haml:11
+msgid ""
+"Finally, this month of August 2009 I set to work, aiming for the end of the "
+"month with the 0.1 version of the web. The rest you can see for yourselves. "
+"I hope you enjoy it and can get a lot out of this."
+msgstr ""
+
+#: app/views/home/about_en.html.haml:7
+msgid ""
+"For that reason, some time ago, I began to give vuestas the issue and think "
+"how could I give me life, not waste too much time thinking about what to "
+"eat, keep those recipes well organized for the next time you need and of "
+"course , learn new recipes from my friends."
+msgstr ""
+
+#: app/views/user_mailer/comment_recipe.text.html.erb:7
+msgid "Hello %{user}!"
+msgstr ""
+
+#: app/views/user_mailer/recipe.text.html.haml:1
+msgid "Hi!"
+msgstr ""
+
+#: app/helpers/invitations_helper.rb:4
+msgid ""
+"Hi!\n"
+"\n"
+"I want to invite you to rezets.com.\n"
+"\n"
+"rezets.com is a new cooking recipe site where you can save all those recipes "
+"that you spread on pieces of paper, notebooks and folders and share them "
+"with your friends.\n"
+"\n"
+"I'm sure it will be very useful.\n"
+"\n"
+"%{user}"
+msgstr ""
+
+#: app/views/users/show.html.haml:29
+msgid ""
+"If you're here because you are one of the lucky ones who have been invited "
+"to enjoy this new service."
+msgstr ""
+
+#: app/views/home/index.html.haml:6
+msgid "Share your recipes and discover lots of them"
+msgstr ""
+
+#: app/views/invitations/new.html.erb:45
+msgid "Sorry but you've exhausted all your invitations!"
+msgstr ""
+
+#: app/views/home/about_en.html.haml:13
+msgid "Thank you."
+msgstr ""
+
+#: app/views/users/show.html.haml:32
+msgid "Thanks!"
+msgstr ""
+
+#: app/views/home/about_en.html.haml:9
+msgid ""
+"There was also another reason to start a project. I needed to learn web "
+"development environment and have a battlefield where you can make and unmake "
+"as I please without worrying about consequences, and since by that time had "
+"some wonderful colleagues who offered to teach me what I knew I opted for "
+"using %{ror} to develop my idea."
+msgstr ""
+
+#: app/views/users/show.html.haml:31
+msgid "To start enjoying rezets.com simply %{create_recipe}."
+msgstr ""
+
+#: app/views/users/show.html.haml:28
+msgid "Welcome to rezets.com!"
+msgstr ""
+
+#: app/views/home/index.html.haml:5
+msgid "What do you feel like cooking today?"
+msgstr ""
+
+#: app/views/invitations/new.html.erb:9
+msgid ""
+"Write the address of the person you want to invite to rezets.com and we will "
+"send an email with the text you typed and a link so it can register. You can "
+"customize the message included below and tell your friends because you like "
+"rezets.com."
+msgstr ""
+
+#: app/views/user_mailer/comment_recipe.text.html.erb:15
+msgid "You can see this comment in %{recipe}"
+msgstr ""
+
+#: app/views/user_mailer/invitation.html.erb:12
+msgid "You can start by:"
+msgstr ""
+
+#: app/views/invitations/new.html.erb:11
+msgid ""
+"You have %{num_invitations} invitations to send to your friends which will "
+"remain %{remaining_invitations}."
+msgstr ""
+
+#: app/controllers/application_controller.rb:22
+msgid "You must be logged in to access this page"
+msgstr ""
+
+#: app/controllers/application_controller.rb:31
+msgid "You must be logged out to access this page"
+msgstr ""
+
+#: app/controllers/home_controller.rb:22 app/views/home/about_es.html.haml:1
+#: app/views/home/about_en.html.haml:1 app/views/common/_footer.html.haml:3
+msgid "about rezets.com"
+msgstr ""
+
+#: app/views/recipes/_email.html.erb:24
+msgid "add a message?"
+msgstr ""
+
+#: app/views/categories/show.html.haml:13
+msgid "add a recipe"
+msgstr ""
+
+#: app/views/recipes/_form.html.erb:47
+msgid "add new ingredient"
+msgstr ""
+
+#: app/views/users/new.html.haml:19
+msgid "address of your page in rezets.com"
+msgstr ""
+
+#: app/views/categories/_sidebar.html.erb:8
+#: app/views/users/_sidebar.html.haml:11
+msgid "all"
+msgstr ""
+
+#: app/views/recipes/_form.html.erb:35
+msgid "amount"
+msgstr ""
+
+#: app/views/recipes/_recipe.html.erb:22 app/views/recipes/show.html.haml:11
+msgid "are you sure?"
+msgstr ""
+
+#: app/views/users/edit.html.haml:12
+msgid "avatar"
+msgstr ""
+
+#: app/views/common/_footer.html.haml:4
+msgid "blog"
+msgstr ""
+
+#: app/views/recipes/_recipe.html.erb:10
+#: app/views/recipes/_show_sidebar.html.haml:6
+msgid "by"
+msgstr ""
+
+#: app/views/recipes/_email.html.erb:20
+msgid "can include several comma-separated"
+msgstr ""
+
+#: app/views/invitations/new.html.erb:35 app/views/recipes/_email.html.erb:35
+#: app/views/recipes/_form.html.erb:69
+msgid "cancel"
+msgstr ""
+
+#: app/views/categories/_sidebar.html.erb:1
+#: app/views/home/_sidebar.html.haml:2 app/views/common/_header.html.haml:20
+#: app/views/users/_sidebar.html.haml:2
+msgid "categories"
+msgstr ""
+
+#: app/views/recipes/_form.html.erb:13
+msgid "category"
+msgstr ""
+
+#: app/views/users/changepassword.html.haml:11
+msgid "change"
+msgstr ""
+
+#: app/views/users/edit.html.haml:2 app/views/users/changepassword.html.haml:1
+msgid "change password"
+msgstr ""
+
+#: app/views/recipes/_form.html.erb:5 app/views/users/new.html.haml:5
+msgid "check the following data"
+msgstr ""
+
+#: app/views/recipes/_email.html.erb:3
+msgid "close"
+msgstr ""
+
+#: app/views/sessions/new.html.erb:24
+msgid "come on in"
+msgstr ""
+
+#: app/views/recipes/_form.html.erb:38
+msgid "comment"
+msgstr ""
+
+#: app/views/user_mailer/recipe.text.html.haml:42
+msgid "comment on the recipe"
+msgstr ""
+
+#: app/views/recipes/_comments.html.haml:4
+msgid "comments"
+msgstr ""
+
+#: app/views/users/new.html.haml:1
+msgid "confirm invitation to rezets.com"
+msgstr ""
+
+#: app/views/users/new.html.haml:16 app/views/users/changepassword.html.haml:8
+msgid "confirm password"
+msgstr ""
+
+#: app/views/common/_footer.html.haml:5
+msgid "contact"
+msgstr ""
+
+#: app/controllers/home_controller.rb:26
+msgid "contact with us"
+msgstr ""
+
+#: app/views/users/new.html.haml:24
+msgid "continue"
+msgstr ""
+
+#: app/views/recipes/_form.html.erb:65
+msgid "create"
+msgstr ""
+
+#: app/views/users/show.html.haml:15 app/views/users/show.html.haml:31
+msgid "create a new recipe"
+msgstr ""
+
+#: app/views/recipes/_show_sidebar.html.haml:5
+msgid "created %{time} ago"
+msgstr ""
+
+#: app/views/recipes/_recipe.html.erb:21 app/views/recipes/show.html.haml:11
+msgid "delete"
+msgstr ""
+
+#: app/views/recipes/_form.html.erb:58
+#: app/views/user_mailer/recipe.text.html.haml:35
+#: app/views/recipes/show.html.haml:63
+msgid "directions"
+msgstr ""
+
+#: app/views/user_mailer/invitation.html.erb:15
+#: app/views/user_mailer/recipe.text.html.haml:46
+msgid "discover new recipes"
+msgstr ""
+
+#: app/views/recipes/_recipe.html.erb:20 app/views/recipes/show.html.haml:10
+msgid "edit"
+msgstr ""
+
+#: app/views/common/_header.html.haml:9 app/views/users/edit.html.haml:1
+msgid "edit profile"
+msgstr ""
+
+#: app/views/recipes/edit.html.erb:1
+msgid "editing"
+msgstr ""
+
+#: app/controllers/recipes_controller.rb:55
+msgid "editing %{recipe}"
+msgstr ""
+
+#: app/views/sessions/new.html.erb:8 app/views/home/feedback.html.erb:11
+#: app/views/recipes/_email.html.erb:19
+#: app/views/invitations/index.html.haml:6 app/views/users/edit.html.haml:9
+#: app/views/users/new.html.haml:10
+msgid "email"
+msgstr ""
+
+#: app/views/invitations/index.html.haml:7
+msgid "envoy"
+msgstr ""
+
+#: app/views/users/show.html.haml:26
+msgid "explore more recipes"
+msgstr ""
+
+#: app/views/home/_sidebar.html.haml:15
+msgid "featured users"
+msgstr ""
+
+#: app/views/recipes/show.html.haml:30
+msgid "for %{num} people"
+msgstr ""
+
+#: app/views/recipes/_form.html.erb:37
+msgid "ingredient"
+msgstr ""
+
+#: app/views/recipes/_form.html.erb:30
+#: app/views/user_mailer/recipe.text.html.haml:19
+#: app/views/recipes/show.html.haml:27
+msgid "ingredients"
+msgstr ""
+
+#: app/views/common/_header.html.haml:10
+msgid "invite friends"
+msgstr ""
+
+#: app/views/home/_sidebar.html.haml:24
+msgid "last recipe"
+msgstr ""
+
+#: app/views/common/_header.html.haml:4
+msgid "login"
+msgstr ""
+
+#: app/views/common/_header.html.haml:11
+msgid "logout"
+msgstr ""
+
+#: app/views/recipes/_comments.html.haml:25
+msgid "make a comment"
+msgstr ""
+
+#: app/views/invitations/new.html.erb:29 app/views/home/feedback.html.erb:16
+#: app/views/recipes/_email.html.erb:29
+msgid "message"
+msgstr ""
+
+#: app/views/user_mailer/recipe.text.html.haml:36
+#: app/views/recipes/show.html.haml:69
+msgid "min"
+msgstr ""
+
+#: app/views/recipes/_form.html.erb:54
+msgid "minutes"
+msgstr ""
+
+#: app/views/home/feedback.html.erb:6 app/views/users/edit.html.haml:6
+#: app/views/users/new.html.haml:7
+msgid "name"
+msgstr ""
+
+#: app/views/user_mailer/comment_recipe.text.html.erb:22
+msgid "new comment"
+msgstr ""
+
+#: app/controllers/recipes_controller.rb:41 app/views/recipes/new.html.erb:1
+msgid "new recipe"
+msgstr ""
+
+#: app/views/user_mailer/recipe.text.html.haml:40
+msgid "now you can,"
+msgstr ""
+
+#: app/views/recipes/_form.html.erb:25
+msgid "number of people"
+msgstr ""
+
+#: app/views/user_mailer/recipe.text.html.haml:27
+#: app/views/recipes/show.html.haml:39 app/views/recipes/show.html.haml:56
+msgid "of"
+msgstr ""
+
+#: app/views/recipes/_email_send.html.erb:2
+msgid "ok!"
+msgstr ""
+
+#: app/views/recipes/_form.html.erb:34
+msgid "opt"
+msgstr ""
+
+#: app/views/user_mailer/recipe.text.html.haml:32
+#: app/views/recipes/show.html.haml:44 app/views/recipes/show.html.haml:61
+msgid "optional"
+msgstr ""
+
+#: app/views/user_mailer/comment_recipe.text.html.erb:21
+msgid "or you can add a %{newcomment}"
+msgstr ""
+
+#: app/views/sessions/new.html.erb:13 app/views/users/new.html.haml:13
+#: app/views/users/changepassword.html.haml:5
+msgid "password"
+msgstr ""
+
+#: app/views/recipes/_form.html.erb:20
+msgid "photo"
+msgstr ""
+
+#: app/controllers/recipes_controller.rb:135
+msgid "please, enter the email address for a friend"
+msgstr ""
+
+#: app/controllers/recipes_controller.rb:131
+msgid "please, enter your name"
+msgstr ""
+
+#: app/views/recipes/_form.html.erb:52
+msgid "preparation time"
+msgstr ""
+
+#: app/views/recipes/show.html.haml:14
+msgid "print"
+msgstr ""
+
+#: app/views/invitations/index.html.haml:8
+msgid "received"
+msgstr ""
+
+#: app/controllers/recipes_controller.rb:66
+msgid "recipe created"
+msgstr ""
+
+#: app/views/recipes/_email_send.html.erb:1
+msgid "recipe sent"
+msgstr ""
+
+#: app/controllers/recipes_controller.rb:83
+msgid "recipe update"
+msgstr ""
+
+#: app/controllers/recipes_controller.rb:13
+#: app/views/common/_header.html.haml:19 app/views/recipes/index.html.haml:1
+msgid "recipes"
+msgstr ""
+
+#: app/views/categories/show.html.haml:2 app/views/users/show.html.haml:26
+msgid "recipes by categories"
+msgstr ""
+
+#: app/views/sessions/new.html.erb:19
+msgid "remember me on this computer"
+msgstr ""
+
+#: app/views/recipes/_ingredient.html.haml:14
+msgid "remove"
+msgstr ""
+
+#: app/views/home/about_en.html.haml:5
+msgid ""
+"rezets.com is a project that stems from the need, but not a necessity like "
+"any other, but a basic need, primary, first order, the need to eat, and do "
+"it well (which is a connoisseur), and cheap that (the economy is not enough "
+"to go throwing money)."
+msgstr ""
+
+#: app/views/users/edit.html.haml:15
+msgid "save"
+msgstr ""
+
+#: app/views/common/_search.html.erb:8
+msgid "search"
+msgstr ""
+
+#: app/views/user_mailer/invitation.html.erb:14
+msgid "see %{user} page"
+msgstr ""
+
+#: app/views/invitations/new.html.erb:4
+msgid "see all invitations"
+msgstr ""
+
+#: app/views/user_mailer/recipe.text.html.haml:44
+msgid "see more %{author}'s recipes"
+msgstr ""
+
+#: app/controllers/sessions_controller.rb:24
+msgid "see you soon!"
+msgstr ""
+
+#: app/views/invitations/new.html.erb:34 app/views/home/feedback.html.erb:20
+#: app/views/recipes/_email.html.erb:34
+#: app/views/invitations/index.html.haml:5
+msgid "send"
+msgstr ""
+
+#: app/views/recipes/_email.html.erb:6
+msgid "send by email"
+msgstr ""
+
+#: app/views/invitations/new.html.erb:1
+msgid "send invitation to rezets.com"
+msgstr ""
+
+#: app/views/invitations/index.html.haml:1
+msgid "send invite"
+msgstr ""
+
+#: app/views/recipes/show.html.haml:19
+msgid "share recipe on facebook"
+msgstr ""
+
+#: app/views/recipes/show.html.haml:18
+msgid "share recipe on twitter"
+msgstr ""
+
+#: app/controllers/home_controller.rb:9
+#: app/views/user_mailer/comment_recipe.text.html.erb:26
+#: app/views/user_mailer/recipe.text.html.haml:49
+#: app/views/user_mailer/recipe.text.html.haml:51
+#: app/views/common/_header.html.haml:14
+msgid "share your recipes"
+msgstr ""
+
+#: app/views/sessions/new.html.erb:2
+msgid "sign in"
+msgstr ""
+
+#: app/views/user_mailer/invitation.html.erb:13
+msgid "sign up rezets.com"
+msgstr ""
+
+#: app/views/common/_header.html.haml:18
+msgid "start"
+msgstr ""
+
+#: app/views/users/show.html.haml:47
+msgid "subscribe to %{user}'s %{category} recipes"
+msgstr ""
+
+#: app/views/users/show.html.haml:45
+msgid "subscribe to %{user}'s recipes"
+msgstr ""
+
+#: app/views/home/index.html.haml:28
+msgid "subscribe to the latest recipes"
+msgstr ""
+
+#: app/views/users/show.html.haml:42
+msgid "subscribe to your own %{category} recipes"
+msgstr ""
+
+#: app/views/users/show.html.haml:40
+msgid "subscribe to your own recipes"
+msgstr ""
+
+#: app/helpers/recipes_helper.rb:28
+msgid "tasty and substance %{recipe} recipe %{url}"
+msgstr ""
+
+#: app/views/invitations/new.html.erb:46
+msgid ""
+"thank you very much to publicize rezets.com your friends, thanks to you "
+"today we are a little larger. When you say we have more invitations will "
+"inform you of this."
+msgstr ""
+
+#: app/controllers/home_controller.rb:31
+msgid "thanks for your help"
+msgstr ""
+
+#: app/views/invitations/new.html.erb:15 app/views/recipes/_form.html.erb:4
+#: app/views/users/new.html.haml:5
+msgid "there are some errors in the form"
+msgstr ""
+
+#: app/views/recipes/_form.html.erb:36
+msgid "unit"
+msgstr ""
+
+#: app/views/recipes/_form.html.erb:67
+msgid "update"
+msgstr ""
+
+#: app/views/user_mailer/recipe.text.html.haml:17
+msgid "updated %{time} ago"
+msgstr ""
+
+#: app/views/invitations/index.html.haml:9
+msgid "user"
+msgstr ""
+
+#: app/views/categories/show.html.haml:12
+msgid "we do not have any %{category} recipe"
+msgstr ""
+
+#: app/controllers/sessions_controller.rb:15
+msgid "welcome!"
+msgstr ""
+
+#: app/views/categories/show.html.haml:13
+msgid ""
+"you can %{add_recipe} yourself if you know some you want to share with your "
+"friends."
+msgstr ""
+
+#: app/views/recipes/_email.html.erb:13
+msgid "your name"
+msgstr ""
+
+#: app/views/recipes/_recipe.html.erb:6
+msgid "{category} recipes"
+msgstr ""
