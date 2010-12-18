@@ -1,0 +1,31 @@
+!!!
+%html{:lang => "es", "xml:lang" => "es", :xmlns => "http://www.w3.org/1999/xhtml"}
+  %head
+    = render "shared/metaheader"
+    = javascript_include_tag 'prototype', 'application'
+    - if @print
+      = stylesheet_link_tag 'print'
+      = stylesheet_link_tag 'print', :media => 'print'
+      :css
+        @print {
+          .print {display:none}
+        }
+      
+      :javascript
+        document.observe('dom:loaded', function(){print();});
+    - else
+      = stylesheet_link_tag 'base', 'rezets'
+      = stylesheet_link_tag 'print', :media => 'print'
+  %body
+    #overwrapper
+      #header
+        .wrapper
+          = render :partial => "common/header"
+      .wrapper
+        <div #{"id=\"#{@page_identifier}\"" unless @page_identifier.nil?} #{"class=\"#{@page_class}\"" unless @page_class.nil?}>
+        - if flash[:notice]
+          %p#message.notice= flash[:notice]
+        = yield
+    #footer
+      = render :partial => "common/footer"
+    = render :partial => "common/scripts"
