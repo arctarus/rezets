@@ -1,0 +1,14 @@
+- title _("contact with us")
+
+%h1= _("contact with us")
+= form_tag url_for(:controller => "home", :action => "send_feedback") do
+  .field
+    = label_tag "feedback[name]", _("name")
+    = text_field_tag "feedback[name]", nil, :size => 30, :maxlength => 50
+  .field
+    = label_tag "feedback[email]", _("email")
+    = text_field_tag "feedback[email]", nil, :size => 30, :maxlength => 50
+  .field
+    = label_tag "feedback[message]", _("message")
+    = text_area_tag "feedback[message]", nil
+  %p#submit= submit_tag _("send")
