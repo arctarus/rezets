@@ -13,8 +13,8 @@
 %div{:style => "text-align:left"}
   %span.tagline= _("share your recipes")
   %p.logo
-    = link_to "<strong>rezets.com</strong> <span class=\"version\">v0.2</span>".html_safe, :controller => "home", :action => "index"
+    %strong
+      = link_to "rezets.com", root_url
   %ul.main-links
-    %li= link_to _("start"), :controller => "home", :action => "index"
     %li= link_to _("recipes"), recipes_path
     %li.last= link_to _("categories"), categories_path

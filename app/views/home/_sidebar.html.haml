@@ -4,12 +4,8 @@
   %ul
     - @categories.each do |category|
       %li
-        %p
-          = link_to category.name, category
-          %span.counter
-            (#{category.recipes.size})
+        = link_to category.name, category
 
-/ last comments
 - unless @users.count.empty?
   .users
     %h2= _("featured users")
@@ -20,7 +16,7 @@
             = link_to image_tag(user.avatar.url(:medium), :class => "avatar", :alt => ""), user
             = link_to h(user.name), user
             #{user.recipes.count} recetas
-          %p{:style => "font-size:1.2em"}
+          %p
             = _("last recipe")
           %p= link_to h(user.recipes.last.name), recipe_path(user.recipes.last), :title => user.recipes.last.title
 

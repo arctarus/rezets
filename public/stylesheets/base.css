@@ -14,17 +14,18 @@ a img {border:none;}
 
 /*=typography*/
 body {font-size:62.5%;color:#1a1a1a;background:#fff;font-family:Arial,sans-serif,Helvetica}
+.wrapper {font-size:1.4em}
 h1, h2, h3, h4, h5, h6 {font-weight:normal;color:#380}
-h1 {margin-bottom:1em; font-size:2.6em; line-height:1em}
+h1 {margin-bottom:1em; font-size:2em; line-height:1em}
 h1 a {color:#1a1a1a}
-h2 {font-size:2.2em; line-height:1em}
+h2 {font-size:1.8em; line-height:1em}
 h2 a {line-height:1em}
-h3 {font-size:1.8em; line-height:1em}
-h4 {font-size:1.5em; line-height:1em}
-h5 {font-size:1.3em;font-weight:bold}
-h6 {font-size:1.3em;font-weight:bold}
+h3 {font-size:1.4em; line-height:1em}
+h4 {font-size:1.3em; line-height:1em}
+h5 {font-size:1.2em;font-weight:bold}
+h6 {font-size:1.2em;font-weight:bold}
 h1 img, h2 img, h3 img, h4 img, h5 img, h6 img {margin:0;}
-p {font-size:1.4em; line-height:1.6em}
+p {line-height:1.6em}
 img.left {float:left; margin:0 1.5em 1.5em 0;padding:0}
 img.right {float:right; margin:0 0 1.5em 1.5em}
 a:focus, a:hover {color:#C00}
