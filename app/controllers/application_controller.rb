@@ -1,17 +1,11 @@
 class ApplicationController < ActionController::Base
-  include FastGettext::Translation
   protect_from_forgery
 
   helper_method :current_user_session, :current_user
-  before_filter :set_locale
-
-  def set_locale
-    FastGettext.available_locales = ['es', 'en']
-    FastGettext.text_domain = 'rezets'
-    session[:locale] = I18n.locale = FastGettext.set_locale(params[:locale] || session[:locale] || request.env['HTTP_ACCEPT_LANGUAGE'] || 'en')
-  end
+  before_filter :set_gettext_locale
 
  private
+
     def current_user_session
       return @current_user_session if defined?(@current_user_session)
       @current_user_session = UserSession.find
@@ -48,6 +42,5 @@ class ApplicationController < ActionController::Base
       redirect_to(session[:return_to] || default)
       session[:return_to] = nil
     end  
-
 
 end

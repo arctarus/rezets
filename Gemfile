@@ -36,7 +36,12 @@ gem "authlogic", :git => 'git://github.com/odorcicd/authlogic.git', :branch => '
 
 gem 'haml'
 gem 'haml-rails'
+
+# i18n
+gem 'gettext'
+gem 'ruby_parser'
 gem 'fast_gettext'
+gem 'gettext_i18n_rails'
 
 group :development, :test do
   gem 'rspec', '>=2.0'
