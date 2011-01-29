@@ -1,22 +1,13 @@
+- title @recipe.title
+- meta_description @recipe.title
+- meta_keywords @recipe.ingredients.map(&:name) << @recipe.category.name
+
 .hrecipe-head
   %h1.fn= link_to h(@recipe.name), user_recipe_path(@recipe.author,@recipe), |
       :title => _("%{recipe} recipe by %{author}") % {                   |
       :recipe => @recipe.name.downcase, :author => @recipe.author.name}  |
   %p.category=  link_to @recipe.category.name, @recipe.category,:title => _("%{category} recipes") % {:category => @recipe.category.name}
-  %ul#action-links.action-links
-    - if @recipe.author? current_user
-      %li= link_to _('edit'), edit_user_recipe_path(@recipe.author, @recipe), :class => "action-link edit"
-      %li= link_to _('delete'), user_recipe_path(@recipe.author, @recipe),                    |
-          :confirm => _("are you sure?"), :method => :delete, :class => "action-link delete" |
-    %li
-      = link_to_function _('print'), "window.open(this.href)",          |
-        :href => user_recipe_path(@recipe.author,@recipe, :print => 1), |
-        :class => 'action-link print'                                   |
-    %li#send-email
-    %li= link_to "twitter", "http://twitter.com/home?status=#{twitter(@recipe)}", |
-        :class => 'action-link twitter',                                         |
-        :title => _('share recipe on twitter')                                   |
-    %li= link_to "facebook", facebook_sharer_url(@recipe), :class => 'action-link facebook', :title => _('share recipe on facebook')
+  = render :partial => 'action_links'
 .hrecipe-main
   = image_tag @recipe.photo.url(:large), |
     :class => "photo",                   |
@@ -72,6 +63,6 @@
     = simple_format(@recipe.directions)
   = render :partial => "comments"
   = will_paginate @comments
-#recipe-sidebar
+
+- content_for :sidebar do
   = render :partial => "show_sidebar"
-%br.clear{:style => "margin-top:2em"}/

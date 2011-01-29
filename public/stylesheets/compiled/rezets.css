@@ -1,0 +1,330 @@
+/* line 14, ../../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+}
+
+/* line 17, ../../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+body {
+  line-height: 1;
+  color: black;
+  background: white;
+}
+
+/* line 19, ../../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 21, ../../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  vertical-align: middle;
+}
+
+/* line 23, ../../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 25, ../../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: "" "";
+}
+/* line 96, ../../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+}
+
+/* line 27, ../../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 39, ../../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+body {
+  line-height: 1.5;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  color: #333333;
+  font-size: 87.5%;
+}
+
+/* line 65, ../../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+  color: #222222;
+}
+/* line 66, ../../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+h1 img, h2 img, h3 img, h4 img, h5 img, h6 img {
+  margin: 0;
+}
+
+/* line 67, ../../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+h1 {
+  font-size: 3em;
+  line-height: 1;
+  margin-bottom: 0.50em;
+}
+
+/* line 68, ../../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+h2 {
+  font-size: 2em;
+  margin-bottom: 0.75em;
+}
+
+/* line 69, ../../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+h3 {
+  font-size: 1.5em;
+  line-height: 1;
+  margin-bottom: 1.00em;
+}
+
+/* line 70, ../../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+h4 {
+  font-size: 1.2em;
+  line-height: 1.25;
+  margin-bottom: 1.25em;
+}
+
+/* line 71, ../../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+h5 {
+  font-size: 1em;
+  font-weight: bold;
+  margin-bottom: 1.50em;
+}
+
+/* line 72, ../../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+h6 {
+  font-size: 1em;
+  font-weight: bold;
+}
+
+/* line 73, ../../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+p {
+  margin: 0 0 1.5em;
+}
+/* line 74, ../../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+p img.left {
+  display: inline;
+  float: left;
+  margin: 1.5em 1.5em 1.5em 0;
+  padding: 0;
+}
+/* line 75, ../../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+p img.right {
+  display: inline;
+  float: right;
+  margin: 1.5em 0 1.5em 1.5em;
+  padding: 0;
+}
+
+/* line 77, ../../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+a {
+  text-decoration: underline;
+  color: #000099;
+}
+/* line 18, ../../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/utilities/links/_link-colors.scss */
+a:visited {
+  color: #000066;
+}
+/* line 21, ../../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/utilities/links/_link-colors.scss */
+a:focus {
+  color: black;
+}
+/* line 24, ../../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/utilities/links/_link-colors.scss */
+a:hover {
+  color: black;
+}
+/* line 27, ../../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/utilities/links/_link-colors.scss */
+a:active {
+  color: #cc0099;
+}
+
+/* line 78, ../../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+blockquote {
+  margin: 1.5em;
+  color: #666666;
+  font-style: italic;
+}
+
+/* line 79, ../../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+strong {
+  font-weight: bold;
+}
+
+/* line 80, ../../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+em {
+  font-style: italic;
+}
+
+/* line 81, ../../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+dfn {
+  font-style: italic;
+  font-weight: bold;
+}
+
+/* line 82, ../../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+sup, sub {
+  line-height: 0;
+}
+
+/* line 83, ../../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+abbr, acronym {
+  border-bottom: 1px dotted #666666;
+}
+
+/* line 84, ../../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+address {
+  margin: 0 0 1.5em;
+  font-style: italic;
+}
+
+/* line 85, ../../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+del {
+  color: #666666;
+}
+
+/* line 86, ../../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+pre {
+  margin: 1.5em 0;
+  white-space: pre;
+}
+
+/* line 87, ../../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+pre, code, tt {
+  font: 1em "andale mono", "lucida console", monospace;
+  line-height: 1.5;
+}
+
+/* line 88, ../../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+li ul, li ol {
+  margin: 0;
+}
+
+/* line 89, ../../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+ul, ol {
+  margin: 0 1.5em 1.5em 0;
+  padding-left: 3.333em;
+}
+
+/* line 90, ../../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+ul {
+  list-style-type: disc;
+}
+
+/* line 91, ../../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+ol {
+  list-style-type: decimal;
+}
+
+/* line 92, ../../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+dl {
+  margin: 0 0 1.5em 0;
+}
+/* line 93, ../../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+dl dt {
+  font-weight: bold;
+}
+
+/* line 94, ../../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+dd {
+  margin-left: 1.5em;
+}
+
+/* line 95, ../../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+table {
+  margin-bottom: 1.4em;
+  width: 100%;
+}
+
+/* line 96, ../../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+th {
+  font-weight: bold;
+}
+
+/* line 97, ../../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+thead th {
+  background: #c3d9ff;
+}
+
+/* line 98, ../../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+th, td, caption {
+  padding: 4px 10px 4px 5px;
+}
+
+/* line 99, ../../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+tr.even td {
+  background: #e5ecf9;
+}
+
+/* line 100, ../../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+tfoot {
+  font-style: italic;
+}
+
+/* line 101, ../../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+caption {
+  background: #eeeeee;
+}
+
+/* line 102, ../../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+.quiet {
+  color: #666666;
+}
+
+/* line 103, ../../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+.loud {
+  color: #111111;
+}
+
+/* line 3, ../../../app/stylesheets/rezets.scss */
+#wrapper {
+  width: 950px;
+  margin: 0 auto;
+  overflow: hidden;
+  *zoom: 1;
+  background: url('/images/grid.png?1295811136');
+}
+
+/* line 7, ../../../app/stylesheets/rezets.scss */
+#header {
+  border: 1px solid red;
+  background: url("/images/bck_header.png") #338800 top left repeat-x;
+}
+/* line 10, ../../../app/stylesheets/rezets.scss */
+#header a {
+  color: #F3F3F3;
+}
+
+/* line 14, ../../../app/stylesheets/rezets.scss */
+#main {
+  border: 1px solid blue;
+}
+
+/* line 15, ../../../app/stylesheets/rezets.scss */
+#footer {
+  border: 1px solid green;
+}
+
+/* line 18, ../../../app/stylesheets/rezets.scss */
+.search {
+  float: right;
+  margin-top: .8em;
+}
