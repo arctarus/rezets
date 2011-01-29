@@ -1,6 +1,4 @@
 class RecipesController < ApplicationController
-  layout 'base'
-  
   before_filter :require_user, :only => [:new, :create, :edit, :update, :destroy, :save, :remove]  
   before_filter :find_recipe, :only => [:show, :edit, :update, :destroy, :email, :email_send]
 
@@ -22,8 +20,6 @@ class RecipesController < ApplicationController
   def show
     @comments = @recipe.comments.paginate(:page => params[:page], :per_page => 20)
     @comment = Comment.new unless current_user.nil?
-    @page_title = @recipe.title
-    @page_class = "hrecipe"
     @recipes_same_author = Recipe.by_author(@recipe.author.id).
       not_in(@recipe.id)
     @recipes_same_category = Recipe.by_category(@recipe.category.id).
