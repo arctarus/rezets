@@ -1,0 +1,36 @@
+#wrapper {
+  @include container;
+//@include showgrid;
+}
+.wrapper { @include container }
+
+#header {
+  position:relative; margin-bottom:1em; text-align:right; zoom:1;
+  background:url('/images/bck_header.png') #380 top left repeat-x;
+  p.logo {
+    display:inline; margin:0; text-align:left; font-size:1.8em;
+    text-shadow:1px 1px 1px #555;
+    a {
+      text-decoration:none;
+      color:#F3F3F3;
+      &:hover {color:#FF0}
+    }
+  }
+  span.tagline {display:block; margin:0 0 -.8em 0; font-size:.8em; color:#F3F3F3; text-shadow:1px 1px 1px #555}
+  a { color:#F3F3F3; }
+}
+
+#main { @include column(18)}
+#sidebar { 
+  @include column(6, true);
+  h2 {font-size:1.4em}
+  ul {list-style:none}
+}
+
+/*=footer*/
+#footer {padding:0 0 1em; background:#F6F6F6; border-top:1px solid #CCC; zoom:1}
+#footer .wrapper {max-width:960px; min-width:700px; padding:1em 0}
+#footer ul {list-style:none}
+#footer ul li {display:inline; margin-left:1em; border-left:1px dotted #CCC; padding-left:1em}
+#footer ul li.first {margin-left:0; border-left:none; padding-left:0}
+#footer p, #footer li {font-size:.9em}
