@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class Recipe < ActiveRecord::Base
   require 'watermark'
   cattr_reader :per_page
@@ -26,7 +27,7 @@ class Recipe < ActiveRecord::Base
 
   has_attached_file :photo,
     :processors => [:watermark],
-    :path       => ":rails_root/public/system/:class/:id/:attachment/:style/:slug.:extension",
+    :path       => "#{Rails.root.to_s}/public/system/:class/:id/:attachment/:style/:slug.:extension",
     :url        => "/system/:class/:id/:attachment/:style/:slug.:extension",
     :styles     => {
       :large  => {
@@ -34,7 +35,7 @@ class Recipe < ActiveRecord::Base
         :watermark_path => "#{Rails.root.to_s}/public/images/watermark.png",
         :position       => "Center",
         :watermark      => "20x100"},
-      :medium => "300>x300",
+      :medium => "310>x310",
       :thumb  => "150>x150" }
 
   scope :by_author, lambda {|author_id|
@@ -83,26 +84,26 @@ class Recipe < ActiveRecord::Base
 
   # before_save
   def slugify_name
-#   accents = { 
-#     ['á','à','â','ä','ã'] => 'a',
-#     ['Ã','Ä','Â','À'] => 'A',
-#     ['é','è','ê','ë'] => 'e',
-#     ['Ë','É','È','Ê'] => 'E',
-#     ['í','ì','î','ï'] => 'i',
-#     ['Í','Î','Ì','Ï'] => 'I',
-#     ['ó','ò','ô','ö','õ'] => 'o',
-#     ['Õ','Ö','Ô','Ò','Ó'] => 'O',
-#     ['ú','ù','û','ü'] => 'u',
-#     ['Ú','Û','Ù','Ü'] => 'U',
-#     ['ç'] => 'c', ['Ç'] => 'C',
-#     ['ñ'] => 'n', ['Ñ'] => 'N'
-#   }
-#   str = self.name
-#   accents.each do |ac,rep|
-#     ac.each do |s|
-#       str = str.gsub(s, rep)
-#     end
-#   end
+    accents = { 
+      ['á','à','â','ä','ã'] => 'a',
+      ['Ã','Ä','Â','À'] => 'A',
+      ['é','è','ê','ë'] => 'e',
+      ['Ë','É','È','Ê'] => 'E',
+      ['í','ì','î','ï'] => 'i',
+      ['Í','Î','Ì','Ï'] => 'I',
+      ['ó','ò','ô','ö','õ'] => 'o',
+      ['Õ','Ö','Ô','Ò','Ó'] => 'O',
+      ['ú','ù','û','ü'] => 'u',
+      ['Ú','Û','Ù','Ü'] => 'U',
+      ['ç'] => 'c', ['Ç'] => 'C',
+      ['ñ'] => 'n', ['Ñ'] => 'N'
+    }
+    str = self.name
+    accents.each do |ac,rep|
+      ac.each do |s|
+        str = str.gsub(s, rep)
+      end
+    end
 
     self.slug = str.split(//u).reject { |e| e.length > 1 }.join.strip.gsub(/[^a-z0-9]+/i, '-').downcase 
   end

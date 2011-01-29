@@ -1,10 +1,10 @@
 !!!
 %html{:lang => "es", "xml:lang" => "es", :xmlns => "http://www.w3.org/1999/xhtml"}
   %head
+    %title= title
     = render "shared/metaheader"
     = javascript_include_tag 'prototype', 'application'
     - if @print
-      = stylesheet_link_tag 'print'
       = stylesheet_link_tag 'print', :media => 'print'
       :css
         @print {
@@ -14,18 +14,29 @@
       :javascript
         document.observe('dom:loaded', function(){print();});
     - else
-      = stylesheet_link_tag 'base', 'rezets'
-      = stylesheet_link_tag 'print', :media => 'print'
+      = stylesheet_link_tag 'rezets.css', :media => 'screen, projection'
+      = stylesheet_link_tag 'print.css', :media => 'print'
+      /[if IE]
+        = stylesheet_link_tag 'ie.css', :media => 'screen, projection'
+
   %body
-    #overwrapper
-      #header
-        .wrapper
-          = render :partial => "common/header"
+    #header
       .wrapper
-        <div #{"id=\"#{@page_identifier}\"" unless @page_identifier.nil?} #{"class=\"#{@page_class}\"" unless @page_class.nil?}>
-        - if flash[:notice]
-          %p#message.notice= flash[:notice]
+        = render :partial => "common/header"
+
+    #wrapper
+
+      #main
+        - if notice
+          %p#message.notice= notice
+
         = yield
+
+      - if content_for? :sidebar
+        #sidebar
+          = content_for :sidebar
+
     #footer
       = render :partial => "common/footer"
+
     = render :partial => "common/scripts"
