@@ -1,0 +1,181 @@
+@import "partials/base";
+@import "partials/layout";
+@import "compass/css3/border-radius";
+
+ul {margin:0; padding:0}
+a {text-decoration:none}
+h1, h2, h3, h4, h5, h6 {font-weight:normal;color:#380}
+h2 {margin-bottom:0}
+
+ul.main-links {display:inline; text-align:left; margin:0 0 0 2em; list-style:none}
+ul.main-links li {display:inline; margin-right:1.5em; text-shadow:1px 1px 1px #555}
+
+.search {float:right; margin-top:.8em}
+
+/*=toolbar*/
+ul.toolbar {margin:0; list-style:none; font-size:.7em}
+ul.toolbar li {display:inline; margin:0 .5em .5em 0; border-right:1px dotted #CCC; padding-right:.5em; font-size:1.3em; text-shadow:1px 1px 1px #555}
+ul.toolbar li.last {margin:0; border:none; padding:0}
+
+/*=forms*/
+fieldset {margin:1em 0}
+legend {font-weight:bold; font-size:1.3em}
+div.field {margin:1em 0; font-size:1.3em}
+div.field p {font-size:1em}
+div.field p label {display:inline; font-weight:normal}
+div.field p input {margin-left:0; vertical-align:middle}
+div.field p.hint {color:#666}
+div.field label {display:block; font-weight:bold}
+div.field input.title {width:31em; font-size:1.4em}
+div.field textarea {width:38em; height:200px; padding:.2em; font-family:sans-serif; font-size:1em}
+p#submit {margin-top:2em}
+p#submit input {font-size:1.2em}
+p#submit a.cancel {margin-left:3em}
+.errorExplanation {border-color:#FBC2C4; -moz-border-radius:.5em; -webkit-border-radius:.5em; padding:1em 2em; background:#FBE3E4 }
+.errorExplanation h2 {color:#8A1F11}
+.errorExplanation ul {margin:0; list-style:none}
+.errorExplanation ul li {font-size:1.3em}
+.fieldWithErrors input, .fieldWithErrors textarea {border: 2px solid #F00}
+
+/*=messages*/
+div.msg {margin:2em 0}
+div.msg h2 {margin-bottom:.5em}
+div.msg p {margin-bottom:1em}
+div.msg p.subtitle {font-size:1.8em; margin-bottom:.3em}
+div.error_static {height:20em}
+div.error_static p {margin-bottom:.5em}
+div.blank {width:65%; padding:2em 3em; background:#f3f3f3}
+div.welcome {width:60%; padding:2em 0}
+
+#login {width:auto; margin:0 32%}
+.sidebar {
+  h2 {margin-bottom:0}
+  h3 {margin-bottom:.3em}
+  ul {list-style:none}
+}
+
+/*=home*/
+div.header-home {text-align:right}
+div.header-home {border:none; margin-bottom:3em; padding-top:.5em}
+div.logo {text-align:left}
+div.logo h1 {font-size:2em; margin-bottom:0}
+p.tagline {margin-bottom:-.4em}
+
+ul.last-recipes {
+  li {
+    @include inline-block;
+    @include border-radius(4px);
+    @include column(8);
+    margin-top:1em;
+    padding:12px 20px;
+    background-color:#F3F3F3;
+    h3 {margin-bottom:0; font-size:1.4em}
+    .right {margin-right:0}
+    img.photo {float:left}
+    p {margin-bottom:0}
+    p.user {margin:.2em 0}
+    p.created {margin-top:.5em; text-align:right}
+    &.last {
+      @include column(8,true);
+    }
+  }
+}
+
+li.user {
+  margin:1em 0; padding:1em; background:#F3F3F3;
+  p {margin-bottom:0}
+}
+
+/*=login-form*/
+div.login-form {margin-left:35%; padding:1em 0 3em}
+
+/*=vcard*/
+div.vcard {margin-bottom:8em}
+div.vcard img {float:left; margin-right:1em}
+div.vcard h1 {margin-bottom:0}
+.feed-link {padding:.2px 0 2px 20px; background:url('/images/feed16.png') top left no-repeat}
+
+/*=hrecipe*/
+div.hrecipe {position:relative}
+div.hrecipe-main {width:593px; padding-right:35px}
+div.hrecipe-head h1 {margin-bottom:0}
+div.hrecipe p.author {margin-bottom:.5em}
+div.hrecipe-main h2 {margin-top:1.5em; margin-bottom:.3em}
+div.hrecipe-main h2.clear {margin-top:.2em; padding-top:1.2em}
+div.hrecipe-main h2.fn {margin:0}
+div.hrecipe-main ul.ingredients {float:left; width:17em; list-style-type:disc; padding-left:1.5em}
+div.hrecipe-main span.duration,
+div.hrecipe-main span.num-persons {color:#666; font-size:.8em}
+div.instructions p {margin-bottom:1em}
+div.ingredient input {display:inline}
+#recipe-sidebar {position:absolute; top:0; right:0; width:319px; background:#5f5f5}
+#recipe-sidebar ul {list-style:none}
+ul.action-links {margin:.1em 0 .6em}
+ul.action-links li {margin-right:1em; line-height:1em; display:inline}
+ul.action-links li a {padding:1px 0 1px 18px;}
+.edit {background:url('/images/action-links.png') top left no-repeat}
+.delete {background:url('/images/action-links.png') 0 -50px no-repeat}
+.print {background:url('/images/action-links.png') 0 -100px no-repeat}
+.send-email {padding-left:20px; background:url('/images/action-links.png') 0 -150px no-repeat}
+.twitter {background:url('/images/action-links.png') 0 -200px no-repeat}
+.facebook {background:url('/images/action-links.png') 0 -400px no-repeat}
+#feed {background:url('/images/action-links.png') 0 -250px no-repeat}
+#prev {background:url('/images/action-links.png') 0 -300px no-repeat}
+#next {background:url('/images/action-links.png') 0 -350px no-repeat}
+
+/*=comments*/
+.comment {margin-top:3em}
+.comment .avatar {float:left; margin-right:.8em}
+.inner-comment {margin-left:38px}
+.inner-comment p.created-time {margin-top:.5em; text-decoration:none; color:#666}
+
+/*=comment-new*/
+#comment-new {margin-bottom:3em}
+#comment-new label {font-size:1.3em; font-weight:normal; color:#380}
+#comment-new textarea {height:100px; width:38em}
+#comment-new div.field {margin:0}
+#comment-new p#submit {margin:0}
+
+/*=ul.hrecipe*/
+ul.recipes {margin-left:0; list-style-type:none}
+li.hrecipe {margin:.5em 0 1em; padding:1em; background:#F3F3F3}
+li.hrecipe img.photo {float:left; margin:0 1em 1em 0;}
+
+/*=pagination*/
+div.pagination {margin:4em 0 2em; font-size:1.3em; text-align:center}
+div.pagination a {margin:0 .5em}
+div.pagination span.current {margin:0 .5em; font-size:1.2em; font-weight:bold}
+div.pagination span.disabled {display:none}
+
+/*=recipe index*/
+div.featured-recipe p.category {font-size:1.6em}
+div.featured-recipe img.photo {border:1px solid #AAA; padding:2px}
+
+div.explore-sidebar {float:right; width:33%}
+div.explore {margin-bottom:5em}
+
+.sidebar-categories ul li {font-size:1.3em}
+
+table#recipe_ingredients {width:600px; margin:.5em 0}
+table#recipe_ingredients thead th {padding:.2em;margin:0;background:#FFF}
+table#recipe_ingredients td {margin:0;padding:.2em 0}
+
+#new-invitation {width:610px}
+
+span.new {font-weight:bold; background:#ffeeaa}
+
+/*=paginator*/
+.prev_page img, .next_page img {vertical-align:middle}
+
+/*=email*/
+#email-container {position:absolute; width:275px; border:1px solid #380; padding:1em 2em; background:#FFF}
+#email-container p.title {font-size:1.3em; font-weight:bold; color:#380}
+#email-container p.close-email-container {position:relative; float:right; left:4%; font-size:1.1em}
+#email-container p.close-email-container a {text-decoration:underline}
+#email-container p.hint {font-size:.9em}
+#email-container p.error {background:none; margin-bottom:0; border:0; padding:0; font-size:.9em}
+#email-container a.cancel-form {margin-left:8em}
+#email-container .ajax-indicator {position:absolute; margin-top:3px; margin-left:5px}
+#email-container .ajax-indicator img {vertical-align:middle}
+#email-container textarea {width:20em; height:8em}
+#email-container p#submit input {font-size:1.1em}
