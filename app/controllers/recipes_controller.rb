@@ -1,18 +1,12 @@
 class RecipesController < ApplicationController
-  before_filter :require_user, :only => [:new, :create, :edit, :update, :destroy, :save, :remove]  
-  before_filter :find_recipe, :only => [:show, :edit, :update, :destroy, :email, :email_send]
+  respond_to :html
+  before_filter :require_user, :except => [:index, :show]
+  before_filter :find_recipe, :except => [:index, :new, :create]
 
   # GET /recipes
   # GET /recipes.xml
   def index
-    @categories = Category.order("name asc")
-    @categories.with_recipes
-
-    @page_title = _("recipes")
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml { render :xml => @recipes }
-    end
+    @categories = Category.with_recipes.order("name asc")
   end
 
   # GET /recipes/1
@@ -21,41 +15,29 @@ class RecipesController < ApplicationController
     @comments = @recipe.comments.paginate(:page => params[:page], :per_page => 20)
     @comment = Comment.new unless current_user.nil?
     @recipes_same_author = Recipe.by_author(@recipe.author.id).
-      not_in(@recipe.id)
+      not_in(@recipe.id).limit(5)
     @recipes_same_category = Recipe.by_category(@recipe.category.id).
-      not_in(@recipes_same_author.map(&:id).push(@recipe.id))
+      not_in(@recipes_same_author.map(&:id).push(@recipe.id)).limit(5)
     @print = params[:print].to_i == 1
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @recipe }
-    end
   end
 
   # GET /recipes/new
   # GET /recipes/new.xml
   def new
-    @page_title = _("new recipe")
-    @categories = Category.all(:order => "name asc")
-    @recipe = Recipe.new
+    @author = User.find_by_slug params[:user_id]
+    @recipe = @author.recipes.new
     @recipe.recipe_ingredients.build
-    @recipe.author = @user
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @recipe }
-    end
   end
 
   # GET /recipes/1/edit
   def edit
-    @categories = Category.all(:order => "name asc")
-    @page_title = _("editing %{recipe}") % {:recipe => @recipe.name}
   end
 
   # POST /recipes
   # POST /recipes.xml
   def create
-    @recipe = Recipe.new(params[:recipe])
-    @recipe.author = current_user
+    @author = User.find_by_slug params[:user_id]
+    @recipe = @author.recipes.new(params[:recipe])
     @recipe.users << current_user
     respond_to do |format|
       if @recipe.save
@@ -63,7 +45,6 @@ class RecipesController < ApplicationController
         format.html { redirect_to current_user }
         format.xml  { render :xml => @recipe, :status => :created, :location => @recipe }
       else
-        @categories = Category.all
         format.html { render :action => "new" }
         format.xml  { render :xml => @recipe.errors, :status => :unprocessable_entity }
       end
@@ -90,12 +71,8 @@ class RecipesController < ApplicationController
   # DELETE /recipes/1
   # DELETE /recipes/1.xml
   def destroy
-    author = @recipe.author
     @recipe.destroy
-    respond_to do |format|
-      format.html { redirect_to author }
-      format.xml  { head :ok }
-    end
+    respond_with(@author)
   end
 
   # GET /user/arctarus/recipes/1-perdices/email
@@ -141,21 +118,6 @@ class RecipesController < ApplicationController
       redirect_to user_recipe_path(@recipe.author,@recipe)
     end
   end
-
-  # POST /recipes/1/save
-# def save
-#   recipe = Recipe.find params[:id]
-#   current_user.recipes << recipe
-#   redirect_to user
-# end
-
-# # POST /recipes/1/remove
-# def remove
-#   recipe = Recipe.find params[:id]
-#   current_user.recipes.delete(recipe)
-#   redirect_to user
-# end
-
 
   private
     def find_recipe
