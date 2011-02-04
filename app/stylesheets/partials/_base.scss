@@ -17,8 +17,13 @@ $link-visited-color: $link-color;
 // Or you can set $blueprint-grid-width to a fixed value and unset $blueprint-container-size -- it will be calculated for you.
 $blueprint-grid-width: ($blueprint-container-size + $blueprint-grid-margin) / $blueprint-grid-columns - $blueprint-grid-margin;
 
-@import "compass/reset";
 @import "compass/utilities";
+@import "blueprint/reset";
 @import "blueprint";
 @import "blueprint/typography";
+
+
+@include blueprint-utilities;
+@include blueprint-debug;
+@include blueprint-interaction;
 @include blueprint-typography;
