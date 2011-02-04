@@ -1,0 +1,12 @@
+- ri = recipe_ingredient
+- unless ri.blank?
+  %li.ingredient
+    - unless ri.value.blank?
+      %span.value= round ri.value
+    - unless ri.value_type.blank?
+      %span.type= h ri.value_type
+      %span.ft= _("of")
+    = h ri.ingredient.name
+    = h ri.comment
+    - if ri.optional
+      %span.ft (#{_("optional")})
