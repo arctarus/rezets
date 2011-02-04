@@ -59,7 +59,6 @@ class Recipe < ActiveRecord::Base
 
   def existing_recipe_ingredients_attributes=(ri_attr)
     recipe_ingredients.reject(&:new_record?).each do |ri|
-      attributes = ri_attr[ri.id.to_s]
       if attributes
         ri.update_attributes(attributes)
       else
