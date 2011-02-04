@@ -1,7 +1,6 @@
 # coding: utf-8
-
 class UsersController < ApplicationController
-  layout 'base'
+  respond_to :html
   before_filter :require_user, :only => [:edit, :update, :changepassword, :updatepassword]
   before_filter :require_no_user, :only => [:new, :create]
   before_filter :find_user, :only => [:show, :edit, :update, :changepassword, :updatepassword]
@@ -9,26 +8,15 @@ class UsersController < ApplicationController
   # GET /user/arctarus
   # GET /user/arctarus.xml
   def show
-    @page_title = "recetas de #{@user.name}"
     conditions = { :user_recipes => { :user_id => @user.id } }
     @total_recipes = Recipe.joins(:user_recipes).where(conditions).count
-    
     unless params[:category_id].nil?
       @category = Category.find_by_slug params[:category_id]
       conditions[:category_id] = @category.id
-      @page_title << " de #{@category.name}"
     end
-
     order = params[:order] != "name" ? "updated_at desc" : "name asc" 
-    @recipes = Recipe.joins(:user_recipes).where(conditions).order(order).
-      paginate(:page => params[:page], :per_page => 10)
-
+    @recipes = Recipe.joins(:user_recipes).where(conditions).order(order).  paginate(:page => params[:page], :per_page => 10)
     @categories = Category.joins(:recipes).where({:recipes => { :author_id => @user.id }}).uniq
-    @page_title << " page #{params[:page]}" unless params[:page].nil? or params[:page].to_i == 1
-    respond_to do |format|
-      format.html
-      format.rss { render :layout => false, :action => "feed" }
-    end
   end
 
   # GET /users/new
@@ -38,10 +26,6 @@ class UsersController < ApplicationController
     if not @invitation.nil? and @invitation.created_at >= Time.now - 1.week
       @user = User.new(:email => @invitation.email)
       @user = User.new
-      respond_to do |format|
-        format.html # new.html.eb
-        format.xml { render :xml => @user }
-      end
     else
       render :layout => false, :file => '/public/404.html', :status => 404
     end
@@ -90,7 +74,6 @@ class UsersController < ApplicationController
   end
 
   def changepassword
-    @page_title = "cambiar tu password de rezets.com"
   end
 
   def updatepassword

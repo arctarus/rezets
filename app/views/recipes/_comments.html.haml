@@ -1,6 +1,5 @@
 - unless current_user.nil? and @comments.blank?
   .comments
-    %hr{:style => "margin-top:3em"}/
     %h2= _("comments")
     - unless @comments.blank?
       - @comments.each do |comment|
@@ -12,6 +11,7 @@
             %p.created-time
               %abbr.timestamp{:title => Time.now}
                 = _("%{time} ago") % {:time => distance_of_time_in_words_to_now(comment.updated_at) }
+
     - unless current_user.nil?
       #comment-new.comment
         = link_to image_tag(current_user.avatar.url(:medium), :class => "avatar", :alt => ""), current_user
