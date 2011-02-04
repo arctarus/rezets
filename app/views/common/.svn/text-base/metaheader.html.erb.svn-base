@@ -1,4 +1,0 @@
-<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-<title>recipeMonkey <%= "| " + @page_title unless @page_title.nil? %></title>
-<%= stylesheet_link_tag 'recipemonkey' %>
-<%= javascript_include_tag 'prototype' %>
