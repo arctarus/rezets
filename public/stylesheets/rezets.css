@@ -1,16 +1,8 @@
-/* line 14, ../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, font, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td {
+/* line 4, ../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
+html, body {
   margin: 0;
   padding: 0;
   border: 0;
-  outline: 0;
   font-weight: inherit;
   font-style: inherit;
   font-size: 100%;
@@ -18,44 +10,198 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   vertical-align: baseline;
 }
 
-/* line 17, ../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-body {
-  line-height: 1;
-  color: black;
-  background: white;
+/* line 6, ../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
+html {
+  font-size: 100.01%;
 }
 
-/* line 19, ../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-ol, ul {
-  list-style: none;
+/* line 16, ../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
+div, span, object, iframe, h1, h2, h3, h4, h5, h6, p,
+pre, a, abbr, acronym, address, code, del, dfn, em, img,
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption, tbody, tfoot, thead, tr {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
 }
 
-/* line 21, ../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-table {
-  border-collapse: separate;
-  border-spacing: 0;
-  vertical-align: middle;
+/* line 18, ../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
+blockquote, q {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+  quotes: "" "";
+}
+/* line 45, ../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
+blockquote:before, blockquote:after, q:before, q:after {
+  content: "";
 }
 
-/* line 23, ../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-caption, th, td {
+/* line 20, ../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
+th, td, caption {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 25, ../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-q, blockquote {
-  quotes: "" "";
-}
-/* line 96, ../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-q:before, q:after, blockquote:before, blockquote:after {
-  content: "";
+/* line 22, ../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
+table {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+  border-collapse: separate;
+  border-spacing: 0;
+  vertical-align: middle;
 }
 
-/* line 27, ../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
 a img {
   border: none;
+}
+
+/* line 9, ../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_utilities.scss */
+.clear {
+  clear: both;
+}
+
+/* line 12, ../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_utilities.scss */
+.nowrap {
+  white-space: nowrap;
+}
+
+/* line 16, ../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_utilities.scss */
+.clearfix {
+  overflow: hidden;
+  *zoom: 1;
+}
+
+/* line 18, ../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_utilities.scss */
+.small {
+  font-size: 0.8em;
+  margin-bottom: 1.875em;
+  line-height: 1.875em;
+}
+
+/* line 22, ../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_utilities.scss */
+.large {
+  font-size: 1.2em;
+  line-height: 2.5em;
+  margin-bottom: 1.25em;
+}
+
+/* line 26, ../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_utilities.scss */
+.first {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+/* line 29, ../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_utilities.scss */
+.last {
+  margin-right: 0;
+  padding-right: 0;
+}
+
+/* line 32, ../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_utilities.scss */
+.top {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+/* line 35, ../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_utilities.scss */
+.bottom {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* line 8, ../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_debug.scss */
+.showgrid {
+  background: url('/images/grid.png?1295811136');
+}
+
+/* line 4, ../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_interaction.scss */
+.error {
+  padding: 0.8em;
+  margin-bottom: 1em;
+  border: 2px solid #dddddd;
+  background: #fbe3e4;
+  color: #8a1f11;
+  border-color: #fbc2c4;
+}
+/* line 29, ../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_interaction.scss */
+.error a {
+  color: #8a1f11;
+}
+
+/* line 6, ../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_interaction.scss */
+.notice {
+  padding: 0.8em;
+  margin-bottom: 1em;
+  border: 2px solid #dddddd;
+  background: #fff6bf;
+  color: #514721;
+  border-color: #ffd324;
+}
+/* line 37, ../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_interaction.scss */
+.notice a {
+  color: #514721;
+}
+
+/* line 8, ../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_interaction.scss */
+.success {
+  padding: 0.8em;
+  margin-bottom: 1em;
+  border: 2px solid #dddddd;
+  background: #e6efc2;
+  color: #264409;
+  border-color: #c6d880;
+}
+/* line 45, ../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_interaction.scss */
+.success a {
+  color: #264409;
+}
+
+/* line 10, ../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_interaction.scss */
+.hide {
+  display: none;
+}
+
+/* line 12, ../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_interaction.scss */
+.highlight {
+  background: yellow;
+}
+
+/* line 14, ../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_interaction.scss */
+.added {
+  background: #006600;
+  color: white;
+}
+
+/* line 16, ../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_interaction.scss */
+.removed {
+  background: #990000;
+  color: white;
 }
 
 /* line 39, ../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
@@ -384,7 +530,7 @@ caption {
 /* line 31, ../../app/stylesheets/partials/_layout.scss */
 #footer {
   padding: 0 0 1em;
-  background: #F6F6F6;
+  background: #EEE;
   border-top: 1px solid #CCC;
   zoom: 1;
 }
@@ -498,74 +644,65 @@ fieldset {
 /* line 22, ../../app/stylesheets/rezets.scss */
 legend {
   font-weight: bold;
-  font-size: 1.3em;
 }
 
 /* line 23, ../../app/stylesheets/rezets.scss */
 div.field {
   margin: 1em 0;
-  font-size: 1.3em;
 }
 
 /* line 24, ../../app/stylesheets/rezets.scss */
-div.field p {
-  font-size: 1em;
-}
-
-/* line 25, ../../app/stylesheets/rezets.scss */
 div.field p label {
   display: inline;
   font-weight: normal;
 }
 
-/* line 26, ../../app/stylesheets/rezets.scss */
+/* line 25, ../../app/stylesheets/rezets.scss */
 div.field p input {
   margin-left: 0;
   vertical-align: middle;
 }
 
-/* line 27, ../../app/stylesheets/rezets.scss */
+/* line 26, ../../app/stylesheets/rezets.scss */
 div.field p.hint {
   color: #666;
 }
 
-/* line 28, ../../app/stylesheets/rezets.scss */
+/* line 27, ../../app/stylesheets/rezets.scss */
 div.field label {
   display: block;
   font-weight: bold;
 }
 
-/* line 29, ../../app/stylesheets/rezets.scss */
+/* line 28, ../../app/stylesheets/rezets.scss */
 div.field input.title {
   width: 31em;
-  font-size: 1.4em;
 }
 
-/* line 30, ../../app/stylesheets/rezets.scss */
+/* line 29, ../../app/stylesheets/rezets.scss */
 div.field textarea {
   width: 38em;
   height: 200px;
   padding: .2em;
   font-family: sans-serif;
-  font-size: 1em;
 }
 
-/* line 31, ../../app/stylesheets/rezets.scss */
+/* line 30, ../../app/stylesheets/rezets.scss */
 p#submit {
   margin-top: 2em;
 }
 
-/* line 32, ../../app/stylesheets/rezets.scss */
+/* line 31, ../../app/stylesheets/rezets.scss */
 p#submit input {
   font-size: 1.2em;
 }
 
-/* line 33, ../../app/stylesheets/rezets.scss */
+/* line 32, ../../app/stylesheets/rezets.scss */
 p#submit a.cancel {
   margin-left: 3em;
 }
 
-/* line 34, ../../app/stylesheets/rezets.scss */
+/* line 33, ../../app/stylesheets/rezets.scss */
 .errorExplanation {
   border-color: #FBC2C4;
   -moz-border-radius: .5em;
@@ -574,121 +711,121 @@ p#submit a.cancel {
   background: #FBE3E4;
 }
 
-/* line 35, ../../app/stylesheets/rezets.scss */
+/* line 34, ../../app/stylesheets/rezets.scss */
 .errorExplanation h2 {
   color: #8A1F11;
 }
 
-/* line 36, ../../app/stylesheets/rezets.scss */
+/* line 35, ../../app/stylesheets/rezets.scss */
 .errorExplanation ul {
   margin: 0;
   list-style: none;
 }
 
-/* line 37, ../../app/stylesheets/rezets.scss */
+/* line 36, ../../app/stylesheets/rezets.scss */
 .errorExplanation ul li {
   font-size: 1.3em;
 }
 
-/* line 38, ../../app/stylesheets/rezets.scss */
+/* line 37, ../../app/stylesheets/rezets.scss */
 .fieldWithErrors input, .fieldWithErrors textarea {
   border: 2px solid #F00;
 }
 
 /*=messages*/
-/* line 41, ../../app/stylesheets/rezets.scss */
+/* line 40, ../../app/stylesheets/rezets.scss */
 div.msg {
   margin: 2em 0;
 }
 
-/* line 42, ../../app/stylesheets/rezets.scss */
+/* line 41, ../../app/stylesheets/rezets.scss */
 div.msg h2 {
   margin-bottom: .5em;
 }
 
-/* line 43, ../../app/stylesheets/rezets.scss */
+/* line 42, ../../app/stylesheets/rezets.scss */
 div.msg p {
   margin-bottom: 1em;
 }
 
-/* line 44, ../../app/stylesheets/rezets.scss */
+/* line 43, ../../app/stylesheets/rezets.scss */
 div.msg p.subtitle {
   font-size: 1.8em;
   margin-bottom: .3em;
 }
 
-/* line 45, ../../app/stylesheets/rezets.scss */
+/* line 44, ../../app/stylesheets/rezets.scss */
 div.error_static {
   height: 20em;
 }
 
-/* line 46, ../../app/stylesheets/rezets.scss */
+/* line 45, ../../app/stylesheets/rezets.scss */
 div.error_static p {
   margin-bottom: .5em;
 }
 
-/* line 47, ../../app/stylesheets/rezets.scss */
+/* line 46, ../../app/stylesheets/rezets.scss */
 div.blank {
   width: 65%;
   padding: 2em 3em;
   background: #f3f3f3;
 }
 
-/* line 48, ../../app/stylesheets/rezets.scss */
+/* line 47, ../../app/stylesheets/rezets.scss */
 div.welcome {
   width: 60%;
   padding: 2em 0;
 }
 
-/* line 50, ../../app/stylesheets/rezets.scss */
+/* line 49, ../../app/stylesheets/rezets.scss */
 #login {
   width: auto;
   margin: 0 32%;
 }
 
-/* line 52, ../../app/stylesheets/rezets.scss */
+/* line 51, ../../app/stylesheets/rezets.scss */
 .sidebar h2 {
   margin-bottom: 0;
 }
-/* line 53, ../../app/stylesheets/rezets.scss */
+/* line 52, ../../app/stylesheets/rezets.scss */
 .sidebar h3 {
   margin-bottom: .3em;
 }
-/* line 54, ../../app/stylesheets/rezets.scss */
+/* line 53, ../../app/stylesheets/rezets.scss */
 .sidebar ul {
   list-style: none;
 }
 
 /*=home*/
-/* line 58, ../../app/stylesheets/rezets.scss */
+/* line 57, ../../app/stylesheets/rezets.scss */
 div.header-home {
   text-align: right;
 }
 
-/* line 59, ../../app/stylesheets/rezets.scss */
+/* line 58, ../../app/stylesheets/rezets.scss */
 div.header-home {
   border: none;
   margin-bottom: 3em;
   padding-top: .5em;
 }
 
-/* line 60, ../../app/stylesheets/rezets.scss */
+/* line 59, ../../app/stylesheets/rezets.scss */
 div.logo {
   text-align: left;
 }
 
-/* line 61, ../../app/stylesheets/rezets.scss */
+/* line 60, ../../app/stylesheets/rezets.scss */
 div.logo h1 {
   font-size: 2em;
   margin-bottom: 0;
 }
 
-/* line 62, ../../app/stylesheets/rezets.scss */
+/* line 61, ../../app/stylesheets/rezets.scss */
 p.tagline {
   margin-bottom: -0.4em;
 }
 
-/* line 65, ../../app/stylesheets/rezets.scss */
+/* line 64, ../../app/stylesheets/rezets.scss */
 ul.last-recipes li {
   display: -moz-inline-box;
   -moz-box-orient: vertical;
@@ -707,7 +844,7 @@ ul.last-recipes li {
   width: 310px;
   margin-top: 1em;
   padding: 12px 20px;
-  background-color: #F3F3F3;
+  background-color: #EEE;
 }
 /* line 7, ../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
 ul.last-recipes li {
@@ -717,33 +854,33 @@ ul.last-recipes li {
 * html ul.last-recipes li {
   overflow-x: hidden;
 }
-/* line 72, ../../app/stylesheets/rezets.scss */
+/* line 71, ../../app/stylesheets/rezets.scss */
 ul.last-recipes li h3 {
   margin-bottom: 0;
   font-size: 1.4em;
 }
-/* line 73, ../../app/stylesheets/rezets.scss */
+/* line 72, ../../app/stylesheets/rezets.scss */
 ul.last-recipes li .right {
   margin-right: 0;
 }
-/* line 74, ../../app/stylesheets/rezets.scss */
+/* line 73, ../../app/stylesheets/rezets.scss */
 ul.last-recipes li img.photo {
   float: left;
 }
-/* line 75, ../../app/stylesheets/rezets.scss */
+/* line 74, ../../app/stylesheets/rezets.scss */
 ul.last-recipes li p {
   margin-bottom: 0;
 }
-/* line 76, ../../app/stylesheets/rezets.scss */
+/* line 75, ../../app/stylesheets/rezets.scss */
 ul.last-recipes li p.user {
   margin: .2em 0;
 }
-/* line 77, ../../app/stylesheets/rezets.scss */
+/* line 76, ../../app/stylesheets/rezets.scss */
 ul.last-recipes li p.created {
   margin-top: .5em;
   text-align: right;
 }
-/* line 78, ../../app/stylesheets/rezets.scss */
+/* line 77, ../../app/stylesheets/rezets.scss */
 ul.last-recipes li.last {
   display: inline;
   float: left;
@@ -755,206 +892,179 @@ ul.last-recipes li.last {
   overflow-x: hidden;
 }
 
-/* line 84, ../../app/stylesheets/rezets.scss */
+/* line 83, ../../app/stylesheets/rezets.scss */
 li.user {
   margin: 1em 0;
   padding: 1em;
   background: #F3F3F3;
 }
-/* line 86, ../../app/stylesheets/rezets.scss */
+/* line 85, ../../app/stylesheets/rezets.scss */
 li.user p {
   margin-bottom: 0;
 }
 
 /*=login-form*/
-/* line 90, ../../app/stylesheets/rezets.scss */
+/* line 89, ../../app/stylesheets/rezets.scss */
 div.login-form {
   margin-left: 35%;
   padding: 1em 0 3em;
 }
 
 /*=vcard*/
-/* line 93, ../../app/stylesheets/rezets.scss */
+/* line 92, ../../app/stylesheets/rezets.scss */
 div.vcard {
   margin-bottom: 8em;
 }
-
 /* line 94, ../../app/stylesheets/rezets.scss */
 div.vcard img {
   float: left;
   margin-right: 1em;
 }
-
 /* line 95, ../../app/stylesheets/rezets.scss */
 div.vcard h1 {
   margin-bottom: 0;
 }
 
-/* line 96, ../../app/stylesheets/rezets.scss */
+/* line 97, ../../app/stylesheets/rezets.scss */
 .feed-link {
   padding: .2px 0 2px 20px;
   background: url("/images/feed16.png") top left no-repeat;
 }
 
 /*=hrecipe*/
-/* line 99, ../../app/stylesheets/rezets.scss */
-div.hrecipe {
-  position: relative;
-}
-
-/* line 100, ../../app/stylesheets/rezets.scss */
-div.hrecipe-main {
-  width: 593px;
-  padding-right: 35px;
-}
-
-/* line 101, ../../app/stylesheets/rezets.scss */
-div.hrecipe-head h1 {
+/* line 103, ../../app/stylesheets/rezets.scss */
+.hrecipe h1 {
   margin-bottom: 0;
 }
-
-/* line 102, ../../app/stylesheets/rezets.scss */
-div.hrecipe p.author {
+/* line 104, ../../app/stylesheets/rezets.scss */
+.hrecipe h1 a {
+  color: #333;
+}
+/* line 106, ../../app/stylesheets/rezets.scss */
+.hrecipe p.category {
+  margin-bottom: 0;
+  font-size: 1.2em;
+}
+/* line 107, ../../app/stylesheets/rezets.scss */
+.hrecipe p.author {
   margin-bottom: .5em;
 }
-
-/* line 103, ../../app/stylesheets/rezets.scss */
-div.hrecipe-main h2 {
+/* line 108, ../../app/stylesheets/rezets.scss */
+.hrecipe h2 {
   margin-top: 1.5em;
   margin-bottom: .3em;
 }
-
-/* line 104, ../../app/stylesheets/rezets.scss */
-div.hrecipe-main h2.clear {
+/* line 109, ../../app/stylesheets/rezets.scss */
+.hrecipe h2.clear {
   margin-top: .2em;
   padding-top: 1.2em;
 }
-
-/* line 105, ../../app/stylesheets/rezets.scss */
-div.hrecipe-main h2.fn {
+/* line 110, ../../app/stylesheets/rezets.scss */
+.hrecipe h2.fn {
   margin: 0;
 }
-
-/* line 106, ../../app/stylesheets/rezets.scss */
-div.hrecipe-main ul.ingredients {
+/* line 111, ../../app/stylesheets/rezets.scss */
+.hrecipe ul.ingredients {
   float: left;
   width: 17em;
   list-style-type: disc;
   padding-left: 1.5em;
 }
-
-/* line 108, ../../app/stylesheets/rezets.scss */
-div.hrecipe-main span.duration,
-div.hrecipe-main span.num-persons {
+/* line 117, ../../app/stylesheets/rezets.scss */
+.hrecipe span.duration,
+.hrecipe span.num-persons {
   color: #666;
   font-size: .8em;
 }
-
-/* line 109, ../../app/stylesheets/rezets.scss */
-div.instructions p {
+/* line 118, ../../app/stylesheets/rezets.scss */
+.hrecipe div.instructions p {
   margin-bottom: 1em;
 }
-
-/* line 110, ../../app/stylesheets/rezets.scss */
-div.ingredient input {
+/* line 119, ../../app/stylesheets/rezets.scss */
+.hrecipe div.ingredient input {
   display: inline;
 }
 
-/* line 111, ../../app/stylesheets/rezets.scss */
-#recipe-sidebar {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 319px;
-  background: #5f5f5;
-}
-
-/* line 112, ../../app/stylesheets/rezets.scss */
-#recipe-sidebar ul {
-  list-style: none;
-}
-
-/* line 113, ../../app/stylesheets/rezets.scss */
+/* line 122, ../../app/stylesheets/rezets.scss */
 ul.action-links {
-  margin: .1em 0 .6em;
+  margin: 0;
+  font-size: .9em;
 }
-
-/* line 114, ../../app/stylesheets/rezets.scss */
+/* line 124, ../../app/stylesheets/rezets.scss */
 ul.action-links li {
   margin-right: 1em;
   line-height: 1em;
   display: inline;
 }
-
-/* line 115, ../../app/stylesheets/rezets.scss */
+/* line 125, ../../app/stylesheets/rezets.scss */
 ul.action-links li a {
   padding: 1px 0 1px 18px;
 }
 
-/* line 116, ../../app/stylesheets/rezets.scss */
+/* line 128, ../../app/stylesheets/rezets.scss */
 .edit {
   background: url("/images/action-links.png") top left no-repeat;
 }
 
-/* line 117, ../../app/stylesheets/rezets.scss */
+/* line 129, ../../app/stylesheets/rezets.scss */
 .delete {
   background: url("/images/action-links.png") 0 -50px no-repeat;
 }
 
-/* line 118, ../../app/stylesheets/rezets.scss */
+/* line 130, ../../app/stylesheets/rezets.scss */
 .print {
   background: url("/images/action-links.png") 0 -100px no-repeat;
 }
 
-/* line 119, ../../app/stylesheets/rezets.scss */
+/* line 131, ../../app/stylesheets/rezets.scss */
 .send-email {
   padding-left: 20px;
   background: url("/images/action-links.png") 0 -150px no-repeat;
 }
 
-/* line 120, ../../app/stylesheets/rezets.scss */
+/* line 132, ../../app/stylesheets/rezets.scss */
 .twitter {
   background: url("/images/action-links.png") 0 -200px no-repeat;
 }
 
-/* line 121, ../../app/stylesheets/rezets.scss */
+/* line 133, ../../app/stylesheets/rezets.scss */
 .facebook {
   background: url("/images/action-links.png") 0 -400px no-repeat;
 }
 
-/* line 122, ../../app/stylesheets/rezets.scss */
+/* line 134, ../../app/stylesheets/rezets.scss */
 #feed {
   background: url("/images/action-links.png") 0 -250px no-repeat;
 }
 
-/* line 123, ../../app/stylesheets/rezets.scss */
+/* line 135, ../../app/stylesheets/rezets.scss */
 #prev {
   background: url("/images/action-links.png") 0 -300px no-repeat;
 }
 
-/* line 124, ../../app/stylesheets/rezets.scss */
+/* line 136, ../../app/stylesheets/rezets.scss */
 #next {
   background: url("/images/action-links.png") 0 -350px no-repeat;
 }
 
 /*=comments*/
-/* line 127, ../../app/stylesheets/rezets.scss */
+/* line 139, ../../app/stylesheets/rezets.scss */
 .comment {
   margin-top: 3em;
 }
 
-/* line 128, ../../app/stylesheets/rezets.scss */
+/* line 140, ../../app/stylesheets/rezets.scss */
 .comment .avatar {
   float: left;
   margin-right: .8em;
 }
 
-/* line 129, ../../app/stylesheets/rezets.scss */
+/* line 141, ../../app/stylesheets/rezets.scss */
 .inner-comment {
   margin-left: 38px;
 }
 
-/* line 130, ../../app/stylesheets/rezets.scss */
+/* line 142, ../../app/stylesheets/rezets.scss */
 .inner-comment p.created-time {
   margin-top: .5em;
   text-decoration: none;
@@ -962,145 +1072,144 @@ ul.action-links li a {
 }
 
 /*=comment-new*/
-/* line 133, ../../app/stylesheets/rezets.scss */
+/* line 145, ../../app/stylesheets/rezets.scss */
 #comment-new {
   margin-bottom: 3em;
 }
 
-/* line 134, ../../app/stylesheets/rezets.scss */
+/* line 146, ../../app/stylesheets/rezets.scss */
 #comment-new label {
-  font-size: 1.3em;
   font-weight: normal;
   color: #380;
 }
 
-/* line 135, ../../app/stylesheets/rezets.scss */
+/* line 147, ../../app/stylesheets/rezets.scss */
 #comment-new textarea {
   height: 100px;
   width: 38em;
 }
 
-/* line 136, ../../app/stylesheets/rezets.scss */
+/* line 148, ../../app/stylesheets/rezets.scss */
 #comment-new div.field {
   margin: 0;
 }
 
-/* line 137, ../../app/stylesheets/rezets.scss */
+/* line 149, ../../app/stylesheets/rezets.scss */
 #comment-new p#submit {
   margin: 0;
 }
 
 /*=ul.hrecipe*/
-/* line 140, ../../app/stylesheets/rezets.scss */
+/* line 152, ../../app/stylesheets/rezets.scss */
 ul.recipes {
   margin-left: 0;
   list-style-type: none;
 }
 
-/* line 141, ../../app/stylesheets/rezets.scss */
+/* line 153, ../../app/stylesheets/rezets.scss */
 li.hrecipe {
   margin: .5em 0 1em;
   padding: 1em;
   background: #F3F3F3;
 }
 
-/* line 142, ../../app/stylesheets/rezets.scss */
+/* line 154, ../../app/stylesheets/rezets.scss */
 li.hrecipe img.photo {
   float: left;
   margin: 0 1em 1em 0;
 }
 
 /*=pagination*/
-/* line 145, ../../app/stylesheets/rezets.scss */
+/* line 157, ../../app/stylesheets/rezets.scss */
 div.pagination {
   margin: 4em 0 2em;
   font-size: 1.3em;
   text-align: center;
 }
 
-/* line 146, ../../app/stylesheets/rezets.scss */
+/* line 158, ../../app/stylesheets/rezets.scss */
 div.pagination a {
   margin: 0 .5em;
 }
 
-/* line 147, ../../app/stylesheets/rezets.scss */
+/* line 159, ../../app/stylesheets/rezets.scss */
 div.pagination span.current {
   margin: 0 .5em;
   font-size: 1.2em;
   font-weight: bold;
 }
 
-/* line 148, ../../app/stylesheets/rezets.scss */
+/* line 160, ../../app/stylesheets/rezets.scss */
 div.pagination span.disabled {
   display: none;
 }
 
 /*=recipe index*/
-/* line 151, ../../app/stylesheets/rezets.scss */
+/* line 163, ../../app/stylesheets/rezets.scss */
 div.featured-recipe p.category {
   font-size: 1.6em;
 }
 
-/* line 152, ../../app/stylesheets/rezets.scss */
+/* line 164, ../../app/stylesheets/rezets.scss */
 div.featured-recipe img.photo {
   border: 1px solid #AAA;
   padding: 2px;
 }
 
-/* line 154, ../../app/stylesheets/rezets.scss */
+/* line 166, ../../app/stylesheets/rezets.scss */
 div.explore-sidebar {
   float: right;
   width: 33%;
 }
 
-/* line 155, ../../app/stylesheets/rezets.scss */
+/* line 167, ../../app/stylesheets/rezets.scss */
 div.explore {
   margin-bottom: 5em;
 }
 
-/* line 157, ../../app/stylesheets/rezets.scss */
+/* line 169, ../../app/stylesheets/rezets.scss */
 .sidebar-categories ul li {
   font-size: 1.3em;
 }
 
-/* line 159, ../../app/stylesheets/rezets.scss */
+/* line 171, ../../app/stylesheets/rezets.scss */
 table#recipe_ingredients {
   width: 600px;
   margin: .5em 0;
 }
 
-/* line 160, ../../app/stylesheets/rezets.scss */
+/* line 172, ../../app/stylesheets/rezets.scss */
 table#recipe_ingredients thead th {
   padding: .2em;
   margin: 0;
   background: #FFF;
 }
 
-/* line 161, ../../app/stylesheets/rezets.scss */
+/* line 173, ../../app/stylesheets/rezets.scss */
 table#recipe_ingredients td {
   margin: 0;
   padding: .2em 0;
 }
 
-/* line 163, ../../app/stylesheets/rezets.scss */
+/* line 175, ../../app/stylesheets/rezets.scss */
 #new-invitation {
   width: 610px;
 }
 
-/* line 165, ../../app/stylesheets/rezets.scss */
+/* line 177, ../../app/stylesheets/rezets.scss */
 span.new {
   font-weight: bold;
   background: #ffeeaa;
 }
 
 /*=paginator*/
-/* line 168, ../../app/stylesheets/rezets.scss */
+/* line 180, ../../app/stylesheets/rezets.scss */
 .prev_page img, .next_page img {
   vertical-align: middle;
 }
 
 /*=email*/
-/* line 171, ../../app/stylesheets/rezets.scss */
+/* line 183, ../../app/stylesheets/rezets.scss */
 #email-container {
   position: absolute;
   width: 275px;
@@ -1109,14 +1218,14 @@ span.new {
   background: #FFF;
 }
 
-/* line 172, ../../app/stylesheets/rezets.scss */
+/* line 184, ../../app/stylesheets/rezets.scss */
 #email-container p.title {
   font-size: 1.3em;
   font-weight: bold;
   color: #380;
 }
 
-/* line 173, ../../app/stylesheets/rezets.scss */
+/* line 185, ../../app/stylesheets/rezets.scss */
 #email-container p.close-email-container {
   position: relative;
   float: right;
@@ -1124,17 +1233,17 @@ span.new {
   font-size: 1.1em;
 }
 
-/* line 174, ../../app/stylesheets/rezets.scss */
+/* line 186, ../../app/stylesheets/rezets.scss */
 #email-container p.close-email-container a {
   text-decoration: underline;
 }
 
-/* line 175, ../../app/stylesheets/rezets.scss */
+/* line 187, ../../app/stylesheets/rezets.scss */
 #email-container p.hint {
   font-size: .9em;
 }
 
-/* line 176, ../../app/stylesheets/rezets.scss */
+/* line 188, ../../app/stylesheets/rezets.scss */
 #email-container p.error {
   background: none;
   margin-bottom: 0;
@@ -1143,30 +1252,30 @@ span.new {
   font-size: .9em;
 }
 
-/* line 177, ../../app/stylesheets/rezets.scss */
+/* line 189, ../../app/stylesheets/rezets.scss */
 #email-container a.cancel-form {
   margin-left: 8em;
 }
 
-/* line 178, ../../app/stylesheets/rezets.scss */
+/* line 190, ../../app/stylesheets/rezets.scss */
 #email-container .ajax-indicator {
   position: absolute;
   margin-top: 3px;
   margin-left: 5px;
 }
 
-/* line 179, ../../app/stylesheets/rezets.scss */
+/* line 191, ../../app/stylesheets/rezets.scss */
 #email-container .ajax-indicator img {
   vertical-align: middle;
 }
 
-/* line 180, ../../app/stylesheets/rezets.scss */
+/* line 192, ../../app/stylesheets/rezets.scss */
 #email-container textarea {
   width: 20em;
   height: 8em;
 }
 
-/* line 181, ../../app/stylesheets/rezets.scss */
+/* line 193, ../../app/stylesheets/rezets.scss */
 #email-container p#submit input {
   font-size: 1.1em;
 }

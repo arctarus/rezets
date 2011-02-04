@@ -1,68 +1,50 @@
+- content_for :sidebar do
+  = render :partial => "show_sidebar"
+
 - title @recipe.title
 - meta_description @recipe.title
 - meta_keywords @recipe.ingredients.map(&:name) << @recipe.category.name
 
-.hrecipe-head
+.hrecipe
   %h1.fn= link_to h(@recipe.name), user_recipe_path(@recipe.author,@recipe), |
-      :title => _("%{recipe} recipe by %{author}") % {                   |
-      :recipe => @recipe.name.downcase, :author => @recipe.author.name}  |
-  %p.category=  link_to @recipe.category.name, @recipe.category,:title => _("%{category} recipes") % {:category => @recipe.category.name}
+    :title => _("%{recipe} recipe by %{author}") % { |
+    :recipe => @recipe.name.downcase, :author => @recipe.author.name} |
+
+  %p.category= link_to @recipe.category.name, @recipe.category, 
+    :title => _("%{category} recipes") % {:category => @recipe.category.name}
   = render :partial => 'action_links'
-.hrecipe-main
-  = image_tag @recipe.photo.url(:large), |
-    :class => "photo",                   |
-    :alt   => @recipe.title,             |
-    :title => @recipe.title              |
-  - unless @recipe.recipe_ingredients.blank?
-    %h2.clearfix
-      = _("ingredients")
-      - unless @recipe.num_persons.blank?
-        %span.num-persons
-          (#{(_("for %{num} people") % {:num => "<span class=\"yield\">#{@recipe.num_persons}</span>"}).html_safe})
-    - if @recipe.recipe_ingredients.size <=  5
+
+= image_tag @recipe.photo.url(:large),  
+  :class => "photo",                    
+  :alt   => @recipe.title,              
+  :title => @recipe.title               
+- unless @recipe.recipe_ingredients.blank?
+  %h2
+    = _("ingredients")
+    - unless @recipe.num_persons.blank?
+      %span.num-persons
+        (#{(_("for %{num} people") % {:num => "<span class=\"yield\">#{@recipe.num_persons}</span>"}).html_safe})
+
+  - if @recipe.recipe_ingredients.size <=  5
+    %ul.ingredients
+      = render :partial => 'recipe_ingredients/recipe_ingredient', :collection => @recipe.recipe_ingredients
+  - else
+    - group_size = (@recipe.recipe_ingredients.size + 1) / 2
+    - @recipe.recipe_ingredients.in_groups_of(group_size).each do |ri_group|
       %ul.ingredients
-        - @recipe.recipe_ingredients.each do |ri|
-          %li.ingredient
-            - unless ri.value.blank?
-              %span.value= round ri.value
-            - unless ri.value_type.blank?
-              %span.type= h ri.value_type
-              %span.ft= _("of")
-            = h ri.ingredient.name
-            = h ri.comment
-            - if ri.optional
-              %span.ft
-                (#{_("optional")})
-    - else
-      - group_size = (@recipe.recipe_ingredients.size + 1) / 2
-      - @recipe.recipe_ingredients.in_groups_of(group_size).each do |ri_group|
-        %ul.ingredients
-          - ri_group.each do |ri|
-            - unless ri.nil?
-              %li.ingredient
-                - unless ri.value.blank?
-                  %span.value= round ri.value
-                - unless ri.value_type.blank?
-                  %span.type= h ri.value_type
-                  %span.ft= _("of")
-                = h ri.ingredient.name
-                = h ri.comment
-                - if ri.optional
-                  %span.ft
-                    (#{_("optional")})
+        = render :partial => 'recipe_ingredients/recipe_ingredient', :collection => ri_group
+
   %h2.clear
     = _("directions")
     - unless @recipe.cook_time.blank?
       %span.duration
         (
         %span.value-title{:title => "@recipe.cook_time"}
-        = h @recipe.cook_time
-        = _("min")
+          = _("%{time} min") % {:time => @recipe.cook_time}
         )
+
   .instructions
     = simple_format(@recipe.directions)
+
   = render :partial => "comments"
   = will_paginate @comments
-
-- content_for :sidebar do
-  = render :partial => "show_sidebar"
