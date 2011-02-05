@@ -4,7 +4,7 @@
     %ul
       - @categories.each do |category|
         %li
-          = link_to_unless_current category.name, category_user_path(category, @user)
+          = link_to_unless_current category.name, [@user, category]
           %span.counter
             (#{Category.find(category.id).recipes.by_author(@user.id).count})
       %li

@@ -8,7 +8,7 @@ $blueprint-font-size:14px;
 $blueprint-font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 
 $link-color:#04A;
-$link-hover-color: $link-color;
+$link-hover-color: lighten($link_color,30%);
 $link-focus-color: $link-color;
 $link-active-color: $link-color;
 $link-visited-color: $link-color;
