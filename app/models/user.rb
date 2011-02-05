@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
   has_many :user_recipes, :dependent => :destroy
   has_many :recipes, :through => :user_recipes
   has_many :comments
+  has_many :invitations_sent, :foreign_key => "sender_id", :class_name => "Invitation"
+  has_many :invitations_received, :foreign_key => "receiver_id", :class_name => "Invitation"
 
   validates_presence_of :email, :slug, :name
   validates_uniqueness_of :slug
