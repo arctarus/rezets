@@ -1,0 +1,32 @@
+- title _("new invitation")
+
+%h1= _("send invitations")
+- if current_user.id == 1
+  %p= link_to _("see all invitations"), invitations_path
+- if @remaining_invitations > 0 or current_user.id == 1
+  %p= _("Write the address of the person you want to invite to rezets.com and we will send an email with the text you typed and a link so it can register. You can customize the message included below and tell your friends because you like rezets.com.")
+  %p= _("You have %{num_invitations} invitations to send to your friends which will remain %{remaining_invitations}.") % { |
+    :num_invitations => 10, :remaining_invitations => @remaining_invitations}   |
+
+  = form_for @invitation do |f|
+    - unless @invitation.errors.empty?
+      %h2= _("It looks like there is a problem")
+
+    .field
+      = f.label :email, _("email")
+      = f.text_field :email, :size => 30, :maxlength => 255
+    .field
+      = label :mail, :subject, _("subject")
+      = text_field :mail, :subject, :value => _("%{user} has invite you to rezets.com") % {:user => current_user.name}
+    .field
+      = label :mail, :message, _("message")
+      = text_area :mail, :message, :value => email_message(current_user.name)
+    %p#submit
+      = f.submit _('send')
+      %span.ft= _("or")
+      = link_to _('cancel'), current_user,
+          :confirm => "you will go out and lose form data that you saved Are you sure?"
+- else
+  .msg.info
+    %p= _("Sorry but you've exhausted all your invitations!")
+    %p= _("thank you very much to publicize rezets.com your friends, thanks to you today we are a little larger. When you say we have more invitations will inform you of this.")
