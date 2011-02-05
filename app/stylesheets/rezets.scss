@@ -26,15 +26,8 @@ div.field p input {margin-left:0; vertical-align:middle}
 div.field p.hint {color:#666}
 div.field label {display:block; font-weight:bold}
 div.field input.title {width:31em}
-div.field textarea {width:38em; height:200px; padding:.2em; font-family:sans-serif}
+div.field textarea {width:38em; height:200px; padding:.2em}
 p#submit {margin-top:2em}
-p#submit input {font-size:1.2em}
-p#submit a.cancel {margin-left:3em}
-.errorExplanation {border-color:#FBC2C4; -moz-border-radius:.5em; -webkit-border-radius:.5em; padding:1em 2em; background:#FBE3E4 }
-.errorExplanation h2 {color:#8A1F11}
-.errorExplanation ul {margin:0; list-style:none}
-.errorExplanation ul li {font-size:1.3em}
-.fieldWithErrors input, .fieldWithErrors textarea {border: 2px solid #F00}
 
 /*=messages*/
 div.msg {margin:2em 0}
@@ -159,21 +152,11 @@ div.pagination a {margin:0 .5em}
 div.pagination span.current {margin:0 .5em; font-size:1.2em; font-weight:bold}
 div.pagination span.disabled {display:none}
 
-/*=recipe index*/
-div.featured-recipe p.category {font-size:1.6em}
-div.featured-recipe img.photo {border:1px solid #AAA; padding:2px}
-
-div.explore-sidebar {float:right; width:33%}
-div.explore {margin-bottom:5em}
-
-.sidebar-categories ul li {font-size:1.3em}
-
 table#recipe_ingredients {width:600px; margin:.5em 0}
 table#recipe_ingredients thead th {padding:.2em;margin:0;background:#FFF}
 table#recipe_ingredients td {margin:0;padding:.2em 0}
 
 #new-invitation {width:610px}
-
 span.new {font-weight:bold; background:#ffeeaa}
 
 /*=paginator*/
