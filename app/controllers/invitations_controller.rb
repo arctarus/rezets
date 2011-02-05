@@ -1,7 +1,6 @@
 # coding: utf-8
-
 class InvitationsController < ApplicationController
-  layout 'base'
+  respond_to :html
   before_filter :require_user, :only => [:new, :create]
 
   # GET /invitations
@@ -19,21 +18,14 @@ class InvitationsController < ApplicationController
   # GET /invitations/new
   # GET /invitations/new.xml
   def new
-    @invitation = Invitation.new
-    @page_title = "nueva invitación"
-    @page_identifier = "new-invitation"
+    @invitation = current_user.invitations_sent.new(params[:invitation])
     @remaining_invitations = 10 - Invitation.where(:sender_id => current_user.id).count
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml { render :xml => @invitation }
-    end
   end
 
   # POST /invitations
   # POST /invitations.xml
   def create
-    @invitation = Invitation.new(params[:invitation])
-    @invitation.sender = current_user
+    @invitation = current_user.invitations_sent.new(params[:invitation])
     respond_to do |format|
       if @invitation.save
         UserMailer.invitation(@invitation, params["mail"], current_user).deliver
