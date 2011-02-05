@@ -1,5 +1,4 @@
 class CategoriesController < ApplicationController
-  layout "base"
 
   def index
     @recipes = Recipe.order("created_at desc").paginate(:page => params[:page])
