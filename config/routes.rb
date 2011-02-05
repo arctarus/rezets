@@ -1,35 +1,24 @@
 Rezets::Application.routes.draw do
   
-  resources :recipes do
-    member do
-      post :save
-      delete :remove
-    end
-    resources :comments
-  end
+  resources :recipes
+  resources :categories
   
   resources :users do
     member do
       get :changepassword
       post :updatepassword
     end
-    resources :recipes
-  end
-
-  resources :users do
+    resources :categories
     resources :recipes do
       member do
         get :email
         post :email_send
       end
+      resources :ingredients
+      resources :comments
     end
   end
 
-  resources :comments
-  resources :ingredients
-  resources :categories do
-   resources :users
-  end
   resources :invitations
   resource :session, :path_names => { :new => "login", :destroy => "logout" }
 
