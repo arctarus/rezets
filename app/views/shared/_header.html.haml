@@ -9,7 +9,9 @@
       %li= link_to _("edit profile"), edit_user_path(current_user)
       %li= link_to _("invite friends"), new_invitation_path
       %li.last= link_to _("logout"), session_path, :method => :delete
+
 = render :partial => "shared/search"
+
 %div{:style => "text-align:left"}
   %span.tagline= _("share your recipes")
   %p.logo
