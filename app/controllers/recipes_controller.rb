@@ -15,10 +15,11 @@ class RecipesController < ApplicationController
     @comments = @recipe.comments.paginate(:page => params[:page], :per_page => 20)
     @comment = Comment.new unless current_user.nil?
     @recipes_same_author = Recipe.by_author(@recipe.author.id).
-      not_in(@recipe.id).limit(5)
+      not_in(@recipe.id).limit(3)
     @recipes_same_category = Recipe.by_category(@recipe.category.id).
-      not_in(@recipes_same_author.map(&:id).push(@recipe.id)).limit(5)
+      not_in(@recipes_same_author.map(&:id).push(@recipe.id)).limit(2)
     @print = params[:print].to_i == 1
+    render :layout => 'recipe'
   end
 
   # GET /recipes/new
