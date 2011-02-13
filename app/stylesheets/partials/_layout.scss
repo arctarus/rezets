@@ -5,7 +5,10 @@
 .wrapper { @include container }
 
 #header {
-  position:relative; margin-bottom:1em; text-align:right; zoom:1;
+  position:relative;
+  @include append-bottom(2em);
+  text-align:right;
+  zoom:1;
   background:url('/images/bck_header.png') #380 top left repeat-x;
   p.logo {
     display:inline; margin:0; text-align:left; font-size:1.8em;
@@ -20,7 +23,9 @@
   a { color:#F3F3F3; }
 }
 
-#main { @include column(18)}
+#main {
+  @include column(18);
+}
 #sidebar { 
   @include column(6, true);
   h2 {font-size:1.4em}
@@ -28,9 +33,26 @@
 }
 
 /*=footer*/
-#footer {padding:0 0 1em; background:#EEE; border-top:1px solid #CCC; zoom:1}
+#footer {
+  @include prepend-top(2em);
+  padding:0 0 1em;
+  background:#EEE;
+  border-top:1px solid #CCC;
+  zoom:1;
+}
 #footer .wrapper {max-width:960px; min-width:700px; padding:1em 0}
 #footer ul {list-style:none}
 #footer ul li {display:inline; margin-left:1em; border-left:1px dotted #CCC; padding-left:1em}
 #footer ul li.first {margin-left:0; border-left:none; padding-left:0}
 #footer p, #footer li {font-size:.9em}
+
+/*=recipe*/
+#recipe { 
+  @include container;
+//@include showgrid;
+  #main {
+    @include append(1);
+    @include column(14);
+  }
+  #sidebar {@include column(9,true)}
+}
