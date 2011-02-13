@@ -1,13 +1,14 @@
-- unless @categories.blank?
-  %h3= _("categories")
+- content_for :sidebar do
   - unless @categories.blank?
-    %ul
-      - @categories.each do |category|
+    %h3= _("categories")
+    - unless @categories.blank?
+      %ul
+        - @categories.each do |category|
+          %li
+            = link_to_unless_current category.name, [@user, category]
+            %span.counter
+              (#{Category.find(category.id).recipes.by_author(@user.id).count})
         %li
-          = link_to_unless_current category.name, [@user, category]
+          = link_to_unless_current _("all"), @user
           %span.counter
-            (#{Category.find(category.id).recipes.by_author(@user.id).count})
-      %li
-        = link_to_unless_current _("all"), @user
-        %span.counter
-          (#{@total_recipes})
+            (#{@total_recipes})

@@ -1,0 +1,13 @@
+- content_for :sidebar do
+  %h3= _("categories")
+  %ul
+    - for category in @categories
+      %li
+        = link_to_unless_current category.name, category,                      |
+          :title => _("%{category} recipes") % {:category => h(category.name)} |
+        %span.counter
+          (#{category.recipes.size})
+    %li
+      = link_to_unless_current _("all"), categories_path
+      %span.counter
+        (#{Recipe.count})

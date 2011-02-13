@@ -1,7 +1,9 @@
 @import "partials/base";
 @import "partials/layout";
+@import "partials/recipe";
 @import "compass/css3/border-radius";
 
+.last { @include last}
 ul {margin:0; padding:0}
 a {text-decoration:none}
 h1, h2, h3, h4, h5, h6 {font-weight:normal;color:#380}
@@ -83,50 +85,13 @@ div.login-form {margin-left:35%; padding:1em 0 3em}
 
 /*=vcard*/
 div.vcard {
-  margin-bottom:8em;
+  margin-bottom:4em;
   img {float:left; margin-right:1em}
   h1 {margin-bottom:0}
 }
 .feed-link {
   padding:.2px 0 2px 20px; 
   background:url('/images/feed16.png') top left no-repeat}
-
-/*=hrecipe*/
-.hrecipe {
-  h1 {margin-bottom:0;
-    a {color:#333}
-  }
-  p.category {margin-bottom:0; font-size:1.2em}
-  p.author {margin-bottom:.5em}
-  h2 {margin-top:1.5em; margin-bottom:.3em}
-  h2.clear {margin-top:.2em; padding-top:1.2em}
-  h2.fn {margin:0}
-  ul.ingredients {
-    float:left; 
-    width:17em; 
-    list-style-type:disc; 
-    padding-left:1.5em}
-  span.duration,
-  span.num-persons {color:#666; font-size:.8em}
-  div.instructions p {margin-bottom:1em}
-  div.ingredient input {display:inline}
-}
-
-ul.action-links {
-  margin:0; font-size:.9em;
-  li {margin-right:1em; line-height:1em; display:inline}
-  li a {padding:1px 0 1px 18px}
-}
-
-.edit {background:url('/images/action-links.png') top left no-repeat}
-.delete {background:url('/images/action-links.png') 0 -50px no-repeat}
-.print {background:url('/images/action-links.png') 0 -100px no-repeat}
-.send-email {padding-left:20px; background:url('/images/action-links.png') 0 -150px no-repeat}
-.twitter {background:url('/images/action-links.png') 0 -200px no-repeat}
-.facebook {background:url('/images/action-links.png') 0 -400px no-repeat}
-#feed {background:url('/images/action-links.png') 0 -250px no-repeat}
-#prev {background:url('/images/action-links.png') 0 -300px no-repeat}
-#next {background:url('/images/action-links.png') 0 -350px no-repeat}
 
 /*=comments*/
 .comment {margin-top:3em}
@@ -142,7 +107,9 @@ ul.action-links {
 #comment-new p#submit {margin:0}
 
 /*=ul.hrecipe*/
-ul.recipes {margin-left:0; list-style-type:none}
+ul.recipes {
+  clear:both;
+  margin-left:0; list-style-type:none}
 li.hrecipe {margin:.5em 0 1em; padding:1em; background:#F3F3F3}
 li.hrecipe img.photo {float:left; margin:0 1em 1em 0;}
 
