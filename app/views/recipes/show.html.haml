@@ -1,38 +1,49 @@
-- content_for :sidebar do
-  = render :partial => "show_sidebar"
-
 - title @recipe.title
 - meta_description @recipe.title
 - meta_keywords @recipe.ingredients.map(&:name) << @recipe.category.name
 
 .hrecipe
+  = link_to image_tag(@recipe.author.avatar.url(:large), :alt => "", :width => "50px"),
+    @recipe.author, :style => "float:left; margin-right:1em"
   %h1.fn= link_to h(@recipe.name), user_recipe_path(@recipe.author,@recipe), |
     :title => _("%{recipe} recipe by %{author}") % { |
     :recipe => @recipe.name.downcase, :author => @recipe.author.name} |
 
-  %p.category= link_to @recipe.category.name, @recipe.category, 
-    :title => _("%{category} recipes") % {:category => @recipe.category.name}
+  %p
+    %span.author= link_to @recipe.author.name, @recipe.author, :class => "url fn"
+    %span.ft
+      |
+    %span.category= link_to @recipe.category.name, @recipe.category, 
+      :title => _("%{category} recipes") % {:category => @recipe.category.name}
+    %span.ft
+      |
+    %span.published= distance_of_time_in_words_to_now @recipe.created_at
+
   = render :partial => 'action_links'
 
-= image_tag @recipe.photo.url(:large),  
-  :class => "photo",                    
-  :alt   => @recipe.title,              
-  :title => @recipe.title               
-- unless @recipe.recipe_ingredients.blank?
-  %h2
-    = _("ingredients")
-    - unless @recipe.num_persons.blank?
-      %span.num-persons
-        (#{(_("for %{num} people") % {:num => "<span class=\"yield\">#{@recipe.num_persons}</span>"}).html_safe})
+  = image_tag @recipe.photo.url(:large),  
+    :class => "photo",                    
+    :alt   => @recipe.title,              
+    :title => @recipe.title               
 
-  - if @recipe.recipe_ingredients.size <=  5
-    %ul.ingredients
-      = render :partial => 'recipe_ingredients/recipe_ingredient', :collection => @recipe.recipe_ingredients
-  - else
-    - group_size = (@recipe.recipe_ingredients.size + 1) / 2
-    - @recipe.recipe_ingredients.in_groups_of(group_size).each do |ri_group|
-      %ul.ingredients
-        = render :partial => 'recipe_ingredients/recipe_ingredient', :collection => ri_group
+  - unless @recipe.recipe_ingredients.blank?
+    #recipe-ingredients
+      %h2
+        = _("ingredients")
+        - unless @recipe.num_persons.blank?
+          %span.num-persons
+            (#{(_("for %{num} people") % {:num => "<span class=\"yield\">#{@recipe.num_persons}</span>"}).html_safe})
+
+      - if @recipe.recipe_ingredients.size <=  5
+        .recipe-ingredients
+          %ul.ingredients
+            = render :partial => 'recipe_ingredients/recipe_ingredient', :collection => @recipe.recipe_ingredients
+      - else
+        - group_size = (@recipe.recipe_ingredients.size + 1) / 2
+        - @recipe.recipe_ingredients.in_groups_of(group_size).each_with_index do |ri_group, i|
+          .recipe-ingredients{:class => ('last' if i == 1)}
+            %ul.ingredients
+              = render :partial => 'recipe_ingredients/recipe_ingredient', :collection => ri_group
 
   %h2.clear
     = _("directions")
