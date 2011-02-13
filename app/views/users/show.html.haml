@@ -1,4 +1,5 @@
 - title user_title(@user,@category, @recipes.current_page)
+= render :partial => 'users/sidebar'
 
 - unless @recipes.blank? and current_user == @user
   .vcard{:id => "user-#{@user.id}"}
@@ -15,35 +16,33 @@
           (#{Category.find(@category.id).recipes.by_author(@user.id).count})
     - if current_user == @user
       %p= link_to _('create a new recipe'), new_user_recipe_path(current_user)
-  .sidebar.sidebar-users
-    = render :partial => "sidebar"
-.main
-  - if @recipes.blank?
-    - if current_user.nil? or @user != current_user
-      .msg.blank
-        %h2= _("%{user} still hasn't any recipe") % {:user => @user.name}
-        %p= ("you can %{explore} or search %{bycategory}.") % {                  |
-            :explore => link_to(_("explore more recipes"), recipes_path),        |
-            :bycategory => link_to(_("recipes by categories"), categories_path)} |
-    - else
-      .msg.welcome
-        %h1= _("Welcome to rezets.com!")
-        %p= _("If you're here because you are one of the lucky ones who have been invited to enjoy this new service.")
-        %p= _("As you can see we are walking in underwear so I would ask you if you saw a little something that does not work or you do not like something we have know.")
-        %p= _("To start enjoying rezets.com simply %{create_recipe}.") % {:create_recipe => link_to(_("create a new recipe"), new_recipe_path)}
-        %p= _("Thanks!")
+
+- if @recipes.blank?
+  - if current_user.nil? or @user != current_user
+    .msg.blank
+      %h2= _("%{user} still hasn't any recipe") % {:user => @user.name}
+      %p= ("you can %{explore} or search %{bycategory}.") % {                  |
+          :explore => link_to(_("explore more recipes"), recipes_path),        |
+          :bycategory => link_to(_("recipes by categories"), categories_path)} |
   - else
-    %ul.recipes
-      - @recipes.each do |recipe|
-        = render :partial => "recipes/recipe", :locals => {:recipe => recipe}
-    = will_paginate @recipes
-    - if @user == current_user
-      - if @category.nil?
-        %p= link_to _("subscribe to your own recipes"), user_path(@user, :format => :rss), :class => "feed-link"
-      - else
-        %p= link_to _("subscribe to your own %{category} recipes") % {:category => @category.name}, user_category_path(@category, @user, :format => :rss), :class => "feed-link"
+    .msg.welcome
+      %h1= _("Welcome to rezets.com!")
+      %p= _("If you're here because you are one of the lucky ones who have been invited to enjoy this new service.")
+      %p= _("As you can see we are walking in underwear so I would ask you if you saw a little something that does not work or you do not like something we have know.")
+      %p= _("To start enjoying rezets.com simply %{create_recipe}.") % {:create_recipe => link_to(_("create a new recipe"), new_recipe_path)}
+      %p= _("Thanks!")
+- else
+  %ul.recipes
+    - @recipes.each do |recipe|
+      = render :partial => "recipes/recipe", :locals => {:recipe => recipe}
+  = will_paginate @recipes
+  - if @user == current_user
+    - if @category.nil?
+      %p= link_to _("subscribe to your own recipes"), user_path(@user, :format => :rss), :class => "feed-link"
     - else
-      - if @category.nil?
-        %p= link_to _("subscribe to %{user}'s recipes") % {:user => @user.name}, user_path(@user, :format => :rss), :class => "feed-link"
-      - else
-        %p= link_to _("subscribe to %{user}'s %{category} recipes") % {:user => @user.name, :category => @category.name}, user_category_path(@category, @user, :format => :rss), :class => "feed-link"
+      %p= link_to _("subscribe to your own %{category} recipes") % {:category => @category.name}, user_category_path(@category, @user, :format => :rss), :class => "feed-link"
+  - else
+    - if @category.nil?
+      %p= link_to _("subscribe to %{user}'s recipes") % {:user => @user.name}, user_path(@user, :format => :rss), :class => "feed-link"
+    - else
+      %p= link_to _("subscribe to %{user}'s %{category} recipes") % {:user => @user.name, :category => @category.name}, user_category_path(@category, @user, :format => :rss), :class => "feed-link"
