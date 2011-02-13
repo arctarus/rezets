@@ -1,0 +1,23 @@
+%li.hrecipe.clearfix
+  = link_to image_tag(recipe.photo.url(:medium), :class => 'photo', :alt => recipe.name), user_recipe_path(recipe.author, recipe)
+  .recipe-data
+    %h2.fn= link_to recipe.name, user_recipe_path(recipe.author, recipe)
+    %p.category= link_to recipe.category.name, recipe.category,                          |
+        :title => _("{category} recipes") % {:category => recipe.category.name} |
+    - unless controller.controller_name == "users" and controller.action_name == "show"
+      %p.author
+        %span.ft= _("by")
+        %span.author.vcard
+          = link_to image_tag(recipe.author.avatar.url(:thumb), :class => "avatar", :alt => ""), recipe.author
+          = link_to recipe.author.name, recipe.author, :class => "url fn"
+    - if recipe.author? current_user
+      %ul.action-links
+        %li= link_to _('edit'), edit_user_recipe_path(recipe.author, recipe), :class => "action-link edit"
+        %li= link_to _('delete'), user_recipe_path(recipe.author, recipe),                      |
+            :confirm => _("are you sure?"), :method => :delete, :class => "action-link delete" |
+    .r-meta
+      %p.date
+        %span.published
+          updated
+          %span.value-title{:title => recipe.updated_at}= distance_of_time_in_words_to_now(recipe.updated_at)
+          ago

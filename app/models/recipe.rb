@@ -26,7 +26,7 @@ class Recipe < ActiveRecord::Base
     :reject_if => proc { |attrs| attrs.all? { |k,v| v.blank? } }
 
   has_attached_file :photo,
-    :processors => [:watermark],
+#   :processors => [:watermark],
     :path       => "#{Rails.root.to_s}/public/system/:class/:id/:attachment/:style/:slug.:extension",
     :url        => "/system/:class/:id/:attachment/:style/:slug.:extension",
     :styles     => {
@@ -35,8 +35,8 @@ class Recipe < ActiveRecord::Base
         :watermark_path => "#{Rails.root.to_s}/public/images/watermark.png",
         :position       => "Center",
         :watermark      => "20x100"},
-      :medium => "310>x310",
-      :thumb  => "150>x150" }
+      :medium => "310x240#",
+      :thumb  => "100x100#" }
 
   scope :by_author, lambda {|author_id|
     where("author_id = ?", author_id).
@@ -69,7 +69,7 @@ class Recipe < ActiveRecord::Base
 
   def save_recipe_ingredients
     recipe_ingredients.each do |ri|
-      ri.save(false)
+      ri.save(:validate => false)
     end
   end
 
@@ -81,30 +81,8 @@ class Recipe < ActiveRecord::Base
     "#{id}-#{slug}"
   end
 
-  # before_save
   def slugify_name
-    accents = { 
-      ['á','à','â','ä','ã'] => 'a',
-      ['Ã','Ä','Â','À'] => 'A',
-      ['é','è','ê','ë'] => 'e',
-      ['Ë','É','È','Ê'] => 'E',
-      ['í','ì','î','ï'] => 'i',
-      ['Í','Î','Ì','Ï'] => 'I',
-      ['ó','ò','ô','ö','õ'] => 'o',
-      ['Õ','Ö','Ô','Ò','Ó'] => 'O',
-      ['ú','ù','û','ü'] => 'u',
-      ['Ú','Û','Ù','Ü'] => 'U',
-      ['ç'] => 'c', ['Ç'] => 'C',
-      ['ñ'] => 'n', ['Ñ'] => 'N'
-    }
-    str = self.name
-    accents.each do |ac,rep|
-      ac.each do |s|
-        str = str.gsub(s, rep)
-      end
-    end
-
-    self.slug = str.split(//u).reject { |e| e.length > 1 }.join.strip.gsub(/[^a-z0-9]+/i, '-').downcase 
+    self.slug = name.parameterize
   end
 
   def title
