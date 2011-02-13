@@ -13,7 +13,7 @@ class Category < ActiveRecord::Base
 
   # before_save
   def slugify_name
-    self.slug = name.split(//u).reject { |e| e.length > 1 }.join.strip.gsub(/[^a-z0-9]+/i, '-').downcase 
+    self.slug = name.parameterize 
   end
 
 end
