@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   before_filter :require_no_user, :only => [:new, :create]
   before_filter :find_user, :only => [:show, :edit, :update,
     :changepassword, :updatepassword, :follow, :unfollow,
-    :following]
+    :following, :likes]
 
   def index
     @users = User.paginate :per_page => 50, :page => params[:page]
@@ -107,6 +107,11 @@ class UsersController < ApplicationController
   def following
     @recipes = @user.followings.map(&:recipes).flatten.
       sort_by{|r| r.updated_at }.reverse.paginate :per_page => 10, :page => params[:page]
+  end
+
+  def likes
+    @recipes = @user.likes.order("updated_at asc").paginate :per_page => 10, :page => params[:page]
+    render 'following'
   end
 
   private

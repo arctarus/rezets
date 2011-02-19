@@ -96,24 +96,40 @@ div.vcard {
 .inner-comment p.created-time {margin-top:.5em; text-decoration:none; color:#666}
 
 /*=comment-new*/
-#comment-new {margin-bottom:3em}
-#comment-new label {font-weight:normal; color:#380}
-#comment-new textarea {height:100px; width:38em}
-#comment-new div.field {margin:0}
-#comment-new p#submit {margin:0}
+#comment-new {margin-bottom:3em;
+  label { font-weight:normal; color:#380;}
+  textarea {height:100px; width:38em}
+  div.field {margin:0}
+  p#submit {margin:0}
+}
 
 /*=ul.hrecipe*/
 ul.recipes {
   clear:both;
-  margin-left:0; list-style-type:none}
-li.hrecipe {margin:.5em 0 1em; padding:1em; background:#F3F3F3}
-li.hrecipe img.photo {float:left; margin:0 1em 1em 0;}
+  margin-left:0;
+  list-style-type:none;
+  li.hrecipe {
+    margin:.5em 0 1em;
+    padding:1em; 
+    background:#F3F3F3;
+    h2.fn {font-size:1.2em}
+    p.category {font-size:1em}
+    .r-meta p {margin-bottom:0; font-size:.9em;}
+    img.photo {
+      float:left; 
+      margin:0 1em 0  0;
+    }
+  }
+}
 
 /*=pagination*/
-div.pagination {margin:4em 0 2em; font-size:1.3em; text-align:center}
-div.pagination a {margin:0 .5em}
-div.pagination span.current {margin:0 .5em; font-size:1.2em; font-weight:bold}
-div.pagination span.disabled {display:none}
+div.pagination {
+  margin:4em 0 2em;
+  text-align:center;
+  a {margin:0 .2em}
+  em {margin:0 .2em; font-style:normal; font-weight:bold}
+  span.disabled {display:none}
+}
 
 table#recipe_ingredients {width:600px; margin:.5em 0}
 table#recipe_ingredients thead th {padding:.2em;margin:0;background:#FFF}
