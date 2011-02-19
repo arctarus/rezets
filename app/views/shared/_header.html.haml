@@ -1,22 +1,7 @@
-- unless controller.controller_name == "sessions" and controller.action_name == "new"
-  %ul.toolbar
-    - if current_user.nil?
-      %li.last= link_to _("login"), new_session_path
-    - else
-      %li
-        = link_to image_tag(current_user.avatar.url(:thumb), :class => 'avatar', :alt => ""), current_user
-        = link_to current_user.name, current_user
-      %li= link_to _("edit profile"), edit_user_path(current_user)
-      %li= link_to _("invite friends"), new_invitation_path
-      %li.last= link_to _("logout"), session_path, :method => :delete
-
-= render :partial => "shared/search"
-
-%div{:style => "text-align:left"}
-  %span.tagline= _("share your recipes")
-  %p.logo
-    %strong
-      = link_to "rezets.com", root_url
+#logo
+  -#%span.tagline= _("share your recipes")
+  %p.logo= link_to "rezets.com", root_url
   %ul.main-links
     %li= link_to _("recipes"), recipes_path
-    %li.last= link_to _("categories"), categories_path
+    %li.last= link_to _("chefs"), users_path
+

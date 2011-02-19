@@ -9,16 +9,6 @@ a {text-decoration:none}
 h1, h2, h3, h4, h5, h6 {font-weight:normal;color:#380}
 h2 {margin-bottom:0}
 
-ul.main-links {display:inline; text-align:left; margin:0 0 0 2em; list-style:none}
-ul.main-links li {display:inline; margin-right:1.5em; text-shadow:1px 1px 1px #555}
-
-.search {float:right; margin-top:.8em}
-
-/*=toolbar*/
-ul.toolbar {margin:0; list-style:none; font-size:.7em}
-ul.toolbar li {display:inline; margin:0 .5em .5em 0; border-right:1px dotted #CCC; padding-right:.5em; font-size:1.3em; text-shadow:1px 1px 1px #555}
-ul.toolbar li.last {margin:0; border:none; padding:0}
-
 /*=forms*/
 fieldset {margin:1em 0}
 legend {font-weight:bold}
@@ -76,8 +66,14 @@ ul.last-recipes {
 }
 
 li.user {
-  margin:1em 0; padding:1em; background:#F3F3F3;
-  p {margin-bottom:0}
+  margin:1em 0;
+  border-bottom: 1px solid #DDD;
+  padding-bottom:1em;
+  .avatar {float:left; margin-right:.5em}
+  p {
+    margin-bottom:0;
+    &.num-recipes {font-size:.9em}
+  }
 }
 
 /*=login-form*/
