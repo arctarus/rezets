@@ -120,6 +120,15 @@ class RecipesController < ApplicationController
     end
   end
 
+  def like
+    current_user.likes << @recipe
+  end
+
+  def unlike
+    current_user.likes.delete @recipe
+    render 'like'
+  end
+
   private
     def find_recipe
       recipe_id = params[:id].split("-").first
