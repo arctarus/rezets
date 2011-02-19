@@ -12,11 +12,7 @@
     %ul.users-list
       - @users.order("num_recipes desc").each do |user|
         %li.user
-          %p
-            = link_to image_tag(user.avatar.url(:medium), :class => "avatar", :alt => ""), user
-            = link_to h(user.name), user
-            #{user.recipes.count} recetas
-          %p
-            = _("last recipe")
-          %p= link_to h(user.recipes.last.name), recipe_path(user.recipes.last), :title => user.recipes.last.title
+          = link_to image_tag(user.avatar.url(:medium), :class => "avatar", :alt => ""), user
+          %p= link_to user.name, user
+          %p.num-recipes #{user.recipes.count} recetas
 

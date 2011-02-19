@@ -3,7 +3,13 @@ class UsersController < ApplicationController
   respond_to :html
   before_filter :require_user, :only => [:edit, :update, :changepassword, :updatepassword]
   before_filter :require_no_user, :only => [:new, :create]
-  before_filter :find_user, :only => [:show, :edit, :update, :changepassword, :updatepassword]
+  before_filter :find_user, :only => [:show, :edit, :update,
+    :changepassword, :updatepassword, :follow, :unfollow,
+    :following]
+
+  def index
+    @users = User.paginate :per_page => 50, :page => params[:page]
+  end
 
   # GET /user/arctarus
   # GET /user/arctarus.xml
@@ -87,6 +93,20 @@ class UsersController < ApplicationController
         format.xml  { render :xml => @user.errors, :status => :unprocessable_entity }
       end
     end
+  end
+
+  def follow
+    current_user.followings << @user
+  end
+
+  def unfollow
+    current_user.followings.delete(@user)
+    render 'follow'
+  end
+
+  def following
+    @recipes = @user.followings.map(&:recipes).flatten.
+      sort_by{|r| r.updated_at }.reverse.paginate :per_page => 10, :page => params[:page]
   end
 
   private
