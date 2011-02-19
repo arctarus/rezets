@@ -10,7 +10,14 @@ class Recipe < ActiveRecord::Base
   has_many :ingredients,        :through => :recipe_ingredients
   has_many :comments
   belongs_to :category
-  belongs_to :author,           :foreign_key => "author_id",      :class_name => "User"
+
+  belongs_to :author,
+    :foreign_key => "author_id",
+    :class_name => "User"
+
+  has_and_belongs_to_many :likes,
+    :join_table => 'likes',
+    :class_name => 'User'
 
   validates_presence_of :name, :directions, :category, :author, :message => "no puede quedar en blanco"
   validates_presence_of :photo_file_name, :message => "es imprescindible que pongas una bien bonita :D"
@@ -31,7 +38,7 @@ class Recipe < ActiveRecord::Base
     :url        => "/system/:class/:id/:attachment/:style/:slug.:extension",
     :styles     => {
       :large  => {
-        :geometry       => "500>x500",
+        :geometry       => "500x375#",
         :watermark_path => "#{Rails.root.to_s}/public/images/watermark.png",
         :position       => "Center",
         :watermark      => "20x100"},

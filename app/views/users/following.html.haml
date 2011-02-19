@@ -1,3 +1,4 @@
 = render :partial => 'users/vcard'
-= render @recipes
+%ul.recipes
+  = render @recipes
 = will_paginate @recipes

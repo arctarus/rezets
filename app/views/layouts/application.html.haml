@@ -23,11 +23,9 @@
   %body
     #header
       .wrapper
+        #nav= render :partial => "shared/nav"
         = render :partial => "shared/header"
         = render :partial => "shared/search"
-    #nav
-      .wrapper
-        = render :partial => "shared/nav"
 
     #wrapper
 
