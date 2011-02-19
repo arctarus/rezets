@@ -22,4 +22,6 @@
   %span.ft
     |
   = link_to_unless_current _("following"), following_user_path(@user)
- 
+  %span.ft
+    |
+  = link_to_unless_current _("likes"), likes_user_path(@user)
