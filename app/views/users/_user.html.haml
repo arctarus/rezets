@@ -1,0 +1,5 @@
+%p
+  = link_to image_tag(user.avatar.url(:medium), :alt => '', :class => :avatar),
+    user
+  = link_to user.name, user
+%p= _("%{num} recipes") % {:num => user.recipes.count}
