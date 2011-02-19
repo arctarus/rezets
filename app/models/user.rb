@@ -21,6 +21,10 @@ class User < ActiveRecord::Base
     :association_foreign_key => 'following_id',
     :foreign_key => 'follower_id'
 
+  has_and_belongs_to_many :likes,
+    :join_table => 'likes',
+    :class_name => 'Recipe'
+
   validates_presence_of :email, :slug, :name
   validates_uniqueness_of :slug
 
