@@ -5,8 +5,9 @@
 .wrapper { @include container }
 
 #header {
-  padding:.2em 0 .5em;
+  padding:0 0 .5em;
   background:url('/images/bck_header.png') #380 top left repeat-x;
+  @include append-bottom(2em);
   zoom:1;
   a {
     text-decoration:none;
@@ -60,7 +61,7 @@ ul.main-links {
 #nav {
   @include append-bottom(0);
   text-align:right;
-  font-size:.9em;
+  font-size:.9emwiiadsdawewqe;
   a {
     text-decoration:none;
     color:#F3F3F3;
