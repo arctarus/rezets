@@ -14,6 +14,8 @@
 
     = render "shared/metaheader"
     = javascript_include_tag :defaults, :cache => true
+
+    %link{ :href => 'http://fonts.googleapis.com/css?family=Lobster', :rel => 'stylesheet', :type => 'text/css'}
     - if @print
       = stylesheet_link_tag 'print', :media => 'print'
       :css
@@ -32,6 +34,10 @@
     #header
       .wrapper
         = render :partial => "shared/header"
+        = render :partial => "shared/search"
+    #nav
+      .wrapper
+        = render :partial => "shared/nav"
 
     #recipe
       #main
