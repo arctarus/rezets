@@ -7,12 +7,18 @@ Rezets::Application.routes.draw do
     member do
       get :changepassword
       post :updatepassword
+      get :following
+      get :likes
+      put :follow
+      put :unfollow
     end
     resources :categories
     resources :recipes do
       member do
         get :email
         post :email_send
+        put :like
+        put :unlike
       end
       resources :ingredients
       resources :comments
