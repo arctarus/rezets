@@ -6,7 +6,7 @@
 
 #header {
   padding:0 0 .5em;
-  background:url('/images/bck_header.png') #380 top left repeat-x;
+  background:url('/images/bck_header.png') #33b300 bottom left repeat-x;
   @include append-bottom(2em);
   zoom:1;
   a {
@@ -59,6 +59,7 @@ ul.main-links {
 
 /*=nav*/
 #nav {
+  height:26px;
   @include append-bottom(0);
   text-align:right;
   font-size:.9emwiiadsdawewqe;
@@ -79,6 +80,7 @@ ul.main-links {
       margin: 0 .5em .5em 0; 
       border-right: 1px dotted #CCC; 
       padding-right: .5em; 
+      font-size:.9em;
       &.last { 
         margin-right:0;
         border-right:none;
