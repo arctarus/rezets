@@ -459,7 +459,7 @@ caption {
 /* line 7, ../../app/stylesheets/partials/_layout.scss */
 #header {
   padding: 0 0 .5em;
-  background: url("/images/bck_header.png") #338800 top left repeat-x;
+  background: url("/images/bck_header.png") #33b300 bottom left repeat-x;
   margin-bottom: 2em;
   zoom: 1;
 }
@@ -543,20 +543,21 @@ ul.main-links li {
 /*=nav*/
 /* line 61, ../../app/stylesheets/partials/_layout.scss */
 #nav {
+  height: 26px;
   margin-bottom: 0;
   text-align: right;
-  font-size: .9em;
+  font-size: .9emwiiadsdawewqe;
 }
-/* line 65, ../../app/stylesheets/partials/_layout.scss */
+/* line 66, ../../app/stylesheets/partials/_layout.scss */
 #nav a {
   text-decoration: none;
   color: #F3F3F3;
 }
-/* line 68, ../../app/stylesheets/partials/_layout.scss */
+/* line 69, ../../app/stylesheets/partials/_layout.scss */
 #nav a:hover {
   color: #FF0;
 }
-/* line 70, ../../app/stylesheets/partials/_layout.scss */
+/* line 71, ../../app/stylesheets/partials/_layout.scss */
 #nav ul {
   background: #336c00;
   float: right;
@@ -570,21 +571,22 @@ ul.main-links li {
   -khtml-border-radius: 0px 0px 5px 5px;
   border-radius: 0px 0px 5px 5px;
 }
-/* line 77, ../../app/stylesheets/partials/_layout.scss */
+/* line 78, ../../app/stylesheets/partials/_layout.scss */
 #nav ul li {
   display: inline;
   margin: 0 .5em .5em 0;
   border-right: 1px dotted #CCC;
   padding-right: .5em;
+  font-size: .9em;
 }
-/* line 82, ../../app/stylesheets/partials/_layout.scss */
+/* line 84, ../../app/stylesheets/partials/_layout.scss */
 #nav ul li.last {
   margin-right: 0;
   border-right: none;
   padding-right: 0;
 }
 
-/* line 91, ../../app/stylesheets/partials/_layout.scss */
+/* line 93, ../../app/stylesheets/partials/_layout.scss */
 #main {
   display: inline;
   float: left;
@@ -597,7 +599,7 @@ ul.main-links li {
   overflow-x: hidden;
 }
 
-/* line 95, ../../app/stylesheets/partials/_layout.scss */
+/* line 97, ../../app/stylesheets/partials/_layout.scss */
 #sidebar {
   display: inline;
   float: left;
@@ -608,18 +610,18 @@ ul.main-links li {
 * html #sidebar {
   overflow-x: hidden;
 }
-/* line 97, ../../app/stylesheets/partials/_layout.scss */
+/* line 99, ../../app/stylesheets/partials/_layout.scss */
 #sidebar h2 {
   font-size: 1.4em;
 }
-/* line 98, ../../app/stylesheets/partials/_layout.scss */
+/* line 100, ../../app/stylesheets/partials/_layout.scss */
 #sidebar ul {
   list-style: none;
   margin-bottom: 1em;
 }
 
 /*=footer*/
-/* line 102, ../../app/stylesheets/partials/_layout.scss */
+/* line 104, ../../app/stylesheets/partials/_layout.scss */
 #footer {
   margin-top: 2em;
   padding: 0 0 1em;
@@ -627,43 +629,43 @@ ul.main-links li {
   border-top: 1px solid #CCC;
   zoom: 1;
 }
-/* line 108, ../../app/stylesheets/partials/_layout.scss */
+/* line 110, ../../app/stylesheets/partials/_layout.scss */
 #footer .wrapper {
   max-width: 960px;
   min-width: 700px;
   padding: 1em 0;
 }
-/* line 109, ../../app/stylesheets/partials/_layout.scss */
+/* line 111, ../../app/stylesheets/partials/_layout.scss */
 #footer ul {
   list-style: none;
 }
-/* line 111, ../../app/stylesheets/partials/_layout.scss */
+/* line 113, ../../app/stylesheets/partials/_layout.scss */
 #footer ul li {
   display: inline;
   margin-left: 1em;
   border-left: 1px dotted #CCC;
   padding-left: 1em;
 }
-/* line 113, ../../app/stylesheets/partials/_layout.scss */
+/* line 115, ../../app/stylesheets/partials/_layout.scss */
 #footer ul li.first {
   margin-left: 0;
   border-left: none;
   padding-left: 0;
 }
-/* line 116, ../../app/stylesheets/partials/_layout.scss */
+/* line 118, ../../app/stylesheets/partials/_layout.scss */
 #footer p, #footer li {
   font-size: .9em;
 }
 
 /*=recipe*/
-/* line 120, ../../app/stylesheets/partials/_layout.scss */
+/* line 122, ../../app/stylesheets/partials/_layout.scss */
 #recipe {
   width: 950px;
   margin: 0 auto;
   overflow: hidden;
   *zoom: 1;
 }
-/* line 123, ../../app/stylesheets/partials/_layout.scss */
+/* line 125, ../../app/stylesheets/partials/_layout.scss */
 #recipe #main {
   padding-right: 40px;
   display: inline;
@@ -675,7 +677,7 @@ ul.main-links li {
 * html #recipe #main {
   overflow-x: hidden;
 }
-/* line 127, ../../app/stylesheets/partials/_layout.scss */
+/* line 129, ../../app/stylesheets/partials/_layout.scss */
 #recipe #sidebar {
   display: inline;
   float: left;
@@ -687,7 +689,7 @@ ul.main-links li {
   overflow-x: hidden;
 }
 
-/* line 130, ../../app/stylesheets/partials/_layout.scss */
+/* line 132, ../../app/stylesheets/partials/_layout.scss */
 .avatar {
   vertical-align: middle;
 }
