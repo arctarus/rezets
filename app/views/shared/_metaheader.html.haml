@@ -1,8 +1,0 @@
-- if controller.controller_name == "users" and not controller.action_name == "new" and not controller.action_name == "create" and not @user.nil?
-  - if @category.nil?
-    %link{:href => user_path(@user, :format => :rss), :rel => "alternate", :title => "recetas de #{@user.name} en rezets.com", :type => "application/atom+xml"}/
-  - else
-    %link{:href => category_user_path(@category, @user, :format => :rss), :rel => "alternate", :title => "recetas de #{@user.name} de #{@category.name} en rezets.com", :type => "application/atom+xml"}/
-- elsif controller.controller_name == "home" and controller.action_name == "index"
-  %link{:href => url_for(:controller => "home", :action => "feed"), :rel => "alternate", :title => "recetas recién hechas en rezets.com", :type => "application/atom+xml"}/
-/[if IE 6]
