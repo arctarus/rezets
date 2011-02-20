@@ -27,3 +27,7 @@
 
 - content_for :sidebar do
   = render :partial => 'sidebar'
+
+- content_for :feed do
+  %link{:href => url_for(:controller => "home", :action => "feed"), :rel => "alternate", :title => "recetas recién hechas en rezets.com", :type => "application/atom+xml"}/
+
