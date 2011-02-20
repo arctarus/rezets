@@ -11,13 +11,15 @@
     - if content_for? :meta_keywords
       %meta{:content => content_for(:meta_keywords), :name => "keywords"}
 
-    = render "shared/metaheader"
-    = javascript_include_tag :defaults, :cache => true
+    - if content_for? :feed
+      = content_for :feed
+
     %link{ :href => 'http://fonts.googleapis.com/css?family=Lobster', :rel => 'stylesheet', :type => 'text/css'}
     = stylesheet_link_tag 'rezets.css', :media => 'screen, projection'
     = stylesheet_link_tag 'print.css', :media => 'print'
     /[if IE]
       = stylesheet_link_tag 'ie.css', :media => 'screen, projection'
+    = javascript_include_tag :defaults, :cache => true
     
 
   %body
