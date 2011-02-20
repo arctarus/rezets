@@ -21,6 +21,7 @@
     - @recipes.each do |recipe|
       = render :partial => "recipes/recipe", :locals => {:recipe => recipe}
   = will_paginate @recipes
+
   - if @user == current_user
     - if @category.nil?
       %p= link_to _("subscribe to your own recipes"), user_path(@user, :format => :rss), :class => "feed-link"
@@ -31,3 +32,9 @@
       %p= link_to _("subscribe to %{user}'s recipes") % {:user => @user.name}, user_path(@user, :format => :rss), :class => "feed-link"
     - else
       %p= link_to _("subscribe to %{user}'s %{category} recipes") % {:user => @user.name, :category => @category.name}, user_category_path(@category, @user, :format => :rss), :class => "feed-link"
+
+- content_for :feed do
+  - if @category.nil?
+    %link{:href => user_path(@user, :format => :rss), :rel => "alternate", :title => "recetas de #{@user.name} en rezets.com", :type => "application/atom+xml"}/
+  - else
+    %link{:href => category_user_path(@category, @user, :format => :rss), :rel => "alternate", :title => "recetas de #{@user.name} de #{@category.name} en rezets.com", :type => "application/atom+xml"}/
