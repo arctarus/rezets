@@ -1,4 +1,4 @@
-- if not @recipe.author.recipes.empty?
+- unless @recipes_same_author.blank?
   %h3= _("%{author}'s recipes") % {:author => @recipe.author.name}
   %ul.recipes
     - @recipes_same_author.each do |recipe|
@@ -9,7 +9,7 @@
         %p= link_to recipe.category.name, category_path(recipe.category),
             :title => _("%{category} recipes") % {:category => recipe.category.name}
               
-- if not @recipe.category.recipes.empty?
+- unless @recipes_same_category.blank?
   %h3= _("%{category} recipes") % {:category => @recipe.category.name}
   %ul.recipes
     - @recipes_same_category.each do |recipe|

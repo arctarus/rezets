@@ -1,4 +1,3 @@
-# encoding: UTF-8
 class Recipe < ActiveRecord::Base
   require 'watermark'
   cattr_reader :per_page
@@ -13,7 +12,8 @@ class Recipe < ActiveRecord::Base
 
   belongs_to :author,
     :foreign_key => "author_id",
-    :class_name => "User"
+    :class_name => "User",
+    :counter_cache => true
 
   has_and_belongs_to_many :likes,
     :join_table => 'likes',
