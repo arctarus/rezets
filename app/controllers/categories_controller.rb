@@ -15,18 +15,29 @@ class CategoriesController < ApplicationController
   # GET /categories/1
   # GET /categories/1.xml
   def show
-    @category = Category.find_by_slug params[:id]
-    @recipes = Recipe.where(:category_id => @category.id).
-      order("created_at desc").
-      paginate(:page => params[:page])
+    @user = User.find_by_slug(params[:user_id]) if params[:user_id]
+    @category = Category.find_by_slug(params[:id])
 
-    @categories = Category.with_recipes.order("name asc")
+    if @user
+      @recipes = @user.recipes.where(:category_id => @category.id).
+        order("created_at desc").
+        paginate(:page => params[:page], :per_page => 10)
+      @categories = Category.joins(:recipes).where({:recipes => { :author_id => @user.id }}).uniq
+    else
+      @recipes = Recipe.where(:category_id => @category.id).
+        order("created_at desc").
+        paginate(:page => params[:page], :per_page => 10)
+      @categories = Category.with_recipes.order("name asc")
+    end
 
-    @page_title = "recetas de #{@category.name}"
-    @page_identifier = "categories"
     respond_to do |format|
-      format.html # show.html.erb
-      format.xml { render :xml => @category }
+      if @user
+        format.html { render :layout => 'users' }
+        format.xml { render :xml => @category }
+      else
+        format.html { render }
+        format.xml { render :xml => @category }
+      end
     end
   end
 
