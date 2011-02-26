@@ -1,5 +1,25 @@
 - title _("chefs")
 
 %h1= _("chefs")
-= render @users
-= will_paginate @users
+
+%ul.user-nav
+  %li
+    %h2{:class => current_page?(:action => :index) && 'current'}= link_to_unless_current _('featured'), users_path
+  %li
+    %h2{:class => current_page?(:action => :rookies) && 'current'}= link_to_unless_current _('rookies'), rookies_users_path
+
+%ul.users
+  - for user in @users
+    %li[user]{:class => cycle('first','last')}
+      .wrapper
+        = link_to image_tag(user.avatar.url(:large), :alt => '', :class => :avatar), user
+        .content
+          %h3= link_to user.name, user
+
+          .counters
+            %p= _("%{num} recipes") % {:num => user.recipes.size}
+            %p= _("%{num} followings") % {:num => user.followings.size}
+
+          .counters
+            %p= _("%{num} likes") % {:num => user.likes.size}
+            %p= _("%{num} followers") % {:num => user.followers.size}

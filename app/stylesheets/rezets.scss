@@ -9,6 +9,10 @@ a {text-decoration:none}
 h1, h2, h3, h4, h5, h6 {font-weight:normal;color:#380}
 h2 {margin-bottom:0}
 
+#sidebar {
+  h3 {margin-bottom:.6em}
+}
+
 /*=forms*/
 fieldset {margin:1em 0}
 legend {font-weight:bold}
@@ -65,15 +69,34 @@ ul.last-recipes {
   }
 }
 
-li.user {
+ul.featured-users li.user {
+  line-height:15px;
   margin:1em 0;
   border-bottom: 1px solid #DDD;
   padding-bottom:1em;
   .avatar {float:left; margin-right:.5em}
   p {
     margin-bottom:0;
-    &.num-recipes {font-size:.9em}
+    &.meta {font-size:.9em}
   }
+}
+
+ul.users {
+  li.user {
+    float:left;
+    margin-right:1em;
+    margin-bottom:1em;
+    background:#EEE;
+    @include column(9);
+    height:110px;
+    .wrapper {padding:1em}
+    .avatar {float:left}
+    .content {margin-left:90px}
+    h3 {margin-bottom:.2em}
+    p {margin-bottom:0}
+    .counters {float:left; width:120px;}
+  }
+  li.last {margin-right:0}
 }
 
 /*=login-form*/
@@ -81,10 +104,34 @@ div.login-form {margin-left:35%; padding:1em 0 3em}
 
 /*=vcard*/
 div.vcard {
-  margin-bottom:4em;
+  height:80px;
+  margin-bottom:2em;
   img {float:left; margin-right:1em}
-  h1 {margin-bottom:0}
+  h1 {margin-bottom:0; font-size:2.4em;
+    a {color:#333}
+  }
+  input.follow {@include fancy-button(#eb9e06)}
+  input.unfollow {@include fancy-button(#be0a0a)}
 }
+
+ul.user-nav {
+  border-bottom:2px solid #CCC;
+  margin-bottom:1em;
+  li {
+    display:inline;
+    margin-right:2em;
+    h2 {
+      display:inline;
+      font-size:1.2em;
+      color:#666;
+      &.current {
+        color:#333;
+        a { color: #333 }
+      }
+    }
+  }
+}
+
 .feed-link {
   padding:.2px 0 2px 20px; 
   background:url('/images/feed16.png') top left no-repeat}
@@ -109,16 +156,20 @@ ul.recipes {
   margin-left:0;
   list-style-type:none;
   li.hrecipe {
+    position: relative;
     margin:.5em 0 1em;
     padding:1em; 
-    background:#F3F3F3;
-    h2.fn {font-size:1.2em}
-    p.category {font-size:1em}
-    .r-meta p {margin-bottom:0; font-size:.9em;}
-    img.photo {
-      float:left; 
-      margin:0 1em 0  0;
+    background:#EEE;
+    @include border-radius(5px);
+    h2 {
+      font-size:1.4em; margin-right:1em;
+      span.ft { color:#666 }
     }
+    p.category {font-size:1.2em; display:inline}
+    p {margin-bottom:.5em}
+    .r-meta p {margin-bottom:0; color:#666;}
+    .photo { float:left; margin:0 1em 0  0}
+    .data { margin-left:110px}
   }
 }
 
@@ -131,9 +182,11 @@ div.pagination {
   span.disabled {display:none}
 }
 
-table#recipe_ingredients {width:600px; margin:.5em 0}
-table#recipe_ingredients thead th {padding:.2em;margin:0;background:#FFF}
-table#recipe_ingredients td {margin:0;padding:.2em 0}
+table#recipe_ingredients {
+  width:600px; margin:.5em 0;
+  thead th {padding:.2em;margin:0;background:#FFF}
+  td {margin:0;padding:.2em 0}
+}
 
 #new-invitation {width:610px}
 span.new {font-weight:bold; background:#ffeeaa}
@@ -142,14 +195,16 @@ span.new {font-weight:bold; background:#ffeeaa}
 .prev_page img, .next_page img {vertical-align:middle}
 
 /*=email*/
-#email-container {position:absolute; width:275px; border:1px solid #380; padding:1em 2em; background:#FFF}
-#email-container p.title {font-size:1.3em; font-weight:bold; color:#380}
-#email-container p.close-email-container {position:relative; float:right; left:4%; font-size:1.1em}
-#email-container p.close-email-container a {text-decoration:underline}
-#email-container p.hint {font-size:.9em}
-#email-container p.error {background:none; margin-bottom:0; border:0; padding:0; font-size:.9em}
-#email-container a.cancel-form {margin-left:8em}
-#email-container .ajax-indicator {position:absolute; margin-top:3px; margin-left:5px}
-#email-container .ajax-indicator img {vertical-align:middle}
-#email-container textarea {width:20em; height:8em}
-#email-container p#submit input {font-size:1.1em}
+#email-container {
+  position:absolute; width:275px; border:1px solid #380; padding:1em 2em; background:#FFF;
+  p.title {font-size:1.3em; font-weight:bold; color:#380}
+  p.close-email-container {position:relative; float:right; left:4%; font-size:1.1em}
+  p.close-email-container a {text-decoration:underline}
+  p.hint {font-size:.9em}
+  p.error {background:none; margin-bottom:0; border:0; padding:0; font-size:.9em}
+  a.cancel-form {margin-left:8em}
+  .ajax-indicator {position:absolute; margin-top:3px; margin-left:5px}
+  .ajax-indicator img {vertical-align:middle}
+  textarea {width:20em; height:8em}
+  p#submit input {font-size:1.1em}
+}

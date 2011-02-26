@@ -11,25 +11,19 @@
     - if content_for? :meta_keywords
       %meta{:content => content_for(:meta_keywords), :name => "keywords"}
 
-
-    = javascript_include_tag :defaults, :cache => true
+    - if content_for? :feed
+      = content_for :feed
 
     %link{ :href => 'http://fonts.googleapis.com/css?family=Lobster', :rel => 'stylesheet', :type => 'text/css'}
-    - if @print
-      = stylesheet_link_tag 'print', :media => 'print'
-      :css
-        @print {
-          .print {display:none}
-        }
-      :javascript
-        document.observe('dom:loaded', function(){print();});
-    - else
-      = stylesheet_link_tag 'rezets.css', :media => 'screen, projection'
-      = stylesheet_link_tag 'print.css', :media => 'print'
-      /[if IE]
-        = stylesheet_link_tag 'ie.css', :media => 'screen, projection'
-      /[if lt IE 7]
-        = stylesheet_link_tag 'ie6.css', :media => 'screen, projection'
+    = stylesheet_link_tag 'rezets.css', :media => 'screen, projection'
+    = stylesheet_link_tag 'print.css', :media => 'print'
+    /[if IE]
+      = stylesheet_link_tag 'ie.css', :media => 'screen, projection'
+    /[if lt IE 7]
+      = stylesheet_link_tag 'ie6.css', :media => 'screen, projection'
+
+    = javascript_include_tag :defaults, :cache => true
+    
 
   %body
     #header
@@ -37,13 +31,20 @@
         #nav= render :partial => "shared/nav"
         = render :partial => "shared/header"
         = render :partial => "shared/search"
-    #recipe
+
+    #wrapper
+      - if notice
+        %p#message.notice= notice
+ 
+      = render :partial => 'users/vcard'
+
       #main
-        - if notice
-          %p#message.notice= notice
+        = render :partial => 'users/nav'
         = yield
-      #sidebar
-        = render :partial => "show_sidebar"
+
+      - if content_for? :sidebar
+        #sidebar
+          = content_for :sidebar
 
     #footer
       = render :partial => "shared/footer"
