@@ -3,8 +3,6 @@ class CreateFollows < ActiveRecord::Migration
     create_table :follows, :id => false do |t|
       t.references :follower
       t.references :following
-
-      t.timestamps
     end
   end
 
