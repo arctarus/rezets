@@ -1,27 +1,7 @@
 - unless @recipes.blank? and current_user == @user
   .vcard{:id => "user-#{@user.id}"}
     = link_to image_tag(@user.avatar.url(:large), :class => "avatar", :alt => ""), @user
-    %h1
-      = link_to _("%{user}'s recipes") % {:user => @user.name}, @user
-      - if @category.nil?
-        %span.counter
-          (#{@total_recipes})
-      - else
-        %span.ft de
-        = link_to @category.name, @category
-        %span.counter
-          (#{Category.find(@category.id).recipes.by_author(@user.id).count})
-    - if current_user == @user
-      %p= link_to _('create a new recipe'), new_user_recipe_path(current_user)
-    - else
+    %h1= link_to @user.name, @user
+    - if current_user != @user
       #follow
         = render :partial => 'follow', :locals => {:user => @user}
-
-%p
-  = link_to_unless_current _("recipes"), @user
-  %span.ft
-    |
-  = link_to_unless_current _("following"), following_user_path(@user)
-  %span.ft
-    |
-  = link_to_unless_current _("likes"), likes_user_path(@user)

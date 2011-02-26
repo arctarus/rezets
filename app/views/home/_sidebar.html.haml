@@ -6,13 +6,16 @@
       %li
         = link_to category.name, category
 
-- unless @users.count.empty?
+- unless @users.empty?
   .users
     %h2= _("featured users")
-    %ul.users-list
-      - @users.order("num_recipes desc").each do |user|
+    %ul.featured-users
+      - @users.each do |user|
         %li.user
           = link_to image_tag(user.avatar.url(:medium), :class => "avatar", :alt => ""), user
           %p= link_to user.name, user
-          %p.num-recipes #{user.recipes.count} recetas
+          %p.meta
+            = _("%{num} recipes") % {:num => user.recipes.size}
+            %span.ft= '|'
+            = n_("%{num} follower", "%{num} followers", user.followers.size) % {:num => user.followers.size}
 

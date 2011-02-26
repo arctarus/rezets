@@ -1,4 +1,8 @@
-= render :partial => 'users/vcard'
 %ul.recipes
   = render @recipes
 = will_paginate @recipes
+
+- content_for :sidebar do
+  %h3= _("you are following")
+  - @user.followings.each do |user|
+    = link_to image_tag(user.avatar.url(:medium), :alt => user.name, :title => user.name), user
