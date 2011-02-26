@@ -50,6 +50,8 @@ GEM
     diff-lcs (1.1.2)
     erubis (2.6.6)
       abstract (>= 1.0.0)
+    fancy-buttons (1.0.6)
+      compass (= 0.10.6)
     fast_gettext (0.5.10)
     fastthread (1.0.7)
     file-tail (1.0.5)
@@ -140,6 +142,7 @@ DEPENDENCIES
   authlogic!
   capistrano
   compass
+  fancy-buttons
   fast_gettext
   gettext
   gettext_i18n_rails

@@ -8,7 +8,13 @@ class UsersController < ApplicationController
     :following, :likes]
 
   def index
-    @users = User.paginate :per_page => 50, :page => params[:page]
+    @users = User.featured.paginate :per_page => 12, :page => params[:page]
+    render :layout => 'application'
+  end
+
+  def rookies
+    @users = User.rookies.paginate :per_page => 12, :page => params[:page]
+    render :action => :index, :layout => 'application'
   end
 
   # GET /user/arctarus
@@ -21,7 +27,9 @@ class UsersController < ApplicationController
       conditions[:category_id] = @category.id
     end
     order = params[:order] != "name" ? "updated_at desc" : "name asc" 
-    @recipes = Recipe.joins(:user_recipes).where(conditions).order(order).  paginate(:page => params[:page], :per_page => 10)
+    @recipes = Recipe.joins(:user_recipes).where(conditions).order(order).
+      includes(:category, :recipe_ingredients => :ingredient).
+      paginate(:page => params[:page], :per_page => 10)
     @categories = Category.joins(:recipes).where({:recipes => { :author_id => @user.id }}).uniq
   end
 

@@ -1,7 +1,8 @@
 - if @category.nil?
-  %h1= _("recipes by categories")
+  %h1= title _("recipes by categories")
 - else
-  %h1= _("%{category} recipes") % {:category => @category.name}
+  %h1= title _("%{category} recipes") % {:category => @category.name}
+
 .sidebar.sidebar-categories
   = render :partial => "sidebar"
 .main
