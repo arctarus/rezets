@@ -4,6 +4,7 @@ Rezets::Application.routes.draw do
   resources :categories
   
   resources :users do
+    get :rookies, :on => :collection
     member do
       get :changepassword
       post :updatepassword

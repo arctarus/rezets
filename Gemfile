@@ -17,6 +17,7 @@ gem "authlogic", :git => 'git://github.com/odorcicd/authlogic.git', :branch => '
 gem 'haml'
 gem 'haml-rails'
 gem 'compass'
+gem 'fancy-buttons'
 
 # i18n
 gem 'gettext'

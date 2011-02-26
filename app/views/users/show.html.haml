@@ -1,14 +1,13 @@
 - title user_title(@user,@category, @recipes.current_page)
 = render :partial => 'users/sidebar'
-= render :partial => 'users/vcard'
 
 - if @recipes.blank?
   - if current_user.nil? or @user != current_user
     .msg.blank
       %h2= _("%{user} still hasn't any recipe") % {:user => @user.name}
-      %p= ("you can %{explore} or search %{bycategory}.") % {                  |
+      %p= raw(("you can %{explore} or search %{bycategory}.") % {                  |
           :explore => link_to(_("explore more recipes"), recipes_path),        |
-          :bycategory => link_to(_("recipes by categories"), categories_path)} |
+          :bycategory => link_to(_("recipes by categories"), categories_path)}) |
   - else
     .msg.welcome
       %h1= _("Welcome to rezets.com!")
@@ -17,9 +16,10 @@
       %p= _("To start enjoying rezets.com simply %{create_recipe}.") % {:create_recipe => link_to(_("create a new recipe"), new_recipe_path)}
       %p= _("Thanks!")
 - else
+  - if current_user == @user
+    %p= link_to _('create a new recipe'), new_user_recipe_path(current_user)
   %ul.recipes
-    - @recipes.each do |recipe|
-      = render :partial => "recipes/recipe", :locals => {:recipe => recipe}
+    = render @recipes
   = will_paginate @recipes
 
   - if @user == current_user

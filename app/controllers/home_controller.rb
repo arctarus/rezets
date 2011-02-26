@@ -3,7 +3,7 @@ class HomeController < ApplicationController
   def index
     @recipes = Recipe.order("created_at desc").limit(8)
     @categories = Category.with_recipes.order("name asc")
-    @users = User.featured
+    @users = User.featured.limit(8)
     @page_identifier = "home"
   end
 
