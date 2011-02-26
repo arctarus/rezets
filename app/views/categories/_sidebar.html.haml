@@ -3,11 +3,22 @@
   %ul
     - for category in @categories
       %li
-        = link_to_unless_current category.name, category,                      |
-          :title => _("%{category} recipes") % {:category => h(category.name)} |
-        %span.counter
-          (#{category.recipes.size})
+        - if @user
+          = link_to_unless_current category.name, [@user,category],
+            :title => _("%{category} recipes") % {:category => h(category.name)}
+          %span.counter
+            (#{@user.recipes.where(:category_id => category.id).size})
+        - else
+          = link_to_unless_current category.name, category,
+            :title => _("%{category} recipes") % {:category => h(category.name)}
+          %span.counter
+            (#{category.recipes.size})
     %li
-      = link_to_unless_current _("all"), categories_path
-      %span.counter
-        (#{Recipe.count})
+      - if @user
+        = link_to_unless_current _("all"), @user
+        %span.counter
+          (#{@user.recipes.size})
+      - else
+        = link_to_unless_current _("all"), categories_path
+        %span.counter
+          (#{Recipe.count})

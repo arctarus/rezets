@@ -33,11 +33,10 @@ class User < ActiveRecord::Base
     :medium => "30x30#",
     :large  => "80x80#" }
 
-  scope :featured,
-    select('users.*, count(user_recipes.id) num_recipes').
-    joins(:user_recipes).
-    group('users.id').
-    limit(8)
+  scope :featured, where("recipes_count > 2").
+                   order("recipes_count desc, followers_count desc")
+  scope :rookies, where("recipes_count between 1 and 2").
+                  order("recipes_count desc, followers_count desc")
 
   def to_param
     slug
