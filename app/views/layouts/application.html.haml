@@ -6,13 +6,13 @@
     %meta{:content => "index,follow", :name => "robots"}/
 
     - if content_for? :meta_description
-      %meta{:content => content_for(:meta_description), :name => "description"}
+      %meta{:content => yield(:meta_description), :name => "description"}
 
     - if content_for? :meta_keywords
-      %meta{:content => content_for(:meta_keywords), :name => "keywords"}
+      %meta{:content => yield(:meta_keywords), :name => "keywords"}
 
     - if content_for? :feed
-      = content_for :feed
+      = yield :feed
 
     %link{ :href => 'http://fonts.googleapis.com/css?family=Lobster', :rel => 'stylesheet', :type => 'text/css'}
     = stylesheet_link_tag 'rezets.css', :media => 'screen, projection'
@@ -34,6 +34,10 @@
 
     #wrapper
 
+      - if content_for? :top
+        #top
+          = yield :top
+
       #main
         - if notice
           %p#message.notice= notice
@@ -42,7 +46,7 @@
 
       - if content_for? :sidebar
         #sidebar
-          = content_for :sidebar
+          = yield :sidebar
 
     #footer
       = render :partial => "shared/footer"
