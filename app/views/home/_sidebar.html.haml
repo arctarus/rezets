@@ -1,5 +1,5 @@
 %h2
-  %span= _("categories")
+  %span= _("recipes")
 - unless @categories.blank?
   %ul
     - @categories.each do |category|
@@ -17,5 +17,5 @@
           %p.meta
             = _("%{num} recipes") % {:num => user.recipes.size}
             %span.ft= '|'
-            = n_("%{num} follower", "%{num} followers", user.followers.size) % {:num => user.followers.size}
+            = link_to n_("%{num} follower", "%{num} followers", user.followers.size) % {:num => user.followers.size}
 
