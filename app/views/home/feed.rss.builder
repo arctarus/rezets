@@ -2,7 +2,7 @@ xml.instruct! :xml, :version => "1.0"
 xml.rss :version => "2.0" do
   xml.channel do
     xml.title "rezets.com"
-    xml.description "rezets.com - recetas recien hechas"
+    xml.description _("rezets.com - freshly made recipes")
     xml.link "http://rezets.com"
  
     for recipe in @recipes
