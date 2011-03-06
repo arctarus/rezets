@@ -14,7 +14,7 @@
     - if content_for? :feed
       = yield :feed
 
-    %link{ :href => 'http://fonts.googleapis.com/css?family=Lobster', :rel => 'stylesheet', :type => 'text/css'}
+    = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Lobster''rezets.css'
     = stylesheet_link_tag 'rezets.css', :media => 'screen, projection'
     = stylesheet_link_tag 'print.css', :media => 'print'
     /[if IE]
