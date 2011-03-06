@@ -1,5 +1,6 @@
 @import "partials/base";
 @import "partials/layout";
+@import "partials/forms";
 @import "partials/recipe";
 @import "compass/css3/border-radius";
 
@@ -13,17 +14,6 @@ h2 {margin-bottom:0}
   h3 {margin-bottom:.6em}
 }
 
-/*=forms*/
-fieldset {margin:1em 0}
-legend {font-weight:bold}
-div.field {margin:1em 0}
-div.field p label {display:inline; font-weight:normal}
-div.field p input {margin-left:0; vertical-align:middle}
-div.field p.hint {color:#666}
-div.field label {display:block; font-weight:bold}
-div.field input.title {width:31em}
-div.field textarea {width:38em; height:200px; padding:.2em}
-p#submit {margin-top:2em}
 
 /*=messages*/
 div.msg {margin:2em 0}
@@ -43,28 +33,34 @@ div.welcome {width:60%; padding:2em 0}
 }
 
 /*=home*/
-div.header-home {text-align:right}
-div.header-home {border:none; margin-bottom:3em; padding-top:.5em}
-div.logo {text-align:left}
-div.logo h1 {font-size:2em; margin-bottom:0}
-p.tagline {margin-bottom:-.4em}
+.home-welcome {
+  margin-bottom:2em;
+  h1 {
+    display:inline;
+    font-size:1.4em;
+  }
+  p {display:inline}
+}
 
-ul.last-recipes {
-  li {
-    @include inline-block;
-    @include border-radius(4px);
-    @include column(8);
-    margin-top:1em;
-    padding:12px 20px;
-    background-color:#EEE;
-    h3 {margin-bottom:0; font-size:1.4em}
-    .right {margin-right:0}
-    img.photo {float:left}
-    p {margin-bottom:0}
-    p.user {margin:.2em 0}
-    p.created {margin-top:.5em; text-align:right}
-    &.last {
-      @include column(8,true);
+.featured-recipes {
+  h2 {font-size:1.4em}
+  ul {
+    li {
+      @include inline-block;
+      @include border-radius(4px);
+      @include column(8);
+      margin:.5em 0 1em;
+      padding:12px 20px;
+      background-color:#EEE;
+      h3 {margin-bottom:0; font-size:1.4em}
+      .right {margin-right:0}
+      img.photo {float:left}
+      p {margin-bottom:0}
+      p.user {margin:.2em 0}
+      p.created {margin-top:.5em; text-align:right}
+      &.last {
+        @include column(8,true);
+      }
     }
   }
 }

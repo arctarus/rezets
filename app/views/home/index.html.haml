@@ -1,12 +1,15 @@
 - title 'rezets.com - ' + _('share your recipes')
-- meta_description _("crea y comparte recetas de cocina con tus amigos")
-- meta_keywords [_("receta"), _("cocina"), _("cocinar"), _("comer"), _("comida")]
+- meta_description _("create and share recipes with your friends")
+- meta_keywords [_("recipe"), _("cook"), _("cooking"), _("eat"), _("food")]
 
-%h2= _("What do you feel like cooking today?")
-=#_("Share your recipes and discover lots of them")
+- content_for :top do
+  .home-welcome
+    %h1= _("What have you cooked today?")
+    %p= _("Share your recipes and discover lots of them.")
 
-- unless @recipes.blank?
-  %ul.last-recipes
+.featured-recipes
+  %h2= _("today featured recipes")
+  %ul
     - @recipes.each do |recipe|
       %li{:class => cycle(nil,"last")}
         %h3= link_to h(recipe.name), user_recipe_path(recipe.author,recipe), :title => recipe.title
@@ -15,19 +18,16 @@
           = link_to h(recipe.author.name), recipe.author
 
         %p= link_to image_tag(recipe.photo.url(:medium), :class => 'photo', :alt => h(recipe.name)), user_recipe_path(recipe.author,recipe)
-        %p.created
-          = _("%{time} ago") % {:time => distance_of_time_in_words_to_now(recipe.created_at)}
-          en
-          = link_to recipe.category.name, recipe.category
+        %p.created= raw(_("%{time} ago on %{category}") % { |
+          :time => distance_of_time_in_words_to_now(recipe.created_at), |
+          :category => link_to(recipe.category.name, recipe.category)}) |
 
 
-%p{:style => "margin-top:2em"}
-  = link_to _("subscribe to the latest recipes"), |
-    url_for(:controller => "home", :action => "feed"), :class => "feed-link"
+%p= link_to _("subscribe to the latest recipes"), feed_path, :class => "feed-link"
 
 - content_for :sidebar do
   = render :partial => 'sidebar'
 
 - content_for :feed do
-  %link{:href => url_for(:controller => "home", :action => "feed"), :rel => "alternate", :title => "recetas recién hechas en rezets.com", :type => "application/atom+xml"}/
+  = auto_discovery_link_tag :atom, {:action => :feed}, {:title => _("freshly made recipes rezets.com")}
 
