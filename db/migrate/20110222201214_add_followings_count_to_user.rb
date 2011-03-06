@@ -1,6 +1,6 @@
 class AddFollowingsCountToUser < ActiveRecord::Migration
   def self.up
-    add_column :users, :followings_count, :integer
+    add_column :users, :followings_count, :integer, :default => 0
     User.all.each do |u|
       User.update_counters(u.id, :followings_count => u.followings.count)
     end

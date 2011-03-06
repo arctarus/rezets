@@ -1,8 +1,10 @@
 class CreateLikes < ActiveRecord::Migration
   def self.up
-    create_table :likes, :id => false do |t|
+    create_table :likes do |t|
       t.references :user
       t.references :recipe
+
+      t.timestamps
     end
   end
 
