@@ -1,4 +1,7 @@
 - title user_title(@user,@category, @recipes.current_page)
+- meta_description user_title(@user,@category, @recipes.current_page)
+- meta_keywords [@user.name]
+
 = render :partial => 'users/sidebar'
 
 - if @recipes.blank?
