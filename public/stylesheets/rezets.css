@@ -577,7 +577,7 @@ ul.main-links li {
   height: 26px;
   margin-bottom: 0;
   text-align: right;
-  font-size: .9emwiiadsdawewqe;
+  font-size: .9em;
 }
 /* line 73, ../../app/stylesheets/partials/_layout.scss */
 #nav a {
@@ -590,7 +590,7 @@ ul.main-links li {
 }
 /* line 78, ../../app/stylesheets/partials/_layout.scss */
 #nav ul {
-  background: #336c00;
+  background: #380;
   float: right;
   padding: .1em .5em;
   margin: 0;

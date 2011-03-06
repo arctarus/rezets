@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110226190139) do
+ActiveRecord::Schema.define(:version => 20110303195906) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -27,9 +27,11 @@ ActiveRecord::Schema.define(:version => 20110226190139) do
     t.datetime "updated_at"
   end
 
-  create_table "follows", :id => false, :force => true do |t|
-    t.integer "follower_id"
-    t.integer "following_id"
+  create_table "follows", :force => true do |t|
+    t.integer  "follower_id"
+    t.integer  "following_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "ingredients", :force => true do |t|
@@ -47,9 +49,11 @@ ActiveRecord::Schema.define(:version => 20110226190139) do
     t.datetime "updated_at"
   end
 
-  create_table "likes", :id => false, :force => true do |t|
-    t.integer "user_id"
-    t.integer "recipe_id"
+  create_table "likes", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "recipe_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "recipe_ingredients", :force => true do |t|
@@ -107,8 +111,9 @@ ActiveRecord::Schema.define(:version => 20110226190139) do
     t.string   "current_login_ip"
     t.string   "last_login_ip"
     t.integer  "recipes_count",       :default => 0
-    t.integer  "followings_count"
+    t.integer  "followings_count",    :default => 0
     t.integer  "followers_count",     :default => 0
+    t.integer  "likes_count",         :default => 0
   end
 
 end
