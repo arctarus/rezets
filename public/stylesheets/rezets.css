@@ -514,12 +514,13 @@ caption {
 #header p.tagline {
   display: block;
   margin: 0 0 -0.8em 0;
-  font-size: 1.1em;
+  font-size: 1em;
+  letter-spacing: 1.2px;
   color: #F3F3F3;
   text-shadow: 1px 1px 1px #555;
 }
 
-/* line 36, ../../app/stylesheets/partials/_layout.scss */
+/* line 37, ../../app/stylesheets/partials/_layout.scss */
 .wrapper {
   width: 950px;
   margin: 0 auto;
@@ -527,7 +528,7 @@ caption {
   *zoom: 1;
 }
 
-/* line 41, ../../app/stylesheets/partials/_layout.scss */
+/* line 42, ../../app/stylesheets/partials/_layout.scss */
 ul.main-links {
   vertical-align: 12%;
   display: inline;
@@ -535,14 +536,14 @@ ul.main-links {
   padding-left: 40px;
   list-style: none;
 }
-/* line 47, ../../app/stylesheets/partials/_layout.scss */
+/* line 48, ../../app/stylesheets/partials/_layout.scss */
 ul.main-links li {
   display: inline;
   margin-right: 1.5em;
   text-shadow: 1px 1px 1px #555;
 }
 
-/* line 54, ../../app/stylesheets/partials/_layout.scss */
+/* line 55, ../../app/stylesheets/partials/_layout.scss */
 #logo {
   display: inline;
   float: left;
@@ -555,7 +556,7 @@ ul.main-links li {
   overflow-x: hidden;
 }
 
-/* line 59, ../../app/stylesheets/partials/_layout.scss */
+/* line 60, ../../app/stylesheets/partials/_layout.scss */
 .search {
   text-align: right;
   margin-top: 2.2em;
@@ -570,7 +571,7 @@ ul.main-links li {
 }
 
 /*=nav*/
-/* line 66, ../../app/stylesheets/partials/_layout.scss */
+/* line 67, ../../app/stylesheets/partials/_layout.scss */
 #nav {
   position: absolute;
   right: 0;
@@ -579,16 +580,16 @@ ul.main-links li {
   text-align: right;
   font-size: .9em;
 }
-/* line 73, ../../app/stylesheets/partials/_layout.scss */
+/* line 74, ../../app/stylesheets/partials/_layout.scss */
 #nav a {
   text-decoration: none;
   color: #F3F3F3;
 }
-/* line 76, ../../app/stylesheets/partials/_layout.scss */
+/* line 77, ../../app/stylesheets/partials/_layout.scss */
 #nav a:hover {
   color: #FF0;
 }
-/* line 78, ../../app/stylesheets/partials/_layout.scss */
+/* line 79, ../../app/stylesheets/partials/_layout.scss */
 #nav ul {
   background: #380;
   float: right;
@@ -602,7 +603,7 @@ ul.main-links li {
   -khtml-border-radius: 0px 0px 5px 5px;
   border-radius: 0px 0px 5px 5px;
 }
-/* line 85, ../../app/stylesheets/partials/_layout.scss */
+/* line 86, ../../app/stylesheets/partials/_layout.scss */
 #nav ul li {
   display: inline;
   margin: 0 .5em .5em 0;
@@ -610,14 +611,14 @@ ul.main-links li {
   padding-right: .5em;
   font-size: .9em;
 }
-/* line 91, ../../app/stylesheets/partials/_layout.scss */
+/* line 92, ../../app/stylesheets/partials/_layout.scss */
 #nav ul li.last {
   margin-right: 0;
   border-right: none;
   padding-right: 0;
 }
 
-/* line 100, ../../app/stylesheets/partials/_layout.scss */
+/* line 101, ../../app/stylesheets/partials/_layout.scss */
 #main {
   display: inline;
   float: left;
@@ -630,7 +631,7 @@ ul.main-links li {
   overflow-x: hidden;
 }
 
-/* line 104, ../../app/stylesheets/partials/_layout.scss */
+/* line 105, ../../app/stylesheets/partials/_layout.scss */
 #sidebar {
   display: inline;
   float: left;
@@ -641,18 +642,18 @@ ul.main-links li {
 * html #sidebar {
   overflow-x: hidden;
 }
-/* line 106, ../../app/stylesheets/partials/_layout.scss */
+/* line 107, ../../app/stylesheets/partials/_layout.scss */
 #sidebar h2 {
   font-size: 1.4em;
 }
-/* line 107, ../../app/stylesheets/partials/_layout.scss */
+/* line 108, ../../app/stylesheets/partials/_layout.scss */
 #sidebar ul {
   list-style: none;
-  margin-bottom: 1em;
+  margin-bottom: 2em;
 }
 
 /*=footer*/
-/* line 111, ../../app/stylesheets/partials/_layout.scss */
+/* line 112, ../../app/stylesheets/partials/_layout.scss */
 #footer {
   margin-top: 2em;
   padding: 0 0 1em;
@@ -660,43 +661,43 @@ ul.main-links li {
   border-top: 1px solid #CCC;
   zoom: 1;
 }
-/* line 117, ../../app/stylesheets/partials/_layout.scss */
+/* line 118, ../../app/stylesheets/partials/_layout.scss */
 #footer .wrapper {
   max-width: 960px;
   min-width: 700px;
   padding: 1em 0;
 }
-/* line 118, ../../app/stylesheets/partials/_layout.scss */
+/* line 119, ../../app/stylesheets/partials/_layout.scss */
 #footer ul {
   list-style: none;
 }
-/* line 120, ../../app/stylesheets/partials/_layout.scss */
+/* line 121, ../../app/stylesheets/partials/_layout.scss */
 #footer ul li {
   display: inline;
   margin-left: 1em;
   border-left: 1px dotted #CCC;
   padding-left: 1em;
 }
-/* line 122, ../../app/stylesheets/partials/_layout.scss */
+/* line 123, ../../app/stylesheets/partials/_layout.scss */
 #footer ul li.first {
   margin-left: 0;
   border-left: none;
   padding-left: 0;
 }
-/* line 125, ../../app/stylesheets/partials/_layout.scss */
+/* line 126, ../../app/stylesheets/partials/_layout.scss */
 #footer p, #footer li {
   font-size: .9em;
 }
 
 /*=recipe*/
-/* line 129, ../../app/stylesheets/partials/_layout.scss */
+/* line 130, ../../app/stylesheets/partials/_layout.scss */
 #recipe {
   width: 950px;
   margin: 0 auto;
   overflow: hidden;
   *zoom: 1;
 }
-/* line 132, ../../app/stylesheets/partials/_layout.scss */
+/* line 133, ../../app/stylesheets/partials/_layout.scss */
 #recipe #main {
   padding-right: 40px;
   display: inline;
@@ -708,7 +709,7 @@ ul.main-links li {
 * html #recipe #main {
   overflow-x: hidden;
 }
-/* line 136, ../../app/stylesheets/partials/_layout.scss */
+/* line 137, ../../app/stylesheets/partials/_layout.scss */
 #recipe #sidebar {
   display: inline;
   float: left;
@@ -720,9 +721,65 @@ ul.main-links li {
   overflow-x: hidden;
 }
 
-/* line 139, ../../app/stylesheets/partials/_layout.scss */
+/* line 140, ../../app/stylesheets/partials/_layout.scss */
 .avatar {
   vertical-align: middle;
+}
+
+/*=forms*/
+/* line 2, ../../app/stylesheets/partials/_forms.scss */
+fieldset {
+  margin: 1em 0;
+}
+
+/* line 3, ../../app/stylesheets/partials/_forms.scss */
+legend {
+  font-weight: bold;
+}
+
+/* line 4, ../../app/stylesheets/partials/_forms.scss */
+div.field {
+  margin: 1em 0;
+}
+
+/* line 5, ../../app/stylesheets/partials/_forms.scss */
+div.field p label {
+  display: inline;
+  font-weight: normal;
+}
+
+/* line 6, ../../app/stylesheets/partials/_forms.scss */
+div.field p input {
+  margin-left: 0;
+  vertical-align: middle;
+}
+
+/* line 7, ../../app/stylesheets/partials/_forms.scss */
+div.field p.hint {
+  color: #666;
+}
+
+/* line 8, ../../app/stylesheets/partials/_forms.scss */
+div.field label {
+  display: block;
+  font-weight: bold;
+}
+
+/* line 9, ../../app/stylesheets/partials/_forms.scss */
+div.field input.title {
+  width: 31em;
+}
+
+/* line 10, ../../app/stylesheets/partials/_forms.scss */
+div.field textarea {
+  width: 38em;
+  height: 200px;
+  padding: .2em;
+}
+
+/* line 11, ../../app/stylesheets/partials/_forms.scss */
+p#submit {
+  margin-top: 2em;
 }
 
 /*=hrecipe*/
@@ -854,189 +911,123 @@ ul.action-links li a {
   background: url("/images/action-links.png") 0 -350px no-repeat;
 }
 
-/* line 6, ../../app/stylesheets/rezets.scss */
+/* line 7, ../../app/stylesheets/rezets.scss */
 .last {
   margin-right: 0;
 }
 
-/* line 7, ../../app/stylesheets/rezets.scss */
+/* line 8, ../../app/stylesheets/rezets.scss */
 ul {
   margin: 0;
   padding: 0;
 }
 
-/* line 8, ../../app/stylesheets/rezets.scss */
+/* line 9, ../../app/stylesheets/rezets.scss */
 a {
   text-decoration: none;
 }
 
-/* line 9, ../../app/stylesheets/rezets.scss */
+/* line 10, ../../app/stylesheets/rezets.scss */
 h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
   color: #380;
 }
 
-/* line 10, ../../app/stylesheets/rezets.scss */
+/* line 11, ../../app/stylesheets/rezets.scss */
 h2 {
   margin-bottom: 0;
 }
 
-/* line 13, ../../app/stylesheets/rezets.scss */
+/* line 14, ../../app/stylesheets/rezets.scss */
 #sidebar h3 {
   margin-bottom: .6em;
 }
 
-/*=forms*/
-/* line 17, ../../app/stylesheets/rezets.scss */
-fieldset {
-  margin: 1em 0;
-}
-
-/* line 18, ../../app/stylesheets/rezets.scss */
-legend {
-  font-weight: bold;
-}
-
-/* line 19, ../../app/stylesheets/rezets.scss */
-div.field {
-  margin: 1em 0;
-}
-
-/* line 20, ../../app/stylesheets/rezets.scss */
-div.field p label {
-  display: inline;
-  font-weight: normal;
-}
-
-/* line 21, ../../app/stylesheets/rezets.scss */
-div.field p input {
-  margin-left: 0;
-  vertical-align: middle;
-}
-
-/* line 22, ../../app/stylesheets/rezets.scss */
-div.field p.hint {
-  color: #666;
-}
-
-/* line 23, ../../app/stylesheets/rezets.scss */
-div.field label {
-  display: block;
-  font-weight: bold;
-}
-
-/* line 24, ../../app/stylesheets/rezets.scss */
-div.field input.title {
-  width: 31em;
-}
-
-/* line 25, ../../app/stylesheets/rezets.scss */
-div.field textarea {
-  width: 38em;
-  height: 200px;
-  padding: .2em;
-}
-
-/* line 26, ../../app/stylesheets/rezets.scss */
-p#submit {
-  margin-top: 2em;
-}
-
 /*=messages*/
-/* line 29, ../../app/stylesheets/rezets.scss */
+/* line 19, ../../app/stylesheets/rezets.scss */
 div.msg {
   margin: 2em 0;
 }
 
-/* line 30, ../../app/stylesheets/rezets.scss */
+/* line 20, ../../app/stylesheets/rezets.scss */
 div.msg h2 {
   margin-bottom: .5em;
 }
 
-/* line 31, ../../app/stylesheets/rezets.scss */
+/* line 21, ../../app/stylesheets/rezets.scss */
 div.msg p {
   margin-bottom: 1em;
 }
 
-/* line 32, ../../app/stylesheets/rezets.scss */
+/* line 22, ../../app/stylesheets/rezets.scss */
 div.msg p.subtitle {
   font-size: 1.8em;
   margin-bottom: .3em;
 }
 
-/* line 33, ../../app/stylesheets/rezets.scss */
+/* line 23, ../../app/stylesheets/rezets.scss */
 div.error_static {
   height: 20em;
 }
 
-/* line 34, ../../app/stylesheets/rezets.scss */
+/* line 24, ../../app/stylesheets/rezets.scss */
 div.error_static p {
   margin-bottom: .5em;
 }
 
-/* line 35, ../../app/stylesheets/rezets.scss */
+/* line 25, ../../app/stylesheets/rezets.scss */
 div.blank {
   width: 65%;
   padding: 2em 3em;
   background: #f3f3f3;
 }
 
-/* line 36, ../../app/stylesheets/rezets.scss */
+/* line 26, ../../app/stylesheets/rezets.scss */
 div.welcome {
   width: 60%;
   padding: 2em 0;
 }
 
-/* line 38, ../../app/stylesheets/rezets.scss */
+/* line 28, ../../app/stylesheets/rezets.scss */
 #login {
   width: auto;
   margin: 0 32%;
 }
 
-/* line 40, ../../app/stylesheets/rezets.scss */
+/* line 30, ../../app/stylesheets/rezets.scss */
 .sidebar h2 {
   margin-bottom: 0;
 }
-/* line 41, ../../app/stylesheets/rezets.scss */
+/* line 31, ../../app/stylesheets/rezets.scss */
 .sidebar h3 {
   margin-bottom: .3em;
 }
-/* line 42, ../../app/stylesheets/rezets.scss */
+/* line 32, ../../app/stylesheets/rezets.scss */
 .sidebar ul {
   list-style: none;
 }
 
 /*=home*/
+/* line 36, ../../app/stylesheets/rezets.scss */
+.home-welcome {
+  margin-bottom: 2em;
+}
+/* line 38, ../../app/stylesheets/rezets.scss */
+.home-welcome h1 {
+  display: inline;
+  font-size: 1.4em;
+}
+/* line 42, ../../app/stylesheets/rezets.scss */
+.home-welcome p {
+  display: inline;
+}
+
 /* line 46, ../../app/stylesheets/rezets.scss */
-div.header-home {
-  text-align: right;
+.featured-recipes h2 {
+  font-size: 1.4em;
 }
-
-/* line 47, ../../app/stylesheets/rezets.scss */
-div.header-home {
-  border: none;
-  margin-bottom: 3em;
-  padding-top: .5em;
-}
-
 /* line 48, ../../app/stylesheets/rezets.scss */
-div.logo {
-  text-align: left;
-}
-
-/* line 49, ../../app/stylesheets/rezets.scss */
-div.logo h1 {
-  font-size: 2em;
-  margin-bottom: 0;
-}
-
-/* line 50, ../../app/stylesheets/rezets.scss */
-p.tagline {
-  margin-bottom: -0.4em;
-}
-
-/* line 53, ../../app/stylesheets/rezets.scss */
-ul.last-recipes li {
+.featured-recipes ul li {
   display: -moz-inline-box;
   -moz-box-orient: vertical;
   display: inline-block;
@@ -1052,78 +1043,78 @@ ul.last-recipes li {
   float: left;
   margin-right: 10px;
   width: 310px;
-  margin-top: 1em;
+  margin: .5em 0 1em;
   padding: 12px 20px;
   background-color: #EEE;
 }
 /* line 7, ../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
-ul.last-recipes li {
+.featured-recipes ul li {
   *display: inline;
 }
 /* line 138, ../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
-* html ul.last-recipes li {
+* html .featured-recipes ul li {
   overflow-x: hidden;
 }
-/* line 60, ../../app/stylesheets/rezets.scss */
-ul.last-recipes li h3 {
+/* line 55, ../../app/stylesheets/rezets.scss */
+.featured-recipes ul li h3 {
   margin-bottom: 0;
   font-size: 1.4em;
 }
-/* line 61, ../../app/stylesheets/rezets.scss */
-ul.last-recipes li .right {
+/* line 56, ../../app/stylesheets/rezets.scss */
+.featured-recipes ul li .right {
   margin-right: 0;
 }
-/* line 62, ../../app/stylesheets/rezets.scss */
-ul.last-recipes li img.photo {
+/* line 57, ../../app/stylesheets/rezets.scss */
+.featured-recipes ul li img.photo {
   float: left;
 }
-/* line 63, ../../app/stylesheets/rezets.scss */
-ul.last-recipes li p {
+/* line 58, ../../app/stylesheets/rezets.scss */
+.featured-recipes ul li p {
   margin-bottom: 0;
 }
-/* line 64, ../../app/stylesheets/rezets.scss */
-ul.last-recipes li p.user {
+/* line 59, ../../app/stylesheets/rezets.scss */
+.featured-recipes ul li p.user {
   margin: .2em 0;
 }
-/* line 65, ../../app/stylesheets/rezets.scss */
-ul.last-recipes li p.created {
+/* line 60, ../../app/stylesheets/rezets.scss */
+.featured-recipes ul li p.created {
   margin-top: .5em;
   text-align: right;
 }
-/* line 66, ../../app/stylesheets/rezets.scss */
-ul.last-recipes li.last {
+/* line 61, ../../app/stylesheets/rezets.scss */
+.featured-recipes ul li.last {
   display: inline;
   float: left;
   margin-right: 0;
   width: 310px;
 }
 /* line 138, ../../../../../../usr/local/rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
-* html ul.last-recipes li.last {
+* html .featured-recipes ul li.last {
   overflow-x: hidden;
 }
 
-/* line 72, ../../app/stylesheets/rezets.scss */
+/* line 68, ../../app/stylesheets/rezets.scss */
 ul.featured-users li.user {
   line-height: 15px;
   margin: 1em 0;
   border-bottom: 1px solid #DDD;
   padding-bottom: 1em;
 }
-/* line 77, ../../app/stylesheets/rezets.scss */
+/* line 73, ../../app/stylesheets/rezets.scss */
 ul.featured-users li.user .avatar {
   float: left;
   margin-right: .5em;
 }
-/* line 78, ../../app/stylesheets/rezets.scss */
+/* line 74, ../../app/stylesheets/rezets.scss */
 ul.featured-users li.user p {
   margin-bottom: 0;
 }
-/* line 80, ../../app/stylesheets/rezets.scss */
+/* line 76, ../../app/stylesheets/rezets.scss */
 ul.featured-users li.user p.meta {
   font-size: .9em;
 }
 
-/* line 85, ../../app/stylesheets/rezets.scss */
+/* line 81, ../../app/stylesheets/rezets.scss */
 ul.users li.user {
   float: left;
   margin-right: 1em;
@@ -1139,64 +1130,64 @@ ul.users li.user {
 * html ul.users li.user {
   overflow-x: hidden;
 }
-/* line 92, ../../app/stylesheets/rezets.scss */
+/* line 88, ../../app/stylesheets/rezets.scss */
 ul.users li.user .wrapper {
   padding: 1em;
 }
-/* line 93, ../../app/stylesheets/rezets.scss */
+/* line 89, ../../app/stylesheets/rezets.scss */
 ul.users li.user .avatar {
   float: left;
 }
-/* line 94, ../../app/stylesheets/rezets.scss */
+/* line 90, ../../app/stylesheets/rezets.scss */
 ul.users li.user .content {
   margin-left: 90px;
 }
-/* line 95, ../../app/stylesheets/rezets.scss */
+/* line 91, ../../app/stylesheets/rezets.scss */
 ul.users li.user h3 {
   margin-bottom: .2em;
 }
-/* line 96, ../../app/stylesheets/rezets.scss */
+/* line 92, ../../app/stylesheets/rezets.scss */
 ul.users li.user p {
   margin-bottom: 0;
 }
-/* line 97, ../../app/stylesheets/rezets.scss */
+/* line 93, ../../app/stylesheets/rezets.scss */
 ul.users li.user .counters {
   float: left;
   width: 120px;
 }
-/* line 99, ../../app/stylesheets/rezets.scss */
+/* line 95, ../../app/stylesheets/rezets.scss */
 ul.users li.last {
   margin-right: 0;
 }
 
 /*=login-form*/
-/* line 103, ../../app/stylesheets/rezets.scss */
+/* line 99, ../../app/stylesheets/rezets.scss */
 div.login-form {
   margin-left: 35%;
   padding: 1em 0 3em;
 }
 
 /*=vcard*/
-/* line 106, ../../app/stylesheets/rezets.scss */
+/* line 102, ../../app/stylesheets/rezets.scss */
 div.vcard {
   height: 80px;
   margin-bottom: 2em;
 }
-/* line 109, ../../app/stylesheets/rezets.scss */
+/* line 105, ../../app/stylesheets/rezets.scss */
 div.vcard img {
   float: left;
   margin-right: 1em;
 }
-/* line 110, ../../app/stylesheets/rezets.scss */
+/* line 106, ../../app/stylesheets/rezets.scss */
 div.vcard h1 {
   margin-bottom: 0;
   font-size: 2.4em;
 }
-/* line 111, ../../app/stylesheets/rezets.scss */
+/* line 107, ../../app/stylesheets/rezets.scss */
 div.vcard h1 a {
   color: #333;
 }
-/* line 113, ../../app/stylesheets/rezets.scss */
+/* line 109, ../../app/stylesheets/rezets.scss */
 div.vcard input.follow {
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
@@ -1259,7 +1250,7 @@ div.vcard input.follow:active {
 div.vcard input.follow:active, div.vcard input.follow:active:visited {
   color: white;
 }
-/* line 114, ../../app/stylesheets/rezets.scss */
+/* line 110, ../../app/stylesheets/rezets.scss */
 div.vcard input.unfollow {
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
@@ -1323,55 +1314,55 @@ div.vcard input.unfollow:active, div.vcard input.unfollow:active:visited {
   color: white;
 }
 
-/* line 117, ../../app/stylesheets/rezets.scss */
+/* line 113, ../../app/stylesheets/rezets.scss */
 ul.user-nav {
   border-bottom: 2px solid #CCC;
   margin-bottom: 1em;
 }
-/* line 120, ../../app/stylesheets/rezets.scss */
+/* line 116, ../../app/stylesheets/rezets.scss */
 ul.user-nav li {
   display: inline;
   margin-right: 2em;
 }
-/* line 123, ../../app/stylesheets/rezets.scss */
+/* line 119, ../../app/stylesheets/rezets.scss */
 ul.user-nav li h2 {
   display: inline;
   font-size: 1.2em;
   color: #666;
 }
-/* line 127, ../../app/stylesheets/rezets.scss */
+/* line 123, ../../app/stylesheets/rezets.scss */
 ul.user-nav li h2.current {
   color: #333;
 }
-/* line 129, ../../app/stylesheets/rezets.scss */
+/* line 125, ../../app/stylesheets/rezets.scss */
 ul.user-nav li h2.current a {
   color: #333;
 }
 
-/* line 135, ../../app/stylesheets/rezets.scss */
+/* line 131, ../../app/stylesheets/rezets.scss */
 .feed-link {
   padding: .2px 0 2px 20px;
   background: url("/images/feed16.png") top left no-repeat;
 }
 
 /*=comments*/
-/* line 140, ../../app/stylesheets/rezets.scss */
+/* line 136, ../../app/stylesheets/rezets.scss */
 .comment {
   margin-top: 3em;
 }
 
-/* line 141, ../../app/stylesheets/rezets.scss */
+/* line 137, ../../app/stylesheets/rezets.scss */
 .comment .avatar {
   float: left;
   margin-right: .8em;
 }
 
-/* line 142, ../../app/stylesheets/rezets.scss */
+/* line 138, ../../app/stylesheets/rezets.scss */
 .inner-comment {
   margin-left: 38px;
 }
 
-/* line 143, ../../app/stylesheets/rezets.scss */
+/* line 139, ../../app/stylesheets/rezets.scss */
 .inner-comment p.created-time {
   margin-top: .5em;
   text-decoration: none;
@@ -1379,37 +1370,37 @@ ul.user-nav li h2.current a {
 }
 
 /*=comment-new*/
-/* line 146, ../../app/stylesheets/rezets.scss */
+/* line 142, ../../app/stylesheets/rezets.scss */
 #comment-new {
   margin-bottom: 3em;
 }
-/* line 147, ../../app/stylesheets/rezets.scss */
+/* line 143, ../../app/stylesheets/rezets.scss */
 #comment-new label {
   font-weight: normal;
   color: #380;
 }
-/* line 148, ../../app/stylesheets/rezets.scss */
+/* line 144, ../../app/stylesheets/rezets.scss */
 #comment-new textarea {
   height: 100px;
   width: 38em;
 }
-/* line 149, ../../app/stylesheets/rezets.scss */
+/* line 145, ../../app/stylesheets/rezets.scss */
 #comment-new div.field {
   margin: 0;
 }
-/* line 150, ../../app/stylesheets/rezets.scss */
+/* line 146, ../../app/stylesheets/rezets.scss */
 #comment-new p#submit {
   margin: 0;
 }
 
 /*=ul.hrecipe*/
-/* line 154, ../../app/stylesheets/rezets.scss */
+/* line 150, ../../app/stylesheets/rezets.scss */
 ul.recipes {
   clear: both;
   margin-left: 0;
   list-style-type: none;
 }
-/* line 158, ../../app/stylesheets/rezets.scss */
+/* line 154, ../../app/stylesheets/rezets.scss */
 ul.recipes li.hrecipe {
   position: relative;
   margin: .5em 0 1em;
@@ -1422,96 +1413,96 @@ ul.recipes li.hrecipe {
   -khtml-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 164, ../../app/stylesheets/rezets.scss */
+/* line 160, ../../app/stylesheets/rezets.scss */
 ul.recipes li.hrecipe h2 {
   font-size: 1.4em;
   margin-right: 1em;
 }
-/* line 166, ../../app/stylesheets/rezets.scss */
+/* line 162, ../../app/stylesheets/rezets.scss */
 ul.recipes li.hrecipe h2 span.ft {
   color: #666;
 }
-/* line 168, ../../app/stylesheets/rezets.scss */
+/* line 164, ../../app/stylesheets/rezets.scss */
 ul.recipes li.hrecipe p.category {
   font-size: 1.2em;
   display: inline;
 }
-/* line 169, ../../app/stylesheets/rezets.scss */
+/* line 165, ../../app/stylesheets/rezets.scss */
 ul.recipes li.hrecipe p {
   margin-bottom: .5em;
 }
-/* line 170, ../../app/stylesheets/rezets.scss */
+/* line 166, ../../app/stylesheets/rezets.scss */
 ul.recipes li.hrecipe .r-meta p {
   margin-bottom: 0;
   color: #666;
 }
-/* line 171, ../../app/stylesheets/rezets.scss */
+/* line 167, ../../app/stylesheets/rezets.scss */
 ul.recipes li.hrecipe .photo {
   float: left;
   margin: 0 1em 0  0;
 }
-/* line 172, ../../app/stylesheets/rezets.scss */
+/* line 168, ../../app/stylesheets/rezets.scss */
 ul.recipes li.hrecipe .data {
   margin-left: 110px;
 }
 
 /*=pagination*/
-/* line 177, ../../app/stylesheets/rezets.scss */
+/* line 173, ../../app/stylesheets/rezets.scss */
 div.pagination {
   margin: 4em 0 2em;
   text-align: center;
 }
-/* line 180, ../../app/stylesheets/rezets.scss */
+/* line 176, ../../app/stylesheets/rezets.scss */
 div.pagination a {
   margin: 0 .2em;
 }
-/* line 181, ../../app/stylesheets/rezets.scss */
+/* line 177, ../../app/stylesheets/rezets.scss */
 div.pagination em {
   margin: 0 .2em;
   font-style: normal;
   font-weight: bold;
 }
-/* line 182, ../../app/stylesheets/rezets.scss */
+/* line 178, ../../app/stylesheets/rezets.scss */
 div.pagination span.disabled {
   display: none;
 }
 
-/* line 185, ../../app/stylesheets/rezets.scss */
+/* line 181, ../../app/stylesheets/rezets.scss */
 table#recipe_ingredients {
   width: 600px;
   margin: .5em 0;
 }
-/* line 187, ../../app/stylesheets/rezets.scss */
+/* line 183, ../../app/stylesheets/rezets.scss */
 table#recipe_ingredients thead th {
   padding: .2em;
   margin: 0;
   background: #FFF;
 }
-/* line 188, ../../app/stylesheets/rezets.scss */
+/* line 184, ../../app/stylesheets/rezets.scss */
 table#recipe_ingredients td {
   margin: 0;
   padding: .2em 0;
 }
 
-/* line 191, ../../app/stylesheets/rezets.scss */
+/* line 187, ../../app/stylesheets/rezets.scss */
 #new-invitation {
   width: 610px;
 }
 
-/* line 192, ../../app/stylesheets/rezets.scss */
+/* line 188, ../../app/stylesheets/rezets.scss */
 span.new {
   font-weight: bold;
   background: #ffeeaa;
 }
 
 /*=paginator*/
-/* line 195, ../../app/stylesheets/rezets.scss */
+/* line 191, ../../app/stylesheets/rezets.scss */
 .prev_page img, .next_page img {
   vertical-align: middle;
 }
 
 /*=email*/
-/* line 198, ../../app/stylesheets/rezets.scss */
+/* line 194, ../../app/stylesheets/rezets.scss */
 #email-container {
   position: absolute;
   width: 275px;
@@ -1519,28 +1510,28 @@ span.new {
   padding: 1em 2em;
   background: #FFF;
 }
-/* line 200, ../../app/stylesheets/rezets.scss */
+/* line 196, ../../app/stylesheets/rezets.scss */
 #email-container p.title {
   font-size: 1.3em;
   font-weight: bold;
   color: #380;
 }
-/* line 201, ../../app/stylesheets/rezets.scss */
+/* line 197, ../../app/stylesheets/rezets.scss */
 #email-container p.close-email-container {
   position: relative;
   float: right;
   left: 4%;
   font-size: 1.1em;
 }
-/* line 202, ../../app/stylesheets/rezets.scss */
+/* line 198, ../../app/stylesheets/rezets.scss */
 #email-container p.close-email-container a {
   text-decoration: underline;
 }
-/* line 203, ../../app/stylesheets/rezets.scss */
+/* line 199, ../../app/stylesheets/rezets.scss */
 #email-container p.hint {
   font-size: .9em;
 }
-/* line 204, ../../app/stylesheets/rezets.scss */
+/* line 200, ../../app/stylesheets/rezets.scss */
 #email-container p.error {
   background: none;
   margin-bottom: 0;
@@ -1548,26 +1539,26 @@ span.new {
   padding: 0;
   font-size: .9em;
 }
-/* line 205, ../../app/stylesheets/rezets.scss */
+/* line 201, ../../app/stylesheets/rezets.scss */
 #email-container a.cancel-form {
   margin-left: 8em;
 }
-/* line 206, ../../app/stylesheets/rezets.scss */
+/* line 202, ../../app/stylesheets/rezets.scss */
 #email-container .ajax-indicator {
   position: absolute;
   margin-top: 3px;
   margin-left: 5px;
 }
-/* line 207, ../../app/stylesheets/rezets.scss */
+/* line 203, ../../app/stylesheets/rezets.scss */
 #email-container .ajax-indicator img {
   vertical-align: middle;
 }
-/* line 208, ../../app/stylesheets/rezets.scss */
+/* line 204, ../../app/stylesheets/rezets.scss */
 #email-container textarea {
   width: 20em;
   height: 8em;
 }
-/* line 209, ../../app/stylesheets/rezets.scss */
+/* line 205, ../../app/stylesheets/rezets.scss */
 #email-container p#submit input {
   font-size: 1.1em;
 }
