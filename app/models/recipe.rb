@@ -15,9 +15,11 @@ class Recipe < ActiveRecord::Base
     :class_name => "User",
     :counter_cache => true
 
-  has_and_belongs_to_many :likes,
-    :join_table => 'likes',
-    :class_name => 'User'
+  has_many :user_likes, :foreign_key => :recipe_id, 
+                        :class_name => 'Like'
+
+  has_many :likes, :through => :user_likes,
+                   :source => :user
 
   validates_presence_of :name, :directions, :category, :author, :message => "no puede quedar en blanco"
   validates_presence_of :photo_file_name, :message => "es imprescindible que pongas una bien bonita :D"
