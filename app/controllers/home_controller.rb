@@ -9,6 +9,7 @@ class HomeController < ApplicationController
 
   def feed
     @recipes = Recipe.order("created_at desc").limit(8)
+    render :template => 'home/feed.rss', :type => :builder
   end
 
   def about
