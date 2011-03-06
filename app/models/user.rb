@@ -6,24 +6,31 @@ class User < ActiveRecord::Base
   has_many :user_recipes, :dependent => :destroy
   has_many :recipes, :through => :user_recipes
   has_many :comments
-  has_many :invitations_sent, :foreign_key => "sender_id", :class_name => "Invitation"
-  has_many :invitations_received, :foreign_key => "receiver_id", :class_name => "Invitation"
+  has_many :invitations_sent, :foreign_key => "sender_id", 
+                              :class_name => "Invitation"
 
-  has_and_belongs_to_many :followers, 
-    :join_table => 'follows', 
-    :class_name => 'User',
-    :association_foreign_key => 'follower_id',
-    :foreign_key => 'following_id'
+  has_many :invitations_received, :foreign_key => "receiver_id", 
+                                  :class_name => "Invitation"
 
-  has_and_belongs_to_many :followings,
-    :join_table => 'follows', 
-    :class_name => 'User',
-    :association_foreign_key => 'following_id',
-    :foreign_key => 'follower_id'
+  has_many :follow_followers, :foreign_key => 'following_id',
+                              :class_name => "Follow"
 
-  has_and_belongs_to_many :likes,
-    :join_table => 'likes',
-    :class_name => 'Recipe'
+  has_many :followers, :through => :follow_followers, 
+                       :source => :following,
+                       :class_name => "User"
+
+  has_many :follow_followings, :foreign_key => 'follower_id', 
+                              :class_name => 'Follow'
+
+  has_many :followings, :through => :follow_followings,
+                        :source => :follower,
+                        :class_name => 'User'
+
+  has_many :recipe_likes, :foreign_key => :user_id,
+                        :class_name => 'Like'
+
+  has_many :likes, :through => :recipe_likes,
+                   :source => :recipe
 
   validates_presence_of :email, :slug, :name
   validates_uniqueness_of :slug

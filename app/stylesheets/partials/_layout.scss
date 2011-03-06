@@ -69,14 +69,14 @@ ul.main-links {
   height:26px;
   @include append-bottom(0);
   text-align:right;
-  font-size:.9emwiiadsdawewqe;
+  font-size:.9em;
   a {
     text-decoration:none;
     color:#F3F3F3;
     &:hover {color:#FF0}
   }
   ul {
-    background:#336c00;
+    background:#380;
     float:right;
     padding:.1em .5em;
     margin:0;
