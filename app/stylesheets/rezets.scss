@@ -49,7 +49,8 @@ div.welcome {width:60%; padding:2em 0}
       @include inline-block;
       @include border-radius(4px);
       @include column(8);
-      margin:.5em 0 1em;
+      margin-top:.5em;
+      margin-bottom:1em;
       padding:12px 20px;
       background-color:#EEE;
       h3 {margin-bottom:0; font-size:1.4em}
@@ -133,8 +134,14 @@ ul.user-nav {
   background:url('/images/feed16.png') top left no-repeat}
 
 /*=comments*/
-.comment {margin-top:3em}
-.comment .avatar {float:left; margin-right:.8em}
+.comment {
+  margin-top:3em;
+  .avatar {
+    float:left; 
+    margin-right:.8em;
+  }
+  h3 {margin-bottom:.5em}
+}
 .inner-comment {margin-left:38px}
 .inner-comment p.created-time {margin-top:.5em; text-decoration:none; color:#666}
 

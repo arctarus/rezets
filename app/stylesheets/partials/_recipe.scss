@@ -47,3 +47,16 @@ ul.action-links {
 #feed {background:url('/images/action-links.png') 0 -250px no-repeat}
 #prev {background:url('/images/action-links.png') 0 -300px no-repeat}
 #next {background:url('/images/action-links.png') 0 -350px no-repeat}
+
+
+#recipe #sidebar { margin-top:91px }
+#sidebar {
+  li.recipe {
+    clear:both;
+    height:100px;
+    margin-bottom:1em;
+    img { float:left; margin-right:.5em }
+    p {margin-bottom:0}
+    p.name {font-size:1.2em}
+  }
+}
