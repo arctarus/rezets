@@ -1,7 +1,7 @@
 module ApplicationHelper
 
   def title(title = nil)
-    if title.blank?
+    if title.nil?
       if content_for? :title
         content_for(:title)
       else
@@ -9,6 +9,7 @@ module ApplicationHelper
       end
     else
       content_for :title, title
+      title
     end
   end
 
