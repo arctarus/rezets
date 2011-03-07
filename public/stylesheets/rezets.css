@@ -515,7 +515,7 @@ caption {
   display: block;
   margin: 0 0 -0.8em 0;
   font-size: 1em;
-  letter-spacing: 1.2px;
+  letter-spacing: 1px;
   color: #F3F3F3;
   text-shadow: 1px 1px 1px #555;
 }
@@ -911,6 +911,31 @@ ul.action-links li a {
   background: url("/images/action-links.png") 0 -350px no-repeat;
 }
 
+/* line 52, ../../app/stylesheets/partials/_recipe.scss */
+#recipe #sidebar {
+  margin-top: 91px;
+}
+
+/* line 54, ../../app/stylesheets/partials/_recipe.scss */
+#sidebar li.recipe {
+  clear: both;
+  height: 100px;
+  margin-bottom: 1em;
+}
+/* line 58, ../../app/stylesheets/partials/_recipe.scss */
+#sidebar li.recipe img {
+  float: left;
+  margin-right: .5em;
+}
+/* line 59, ../../app/stylesheets/partials/_recipe.scss */
+#sidebar li.recipe p {
+  margin-bottom: 0;
+}
+/* line 60, ../../app/stylesheets/partials/_recipe.scss */
+#sidebar li.recipe p.name {
+  font-size: 1.2em;
+}
+
 /* line 7, ../../app/stylesheets/rezets.scss */
 .last {
   margin-right: 0;
@@ -1043,7 +1068,8 @@ div.welcome {
   float: left;
   margin-right: 10px;
   width: 310px;
-  margin: .5em 0 1em;
+  margin-top: .5em;
+  margin-bottom: 1em;
   padding: 12px 20px;
   background-color: #EEE;
 }
@@ -1055,33 +1081,33 @@ div.welcome {
 * html .featured-recipes ul li {
   overflow-x: hidden;
 }
-/* line 55, ../../app/stylesheets/rezets.scss */
+/* line 56, ../../app/stylesheets/rezets.scss */
 .featured-recipes ul li h3 {
   margin-bottom: 0;
   font-size: 1.4em;
 }
-/* line 56, ../../app/stylesheets/rezets.scss */
+/* line 57, ../../app/stylesheets/rezets.scss */
 .featured-recipes ul li .right {
   margin-right: 0;
 }
-/* line 57, ../../app/stylesheets/rezets.scss */
+/* line 58, ../../app/stylesheets/rezets.scss */
 .featured-recipes ul li img.photo {
   float: left;
 }
-/* line 58, ../../app/stylesheets/rezets.scss */
+/* line 59, ../../app/stylesheets/rezets.scss */
 .featured-recipes ul li p {
   margin-bottom: 0;
 }
-/* line 59, ../../app/stylesheets/rezets.scss */
+/* line 60, ../../app/stylesheets/rezets.scss */
 .featured-recipes ul li p.user {
   margin: .2em 0;
 }
-/* line 60, ../../app/stylesheets/rezets.scss */
+/* line 61, ../../app/stylesheets/rezets.scss */
 .featured-recipes ul li p.created {
   margin-top: .5em;
   text-align: right;
 }
-/* line 61, ../../app/stylesheets/rezets.scss */
+/* line 62, ../../app/stylesheets/rezets.scss */
 .featured-recipes ul li.last {
   display: inline;
   float: left;
@@ -1093,28 +1119,28 @@ div.welcome {
   overflow-x: hidden;
 }
 
-/* line 68, ../../app/stylesheets/rezets.scss */
+/* line 69, ../../app/stylesheets/rezets.scss */
 ul.featured-users li.user {
   line-height: 15px;
   margin: 1em 0;
   border-bottom: 1px solid #DDD;
   padding-bottom: 1em;
 }
-/* line 73, ../../app/stylesheets/rezets.scss */
+/* line 74, ../../app/stylesheets/rezets.scss */
 ul.featured-users li.user .avatar {
   float: left;
   margin-right: .5em;
 }
-/* line 74, ../../app/stylesheets/rezets.scss */
+/* line 75, ../../app/stylesheets/rezets.scss */
 ul.featured-users li.user p {
   margin-bottom: 0;
 }
-/* line 76, ../../app/stylesheets/rezets.scss */
+/* line 77, ../../app/stylesheets/rezets.scss */
 ul.featured-users li.user p.meta {
   font-size: .9em;
 }
 
-/* line 81, ../../app/stylesheets/rezets.scss */
+/* line 82, ../../app/stylesheets/rezets.scss */
 ul.users li.user {
   float: left;
   margin-right: 1em;
@@ -1130,64 +1156,64 @@ ul.users li.user {
 * html ul.users li.user {
   overflow-x: hidden;
 }
-/* line 88, ../../app/stylesheets/rezets.scss */
+/* line 89, ../../app/stylesheets/rezets.scss */
 ul.users li.user .wrapper {
   padding: 1em;
 }
-/* line 89, ../../app/stylesheets/rezets.scss */
+/* line 90, ../../app/stylesheets/rezets.scss */
 ul.users li.user .avatar {
   float: left;
 }
-/* line 90, ../../app/stylesheets/rezets.scss */
+/* line 91, ../../app/stylesheets/rezets.scss */
 ul.users li.user .content {
   margin-left: 90px;
 }
-/* line 91, ../../app/stylesheets/rezets.scss */
+/* line 92, ../../app/stylesheets/rezets.scss */
 ul.users li.user h3 {
   margin-bottom: .2em;
 }
-/* line 92, ../../app/stylesheets/rezets.scss */
+/* line 93, ../../app/stylesheets/rezets.scss */
 ul.users li.user p {
   margin-bottom: 0;
 }
-/* line 93, ../../app/stylesheets/rezets.scss */
+/* line 94, ../../app/stylesheets/rezets.scss */
 ul.users li.user .counters {
   float: left;
   width: 120px;
 }
-/* line 95, ../../app/stylesheets/rezets.scss */
+/* line 96, ../../app/stylesheets/rezets.scss */
 ul.users li.last {
   margin-right: 0;
 }
 
 /*=login-form*/
-/* line 99, ../../app/stylesheets/rezets.scss */
+/* line 100, ../../app/stylesheets/rezets.scss */
 div.login-form {
   margin-left: 35%;
   padding: 1em 0 3em;
 }
 
 /*=vcard*/
-/* line 102, ../../app/stylesheets/rezets.scss */
+/* line 103, ../../app/stylesheets/rezets.scss */
 div.vcard {
   height: 80px;
   margin-bottom: 2em;
 }
-/* line 105, ../../app/stylesheets/rezets.scss */
+/* line 106, ../../app/stylesheets/rezets.scss */
 div.vcard img {
   float: left;
   margin-right: 1em;
 }
-/* line 106, ../../app/stylesheets/rezets.scss */
+/* line 107, ../../app/stylesheets/rezets.scss */
 div.vcard h1 {
   margin-bottom: 0;
   font-size: 2.4em;
 }
-/* line 107, ../../app/stylesheets/rezets.scss */
+/* line 108, ../../app/stylesheets/rezets.scss */
 div.vcard h1 a {
   color: #333;
 }
-/* line 109, ../../app/stylesheets/rezets.scss */
+/* line 110, ../../app/stylesheets/rezets.scss */
 div.vcard input.follow {
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
@@ -1250,7 +1276,7 @@ div.vcard input.follow:active {
 div.vcard input.follow:active, div.vcard input.follow:active:visited {
   color: white;
 }
-/* line 110, ../../app/stylesheets/rezets.scss */
+/* line 111, ../../app/stylesheets/rezets.scss */
 div.vcard input.unfollow {
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
@@ -1314,55 +1340,58 @@ div.vcard input.unfollow:active, div.vcard input.unfollow:active:visited {
   color: white;
 }
 
-/* line 113, ../../app/stylesheets/rezets.scss */
+/* line 114, ../../app/stylesheets/rezets.scss */
 ul.user-nav {
   border-bottom: 2px solid #CCC;
   margin-bottom: 1em;
 }
-/* line 116, ../../app/stylesheets/rezets.scss */
+/* line 117, ../../app/stylesheets/rezets.scss */
 ul.user-nav li {
   display: inline;
   margin-right: 2em;
 }
-/* line 119, ../../app/stylesheets/rezets.scss */
+/* line 120, ../../app/stylesheets/rezets.scss */
 ul.user-nav li h2 {
   display: inline;
   font-size: 1.2em;
   color: #666;
 }
-/* line 123, ../../app/stylesheets/rezets.scss */
+/* line 124, ../../app/stylesheets/rezets.scss */
 ul.user-nav li h2.current {
   color: #333;
 }
-/* line 125, ../../app/stylesheets/rezets.scss */
+/* line 126, ../../app/stylesheets/rezets.scss */
 ul.user-nav li h2.current a {
   color: #333;
 }
 
-/* line 131, ../../app/stylesheets/rezets.scss */
+/* line 132, ../../app/stylesheets/rezets.scss */
 .feed-link {
   padding: .2px 0 2px 20px;
   background: url("/images/feed16.png") top left no-repeat;
 }
 
 /*=comments*/
-/* line 136, ../../app/stylesheets/rezets.scss */
+/* line 137, ../../app/stylesheets/rezets.scss */
 .comment {
   margin-top: 3em;
 }
-
-/* line 137, ../../app/stylesheets/rezets.scss */
+/* line 139, ../../app/stylesheets/rezets.scss */
 .comment .avatar {
   float: left;
   margin-right: .8em;
 }
+/* line 143, ../../app/stylesheets/rezets.scss */
+.comment h3 {
+  margin-bottom: .5em;
+}
 
-/* line 138, ../../app/stylesheets/rezets.scss */
+/* line 145, ../../app/stylesheets/rezets.scss */
 .inner-comment {
   margin-left: 38px;
 }
 
-/* line 139, ../../app/stylesheets/rezets.scss */
+/* line 146, ../../app/stylesheets/rezets.scss */
 .inner-comment p.created-time {
   margin-top: .5em;
   text-decoration: none;
@@ -1370,37 +1399,37 @@ ul.user-nav li h2.current a {
 }
 
 /*=comment-new*/
-/* line 142, ../../app/stylesheets/rezets.scss */
+/* line 149, ../../app/stylesheets/rezets.scss */
 #comment-new {
   margin-bottom: 3em;
 }
-/* line 143, ../../app/stylesheets/rezets.scss */
+/* line 150, ../../app/stylesheets/rezets.scss */
 #comment-new label {
   font-weight: normal;
   color: #380;
 }
-/* line 144, ../../app/stylesheets/rezets.scss */
+/* line 151, ../../app/stylesheets/rezets.scss */
 #comment-new textarea {
   height: 100px;
   width: 38em;
 }
-/* line 145, ../../app/stylesheets/rezets.scss */
+/* line 152, ../../app/stylesheets/rezets.scss */
 #comment-new div.field {
   margin: 0;
 }
-/* line 146, ../../app/stylesheets/rezets.scss */
+/* line 153, ../../app/stylesheets/rezets.scss */
 #comment-new p#submit {
   margin: 0;
 }
 
 /*=ul.hrecipe*/
-/* line 150, ../../app/stylesheets/rezets.scss */
+/* line 157, ../../app/stylesheets/rezets.scss */
 ul.recipes {
   clear: both;
   margin-left: 0;
   list-style-type: none;
 }
-/* line 154, ../../app/stylesheets/rezets.scss */
+/* line 161, ../../app/stylesheets/rezets.scss */
 ul.recipes li.hrecipe {
   position: relative;
   margin: .5em 0 1em;
@@ -1413,96 +1442,96 @@ ul.recipes li.hrecipe {
   -khtml-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 160, ../../app/stylesheets/rezets.scss */
+/* line 167, ../../app/stylesheets/rezets.scss */
 ul.recipes li.hrecipe h2 {
   font-size: 1.4em;
   margin-right: 1em;
 }
-/* line 162, ../../app/stylesheets/rezets.scss */
+/* line 169, ../../app/stylesheets/rezets.scss */
 ul.recipes li.hrecipe h2 span.ft {
   color: #666;
 }
-/* line 164, ../../app/stylesheets/rezets.scss */
+/* line 171, ../../app/stylesheets/rezets.scss */
 ul.recipes li.hrecipe p.category {
   font-size: 1.2em;
   display: inline;
 }
-/* line 165, ../../app/stylesheets/rezets.scss */
+/* line 172, ../../app/stylesheets/rezets.scss */
 ul.recipes li.hrecipe p {
   margin-bottom: .5em;
 }
-/* line 166, ../../app/stylesheets/rezets.scss */
+/* line 173, ../../app/stylesheets/rezets.scss */
 ul.recipes li.hrecipe .r-meta p {
   margin-bottom: 0;
   color: #666;
 }
-/* line 167, ../../app/stylesheets/rezets.scss */
+/* line 174, ../../app/stylesheets/rezets.scss */
 ul.recipes li.hrecipe .photo {
   float: left;
   margin: 0 1em 0  0;
 }
-/* line 168, ../../app/stylesheets/rezets.scss */
+/* line 175, ../../app/stylesheets/rezets.scss */
 ul.recipes li.hrecipe .data {
   margin-left: 110px;
 }
 
 /*=pagination*/
-/* line 173, ../../app/stylesheets/rezets.scss */
+/* line 180, ../../app/stylesheets/rezets.scss */
 div.pagination {
   margin: 4em 0 2em;
   text-align: center;
 }
-/* line 176, ../../app/stylesheets/rezets.scss */
+/* line 183, ../../app/stylesheets/rezets.scss */
 div.pagination a {
   margin: 0 .2em;
 }
-/* line 177, ../../app/stylesheets/rezets.scss */
+/* line 184, ../../app/stylesheets/rezets.scss */
 div.pagination em {
   margin: 0 .2em;
   font-style: normal;
   font-weight: bold;
 }
-/* line 178, ../../app/stylesheets/rezets.scss */
+/* line 185, ../../app/stylesheets/rezets.scss */
 div.pagination span.disabled {
   display: none;
 }
 
-/* line 181, ../../app/stylesheets/rezets.scss */
+/* line 188, ../../app/stylesheets/rezets.scss */
 table#recipe_ingredients {
   width: 600px;
   margin: .5em 0;
 }
-/* line 183, ../../app/stylesheets/rezets.scss */
+/* line 190, ../../app/stylesheets/rezets.scss */
 table#recipe_ingredients thead th {
   padding: .2em;
   margin: 0;
   background: #FFF;
 }
-/* line 184, ../../app/stylesheets/rezets.scss */
+/* line 191, ../../app/stylesheets/rezets.scss */
 table#recipe_ingredients td {
   margin: 0;
   padding: .2em 0;
 }
 
-/* line 187, ../../app/stylesheets/rezets.scss */
+/* line 194, ../../app/stylesheets/rezets.scss */
 #new-invitation {
   width: 610px;
 }
 
-/* line 188, ../../app/stylesheets/rezets.scss */
+/* line 195, ../../app/stylesheets/rezets.scss */
 span.new {
   font-weight: bold;
   background: #ffeeaa;
 }
 
 /*=paginator*/
-/* line 191, ../../app/stylesheets/rezets.scss */
+/* line 198, ../../app/stylesheets/rezets.scss */
 .prev_page img, .next_page img {
   vertical-align: middle;
 }
 
 /*=email*/
-/* line 194, ../../app/stylesheets/rezets.scss */
+/* line 201, ../../app/stylesheets/rezets.scss */
 #email-container {
   position: absolute;
   width: 275px;
@@ -1510,28 +1539,28 @@ span.new {
   padding: 1em 2em;
   background: #FFF;
 }
-/* line 196, ../../app/stylesheets/rezets.scss */
+/* line 203, ../../app/stylesheets/rezets.scss */
 #email-container p.title {
   font-size: 1.3em;
   font-weight: bold;
   color: #380;
 }
-/* line 197, ../../app/stylesheets/rezets.scss */
+/* line 204, ../../app/stylesheets/rezets.scss */
 #email-container p.close-email-container {
   position: relative;
   float: right;
   left: 4%;
   font-size: 1.1em;
 }
-/* line 198, ../../app/stylesheets/rezets.scss */
+/* line 205, ../../app/stylesheets/rezets.scss */
 #email-container p.close-email-container a {
   text-decoration: underline;
 }
-/* line 199, ../../app/stylesheets/rezets.scss */
+/* line 206, ../../app/stylesheets/rezets.scss */
 #email-container p.hint {
   font-size: .9em;
 }
-/* line 200, ../../app/stylesheets/rezets.scss */
+/* line 207, ../../app/stylesheets/rezets.scss */
 #email-container p.error {
   background: none;
   margin-bottom: 0;
@@ -1539,26 +1568,26 @@ span.new {
   padding: 0;
   font-size: .9em;
 }
-/* line 201, ../../app/stylesheets/rezets.scss */
+/* line 208, ../../app/stylesheets/rezets.scss */
 #email-container a.cancel-form {
   margin-left: 8em;
 }
-/* line 202, ../../app/stylesheets/rezets.scss */
+/* line 209, ../../app/stylesheets/rezets.scss */
 #email-container .ajax-indicator {
   position: absolute;
   margin-top: 3px;
   margin-left: 5px;
 }
-/* line 203, ../../app/stylesheets/rezets.scss */
+/* line 210, ../../app/stylesheets/rezets.scss */
 #email-container .ajax-indicator img {
   vertical-align: middle;
 }
-/* line 204, ../../app/stylesheets/rezets.scss */
+/* line 211, ../../app/stylesheets/rezets.scss */
 #email-container textarea {
   width: 20em;
   height: 8em;
 }
-/* line 205, ../../app/stylesheets/rezets.scss */
+/* line 212, ../../app/stylesheets/rezets.scss */
 #email-container p#submit input {
   font-size: 1.1em;
 }
