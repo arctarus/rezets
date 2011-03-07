@@ -1,20 +1,19 @@
+- content_for :sidebar do
+  = render :partial => "sidebar"
+
 - if @category.nil?
   %h1= title _("recipes by categories")
 - else
   %h1= title _("%{category} recipes") % {:category => @category.name}
 
-.sidebar.sidebar-categories
-  = render :partial => "sidebar"
-.main
-  - if @recipes.blank?
-    .msg.blank
-      %h2= _("we do not have any %{category} recipe") % {:category => @category.name}
-      %p= _("you can %{add_recipe} yourself if you know some you want to share with your friends.") % { |
-          :add_recipe => link_to(_("add a recipe"), new_user_recipe_path(current_user))}                |
-  - else
-    %ul.recipes
-      - @recipes.each do |recipe|
-        = render :partial => "recipes/recipe", :locals => { |
-          :recipe => recipe }                               |
-    = will_paginate @recipes
-  %br.clear/
+
+- if @recipes.blank?
+  .msg.blank
+    %h2= _("we do not have any %{category} recipe") % {:category => @category.name}
+    %p= _("you can %{add_recipe} yourself if you know some you want to share with your friends.") % { |
+        :add_recipe => link_to(_("add a recipe"), new_user_recipe_path(current_user))}                |
+- else
+  %ul.recipes
+    = render @recipes
+
+  = will_paginate @recipes
