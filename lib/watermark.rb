@@ -1,25 +1,26 @@
 # from http://github.com/ng/paperclip-watermarking-app with modifications
-
 module Paperclip
   class Watermark < Processor
     # Handles watermarking of images that are uploaded.
     attr_accessor :current_geometry, :target_geometry, :format, :whiny, :convert_options, :watermark_path, :overlay, :position
 
-    def initialize file, options = {}, attachment = nil
+    def initialize(file, options = {}, attachment = nil)
        super
-       geometry          = options[:geometry]
-       @file             = file
-       @crop             = geometry[-1,1] == '#'
-       @target_geometry  = Geometry.parse geometry
+       geometry = options[:geometry]
+       geometry = geometry.nil? ? "500x375#" : geometry
+       @file = file
+       @crop = geometry.nil? ? false : geometry[-1,1] == '#'
+       @target_geometry = Geometry.parse geometry
        @current_geometry = Geometry.from_file @file
-       @convert_options  = options[:convert_options]
-       @whiny            = options[:whiny].nil? ? true : options[:whiny]
-       @format           = options[:format]
-       @watermark_path   = options[:watermark_path]
-       @position         = options[:position].nil? ? "SouthEast" : options[:position]
-       @overlay          = options[:overlay].nil? ? true : false
-       @current_format   = File.extname(@file.path)
-       @basename         = File.basename(@file.path, @current_format)
+       @convert_options = options[:convert_options]
+       @watermark = options[:watermark]
+       @whiny = options[:whiny].nil? ? true : options[:whiny]
+       @format = options[:format]
+       @watermark_path = options[:watermark_path]
+       @position = options[:position].nil? ? "SouthEast" : options[:position]
+       @overlay = options[:overlay].nil? ? true : false
+       @current_format = File.extname(@file.path)
+       @basename = File.basename(@file.path, @current_format)
      end
 
      # TODO: extend watermark
@@ -53,9 +54,10 @@ module Paperclip
         end
 
         begin
-          success = Paperclip.run(command, *params)
-        rescue PaperclipCommandLineError
-          raise PaperclipError, "There was an error processing the watermark for #{@basename}" if @whiny
+          escaped_params = params.join(" ")
+          success = Paperclip.run(command, escaped_params)
+        rescue PaperclipCommandLineError => e
+          raise PaperclipError, "There was an error processing the watermark for #{@basename} - #{e}" if @whiny
         end
 
         dst
@@ -73,6 +75,7 @@ module Paperclip
         scale, crop = @current_geometry.transformation_to(@target_geometry, crop?)
         trans = %W[-resize #{scale}]
         trans += %W[-crop #{crop} +repage] if crop
+        trans += %W[-watermark #{@watermark}] unless @watermark.blank?
         trans << convert_options if convert_options?
         trans
       end

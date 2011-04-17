@@ -498,7 +498,7 @@ caption {
 }
 /* line 16, ../../app/stylesheets/partials/_layout.scss */
 #header a:hover {
-  color: #FF0;
+  color: #FFB800;
 }
 /* line 18, ../../app/stylesheets/partials/_layout.scss */
 #header p.logo {
@@ -578,18 +578,8 @@ ul.main-links li {
   height: 26px;
   margin-bottom: 0;
   text-align: right;
-  font-size: .9em;
 }
-/* line 74, ../../app/stylesheets/partials/_layout.scss */
-#nav a {
-  text-decoration: none;
-  color: #F3F3F3;
-}
-/* line 77, ../../app/stylesheets/partials/_layout.scss */
-#nav a:hover {
-  color: #FF0;
-}
-/* line 79, ../../app/stylesheets/partials/_layout.scss */
+/* line 73, ../../app/stylesheets/partials/_layout.scss */
 #nav ul {
   background: #380;
   float: right;
@@ -603,7 +593,7 @@ ul.main-links li {
   -khtml-border-radius: 0px 0px 5px 5px;
   border-radius: 0px 0px 5px 5px;
 }
-/* line 86, ../../app/stylesheets/partials/_layout.scss */
+/* line 80, ../../app/stylesheets/partials/_layout.scss */
 #nav ul li {
   display: inline;
   margin: 0 .5em .5em 0;
@@ -611,14 +601,14 @@ ul.main-links li {
   padding-right: .5em;
   font-size: .9em;
 }
-/* line 92, ../../app/stylesheets/partials/_layout.scss */
+/* line 86, ../../app/stylesheets/partials/_layout.scss */
 #nav ul li.last {
   margin-right: 0;
   border-right: none;
   padding-right: 0;
 }
 
-/* line 101, ../../app/stylesheets/partials/_layout.scss */
+/* line 95, ../../app/stylesheets/partials/_layout.scss */
 #main {
   display: inline;
   float: left;
@@ -631,7 +621,7 @@ ul.main-links li {
   overflow-x: hidden;
 }
 
-/* line 105, ../../app/stylesheets/partials/_layout.scss */
+/* line 99, ../../app/stylesheets/partials/_layout.scss */
 #sidebar {
   display: inline;
   float: left;
@@ -642,18 +632,18 @@ ul.main-links li {
 * html #sidebar {
   overflow-x: hidden;
 }
-/* line 107, ../../app/stylesheets/partials/_layout.scss */
+/* line 101, ../../app/stylesheets/partials/_layout.scss */
 #sidebar h2 {
   font-size: 1.4em;
 }
-/* line 108, ../../app/stylesheets/partials/_layout.scss */
+/* line 102, ../../app/stylesheets/partials/_layout.scss */
 #sidebar ul {
   list-style: none;
   margin-bottom: 2em;
 }
 
 /*=footer*/
-/* line 112, ../../app/stylesheets/partials/_layout.scss */
+/* line 106, ../../app/stylesheets/partials/_layout.scss */
 #footer {
   margin-top: 2em;
   padding: 0 0 1em;
@@ -661,43 +651,44 @@ ul.main-links li {
   border-top: 1px solid #CCC;
   zoom: 1;
 }
-/* line 118, ../../app/stylesheets/partials/_layout.scss */
+/* line 112, ../../app/stylesheets/partials/_layout.scss */
 #footer .wrapper {
   max-width: 960px;
   min-width: 700px;
   padding: 1em 0;
 }
-/* line 119, ../../app/stylesheets/partials/_layout.scss */
+/* line 113, ../../app/stylesheets/partials/_layout.scss */
 #footer ul {
   list-style: none;
+  margin-bottom: 2em;
 }
-/* line 121, ../../app/stylesheets/partials/_layout.scss */
+/* line 116, ../../app/stylesheets/partials/_layout.scss */
 #footer ul li {
   display: inline;
   margin-left: 1em;
   border-left: 1px dotted #CCC;
   padding-left: 1em;
 }
-/* line 123, ../../app/stylesheets/partials/_layout.scss */
+/* line 118, ../../app/stylesheets/partials/_layout.scss */
 #footer ul li.first {
   margin-left: 0;
   border-left: none;
   padding-left: 0;
 }
-/* line 126, ../../app/stylesheets/partials/_layout.scss */
+/* line 121, ../../app/stylesheets/partials/_layout.scss */
 #footer p, #footer li {
   font-size: .9em;
 }
 
 /*=recipe*/
-/* line 130, ../../app/stylesheets/partials/_layout.scss */
+/* line 125, ../../app/stylesheets/partials/_layout.scss */
 #recipe {
   width: 950px;
   margin: 0 auto;
   overflow: hidden;
   *zoom: 1;
 }
-/* line 133, ../../app/stylesheets/partials/_layout.scss */
+/* line 128, ../../app/stylesheets/partials/_layout.scss */
 #recipe #main {
   padding-right: 40px;
   display: inline;
@@ -709,7 +700,7 @@ ul.main-links li {
 * html #recipe #main {
   overflow-x: hidden;
 }
-/* line 137, ../../app/stylesheets/partials/_layout.scss */
+/* line 132, ../../app/stylesheets/partials/_layout.scss */
 #recipe #sidebar {
   display: inline;
   float: left;
@@ -721,9 +712,14 @@ ul.main-links li {
   overflow-x: hidden;
 }
 
-/* line 140, ../../app/stylesheets/partials/_layout.scss */
+/* line 135, ../../app/stylesheets/partials/_layout.scss */
 .avatar {
   vertical-align: middle;
+}
+
+/* line 136, ../../app/stylesheets/partials/_layout.scss */
+.action {
+  text-decoration: underline;
 }
 
 /*=forms*/
@@ -743,41 +739,41 @@ div.field {
 }
 
 /* line 5, ../../app/stylesheets/partials/_forms.scss */
-div.field p label {
-  display: inline;
-  font-weight: normal;
-}
-
-/* line 6, ../../app/stylesheets/partials/_forms.scss */
-div.field p input {
-  margin-left: 0;
-  vertical-align: middle;
-}
-
-/* line 7, ../../app/stylesheets/partials/_forms.scss */
 div.field p.hint {
   color: #666;
 }
 
-/* line 8, ../../app/stylesheets/partials/_forms.scss */
+/* line 6, ../../app/stylesheets/partials/_forms.scss */
 div.field label {
   display: block;
   font-weight: bold;
 }
 
-/* line 9, ../../app/stylesheets/partials/_forms.scss */
+/* line 7, ../../app/stylesheets/partials/_forms.scss */
 div.field input.title {
   width: 31em;
 }
 
-/* line 10, ../../app/stylesheets/partials/_forms.scss */
+/* line 8, ../../app/stylesheets/partials/_forms.scss */
 div.field textarea {
   width: 38em;
   height: 200px;
   padding: .2em;
 }
 
-/* line 11, ../../app/stylesheets/partials/_forms.scss */
+/* line 9, ../../app/stylesheets/partials/_forms.scss */
+div.checkbox label {
+  display: inline;
+  font-weight: normal;
+}
+
+/* line 10, ../../app/stylesheets/partials/_forms.scss */
+div.checkbox input {
+  margin-left: 0;
+  vertical-align: middle;
+}
+
+/* line 12, ../../app/stylesheets/partials/_forms.scss */
 p#submit {
   margin-top: 2em;
 }
@@ -913,7 +909,7 @@ ul.action-links li a {
 
 /* line 52, ../../app/stylesheets/partials/_recipe.scss */
 #recipe #sidebar {
-  margin-top: 91px;
+  margin-top: 61px;
 }
 
 /* line 54, ../../app/stylesheets/partials/_recipe.scss */
@@ -1040,7 +1036,7 @@ div.welcome {
 /* line 38, ../../app/stylesheets/rezets.scss */
 .home-welcome h1 {
   display: inline;
-  font-size: 1.4em;
+  font-size: 1.6em;
 }
 /* line 42, ../../app/stylesheets/rezets.scss */
 .home-welcome p {
