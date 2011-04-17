@@ -1,4 +1,4 @@
-- form_for @recipe, :url => @recipe.new_record? ? @recipe : [@recipe.author,@recipe], :html => { :multipart => true } do |f|
+= form_for @recipe, :url => @recipe.new_record? ? @recipe : [@recipe.author,@recipe], :html => { :multipart => true } do |f|
 
   - unless @recipe.errors.empty?
     %h2= _("there are some errors in the form")

@@ -4,9 +4,6 @@
   .data
     %h2
       %span.fn= link_to recipe.name, user_recipe_path(recipe.author, recipe), :title => recipe.title
-      %span.ft= _("in")
-      %span.category= link_to recipe.category.name, recipe.category,
-      :title => _("{category} recipes") % {:category => recipe.category.name}
 
     - unless controller.controller_name == "users" and controller.action_name == "show"
       %p.author
@@ -20,3 +17,6 @@
       %p.date
         %span.published
           %span.value-title{:title => recipe.updated_at}= _("%{time} ago") % {:time => distance_of_time_in_words_to_now(recipe.updated_at)}
+          %span.ft= _("in")
+          %span.category= link_to recipe.category.name, recipe.category,
+            :title => _("{category} recipes") % {:category => recipe.category.name}
