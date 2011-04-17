@@ -105,6 +105,7 @@ class UsersController < ApplicationController
 
   def follow
     current_user.followings << @user
+    redirect_to following_user_path(current_user)
   end
 
   def unfollow
