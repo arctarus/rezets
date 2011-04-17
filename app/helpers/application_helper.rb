@@ -23,4 +23,16 @@ module ApplicationHelper
     end
   end
 
+  def blog_url
+    "http://blog.rezets.com"
+  end
+
+  def twitter_url
+    "http://twitter.com/rezets"
+  end
+
+  def facebook_url
+    "http://facebook.com/rezets" 
+  end
+
 end

@@ -13,7 +13,7 @@
   a {
     text-decoration:none;
     color:#F3F3F3;
-    &:hover {color:#FF0}
+    &:hover {color:#FFB800}
   }
   p.logo {
     font-family: 'Lobster', arial, serif;
@@ -70,12 +70,6 @@ ul.main-links {
   height:26px;
   @include append-bottom(0);
   text-align:right;
-  font-size:.9em;
-  a {
-    text-decoration:none;
-    color:#F3F3F3;
-    &:hover {color:#FF0}
-  }
   ul {
     background:#380;
     float:right;
@@ -118,6 +112,7 @@ ul.main-links {
   .wrapper { max-width:960px; min-width:700px; padding:1em 0}
   ul {
     list-style:none;
+    margin-bottom:2em;
     li {
       display:inline; margin-left:1em; border-left:1px dotted #CCC; padding-left:1em;
       &.first {margin-left:0; border-left:none; padding-left:0}
@@ -138,3 +133,4 @@ ul.main-links {
 }
 
 .avatar {vertical-align:middle}
+.action {text-decoration:underline}
