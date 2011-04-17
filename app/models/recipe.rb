@@ -1,5 +1,6 @@
+require 'watermark'
+
 class Recipe < ActiveRecord::Base
-  require 'watermark'
   cattr_reader :per_page
   @@per_page = 10
 
@@ -10,10 +11,9 @@ class Recipe < ActiveRecord::Base
   has_many :comments
   belongs_to :category
 
-  belongs_to :author,
-    :foreign_key => "author_id",
-    :class_name => "User",
-    :counter_cache => true
+  belongs_to :author, :foreign_key => "author_id",
+                      :class_name => "User",
+                      :counter_cache => true
 
   has_many :user_likes, :foreign_key => :recipe_id, 
                         :class_name => 'Like'
@@ -35,14 +35,14 @@ class Recipe < ActiveRecord::Base
     :reject_if => proc { |attrs| attrs.all? { |k,v| v.blank? } }
 
   has_attached_file :photo,
-#   :processors => [:watermark],
+    :processors => [:watermark],
     :path       => "#{Rails.root.to_s}/public/system/:class/:id/:attachment/:style/:slug.:extension",
     :url        => "/system/:class/:id/:attachment/:style/:slug.:extension",
     :styles     => {
       :large  => {
         :geometry       => "500x375#",
         :watermark_path => "#{Rails.root.to_s}/public/images/watermark.png",
-        :position       => "Center",
+        :position       => "center",
         :watermark      => "20x100"},
       :medium => "310x240#",
       :thumb  => "100x100#" }
