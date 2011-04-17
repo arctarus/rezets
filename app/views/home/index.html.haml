@@ -8,7 +8,7 @@
     %p= _("Share your recipes and discover lots of them.")
 
 .featured-recipes
-  %h2= _("today featured recipes")
+  %h2= _("Today featured recipes")
   %ul
     - @recipes.each do |recipe|
       %li{:class => cycle(nil,"last")}
@@ -18,12 +18,12 @@
           = link_to h(recipe.author.name), recipe.author
 
         %p= link_to image_tag(recipe.photo.url(:medium), :class => 'photo', :alt => h(recipe.name)), user_recipe_path(recipe.author,recipe)
-        %p.created= raw(_("%{time} ago on %{category}") % { |
+        %p.created= raw(_("%{time} ago in %{category}") % { |
           :time => distance_of_time_in_words_to_now(recipe.created_at), |
           :category => link_to(recipe.category.name, recipe.category)}) |
 
 
-%p= link_to _("subscribe to the latest recipes"), feed_path, :class => "feed-link"
+%p= link_to _("Subscribe to the latest recipes"), feed_path, :class => "feed-link"
 
 - content_for :sidebar do
   = render :partial => 'sidebar'

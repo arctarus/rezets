@@ -1,7 +1,16 @@
 - unless current_user.nil?
   - if not current_user.followings.include?(user)
-    = form_for @user, :url => follow_user_path(user), :remote => true do |f|
-      = f.submit _("follow"), :class => 'follow'
+    %p
+      = link_to _("Follow it"), follow_user_path,
+        :method => :put, 
+        :class => :action,
+        :confirm => _("Now you can follow the recipes that he make on your following tab. Ok?")
+      = _("to follow the recipes than he make.")
   - else
-    = form_for @user, :url => unfollow_user_path(user), :remote => true do |f|
-      = f.submit _("unfollow"), :class => 'unfollow'
+    %p
+      = _("You are following it.")
+      = link_to _("Stop following"), unfollow_user_path, 
+        :remote => true, 
+        :method => :put,
+        :class => :action,
+        :confirm => _("Are you sure? You don't follow the recipes that he make.")

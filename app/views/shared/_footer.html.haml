@@ -1,11 +1,10 @@
 .wrapper
   %ul
-    %li.first{:style => "border:none"}= link_to _("about rezets.com"), :controller => "home", :action => "about"
-    %li= link_to _("blog"), "http://blog.rezets.com"
-    %li= link_to _("contact"), :controller => "home", :action => "feedback"
+    %li.first= link_to _("about rezets.com"), about_path
+    %li= link_to _("blog"), blog_url
+    %li= link_to _("contact"), feedback_path
 
   %p
-    siguenos en 
-    = link_to "twitter", "http://twitter.com/rezets"
-    y en 
-    = link_to "facebook", "http://facebook.com"
+    =raw(_("follow us on %{twitter} and %{facebook}") % { |
+      :twitter => link_to("twitter",twitter_url), |
+      :facebook => link_to("facebook",facebook_url)}) |
