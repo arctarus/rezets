@@ -1,5 +1,5 @@
 %h2
-  %span= _("recipes")
+  %span= _("Recipes")
 - unless @categories.blank?
   %ul
     - @categories.each do |category|
@@ -8,7 +8,7 @@
 
 - unless @users.empty?
   .users
-    %h2= _("featured users")
+    %h2= _("Featured users")
     %ul.featured-users
       - @users.each do |user|
         %li.user

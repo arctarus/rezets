@@ -2,11 +2,12 @@
 fieldset {margin:1em 0}
 legend {font-weight:bold}
 div.field {margin:1em 0}
-div.field p label {display:inline; font-weight:normal}
-div.field p input {margin-left:0; vertical-align:middle}
 div.field p.hint {color:#666}
 div.field label {display:block; font-weight:bold}
 div.field input.title {width:31em}
 div.field textarea {width:38em; height:200px; padding:.2em}
+div.checkbox label {display:inline; font-weight:normal}
+div.checkbox input {margin-left:0; vertical-align:middle}
+
 p#submit {margin-top:2em}
 
