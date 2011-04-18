@@ -43,7 +43,7 @@ class Recipe < ActiveRecord::Base
         :geometry       => "500x375#",
         :watermark_path => "#{Rails.root.to_s}/public/images/watermark.png",
         :position       => "center",
-        :watermark      => "20x100"},
+        :watermark      => "30x100"},
       :medium => "310x240#",
       :thumb  => "100x100#" }
 
@@ -66,10 +66,10 @@ class Recipe < ActiveRecord::Base
     recipe_ingredients.build(ri_attr)
   end
 
-  def existing_recipe_ingredients_attributes=(ri_attr)
+  def existing_recipe_ingredients_attributes=(ri_attrs)
     recipe_ingredients.reject(&:new_record?).each do |ri|
-      if attributes
-        ri.update_attributes(attributes)
+      if ri_attr = ri_attrs[ri.id.to_s]
+        ri.update_attributes(ri_attr)
       else
         recipe_ingredients.delete(ri)
       end
