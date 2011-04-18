@@ -25,48 +25,34 @@ class RecipesController < ApplicationController
   # GET /recipes/new
   # GET /recipes/new.xml
   def new
-    @author = User.find_by_slug params[:user_id]
-    @recipe = @author.recipes.new
+    @recipe = current_user.authorings.new
     @recipe.recipe_ingredients.build
   end
 
   # GET /recipes/1/edit
   def edit
+    @recipe.recipe_ingredients.build
   end
 
   # POST /recipes
   # POST /recipes.xml
   def create
-    @author = User.find_by_slug params[:user_id]
-    @recipe = @author.recipes.new(params[:recipe])
+    @recipe = current_user.authorings.new(params[:recipe])
     @recipe.users << current_user
-    respond_to do |format|
-      if @recipe.save
-        flash[:notice] = _('recipe created')
-        format.html { redirect_to current_user }
-        format.xml  { render :xml => @recipe, :status => :created, :location => @recipe }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @recipe.errors, :status => :unprocessable_entity }
-      end
+    if @recipe.save
     end
+    respond_with @recipe, :location => current_user
   end
 
   # PUT /recipes/1
   # PUT /recipes/1.xml
   def update
     @recipe.updated_at = Time.now
-    respond_to do |format|
-      if @recipe.update_attributes(params[:recipe])
-        flash[:notice] = _('recipe update')
-        format.html { redirect_to(current_user) }
-        format.xml  { head :ok }
-      else
-        @categories = Category.all
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @recipe.errors, :status => :unprocessable_entity }
-      end
+    if @recipe.update_attributes(params[:recipe])
+    else
+      @categories = Category.all
     end
+    respond_with @recipe, :location => current_user
   end
 
   # DELETE /recipes/1

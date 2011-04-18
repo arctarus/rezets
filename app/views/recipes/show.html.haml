@@ -5,22 +5,23 @@
 .hrecipe
   = link_to image_tag(@recipe.author.avatar.url(:large), :alt => "", :width => "50px"),
     @recipe.author, :style => "float:left; margin-right:1em"
-  %h1.fn= link_to h(@recipe.name), user_recipe_path(@recipe.author,@recipe), |
-    :title => _("%{recipe} recipe by %{author}") % { |
-    :recipe => @recipe.name.downcase, :author => @recipe.author.name} |
+  .meta
+    %h1.fn= link_to h(@recipe.name), user_recipe_path(@recipe.author,@recipe), |
+      :title => _("%{recipe} recipe by %{author}") % { |
+      :recipe => @recipe.name.downcase, :author => @recipe.author.name} |
 
-  %p
-    %span.author= link_to @recipe.author.name, @recipe.author, :class => "url fn"
-    %span.ft
-      |
-    %span.category= link_to @recipe.category.name, @recipe.category, 
-      :title => _("%{category} recipes") % {:category => @recipe.category.name}
-    %span.ft
-      |
-    %span.published= distance_of_time_in_words_to_now @recipe.created_at
+    %p
+      %span.author= link_to @recipe.author.name, @recipe.author, :class => "url fn"
+      %span.ft
+        |
+      %span.category= link_to @recipe.category.name, @recipe.category, 
+        :title => _("%{category} recipes") % {:category => @recipe.category.name}
+      %span.ft
+        |
+      %span.published= distance_of_time_in_words_to_now @recipe.created_at
 
+    = render :partial => 'likes', :locals => {:recipe => @recipe, :author => @recipe.author}
 
-  = render :partial => 'likes', :locals => {:recipe => @recipe, :author => @recipe.author}
   = render :partial => 'action_links'
 
   = image_tag @recipe.photo.url(:large),  

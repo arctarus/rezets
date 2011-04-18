@@ -1,27 +1,16 @@
 class RecipeIngredient < ActiveRecord::Base
-  attr_accessor :name
-
-  belongs_to :recipe
+  belongs_to :recipe, :touch => true
   belongs_to :ingredient
 
   validates_uniqueness_of :ingredient_id, :scope => :recipe_id
   validates_presence_of :name
 
   after_destroy :destroy_ingredient_if_not_use_it
-  
-  def name
-    ingredient.name unless ingredient.nil?
-  end
+
+  delegate :name, :to => :ingredient, :allow_nil => true
 
   def name=(ingredient_name)
-    ingredients = Ingredient.find_all_by_name(ingredient_name.downcase)
-    if ingredients.blank?
-      i = Ingredient.new(:name => ingredient_name.downcase)
-      return false unless i.save
-    else
-      i = ingredients.first
-    end
-    self.ingredient = i
+    self.ingredient = Ingredient.find_or_create_by_name(ingredient_name.downcase)
   end
 
   def destroy_ingredient_if_not_use_it
