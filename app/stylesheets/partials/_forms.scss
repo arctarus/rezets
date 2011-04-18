@@ -1,13 +1,22 @@
 /*=forms*/
+textarea {font-size:1.4em}
 fieldset {margin:1em 0}
 legend {font-weight:bold}
-div.field {margin:1em 0}
-div.field p.hint {color:#666}
-div.field label {display:block; font-weight:bold}
-div.field input.title {width:31em}
-div.field textarea {width:38em; height:200px; padding:.2em}
-div.checkbox label {display:inline; font-weight:normal}
-div.checkbox input {margin-left:0; vertical-align:middle}
+.error {
+  h2 {color:#333}
+  p {margin-bottom:0}
+}
 
+p.validation-error {margin-bottom:0; color:#8A1F11}
+div.field {
+  margin:1em 0;
+  p.hint {color:#666}
+  label {display:block; font-weight:bold}
+  input.title {width:26em; font-size:1.6em}
+  textarea {width:38em; height:200px; padding:.2em}
+}
+div.checkbox {
+  label {display:inline; font-weight:normal}
+  input {margin-left:0; vertical-align:middle}
+}
 p#submit {margin-top:2em}
-
