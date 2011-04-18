@@ -801,7 +801,7 @@ p#submit {
 }
 /* line 4, ../../app/stylesheets/partials/_recipe.scss */
 .hrecipe h1 {
-  margin-bottom: 0;
+  margin-bottom: 5px;
   font-size: 2em;
 }
 /* line 7, ../../app/stylesheets/partials/_recipe.scss */
@@ -927,27 +927,37 @@ ul.action-links li a {
   background: url("/images/action-links.png") 0 -350px no-repeat;
 }
 
-/* line 53, ../../app/stylesheets/partials/_recipe.scss */
+/* line 51, ../../app/stylesheets/partials/_recipe.scss */
+.unlike {
+  background: url("/images/action-links.png") 0 -450px no-repeat;
+}
+
+/* line 52, ../../app/stylesheets/partials/_recipe.scss */
+.like {
+  background: url("/images/action-links.png") 0 -500px no-repeat;
+}
+
+/* line 55, ../../app/stylesheets/partials/_recipe.scss */
 #recipe #sidebar {
   margin-top: 61px;
 }
 
-/* line 55, ../../app/stylesheets/partials/_recipe.scss */
+/* line 57, ../../app/stylesheets/partials/_recipe.scss */
 #sidebar li.recipe {
   clear: both;
   height: 100px;
   margin-bottom: 1em;
 }
-/* line 59, ../../app/stylesheets/partials/_recipe.scss */
+/* line 61, ../../app/stylesheets/partials/_recipe.scss */
 #sidebar li.recipe img {
   float: left;
   margin-right: .5em;
 }
-/* line 60, ../../app/stylesheets/partials/_recipe.scss */
+/* line 62, ../../app/stylesheets/partials/_recipe.scss */
 #sidebar li.recipe p {
   margin-bottom: 0;
 }
-/* line 61, ../../app/stylesheets/partials/_recipe.scss */
+/* line 63, ../../app/stylesheets/partials/_recipe.scss */
 #sidebar li.recipe p.name {
   font-size: 1.2em;
 }
@@ -1122,6 +1132,7 @@ div.welcome {
 .featured-recipes ul li p.created {
   margin-top: .5em;
   text-align: right;
+  font-size: .9em;
 }
 /* line 62, ../../app/stylesheets/rezets.scss */
 .featured-recipes ul li.last {

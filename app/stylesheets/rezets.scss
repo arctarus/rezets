@@ -58,7 +58,7 @@ div.welcome {width:60%; padding:2em 0}
       img.photo {float:left}
       p {margin-bottom:0}
       p.user {margin:.2em 0}
-      p.created {margin-top:.5em; text-align:right}
+      p.created {margin-top:.5em; text-align:right; font-size:.9em}
       &.last {
         @include column(8,true);
       }
@@ -170,7 +170,7 @@ ul.recipes {
     }
     p.category {font-size:1.2em; display:inline}
     p {margin-bottom:.5em}
-    .r-meta p {margin-bottom:0; color:#666;}
+    .r-meta p {margin-bottom:0; color:#666}
     .photo { float:left; margin:0 1em 0  0}
     .data { margin-left:110px}
   }
