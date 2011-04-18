@@ -1,9 +1,9 @@
 module RecipesHelper
 
-  def add_ingredient_link(name)
-    link_to_function name do |page|
-      page.insert_html :bottom, :recipe_ingredients_body, :partial => "ingredient", :object => RecipeIngredient.new
-    end
+  def add_ingredient_link(name, url)
+    template = render(:partial => 'ingredient', :object => RecipeIngredient.new)
+    js = "$(\"recipe_ingredients_body\").insert({bottom: \"#{escape_javascript(template)}\"}); return false;"
+    link_to name, '#', :remote => true, :onclick => js
   end
 
   def round(x)
@@ -25,7 +25,7 @@ module RecipesHelper
   end
 
   def twitter(recipe)
-    _("tasty and substance %{recipe} recipe %{url}") % {:recipe => recipe.name.downcase, :url => user_recipe_url(recipe.author,recipe)}
+    _("tasty and substance %{recipe} recipe %{url}") % {:recipe => recipe.name.downcase, :url => user_recipe_url(current_user,recipe)}
   end
 
   def facebook_sharer_url(recipe)
