@@ -24,8 +24,28 @@ module RecipesHelper
     render :partial => 'email', :locals => { :recipe => recipe }
   end
 
-  def twitter(recipe)
-    _("tasty and substance %{recipe} recipe %{url}") % {:recipe => recipe.name.downcase, :url => user_recipe_url(current_user,recipe)}
+  def link_to_print(recipe)
+    link_to_function _('print'), "window.open(this.href)",
+      :href => user_recipe_path(recipe.author,recipe, :print => 1),
+      :class => 'action-link print'
+  end
+
+  def link_to_twitter(recipe)
+    link_to "twitter", "http://twitter.com/home?status=#{twitter_status_example(recipe)}",
+      :class => 'action-link twitter',
+      :title => _('share recipe on twitter')
+  end
+
+  def twitter_status_example(recipe)
+    _("tasty and substance %{recipe} recipe %{url}") % {
+      :recipe => recipe.name.downcase, 
+      :url => user_recipe_url(recipe.author,recipe)}
+  end
+
+  def link_to_facebook(recipe)
+    link_to "facebook", facebook_sharer_url(recipe), 
+      :class => 'action-link facebook', 
+      :title => _('share recipe on facebook')
   end
 
   def facebook_sharer_url(recipe)
