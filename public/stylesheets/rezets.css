@@ -504,7 +504,7 @@ caption {
 #header p.logo {
   font-family: 'Lobster', arial, serif;
   display: inline;
-  margin: 0;
+  margin: 0 0 0 2px;
   text-align: left;
   font-size: 2.8em;
   text-shadow: 1px 1px 1px #555;
@@ -724,99 +724,119 @@ ul.main-links li {
 
 /*=forms*/
 /* line 2, ../../app/stylesheets/partials/_forms.scss */
+textarea {
+  font-size: 1.4em;
+}
+
+/* line 3, ../../app/stylesheets/partials/_forms.scss */
 fieldset {
   margin: 1em 0;
 }
 
-/* line 3, ../../app/stylesheets/partials/_forms.scss */
+/* line 4, ../../app/stylesheets/partials/_forms.scss */
 legend {
   font-weight: bold;
 }
 
-/* line 4, ../../app/stylesheets/partials/_forms.scss */
+/* line 6, ../../app/stylesheets/partials/_forms.scss */
+.error h2 {
+  color: #333;
+}
+/* line 7, ../../app/stylesheets/partials/_forms.scss */
+.error p {
+  margin-bottom: 0;
+}
+
+/* line 10, ../../app/stylesheets/partials/_forms.scss */
+p.validation-error {
+  margin-bottom: 0;
+  color: #8A1F11;
+}
+
+/* line 11, ../../app/stylesheets/partials/_forms.scss */
 div.field {
   margin: 1em 0;
 }
-
-/* line 5, ../../app/stylesheets/partials/_forms.scss */
+/* line 13, ../../app/stylesheets/partials/_forms.scss */
 div.field p.hint {
   color: #666;
 }
-
-/* line 6, ../../app/stylesheets/partials/_forms.scss */
+/* line 14, ../../app/stylesheets/partials/_forms.scss */
 div.field label {
   display: block;
   font-weight: bold;
 }
-
-/* line 7, ../../app/stylesheets/partials/_forms.scss */
+/* line 15, ../../app/stylesheets/partials/_forms.scss */
 div.field input.title {
-  width: 31em;
+  width: 26em;
+  font-size: 1.6em;
 }
-
-/* line 8, ../../app/stylesheets/partials/_forms.scss */
+/* line 16, ../../app/stylesheets/partials/_forms.scss */
 div.field textarea {
   width: 38em;
   height: 200px;
   padding: .2em;
 }
 
-/* line 9, ../../app/stylesheets/partials/_forms.scss */
+/* line 19, ../../app/stylesheets/partials/_forms.scss */
 div.checkbox label {
   display: inline;
   font-weight: normal;
 }
-
-/* line 10, ../../app/stylesheets/partials/_forms.scss */
+/* line 20, ../../app/stylesheets/partials/_forms.scss */
 div.checkbox input {
   margin-left: 0;
   vertical-align: middle;
 }
 
-/* line 12, ../../app/stylesheets/partials/_forms.scss */
+/* line 22, ../../app/stylesheets/partials/_forms.scss */
 p#submit {
   margin-top: 2em;
 }
 
 /*=hrecipe*/
 /* line 3, ../../app/stylesheets/partials/_recipe.scss */
+.hrecipe .meta {
+  margin-left: 64px;
+}
+/* line 4, ../../app/stylesheets/partials/_recipe.scss */
 .hrecipe h1 {
   margin-bottom: 0;
   font-size: 2em;
 }
-/* line 6, ../../app/stylesheets/partials/_recipe.scss */
+/* line 7, ../../app/stylesheets/partials/_recipe.scss */
 .hrecipe h1 a {
   color: #333;
 }
-/* line 8, ../../app/stylesheets/partials/_recipe.scss */
+/* line 9, ../../app/stylesheets/partials/_recipe.scss */
 .hrecipe p.category {
   margin-bottom: 0;
   font-size: 1.2em;
 }
-/* line 9, ../../app/stylesheets/partials/_recipe.scss */
+/* line 10, ../../app/stylesheets/partials/_recipe.scss */
 .hrecipe p.author {
   margin-bottom: .5em;
 }
-/* line 10, ../../app/stylesheets/partials/_recipe.scss */
+/* line 11, ../../app/stylesheets/partials/_recipe.scss */
 .hrecipe h2.fn {
   margin: 0;
 }
-/* line 12, ../../app/stylesheets/partials/_recipe.scss */
+/* line 13, ../../app/stylesheets/partials/_recipe.scss */
 .hrecipe span.duration,
 .hrecipe span.num-persons {
   color: #666;
   font-size: .8em;
 }
-/* line 13, ../../app/stylesheets/partials/_recipe.scss */
+/* line 14, ../../app/stylesheets/partials/_recipe.scss */
 .hrecipe div.instructions p {
   margin-bottom: 1em;
 }
-/* line 14, ../../app/stylesheets/partials/_recipe.scss */
+/* line 15, ../../app/stylesheets/partials/_recipe.scss */
 .hrecipe div.ingredient input {
   display: inline;
 }
 
-/* line 17, ../../app/stylesheets/partials/_recipe.scss */
+/* line 18, ../../app/stylesheets/partials/_recipe.scss */
 #recipe-ingredients {
   width: 950px;
   margin: 0 auto;
@@ -827,7 +847,7 @@ p#submit {
   margin-top: 1.5em;
 }
 
-/* line 24, ../../app/stylesheets/partials/_recipe.scss */
+/* line 25, ../../app/stylesheets/partials/_recipe.scss */
 .recipe-ingredients {
   display: inline;
   float: left;
@@ -839,95 +859,95 @@ p#submit {
   overflow-x: hidden;
 }
 
-/* line 29, ../../app/stylesheets/partials/_recipe.scss */
+/* line 30, ../../app/stylesheets/partials/_recipe.scss */
 .sidebar ul.ingredients {
   list-style-type: disc;
   padding-left: 1.5em;
 }
 
-/* line 35, ../../app/stylesheets/partials/_recipe.scss */
+/* line 36, ../../app/stylesheets/partials/_recipe.scss */
 ul.action-links {
   margin: .5em 0;
   font-size: .9em;
 }
-/* line 37, ../../app/stylesheets/partials/_recipe.scss */
+/* line 38, ../../app/stylesheets/partials/_recipe.scss */
 ul.action-links li {
   margin-right: 1em;
   line-height: 1em;
   display: inline;
 }
-/* line 38, ../../app/stylesheets/partials/_recipe.scss */
+/* line 39, ../../app/stylesheets/partials/_recipe.scss */
 ul.action-links li a {
   padding: 1px 0 1px 18px;
 }
 
-/* line 41, ../../app/stylesheets/partials/_recipe.scss */
+/* line 42, ../../app/stylesheets/partials/_recipe.scss */
 .edit {
   background: url("/images/action-links.png") top left no-repeat;
 }
 
-/* line 42, ../../app/stylesheets/partials/_recipe.scss */
+/* line 43, ../../app/stylesheets/partials/_recipe.scss */
 .delete {
   background: url("/images/action-links.png") 0 -50px no-repeat;
 }
 
-/* line 43, ../../app/stylesheets/partials/_recipe.scss */
+/* line 44, ../../app/stylesheets/partials/_recipe.scss */
 .print {
   background: url("/images/action-links.png") 0 -100px no-repeat;
 }
 
-/* line 44, ../../app/stylesheets/partials/_recipe.scss */
+/* line 45, ../../app/stylesheets/partials/_recipe.scss */
 .send-email {
   padding-left: 20px;
   background: url("/images/action-links.png") 0 -150px no-repeat;
 }
 
-/* line 45, ../../app/stylesheets/partials/_recipe.scss */
+/* line 46, ../../app/stylesheets/partials/_recipe.scss */
 .twitter {
   background: url("/images/action-links.png") 0 -200px no-repeat;
 }
 
-/* line 46, ../../app/stylesheets/partials/_recipe.scss */
+/* line 47, ../../app/stylesheets/partials/_recipe.scss */
 .facebook {
   background: url("/images/action-links.png") 0 -400px no-repeat;
 }
 
-/* line 47, ../../app/stylesheets/partials/_recipe.scss */
+/* line 48, ../../app/stylesheets/partials/_recipe.scss */
 #feed {
   background: url("/images/action-links.png") 0 -250px no-repeat;
 }
 
-/* line 48, ../../app/stylesheets/partials/_recipe.scss */
+/* line 49, ../../app/stylesheets/partials/_recipe.scss */
 #prev {
   background: url("/images/action-links.png") 0 -300px no-repeat;
 }
 
-/* line 49, ../../app/stylesheets/partials/_recipe.scss */
+/* line 50, ../../app/stylesheets/partials/_recipe.scss */
 #next {
   background: url("/images/action-links.png") 0 -350px no-repeat;
 }
 
-/* line 52, ../../app/stylesheets/partials/_recipe.scss */
+/* line 53, ../../app/stylesheets/partials/_recipe.scss */
 #recipe #sidebar {
   margin-top: 61px;
 }
 
-/* line 54, ../../app/stylesheets/partials/_recipe.scss */
+/* line 55, ../../app/stylesheets/partials/_recipe.scss */
 #sidebar li.recipe {
   clear: both;
   height: 100px;
   margin-bottom: 1em;
 }
-/* line 58, ../../app/stylesheets/partials/_recipe.scss */
+/* line 59, ../../app/stylesheets/partials/_recipe.scss */
 #sidebar li.recipe img {
   float: left;
   margin-right: .5em;
 }
-/* line 59, ../../app/stylesheets/partials/_recipe.scss */
+/* line 60, ../../app/stylesheets/partials/_recipe.scss */
 #sidebar li.recipe p {
   margin-bottom: 0;
 }
-/* line 60, ../../app/stylesheets/partials/_recipe.scss */
+/* line 61, ../../app/stylesheets/partials/_recipe.scss */
 #sidebar li.recipe p.name {
   font-size: 1.2em;
 }
