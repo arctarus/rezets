@@ -1,27 +1,28 @@
 = form_for @recipe, :url => @recipe.new_record? ? @recipe : [@recipe.author,@recipe], :html => { :multipart => true } do |f|
 
   - unless @recipe.errors.empty?
-    %h2= _("there are some errors in the form")
-    %p= _("check the following data")
+    .error
+      %h2= _("there are some errors in the form")
+      %p= _("check the following data")
 
   .field
     = error_messages_for :name
-    = f.text_field :name, :class => "title"
+    = f.text_field :name, :maxlength => 255, :required => true, :class => [:text,:title]
 
   .field
     = f.label :category_id, _("category")
     = f.select :category_id, Category.order("name asc").collect {|c| [c.name,c.id] }
 
-  - unless @recipe.photo.url == "/photos/original/missing.png"
-    .field
-      = f.label :photo, _("photo")
+  .field
+    = f.label :photo, _("photo")
+    - unless @recipe.photo.url == "/photos/original/missing.png"
       = image_tag @recipe.photo.url(:medium)
       %br
-      = f.file_field :photo
+    = f.file_field :photo
 
   .field
     = f.label :num_persons, _("number of people")
-    = f.text_field :num_persons, :class => "number", :maxlength => 3
+    = f.text_field :num_persons, :required => true, :class => "number", :maxlength => 3
 
   %fieldset.ingredients
     %legend= _("ingredients")
@@ -37,17 +38,17 @@
       %tbody#recipe_ingredients_body
         = render :partial => "ingredient", :collection => @recipe.recipe_ingredients
 
-    %p#addingredient= add_ingredient_link _("add new ingredient")
+    %p#addingredient= add_ingredient_link _("add new ingredient"), '#'
 
   .field
     = f.label :cook_time, _("preparation time")
-    = f.text_field :cook_time, :class => "number", :maxlength => 3
+    = f.text_field :cook_time, :class => "number", :maxlength => 3, :required => true
     %span.ft= _("minutes")
 
   .field
     = f.label :directions, _("directions")
     = error_messages_for :directions
-    = f.text_area :directions
+    = f.text_area :directions, :required => true
 
   %p#submit
     - submit_value = @recipe.new_record? ? _("create") : _("update")
