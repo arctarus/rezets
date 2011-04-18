@@ -1,8 +1,9 @@
-- unless current_user.nil?
-  #like
-    - if not current_user.likes.include?(recipe)
-      = form_for recipe, :url => like_user_recipe_path(author, recipe), :remote => true do |f|
-        = f.submit _('I like it!')
-    - else
-      = form_for recipe, :url => unlike_user_recipe_path(author, recipe), :remote => true do |f|
-        = f.submit _("I don't like it yet!")
+- if current_user
+  - if not current_user.likes.include?(recipe)
+    = link_to _('like?'), like_user_recipe_path(author, recipe), 
+      :remote => true, :method => :put, :class => :unlike
+  - else
+    = link_to _("you like"), unlike_user_recipe_path(author, recipe), 
+      :remote => true, :method => :put, :class => :like
+- else
+  = link_to _('like?'), login_path, :class => :unlike
