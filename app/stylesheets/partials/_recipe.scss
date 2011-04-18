@@ -2,7 +2,7 @@
 .hrecipe {
   .meta {margin-left:64px}
   h1 {
-    margin-bottom:0;
+    margin-bottom:5px;
     font-size:2em;
     a {color:#333}
   }
@@ -48,6 +48,8 @@ ul.action-links {
 #feed {background:url('/images/action-links.png') 0 -250px no-repeat}
 #prev {background:url('/images/action-links.png') 0 -300px no-repeat}
 #next {background:url('/images/action-links.png') 0 -350px no-repeat}
+.unlike {background:url('/images/action-links.png') 0 -450px no-repeat}
+.like {background:url('/images/action-links.png') 0 -500px no-repeat}
 
 
 #recipe #sidebar { margin-top:61px }

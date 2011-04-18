@@ -17,7 +17,7 @@ class SessionsController < ApplicationController
   
   def destroy
     current_user_session.destroy
-    redirect_back_or_default "home#index"
+    redirect_back_or_default root_url
   end
 
 end
