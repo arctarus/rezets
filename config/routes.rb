@@ -34,8 +34,10 @@ Rezets::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   root :to => "home#index"
+  match "/users/new/:token" => "users#new"
   match "/about"    => "home#about",    :as => :about
-  match "/feedback" => "home#feedback", :as => :feedback
+  match "/feedback" => "home#feedback", :as => :feedback, :via => :get
+  match "/feedback" => "home#send_feedback", :as => :feedback, :via => :post
   match "/search"   => "home#search",   :as => :search
   match "/feed"     => "home#feed",     :as => :feed
 
