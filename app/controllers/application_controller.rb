@@ -3,6 +3,15 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user_session, :current_user
   before_filter :set_gettext_locale
+  rescue_from ActiveRecord::RecordNotFound, :with => :page_not_found
+
+  protected
+
+  def page_not_found
+    render  :layout   => false,
+            :file     => "/public/404.html", 
+            :status   => 404
+  end
 
   private
 

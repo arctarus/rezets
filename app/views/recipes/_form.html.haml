@@ -2,8 +2,8 @@
 
   - unless @recipe.errors.empty?
     .error
-      %h2= _("there are some errors in the form")
-      %p= _("check the following data")
+      %h2= _('It looks like to be missing some data')
+      %p= _('Reviews the form before continuing')
 
   .field
     = error_messages_for :name

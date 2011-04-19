@@ -1,24 +1,34 @@
 %h1= _("confirm invitation to rezets.com")
+
+- unless @user.errors.empty?
+  .error
+    %h2= _('It looks like to be missing some data')
+    %p= _('Reviews the form before continuing')
+
 = form_for @user do |f|
-  = f.error_messages :header_message => _("there are some errors in the form"), |
-    :message => _("check the following data")                                   |
+
   = hidden_field :invitation, :token
   .field
     = f.label :name, _("name")
     = f.text_field :name, :class => "text", :size => 30, :maxlength => 255
+
   .field
     = f.label :email, _("email")
     = f.text_field :email, :class => "text", :size => 30, :maxlength => 255
+
   .field
     = f.label :password, _("password")
     = f.password_field :password, :class => "text", :size => 30, :maxlength => 255
+
   .field
     = f.label :password_confirmation, _("confirm password")
     = f.password_field :password_confirmation, :class => "text", :size => 30, :maxlength => 255
+
   .field
     = f.label :slug, _("address of your page in rezets.com")
     %p
       %span.ft http://rezets.com/users/
       = f.text_field :slug, :class => "text", :size => 20, :maxlength => 255
+
   %p#submit
     = f.submit _("continue")
