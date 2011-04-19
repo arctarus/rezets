@@ -1,4 +1,3 @@
-# coding: utf-8
 class UsersController < ApplicationController
   respond_to :html
   before_filter :require_user, :only => [:edit, :update, :changepassword, :updatepassword]
@@ -52,55 +51,35 @@ class UsersController < ApplicationController
       :email => params[:user][:email],
       :password => params[:user][:password]
     })
-    respond_to do |format|
-      if not @invitation.nil? and @user.save and @user_session.save
-        @invitation.update_attributes({
-          :updated_at => Time.now,
-          :receiver_id => @user.id })
-        flash[:notice] = "Bienvenido a rezets.com"
-        format.html { redirect_back_or_default @user_session.user }
-        format.xml { render :xml => @user, :status => :created, :location => @user }
-      else
-        format.html { render :action => "new" }
-        format.xml { render :xml => @user.errors, :status => :unprocessable_entity }
-      end
+    if not @invitation.nil? and @user.save and @user_session.save
+      @invitation.update_attributes({
+        :updated_at => Time.now,
+        :receiver_id => @user.id })
     end
+    respond_with @user
   end
 
   # GET /users/arctarus/profile
   def edit
-    @page_title = "editar perfil de #{@user.name}"
+    render :layout => 'application'
   end
 
   # PUT /users/arctarus
   # PUT /users/arctarus/1.xml
   def update
-    respond_to do |format|
-      if @user.update_attributes(params[:user])
-        flash[:notice] = 'perfil actualizado correctamente'
-        format.html { redirect_to @user }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @user.errors, :status => :unprocessable_entity }
-      end
+    if @user.update_attributes(params[:user])
     end
+    respond_with @user
   end
 
   def changepassword
+    render :layout => 'application'
   end
 
   def updatepassword
-    respond_to do |format|
-      if @user.update_attributes(params[:user])
-        flash[:notice] = 'password updated'
-        format.html { redirect_to @user }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "changepassword" }
-        format.xml  { render :xml => @user.errors, :status => :unprocessable_entity }
-      end
+    if @user.update_attributes(params[:user])
     end
+    respond_with @user
   end
 
   def follow
