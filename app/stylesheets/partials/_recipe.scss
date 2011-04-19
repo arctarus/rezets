@@ -35,14 +35,14 @@
 
 ul.action-links {
   margin:.5em 0; font-size:.9em;
-  li {margin-right:1em; line-height:1em; display:inline}
+  li {margin-right:1em; padding:1px 0; line-height:1em; display:inline}
   li a {padding:1px 0 1px 18px}
 }
 
 .edit {background:url('/images/action-links.png') top left no-repeat}
 .delete {background:url('/images/action-links.png') 0 -50px no-repeat}
 .print {background:url('/images/action-links.png') 0 -100px no-repeat}
-.send-email {padding-left:20px; background:url('/images/action-links.png') 0 -150px no-repeat}
+#send-email {background:url('/images/action-links.png') 0 -150px no-repeat}
 .twitter {background:url('/images/action-links.png') 0 -200px no-repeat}
 .facebook {background:url('/images/action-links.png') 0 -400px no-repeat}
 #feed {background:url('/images/action-links.png') 0 -250px no-repeat}
