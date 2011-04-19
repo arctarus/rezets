@@ -1,23 +1,29 @@
 %p= _("Hi!")
+
 - if @message.blank?
   %p= _("%{user} has shared a %{recipe} recipe with you!") % {:user => @user_name, :recipe => @recipe.name.downcase }
 - else
   %p= _("%{user} has shared a %{recipe} recipe with you and says:") % {:user => @user_name, :recipe => @recipe.name.downcase }
-  = simple_format(h(@message))
+  = simple_format(@message)
+
 %p
   %span{:style => "font-size:1.4em"}= link_to @recipe.name.capitalize,        |
       user_recipe_url(@recipe.author,@recipe) |
   %br/
   = link_to @recipe.category.name, category_url(@recipe.category)
   %br/
-  por #{link_to "#{image_tag root_url + @recipe.author.avatar.url(:thumb), :alt => @recipe.author.name, :style => 'border:none; vertical-align:middle'}", user_url(@recipe.author)}
-  \#{link_to @recipe.author.name, user_url(@recipe.author)} |
-  \#{_("updated %{time} ago") % {:time => distance_of_time_in_words_to_now(@recipe.updated_at)}}
-= link_to "#{image_tag "#{root_url}#{@recipe.photo.url(:large)}",                                             |
-  :class => "photo", :alt => @recipe.name, :style => 'border:none'}", user_recipe_url(@recipe.author,@recipe) |
+  = _('by')
+  = link_to image_tag(root_url + @recipe.author.avatar.url(:thumb), :alt => @recipe.author.name, :style => 'border:none; vertical-align:middle'), user_url(@recipe.author)
+  = link_to @recipe.author.name, user_url(@recipe.author)
+  =_("updated %{time} ago") % {:time => distance_of_time_in_words_to_now(@recipe.updated_at)}
+
+= link_to image_tag(root_url + @recipe.photo.url(:large), :class => "photo", :alt => @recipe.name, :style => 'border:none'), |
+  user_recipe_url(@recipe.author,@recipe) |
+
 %p{:style => "margin-top:1em; font-size:1.3em;"}
   %span{:style => "color:#380"}= _("ingredients")
   (para #{h @recipe.num_persons} personas)
+
 - @recipe.recipe_ingredients.each do |ri|
   ·
   - unless ri.value.blank?
@@ -33,9 +39,10 @@
   %br/
 %p{:style => "margin-top:1em; font-size:1.3em;"}
   %span{:style => "color:#380"}= _("directions")
-  (#{h @recipe.cook_time} #{_("min")})
+  (#{@recipe.cook_time} #{_("min")})
 .instructions
-  = simple_format(h(@recipe.directions))
+  = simple_format @recipe.directions
+
 %br/
 %p= _("now you can,")
 %p

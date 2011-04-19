@@ -1,0 +1,13 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+  %body
+    %p= _("%{user} has invited you to join to rezets.com and says you:") % {:user => h(@user.name)}
+    .body
+      = simple_format(h(@message))
+      %br/
+      %p= _("You can start by:")
+      %p= link_to _("sign up rezets.com"), new_user_url + '/' + @invitation.token
+      %p= link_to _("see %{user} page") % {:user => @user.name}, user_url(@user)
+      = link_to _("discover new recipes"), recipes_url
