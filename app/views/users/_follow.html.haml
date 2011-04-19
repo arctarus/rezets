@@ -2,15 +2,16 @@
   - if not current_user.followings.include?(user)
     %p
       = link_to _("Follow it"), follow_user_path,
-        :method => :put, 
-        :class => :action,
+        :remote  => true,
+        :method  => :put, 
+        :class   => :action,
         :confirm => _("Now you can follow the recipes that he make on your following tab. Ok?")
       = _("to follow the recipes than he make.")
   - else
     %p
       = _("You are following it.")
       = link_to _("Stop following"), unfollow_user_path, 
-        :remote => true, 
-        :method => :put,
-        :class => :action,
+        :remote  => true, 
+        :method  => :put,
+        :class   => :action,
         :confirm => _("Are you sure? You don't follow the recipes that he make.")
