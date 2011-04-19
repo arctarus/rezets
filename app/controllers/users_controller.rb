@@ -35,10 +35,11 @@ class UsersController < ApplicationController
   # GET /users/new
   # GET /users/new.xml
   def new
-    @invitation = Invitation.find_by_token(params[:id])
+    @invitation = Invitation.find_by_token(params[:token])
     if not @invitation.nil? and @invitation.created_at >= Time.now - 1.week
       @user = User.new(:email => @invitation.email)
       @user = User.new
+      render :layout => 'application'
     else
       render :layout => false, :file => '/public/404.html', :status => 404
     end
