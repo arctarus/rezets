@@ -1,15 +1,29 @@
+- title _("edit #{@user.name}'s profile")
 %h1= _("edit profile")
-%p= link_to _("change password"), changepassword_user_path
+
+
+- unless @user.errors.empty?
+  .error
+    %h2= _('It looks like to be missing some data')
+    %p= _('Reviews the form before continuing')
+
 = form_for @user, :html => { :multipart => true } do |f|
-  = f.error_messages
-  .field
-    = f.label :name, _("name")
-    = f.text_field :name, :class => "text", :size => 30, :maxlength => 255
-  .field
-    = f.label :email, _("email")
-    = f.text_field :email, :class => "text", :size => 30, :maxlength => 255
+
   .field
     = f.label :avatar, _("avatar")
+    = image_tag @user.avatar.url(:large)
+    %br
     = f.file_field :avatar
+
+  .field
+    = f.label :name, _("name")
+    = f.text_field :name, :class => "text", :size => 30, :maxlength => 255, :required => true
+
+  .field
+    = f.label :email, _("email")
+    = f.text_field :email, :class => "text", :size => 30, :maxlength => 255, :required => true
+
+  %p= link_to _("change password"), changepassword_user_path
+
   %p#submit
     = f.submit _("save")
