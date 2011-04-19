@@ -1,4 +1,3 @@
-# coding: utf-8
 class InvitationsController < ApplicationController
   respond_to :html
   before_filter :require_user, :only => [:new, :create]
@@ -7,11 +6,10 @@ class InvitationsController < ApplicationController
   # GET /invitations.xml
   def index
     if current_user.id == 1
-      @invitations = Invitation.all.order('created_at desc').
-        paginate(:page => params[:page], :per_page => 20)
-      @page_title = "invitaciones enviadas"
+      @invitations = Invitation.order('created_at desc').
+        paginate :page => params[:page]
     else
-      render :layout => false, :file => '/public/404.html', :status => 404
+      page_not_found
     end
   end
 
@@ -26,17 +24,11 @@ class InvitationsController < ApplicationController
   # POST /invitations.xml
   def create
     @invitation = current_user.invitations_sent.new(params[:invitation])
-    respond_to do |format|
-      if @invitation.save
-        UserMailer.invitation(@invitation, params["mail"], current_user).deliver
-        flash[:notice] = "Invitación enviada correctamente a #{@invitation.email}"
-        format.html { redirect_to current_user }
-        format.xml { render :xml => @invitation, :status => :created, :location => @invitation }
-      else
-        flash[:notice] = "No se ha poditio enviar la invitación"
-        format.html { render :action => "new" }
-        format.xml { render :xml => @invitation.errors, :status => :unprocessable_entity }
-      end
+    if @invitation.save
+      UserMailer.invitation(@invitation, params["mail"], current_user).deliver
+      flash[:notice] = _("Invitation send successfully to %{email}") % {:emal => @invitation.email}
+    else
+      flash[:notice] = _("Failed to send the invitation")
     end
   end
 
