@@ -111,7 +111,7 @@ class RecipesController < ApplicationController
   end
 
   def unlike
-    current_user.likes.delete @recipe
+    current_user.recipe_likes.find_by_recipe_id(@recipe.id).destroy
     render 'like'
   end
 
@@ -119,8 +119,7 @@ class RecipesController < ApplicationController
     def find_recipe
       recipe_id = params[:id].split("-").first
       @author = User.find_by_slug params[:user_id]
-      @recipe = Recipe.find_by_id_and_author_id(recipe_id, @author.id, 
-        :include => :ingredients)
+      @recipe = @author.recipes.find(recipe_id, :include => :ingredients)
     end
 
 end

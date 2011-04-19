@@ -84,11 +84,11 @@ class UsersController < ApplicationController
 
   def follow
     current_user.followings << @user
-    redirect_to following_user_path(current_user)
+    render 'follow'
   end
 
   def unfollow
-    current_user.followings.delete(@user)
+    current_user.follow_followings.find_by_following_id(@user.id).destroy
     render 'follow'
   end
 
