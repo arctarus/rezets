@@ -3,7 +3,7 @@
 - meta_keywords @recipe.ingredients.map(&:name) << @recipe.category.name
 
 .hrecipe
-  = link_to image_tag(@recipe.author.avatar.url(:large), :alt => "", :width => "50px"),
+  = link_to image_tag(@recipe.author.avatar.url(:medium), :alt => "", :width => "50px"),
     @recipe.author, :style => "float:left; margin-right:1em"
   .meta
     %h1.fn= link_to h(@recipe.name), user_recipe_path(@recipe.author,@recipe), |
@@ -42,27 +42,23 @@
             (#{(_("for %{num} people") % {:num => "<span class=\"yield\">#{@recipe.num_persons}</span>"}).html_safe})
 
       - if @recipe.recipe_ingredients.size <=  5
-        .recipe-ingredients
-          %ul.ingredients
-            = render :partial => 'recipe_ingredients/recipe_ingredient', :collection => @recipe.recipe_ingredients
+        %ul.ingredients
+          = render :partial => 'recipe_ingredients/recipe_ingredient', :collection => @recipe.recipe_ingredients
       - else
         - group_size = (@recipe.recipe_ingredients.size + 1) / 2
         - @recipe.recipe_ingredients.in_groups_of(group_size).each_with_index do |ri_group, i|
-          .recipe-ingredients{:class => ('last' if i == 1)}
-            %ul.ingredients
-              = render :partial => 'recipe_ingredients/recipe_ingredient', :collection => ri_group
+          %ul.ingredients{:class => i == 1 && 'last'}
+            = render :partial => 'recipe_ingredients/recipe_ingredient', :collection => ri_group
 
   %h2.clear
     = _("directions")
     - unless @recipe.cook_time.blank?
       %span.duration
         (
-        %span.value-title{:title => "@recipe.cook_time"}
-          = _("%{time} min") % {:time => @recipe.cook_time}
+        %span.value-title{:title => @recipe.cook_time}>= _("%{time} min") % {:time => @recipe.cook_time}
         )
 
   .instructions
     = simple_format(@recipe.directions)
 
-  = render :partial => "comments"
-  = will_paginate @comments
+  = render :partial => "comments", :locals => {:recipe => @recipe}

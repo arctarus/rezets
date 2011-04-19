@@ -39,7 +39,7 @@ class User < ActiveRecord::Base
 
   has_attached_file :avatar, :styles => {
     :thumb  => "20x20#",
-    :medium => "30x30#",
+    :medium => "50x50#",
     :large  => "80x80#" }
 
   scope :featured, where("recipes_count > 2").
