@@ -1,0 +1,8 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+  %body
+    %p= _("%{user} tell us:") % {:user => h(@name)}
+    .body
+      = simple_format(h(@message))
