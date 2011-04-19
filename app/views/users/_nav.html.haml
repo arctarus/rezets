@@ -1,10 +1,11 @@
-%ul.user-nav
-  %li
-    %h2{:class => controller.action_name == 'show' && 'current'}
-      = link_to_unless controller.action_name == 'show', raw(n_("%{num} recipe", "%{num} recipes", @user.recipes.size) % {:num => "<strong>#{@user.recipes.size}</strong>"}), @user
-  %li
-    %h2{:class => current_page?(:controller => :users, :action => :following) && 'current'}
-      = link_to_unless @user.followings.blank?, raw(n_("%{num} following", "%{num} followings", @user.followings.size) % {:num => "<strong>#{@user.followings.size}</strong>"}), following_user_path(@user)
-  %li
-    %h2{:class => current_page?(:controller => :users, :action => :likes) && 'current'}
-      = link_to_unless @user.likes.blank?, raw(n_("%{num} like", "%{num} likes", @user.likes.size) % {:num => "<strong>#{@user.likes.size}</strong>"}), likes_user_path(@user)
+- unless @recipes.empty?
+  %ul.user-nav
+    %li
+      %h2{:class => controller.action_name == 'show' && 'current'}
+        = link_to_unless controller.action_name == 'show', raw(n_("%{num} recipe", "%{num} recipes", @user.recipes.size) % {:num => "<strong>#{@user.recipes.size}</strong>"}), @user
+    %li
+      %h2{:class => current_page?(:controller => :users, :action => :following) && 'current'}
+        = link_to_unless @user.followings.blank?, raw(n_("%{num} following", "%{num} followings", @user.followings.size) % {:num => "<strong>#{@user.followings.size}</strong>"}), following_user_path(@user)
+    %li
+      %h2{:class => current_page?(:controller => :users, :action => :likes) && 'current'}
+        = link_to_unless @user.likes.blank?, raw(n_("%{num} like", "%{num} likes", @user.likes.size) % {:num => "<strong>#{@user.likes.size}</strong>"}), likes_user_path(@user)
