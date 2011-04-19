@@ -22,9 +22,11 @@
   @include prepend-top;
 }
 
-.recipe-ingredients {
-  @include column(7);
+ul.ingredients {
+  @include column(6);
+  padding-left:1em;
 }
+ul.last {margin-right:0}
 
 .sidebar {
   ul.ingredients {
@@ -50,6 +52,7 @@ ul.action-links {
 #next {background:url('/images/action-links.png') 0 -350px no-repeat}
 .unlike {background:url('/images/action-links.png') 0 -450px no-repeat}
 .like {background:url('/images/action-links.png') 0 -500px no-repeat}
+p.like {padding-left:20px}
 
 
 #recipe #sidebar { margin-top:61px }
@@ -61,5 +64,6 @@ ul.action-links {
     img { float:left; margin-right:.5em }
     p {margin-bottom:0}
     p.name {font-size:1.2em}
+    .data {margin-left:107px}
   }
 }
