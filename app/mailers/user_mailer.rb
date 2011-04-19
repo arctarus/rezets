@@ -9,7 +9,7 @@ class UserMailer < ActionMailer::Base
     mail  :to       => 'rezets.com@gmail.com',
           :from     => feedback['email'],
           :reply_to => feedback["email"],
-          :subject  => _("feedback from #{feedback["name"]}")
+          :subject  => _("feedback from %{name}") % {:name => feedback['name']}
   end 
 
   def invitation(invitation, tmpl, user)
