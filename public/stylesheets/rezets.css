@@ -873,6 +873,7 @@ ul.action-links {
 /* line 38, ../../app/stylesheets/partials/_recipe.scss */
 ul.action-links li {
   margin-right: 1em;
+  padding: 1px 0;
   line-height: 1em;
   display: inline;
 }
@@ -897,8 +898,7 @@ ul.action-links li a {
 }
 
 /* line 45, ../../app/stylesheets/partials/_recipe.scss */
-.send-email {
-  padding-left: 20px;
+#send-email {
   background: url("/images/action-links.png") 0 -150px no-repeat;
 }
 
