@@ -26,10 +26,11 @@ class InvitationsController < ApplicationController
     @invitation = current_user.invitations_sent.new(params[:invitation])
     if @invitation.save
       UserMailer.invitation(@invitation, params["mail"], current_user).deliver
-      flash[:notice] = _("Invitation send successfully to %{email}") % {:emal => @invitation.email}
+      flash[:notice] = _("Invitation send successfully to %{email}") % {:email => @invitation.email}
     else
       flash[:notice] = _("Failed to send the invitation")
     end
+    respond_with @invitation, :location => new_invitation_path
   end
 
 end

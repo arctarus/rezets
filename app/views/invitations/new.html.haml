@@ -5,8 +5,13 @@
   %p= link_to _("see all invitations"), invitations_path
 - if @remaining_invitations > 0 or current_user.id == 1
   %p= _("Write the address of the person you want to invite to rezets.com and we will send an email with the text you typed and a link so it can register. You can customize the message included below and tell your friends because you like rezets.com.")
-  %p= _("You have %{num_invitations} invitations to send to your friends which will remain %{remaining_invitations}.") % { |
-    :num_invitations => 10, :remaining_invitations => @remaining_invitations}   |
+
+  - if current_user.id != 1
+    %p= _("You have %{num_invitations} invitations to send to your friends which will remain %{remaining_invitations}.") % { |
+      :num_invitations => 10, :remaining_invitations => @remaining_invitations}   |
+  - else
+    %p Has enviado #{current_user.invitations_sent.size} invitaciones.
+
 
   = form_for @invitation do |f|
     - unless @invitation.errors.empty?
