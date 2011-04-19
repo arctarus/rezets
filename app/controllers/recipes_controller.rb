@@ -1,6 +1,6 @@
 class RecipesController < ApplicationController
   respond_to :html
-  before_filter :require_user, :except => [:index, :show]
+  before_filter :require_user, :except => [:index, :show, :email, :email_send]
   before_filter :find_recipe, :except => [:index, :new, :create]
 
   # GET /recipes
@@ -85,7 +85,7 @@ class RecipesController < ApplicationController
           page.select('#email-container p.error').each do |error|
             error.remove
           end
-          page.remove "ajax-indicator"
+          #page.remove "ajax-indicator"
           if current_user.nil? and params[:email][:name].blank?
             page.insert_html :before, 'email_name',
               '<p class="error">' + _("please, enter your name") + '</p>'
