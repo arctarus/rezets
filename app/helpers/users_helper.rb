@@ -5,7 +5,7 @@ module UsersHelper
     else
       title = _("%{user}'s recipes") % {:user => user.name}
     end
-    title << _(" page #{page}") if page > 1
+    title << ' ' + _("page %{num}") % {:num => page} if page > 1
     title
   end
 end
