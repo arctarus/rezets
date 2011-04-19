@@ -20,6 +20,12 @@
         |
       %span.published= distance_of_time_in_words_to_now @recipe.created_at
 
+    - if @recipe.author? current_user
+      %ul.action-links
+        %li= link_to _('edit'), edit_user_recipe_path(@recipe.author, @recipe), :class => "action-link edit"
+        %li= link_to _('delete'), user_recipe_path(@recipe.author, @recipe),
+          :confirm => _("are you sure?"), :method => :delete, :class => "action-link delete"
+
   = render :partial => 'action_links'
 
   = image_tag @recipe.photo.url(:large),  
