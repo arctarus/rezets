@@ -10,12 +10,12 @@
     - if current_user.blank?
       .field
         = label_tag "email[name]", _("your name")
-        = text_field_tag "email[name]", nil, :size => 30, :maxlength => 50
+        = text_field_tag "email[name]", nil, :size => 30, :maxlength => 50, :class => :text, :required => true
 
     .field
       = label_tag "email[recipients]", _("email")
       %p.hint= _("can include several comma-separated")
-      = text_field_tag "email[recipients]", nil, :size => 30
+      = text_field_tag "email[recipients]", nil, :size => 30, :class => :text, :required => true
 
     %p= link_to_function _("add a message?"),                        |
         "$('email-message').show();$('add-email-message').remove()", |
@@ -27,6 +27,7 @@
 
     %p#submit
       = submit_tag _("send")
+      %span.ft= _('or')
       = link_to_function _("cancel"),     |
         "$('email-container').remove();", |
         :class => 'cancel-form'           |
