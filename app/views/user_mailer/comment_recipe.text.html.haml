@@ -3,19 +3,19 @@
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
   %body
-    = _("Hello %{user}!") % {:user => h(@user.name)}
+    = _("Hello %{user}!") % {:user => @user.name}
     %br/
     %br/
-    = @subject
+    = @title
     \:
     %br/
     %br/
     .body
       = simple_format(h(@comment.body))
     %br/
-    * #{_("You can see this comment in %{recipe}") % { :recipe => link_to(_("%{recipe} by %{author}") % { :recipe => @comment.recipe.name,  :author => @comment.recipe.author.name }, user_recipe_url(@comment.recipe.author, @comment.recipe) + "#comment-#{@comment.id}")}},
+    * #{raw(_("You can see this comment in %{recipe}") % { :recipe => link_to(_("%{recipe} by %{author}") % { :recipe => @comment.recipe.name, :author => @comment.recipe.author.name }, user_recipe_url(@comment.recipe.author, @comment.recipe) + "#comment-#{@comment.id}")})},
     %br/
-    * #{_("or you can add a %{newcomment}") % { :newcomment => link_to(_("new comment"), user_recipe_url(@comment.recipe.author, @comment.recipe) + '#comment-new')}}.
+    * #{raw(_("or you can add a %{newcomment}") % { :newcomment => link_to(_("new comment"), user_recipe_url(@comment.recipe.author, @comment.recipe) + '#comment-new')})}.
     %br/
     %br/
     \---
