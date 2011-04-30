@@ -82,7 +82,7 @@ class RecipesController < ApplicationController
           page.select('#email-container p.error').each do |error|
             error.remove
           end
-          #page.remove "ajax-indicator"
+          page.remove "ajax-indicator"
           if current_user.nil? and params[:email][:name].blank?
             page.insert_html :before, 'email_name',
               '<p class="error">' + _("please, enter your name") + '</p>'
