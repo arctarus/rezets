@@ -8,7 +8,7 @@
 defaults: &DEFAULTS
   # The domain from where your app is served.
   app_domain: rezets.com
-  allow_outgoing_email: true
+  allow_outgoing_email: false
   outgoing:
     from: rezets.com            # the domain your emails will come from, as in no_reply@app.teambox.com
     host: smtp.gmail.com        # the actual SMTP server used to deliver emails. can be a local or remote server
@@ -27,11 +27,8 @@ production:
   <<: *DEFAULTS
   app_domain: rezets.com
 
-test: &TEST
+test:
   <<: *DEFAULTS
   app_domain: 127.0.0.1
   allow_outgoing_email: false
   asset_max_file_size: 1
-
-cucumber:
-  <<: *TEST  
