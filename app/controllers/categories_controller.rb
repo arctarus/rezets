@@ -1,10 +1,9 @@
 class CategoriesController < ApplicationController
 
   def index
-    @recipes = Recipe.order("created_at desc").paginate(:page => params[:page])
+    @recipes = Recipe.order("likes_count desc, updated_at desc").paginate(:page => params[:page])
     @categories = Category.with_recipes.order("name asc")
 
-    @page_title = "recetas por categorias"
     if not params[:page].nil? and params[:page].to_i > 1
       @page_title << " pagina #{params[:page]}"
     end
@@ -20,12 +19,12 @@ class CategoriesController < ApplicationController
 
     if @user
       @recipes = @user.recipes.where(:category_id => @category.id).
-        order("created_at desc").
+        order("updated_at desc").
         paginate(:page => params[:page], :per_page => 10)
       @categories = Category.joins(:recipes).where({:recipes => { :author_id => @user.id }}).uniq
     else
       @recipes = Recipe.where(:category_id => @category.id).
-        order("created_at desc").
+        order("likes_count desc, updated_at desc").
         paginate(:page => params[:page], :per_page => 10)
       @categories = Category.with_recipes.order("name asc")
     end
