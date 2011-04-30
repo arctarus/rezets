@@ -19,6 +19,6 @@
         %span.counter
           (#{@user.recipes.size})
       - else
-        = link_to_unless_current _("all"), categories_path
+        = link_to_unless_current _("all"), recipes_path
         %span.counter
           (#{Recipe.count})
