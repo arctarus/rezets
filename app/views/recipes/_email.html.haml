@@ -1,11 +1,9 @@
--#:after => "$('submit').down().insert({after:'<span id=\"ajax-indicator\" class=\"ajax-indicator\">#{image_tag 'ajax-indicator.gif', :alt => _('loading')} enviando...</span>'})"
-
 %p.close-email-container
   = link_to_function image_tag('close.png', :alt => _('close')), "$('email-container').remove();", :title => _('close')
 
 #send-email-wrapper
   %p.title.send-email= _("send by email")
-  - form_tag email_send_user_recipe_path(recipe.author,recipe), :remote => true do
+  = form_tag email_send_user_recipe_path(recipe.author,recipe), :id => 'send-email-form', :remote => true do
 
     - if current_user.blank?
       .field
@@ -31,3 +29,9 @@
       = link_to_function _("cancel"),     |
         "$('email-container').remove();", |
         :class => 'cancel-form'           |
+
+    %script{:type => 'text/javascript'}
+      :plain
+        $('send-email-form').observe('submit', function(){
+         $('submit').down().insert({after:'<span id=\"ajax-indicator\" class=\"ajax-indicator\">#{image_tag 'ajax-indicator.gif', :alt => ''} enviando...</span>'});
+        });
