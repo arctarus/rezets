@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'rails', '>=3.0.3'
-gem 'mysql2'
+gem 'mysql2', '0.2.6'
 
 # web server
 # gem 'mongrel', '>=1.2.0.pre2'
