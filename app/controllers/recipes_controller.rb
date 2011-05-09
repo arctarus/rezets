@@ -1,7 +1,7 @@
 class RecipesController < ApplicationController
   respond_to :html
   before_filter :require_user, :except => [:index, :show, :email, :email_send]
-  before_filter :find_recipe, :except => [:index, :new, :create]
+  before_filter :find_recipe, :except => [:index, :new, :create, :edit, :update, :destroy]
 
   # GET /recipes
   # GET /recipes.xml
@@ -28,11 +28,6 @@ class RecipesController < ApplicationController
     @recipe.recipe_ingredients.build
   end
 
-  # GET /recipes/1/edit
-  def edit
-    @recipe.recipe_ingredients.build
-  end
-
   # POST /recipes
   # POST /recipes.xml
   def create
@@ -43,9 +38,15 @@ class RecipesController < ApplicationController
     respond_with @recipe, :location => current_user
   end
 
+  # GET /recipes/1/edit
+  def edit
+    @recipe = current_user.authorings.find(params[:id])
+  end
+
   # PUT /recipes/1
   # PUT /recipes/1.xml
   def update
+    @recipe = current_user.authorings.find(params[:id])
     @recipe.updated_at = Time.now
     if @recipe.update_attributes(params[:recipe])
     else
@@ -57,6 +58,7 @@ class RecipesController < ApplicationController
   # DELETE /recipes/1
   # DELETE /recipes/1.xml
   def destroy
+    @recipe = current_user.recipes.find(params[:id], :include => :ingredients)
     @recipe.destroy
     respond_with(@author)
   end
