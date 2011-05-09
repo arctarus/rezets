@@ -9,7 +9,7 @@ development:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: rezets
+  database: rezets_dev
   pool: 5
   username: rezets
   password: r3z3ts
