@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   before_filter :find_user, :only => [:show, :edit, :update,
     :changepassword, :updatepassword, :follow, :unfollow,
     :following, :likes]
+  before_filter :ensure_himself, :only => [:edit, :update, :changepassword, :updatepassword]
 
   def index
     @users = User.featured.paginate :per_page => 12, :page => params[:page]
@@ -107,6 +108,10 @@ class UsersController < ApplicationController
 
   def find_user
     @user = User.find_by_slug params[:id]
+  end
+
+  def ensure_himself
+    raise ActiveRecord::RecordNotFound if current_user != @user
   end
 
 end
