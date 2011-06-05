@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
 
   helper_method :current_user_session, :current_user
-  before_filter :set_gettext_locale
+# before_filter :set_gettext_locale
   rescue_from ActiveRecord::RecordNotFound, :with => :page_not_found
 
   protected
