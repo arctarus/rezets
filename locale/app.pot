@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: version 0.0.1\n"
-"POT-Creation-Date: 2011-04-19 16:55+0200\n"
+"POT-Creation-Date: 2011-05-09 20:02+0200\n"
 "PO-Revision-Date: 2009-11-09 22:31+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,12 +18,12 @@ msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
 #: app/views/recipes/_sidebar.html.haml:2
-#: app/views/recipes/_sidebar.html.haml:21
+#: app/views/recipes/_sidebar.html.haml:23
 msgid "%{author}'s recipes"
 msgstr ""
 
-#: app/views/recipes/_sidebar.html.haml:8
-#: app/views/recipes/_sidebar.html.haml:13 app/views/recipes/show.html.haml:19
+#: app/views/recipes/_sidebar.html.haml:9
+#: app/views/recipes/_sidebar.html.haml:14 app/views/recipes/show.html.haml:19
 #: app/views/categories/_sidebar.html.haml:9
 #: app/views/categories/_sidebar.html.haml:14
 #: app/views/categories/show.html.haml:8
@@ -60,9 +60,14 @@ msgid_plural "%{num} likes"
 msgstr[0] ""
 msgstr[1] ""
 
-#: app/views/recipes/_sidebar.html.haml:10
-#: app/views/recipes/_sidebar.html.haml:24 app/views/users/index.html.haml:24
+#: app/views/users/index.html.haml:24
 msgid "%{num} likes"
+msgstr ""
+
+#: app/views/recipes/_sidebar.html.haml:11
+#: app/views/recipes/_sidebar.html.haml:26
+#: app/views/recipes/_recipe.html.haml:14
+msgid "%{num} people like it"
 msgstr ""
 
 #: app/views/users/_nav.html.haml:5
@@ -85,7 +90,7 @@ msgstr ""
 msgid "%{recipe} recipe by %{author}"
 msgstr ""
 
-#: app/views/recipes/_recipe.html.haml:19
+#: app/views/recipes/_recipe.html.haml:22
 #: app/views/recipes/_comments.html.haml:13
 msgid "%{time} ago"
 msgstr ""
@@ -336,7 +341,7 @@ msgstr ""
 msgid "about rezets.com"
 msgstr ""
 
-#: app/views/recipes/_email.html.haml:24
+#: app/views/recipes/_email.html.haml:22
 msgid "add a message?"
 msgstr ""
 
@@ -378,7 +383,7 @@ msgstr ""
 msgid "by"
 msgstr ""
 
-#: app/views/recipes/_email.html.haml:17
+#: app/views/recipes/_email.html.haml:15
 msgid "can include several comma-separated"
 msgstr ""
 
@@ -387,7 +392,6 @@ msgstr ""
 msgid "cancel"
 msgstr ""
 
-#: app/views/categories/_sidebar.html.haml:2
 #: app/views/users/_sidebar.html.haml:2
 msgid "categories"
 msgstr ""
@@ -413,7 +417,7 @@ msgstr ""
 msgid "chefs"
 msgstr ""
 
-#: app/views/recipes/_email.html.haml:4
+#: app/views/recipes/_email.html.haml:2
 msgid "close"
 msgstr ""
 
@@ -508,7 +512,7 @@ msgstr ""
 #: app/views/invitations/new.html.haml:21 app/views/sessions/new.html.haml:10
 #: app/views/home/feedback.html.haml:9
 #: app/views/recipes/_action_links.html.haml:4
-#: app/views/recipes/_email.html.haml:16 app/views/users/edit.html.haml:23
+#: app/views/recipes/_email.html.haml:14 app/views/users/edit.html.haml:23
 #: app/views/users/new.html.haml:16
 msgid "email"
 msgstr ""
@@ -545,7 +549,7 @@ msgstr ""
 msgid "freshly made recipes rezets.com"
 msgstr ""
 
-#: app/views/recipes/_recipe.html.haml:20
+#: app/views/recipes/_recipe.html.haml:23
 msgid "in"
 msgstr ""
 
@@ -579,7 +583,7 @@ msgid "make a comment"
 msgstr ""
 
 #: app/views/invitations/new.html.haml:27 app/views/home/feedback.html.haml:12
-#: app/views/recipes/_email.html.haml:25
+#: app/views/recipes/_email.html.haml:23
 msgid "message"
 msgstr ""
 
@@ -625,7 +629,7 @@ msgstr ""
 msgid "of"
 msgstr ""
 
-#: app/views/recipes/_email_send.html.haml:5
+#: app/views/recipes/_email_send.html.haml:4
 msgid "ok!"
 msgstr ""
 
@@ -639,6 +643,7 @@ msgid "optional"
 msgstr ""
 
 #: app/views/invitations/new.html.haml:31 app/views/recipes/_form.html.haml:56
+#: app/views/recipes/_email.html.haml:32
 msgid "or"
 msgstr ""
 
@@ -659,11 +664,11 @@ msgstr ""
 msgid "photo"
 msgstr ""
 
-#: app/controllers/recipes_controller.rb:92
+#: app/controllers/recipes_controller.rb:96
 msgid "please, enter the email address for a friend"
 msgstr ""
 
-#: app/controllers/recipes_controller.rb:88
+#: app/controllers/recipes_controller.rb:92
 msgid "please, enter your name"
 msgstr ""
 
@@ -687,7 +692,8 @@ msgstr ""
 msgid "recipe sent"
 msgstr ""
 
-#: app/views/shared/_header.html.haml:5 app/views/recipes/index.html.haml:1
+#: app/views/shared/_header.html.haml:5 app/views/recipes/index.html.haml:4
+#: app/views/categories/_sidebar.html.haml:2
 msgid "recipes"
 msgstr ""
 
@@ -737,11 +743,11 @@ msgstr ""
 
 #: app/views/invitations/index.html.haml:7
 #: app/views/invitations/new.html.haml:30 app/views/home/feedback.html.haml:14
-#: app/views/recipes/_email.html.haml:32
+#: app/views/recipes/_email.html.haml:27
 msgid "send"
 msgstr ""
 
-#: app/views/recipes/_email.html.haml:7
+#: app/views/recipes/_email.html.haml:5
 msgid "send by email"
 msgstr ""
 
@@ -857,10 +863,10 @@ msgstr ""
 msgid "you like"
 msgstr ""
 
-#: app/views/recipes/_email.html.haml:12
+#: app/views/recipes/_email.html.haml:10
 msgid "your name"
 msgstr ""
 
-#: app/views/recipes/_recipe.html.haml:23
+#: app/views/recipes/_recipe.html.haml:26
 msgid "{category} recipes"
 msgstr ""
