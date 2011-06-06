@@ -2,9 +2,7 @@
   = render :partial => "sidebar"
 
 - if @user.nil?
-  - if @category.nil?
-    %h1= title _("recipes by categories")
-  - else
+  - content_for :top do
     %h1= title _("%{category} recipes") % {:category => @category.name}
 
 
