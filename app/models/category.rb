@@ -6,6 +6,8 @@ class Category < ActiveRecord::Base
 
   scope :with_recipes, 
     where('id in (select category_id from recipes group by category_id)')
+  
+  scope :author
 
   def to_param
     slug
