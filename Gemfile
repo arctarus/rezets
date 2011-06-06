@@ -1,7 +1,8 @@
 source 'http://rubygems.org'
 
+gem 'rake', '0.8.7'
 gem 'rails', '>=3.0.3'
-gem 'mysql2', '0.2.6'
+gem 'mysql2', '~>0.2.6'
 
 # web server
 # gem 'mongrel', '>=1.2.0.pre2'
@@ -10,11 +11,10 @@ gem 'passenger'
 # Deploy with Capistrano
 gem 'capistrano'
 
-gem 'will_paginate', '>=3.0.pre2'
+gem 'will_paginate'
 gem "paperclip"
 gem "authlogic", :git => 'git://github.com/odorcicd/authlogic.git', :branch => 'rails3'
 
-gem 'haml'
 gem 'haml-rails'
 gem 'compass'
 gem 'fancy-buttons'
@@ -26,6 +26,7 @@ gem 'fast_gettext'
 gem 'gettext_i18n_rails'
 
 group :development, :test do
-  gem 'rspec', '>=2.0'
   gem 'rspec-rails'
+  gem 'capybara'
+  gem 'steak'
 end
