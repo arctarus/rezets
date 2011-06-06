@@ -1,15 +1,5 @@
 class CategoriesController < ApplicationController
-
-  def index
-    @recipes = Recipe.order("likes_count desc, updated_at desc").paginate(:page => params[:page])
-    @categories = Category.with_recipes.order("name asc")
-
-    if not params[:page].nil? and params[:page].to_i > 1
-      @page_title << " pagina #{params[:page]}"
-    end
-    @page_identifier = "categories"
-    render :action => "show"
-  end
+  respond_to :html, :xml, :json
 
   # GET /categories/1
   # GET /categories/1.xml
@@ -29,15 +19,9 @@ class CategoriesController < ApplicationController
       @categories = Category.with_recipes.order("name asc")
     end
 
-    respond_to do |format|
-      if @user
-        format.html { render :layout => 'users' }
-        format.xml { render :xml => @category }
-      else
-        format.html { render }
-        format.xml { render :xml => @category }
-      end
+    respond_with @category do |format|
+      format.html { render :layout => 'users' if @user }
     end
-  end
+ end
 
 end
