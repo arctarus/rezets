@@ -23,6 +23,22 @@
     = f.label :email, _("email")
     = f.text_field :email, :class => "text", :size => 30, :maxlength => 255, :required => true
 
+  .field
+    = f.label :city, _("your city") 
+    = f.text_field :city, :class => :text, :size => 30, :maxlength => 255
+
+  .field
+    = f.label :website, _("your website") 
+    = f.text_field :website, :class => :text, :size => 30, :maxlength => 255
+
+  .field
+    = f.label :twitter, _("twitter") 
+    = f.text_field :twitter, :class => :text, :size => 30, :maxlength => 255
+
+  .field
+    = f.label :about, _("about you") 
+    = f.text_area :about, :class => :text
+
   %p= link_to _("change password"), changepassword_user_path
 
   %p#submit
