@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110430103254) do
+ActiveRecord::Schema.define(:version => 20110606184345) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -115,6 +115,10 @@ ActiveRecord::Schema.define(:version => 20110430103254) do
     t.integer  "followings_count",    :default => 0
     t.integer  "followers_count",     :default => 0
     t.integer  "likes_count",         :default => 0
+    t.text     "about"
+    t.string   "city"
+    t.string   "website"
+    t.string   "twitter"
   end
 
 end
