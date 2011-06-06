@@ -60,7 +60,7 @@ class RecipesController < ApplicationController
   def destroy
     @recipe = current_user.recipes.find(params[:id], :include => :ingredients)
     @recipe.destroy
-    respond_with(@author)
+    respond_with @author
   end
 
   # GET /user/arctarus/recipes/1-perdices/email
