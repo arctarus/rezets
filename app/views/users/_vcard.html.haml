@@ -2,6 +2,24 @@
   .vcard[@user]
     = link_to image_tag(@user.avatar.url(:large), :class => "avatar", :alt => ""), @user
     %h1= link_to @user.name, @user
+    = simple_format @user.about
+    %p
+      - if @user.city.present?
+        %span.city
+          = @user.city
+
+      - if @user.website.present?
+        %span.ft
+          |
+        %span.website
+          = link_to @user.website, @user.website
+
+      - if @user.twitter.present?
+        %span.ft
+          |
+        %span.website
+          = link_to "@#{@user.twitter}", "http://twitter.com/#{@user.twitter}"
+
     - if current_user != @user
       #follow
         = render :partial => 'users/follow', :locals => {:user => @user}

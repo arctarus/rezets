@@ -110,6 +110,9 @@ div.vcard {
   }
   input.follow {@include fancy-button(#eb9e06)}
   input.unfollow {@include fancy-button(#be0a0a)}
+  p { margin-bottom:0;
+    span.ft { color:#999 }
+  }
 }
 
 ul.user-nav {
