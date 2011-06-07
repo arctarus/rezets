@@ -25,6 +25,8 @@ gem 'ruby_parser'
 gem 'fast_gettext'
 gem 'gettext_i18n_rails'
 
+gem 'twitter'
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'
