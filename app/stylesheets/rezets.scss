@@ -102,8 +102,9 @@ div.login-form {margin-left:35%; padding:1em 0 3em}
 
 /*=vcard*/
 div.vcard {
-  height:80px;
+  min-height:80px;
   margin-bottom:2em;
+  width:600px;
   img {float:left; margin-right:1em}
   h1 {margin-bottom:0; font-size:2.4em;
     a {color:#333}
@@ -113,6 +114,7 @@ div.vcard {
   p { margin-bottom:0;
     span.ft { color:#999 }
   }
+  .about { font-style: italic }
 }
 
 ul.user-nav {
