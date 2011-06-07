@@ -2,7 +2,9 @@
   .vcard[@user]
     = link_to image_tag(@user.avatar.url(:large), :class => "avatar", :alt => ""), @user
     %h1= link_to @user.name, @user
-    = simple_format @user.about
+    %quote.about
+      = simple_format truncate(@user.about, :length => 140)
+
     %p
       - if @user.city.present?
         %span.city
