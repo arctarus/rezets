@@ -4,6 +4,10 @@ module NavigationHelpers
   def homepage
     "/"
   end
+
+  def user_path(user)
+    "/users/#{user.to_param}"
+  end
 end
 
 RSpec.configuration.include NavigationHelpers, :type => :acceptance
