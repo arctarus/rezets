@@ -30,5 +30,8 @@ gem 'twitter'
 group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'
+  gem 'launchy'
   gem 'steak'
+  gem 'factory_girl_rails'
+  gem 'ffaker'
 end
