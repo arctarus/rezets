@@ -1,6 +1,6 @@
 - new_or_existing = ingredient.new_record? ? 'new' : 'existing'
 - prefix = "recipe[#{new_or_existing}_recipe_ingredients_attributes][]"
-- ingredient_value = ingredient.value.round if ingredient.value
+- ingredient_value = (ingredient.value and ingredient.value == ingredient.value.round) ? ingredient.value.round : ingredient.value
 
 = fields_for prefix, ingredient do |rif|
   %tr.ingredient
