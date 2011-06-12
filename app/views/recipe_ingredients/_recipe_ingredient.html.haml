@@ -6,7 +6,7 @@
     - unless ri.value_type.blank?
       %span.type= h ri.value_type
       %span.ft= _("of")
-    = h ri.ingredient.name
-    = h ri.comment
+    = ri.ingredient.name
+    %span{:title => ri.comment}= truncate ri.comment, :length => 30
     - if ri.optional
       %span.ft (#{_("optional")})
