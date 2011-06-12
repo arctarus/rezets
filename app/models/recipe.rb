@@ -21,18 +21,23 @@ class Recipe < ActiveRecord::Base
   has_many :likes, :through => :user_likes,
                    :source => :user
 
-  validates_presence_of :name, :directions, :category, :author, :message => "no puede quedar en blanco"
-  validates_presence_of :photo_file_name, :message => "es imprescindible que pongas una bien bonita :D"
+  validates_presence_of :name, :directions, :category, :author, :message => _("can't be blank")
+  validates_presence_of :photo_file_name, :message => _("it is imperative that you put a really nice one ;)")
 # validates_attachment_dimensions :image, :minimum => 300, :maximum => 900
   validates_length_of :name, :minimum => 5
 
   after_update :save_recipe_ingredients
   before_save :slugify_name
   before_update :slugify_name
+  after_validation :move_photo_if_name_change
 
   accepts_nested_attributes_for :recipe_ingredients, 
     :allow_destroy => :true,
     :reject_if => proc { |attrs| attrs.all? { |k,v| v.blank? } }
+
+  Paperclip.interpolates :slug do |attachment, style|
+    attachment.instance.slug
+  end
 
   has_attached_file :photo,
     :processors => [:watermark],
@@ -46,7 +51,7 @@ class Recipe < ActiveRecord::Base
         :watermark      => "30x100"},
       :medium => "310x240#",
       :thumb  => "100x100#" }
-
+    
   scope :by_author, lambda {|author_id|
     where("author_id = ?", author_id).
     order("created_at desc")}
@@ -57,10 +62,7 @@ class Recipe < ActiveRecord::Base
 
   scope :not_in, lambda {|recipes_ids|
     where("recipes.id not in (?)",recipes_ids)}
-      
-  Paperclip.interpolates :slug do |attachment, style|
-    attachment.instance.slug
-  end
+ 
 
   def new_recipe_ingredients_attributes=(ri_attr)
     recipe_ingredients.build(ri_attr)
@@ -99,4 +101,20 @@ class Recipe < ActiveRecord::Base
       :recipe => name.downcase, :author => author.name}
   end
   
+  private
+
+  def move_photo_if_name_change
+    if name_changed?
+      (photo.styles.keys + [:original]).each do |style|
+        move_style_photo(style)
+      end
+    end
+  end
+
+  def move_style_photo(style)
+    path = File.path photo.path(style)
+    extension = File.extname path
+    new_name = File.join(File.dirname(path), name.parameterize + extension)
+    FileUtils.move path, new_name if File.exist?(path)
+  end
 end
