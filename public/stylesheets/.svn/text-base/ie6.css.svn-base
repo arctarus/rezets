@@ -1,3 +1,0 @@
-.wrapper {
-  width: expression(document.body.clientWidth > 940 ? "940px" : (document.body.clientWidth < 730 ? "730px" : "94%"));
-}
