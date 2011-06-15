@@ -48,7 +48,7 @@
         - group_size = (@recipe.recipe_ingredients.size + 1) / 2
         - @recipe.recipe_ingredients.in_groups_of(group_size).each_with_index do |ri_group, i|
           %ul.ingredients{:class => i == 1 && 'last'}
-            = render ri_group
+            = render :partial => 'recipe_ingredients/recipe_ingredient', :collection => ri_group
 
   %h2.clear
     = _("directions")
