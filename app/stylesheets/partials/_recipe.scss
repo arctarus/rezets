@@ -1,6 +1,8 @@
 /*=hrecipe*/
 .hrecipe {
-  .meta {margin-left:64px}
+  .meta {
+    margin-left:64px
+  }
   h1 {
     margin-bottom:5px;
     font-size:2em;
@@ -13,6 +15,7 @@
   span.num-persons {color:#666; font-size:.8em}
   div.instructions p {margin-bottom:1em}
   div.ingredient input {display:inline}
+  span.actions { margin-left:2em }
 }
 
 #recipe-ingredients {
@@ -55,7 +58,6 @@ ul.action-links {
 p.like {padding-left:20px}
 
 
-#recipe #sidebar { margin-top:61px }
 #sidebar {
   li.recipe {
     clear:both;
