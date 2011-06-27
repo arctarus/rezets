@@ -1,0 +1,34 @@
+#
+# This file takes care of some key strings for the interface and app.
+# You will also need to edit environment.rb with your own email settings.
+# 
+
+# This block defines defaults, shared for all environments.
+# You can override them individually under development, test or production.
+defaults: &DEFAULTS
+  # The domain from where your app is served.
+  app_domain: rezets.com
+  allow_outgoing_email: false
+  outgoing:
+    from: rezets.com            # the domain your emails will come from, as in no_reply@app.teambox.com
+    host: smtp.gmail.com        # the actual SMTP server used to deliver emails. can be a local or remote server
+    user: 
+    pass: 
+    auth: plain                 # choose: plain, login, cram_md5    
+    port: 587
+    enable_starttls_auto: true
+
+development:
+  <<: *DEFAULTS
+  app_domain: localhost:3000
+  allow_outgoing_email: true
+
+production:
+  <<: *DEFAULTS
+  app_domain: rezets.com
+
+test:
+  <<: *DEFAULTS
+  app_domain: 127.0.0.1
+  allow_outgoing_email: false
+  asset_max_file_size: 1
