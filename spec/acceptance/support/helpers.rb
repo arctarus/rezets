@@ -17,7 +17,7 @@ module HelperMethods
   end
 
   def sample_number(num = 10)
-    rand(num)+1
+    (rand(num)+1).to_s
   end
 
   def sample_name
