@@ -20,7 +20,7 @@
         |
       %span.published= distance_of_time_in_words_to_now @recipe.created_at
 
- = render :partial => 'action_links'
+  = render :partial => 'action_links'
 
   = image_tag @recipe.photo.url(:large),  
     :class => "photo",                    
