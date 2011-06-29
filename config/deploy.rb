@@ -1,18 +1,28 @@
-require 'config/deploy/capistrano_database'
+require './config/deploy/capistrano_database'
+require 'bundler/capistrano'
+
+# Add RVM's lib directory to the load path.
+$:.unshift(File.expand_path('./lib', ENV['rvm_path']))
+# Load RVM's capistrano plugin.
+require 'rvm/capistrano'
+# Set it to the ruby + gemset of your app, e.g:
+set :rvm_ruby_string, 'ruby-1.9.2-p180'
 
 set :application, "rezets"
+set :repository,  "git://github.com/arctarus/rezets.git"
 set :db_name, 'rm'
 set :db_user, 'rezets'
+
 set :scm, :git
+set :scm_verbose, true
 set :user, "arctarus"
 set :use_sudo, false
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 
-set :repository,  "git@67.23.21.106:rezets"
-set :branch, "master"
-set :deploy_via, :remote_cache
+set :branch, "stable"
 set :git_shallow_clone, 1
 set :ssh_options, { :forward_agent => true }
+set :deploy_via, :remote_cache
 set :deploy_to, "/home/arctarus/public_html/#{application}"
 
 default_run_options[:pty] = true
@@ -22,7 +32,8 @@ default_run_options[:pty] = true
 # role :db,  "67.23.21.106", :primary => true        # This is where Rails migrations will run
 # role :db,  "your slave db-server here"
 
-server 'rezets.com', :app, :web, :db, :primary => true
+server 'rezets.com', :app, :web
+role :db, 'rezets.com', :primary => true
 
 # If you are using Passenger mod_rails uncomment this:
 # if you're still using the script/reapear helper you will need
