@@ -23,9 +23,9 @@ feature "New Recipe", %q{
     fill_in "recipe_name", :with => recipe_name
     select category_name, :from => _("category")
     attach_file _("photo"), image_path("recipe.jpg")
-    fill_in _("number of people"), :with => sample_number(10)
+    fill_in _("number of people"), :with => sample_number
     
-    fill_in_ingredient_with :value => sample_number(10), 
+    fill_in_ingredient_with :value => sample_number, 
                             :unit => ingredient_unit, 
                             :name => ingredient_name
 
