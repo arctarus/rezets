@@ -1,37 +1,0 @@
-9
-
-dir
-100
-https://recipemonkey.googlecode.com/svn/trunk/vendor/gems/rspec-rails-1.2.0/features
-https://recipemonkey.googlecode.com/svn
-
-
-
-2009-07-19T09:52:44.755660Z
-2
-arctarusnet
-
-
-svn:special svn:externals svn:needs-lock
-
-
-
-
-
-
-
-
-
-
-
-4a91eba8-7445-11de-927c-01e442f92a7c
-
-step_definitions
-dir
-
-support
-dir
-
-transactions
-dir
-

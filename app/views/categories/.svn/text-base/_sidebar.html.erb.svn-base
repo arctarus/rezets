@@ -1,9 +1,0 @@
-<h3>categorías</h3>
-<ul>
-<% for category in @categories %>
-  <li><%= link_to_unless_current category.name, category,
-    :title => "recetas de #{category.name}" 
-  %> <span class="counter">(<%= category.recipes.size %>)</span></li>
-<% end %>
-  <li><%= link_to_unless_current "todas", categories_path %> <span class="counter">(<%= Recipe.count %>)</span></li>
-</ul>
