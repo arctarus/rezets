@@ -3,6 +3,5 @@ db/*.sqlite3
 config/database.yml
 log/*.log
 tmp/**/*
-public/stylesheets/*
 public/system
 public/system/**/*
