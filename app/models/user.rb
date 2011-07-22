@@ -37,10 +37,17 @@ class User < ActiveRecord::Base
   validates_presence_of :email, :slug, :name
   validates_uniqueness_of :slug
 
-  has_attached_file :avatar, :styles => {
-    :thumb  => "20x20#",
-    :medium => "50x50#",
-    :large  => "80x80#" }
+  has_attached_file :avatar, 
+    :storage => :s3,
+    :bucket  => ENV['S3_BUCKET'],
+    :s3_credentials => {
+      :access_key_id => ENV['S3_KEY'],
+      :secret_access_key => ENV['S3_SECRET']
+    },
+    :styles => {
+      :thumb  => "20x20#",
+      :medium => "50x50#",
+      :large  => "80x80#" }
 
   scope :featured, where("recipes_count > 2").
                    order("recipes_count desc, followers_count desc")
