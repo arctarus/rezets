@@ -13,6 +13,7 @@ gem 'capistrano'
 
 gem 'will_paginate'
 gem "paperclip"
+gem 'aws-s3'
 gem "authlogic", :git => 'git://github.com/odorcicd/authlogic.git', :branch => 'rails3'
 
 gem 'haml-rails'
