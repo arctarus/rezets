@@ -1,12 +1,14 @@
 require './config/deploy/capistrano_database'
-require 'bundler/capistrano'
 
 # Add RVM's lib directory to the load path.
 $:.unshift(File.expand_path('./lib', ENV['rvm_path']))
+
 # Load RVM's capistrano plugin.
 require 'rvm/capistrano'
+require 'bundler/capistrano'
+
 # Set it to the ruby + gemset of your app, e.g:
-set :rvm_ruby_string, '1.9.2@rezets'
+set :rvm_ruby_string, '1.9.2'
 set :rvm_type, :user
 
 set :application, "rezets"
@@ -14,6 +16,7 @@ set :repository,  "git@github.com:arctarus/rezets.git"
 set :db_name, 'rm'
 set :db_user, 'rezets'
 
+#set :bundle_dir, "#{ENV['rvm_path']}/gems/#{rvm_ruby_string}"
 set :scm, :git
 set :scm_verbose, true
 set :user, "arctarus"
@@ -23,7 +26,7 @@ set :use_sudo, false
 set :branch, "stable"
 # set :git_shallow_clone, 1
 # set :ssh_options, { :forward_agent => true }
-set :deploy_via, :copy
+set :deploy_via, :remote_cache
 set :deploy_to, "/home/#{user}/public_html/#{application}"
 
 # default_run_options[:pty] = true
