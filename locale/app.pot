@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: version 0.0.1\n"
-"POT-Creation-Date: 2011-08-02 19:26+0200\n"
+"POT-Creation-Date: 2011-08-02 19:45+0200\n"
 "PO-Revision-Date: 2009-11-09 22:31+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,17 +34,11 @@ msgstr ""
 msgid "%{ico} prev"
 msgstr ""
 
-#: app/views/home/_sidebar.html.haml:20
-msgid "%{num} follower"
-msgid_plural "%{num} followers"
-msgstr[0] ""
-msgstr[1] ""
-
 #: app/views/users/index.html.haml:25
 msgid "%{num} followers"
 msgstr ""
 
-#: app/views/users/_nav.html.haml:8
+#: app/views/home/_sidebar.html.haml:20 app/views/users/_nav.html.haml:8
 msgid "%{num} following"
 msgid_plural "%{num} followings"
 msgstr[0] ""
