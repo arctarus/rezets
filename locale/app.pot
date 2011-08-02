@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: version 0.0.1\n"
-"POT-Creation-Date: 2011-05-09 20:02+0200\n"
+"POT-Creation-Date: 2011-08-02 19:26+0200\n"
 "PO-Revision-Date: 2009-11-09 22:31+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,10 +23,10 @@ msgid "%{author}'s recipes"
 msgstr ""
 
 #: app/views/recipes/_sidebar.html.haml:9
-#: app/views/recipes/_sidebar.html.haml:14 app/views/recipes/show.html.haml:19
-#: app/views/categories/_sidebar.html.haml:9
-#: app/views/categories/_sidebar.html.haml:14
-#: app/views/categories/show.html.haml:8
+#: app/views/recipes/_sidebar.html.haml:16 app/views/recipes/show.html.haml:17
+#: app/views/categories/_sidebar.html.haml:7
+#: app/views/categories/_sidebar.html.haml:12
+#: app/views/categories/show.html.haml:6
 msgid "%{category} recipes"
 msgstr ""
 
@@ -77,7 +77,7 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: app/views/home/_sidebar.html.haml:18 app/views/users/index.html.haml:20
-#: app/views/users/_user.html.haml:6
+#: app/views/users/_user.html.haml:5
 msgid "%{num} recipes"
 msgstr ""
 
@@ -85,8 +85,8 @@ msgstr ""
 msgid "%{recipe} by %{author}"
 msgstr ""
 
-#: app/models/recipe.rb:98 app/helpers/recipes_helper.rb:53
-#: app/views/recipes/show.html.haml:12
+#: app/models/recipe.rb:106 app/helpers/recipes_helper.rb:53
+#: app/views/recipes/show.html.haml:9
 msgid "%{recipe} recipe by %{author}"
 msgstr ""
 
@@ -95,11 +95,11 @@ msgstr ""
 msgid "%{time} ago"
 msgstr ""
 
-#: app/views/home/index.html.haml:26
+#: app/views/home/index.html.haml:27
 msgid "%{time} ago in %{category}"
 msgstr ""
 
-#: app/views/recipes/show.html.haml:58
+#: app/views/recipes/show.html.haml:52
 msgid "%{time} min"
 msgstr ""
 
@@ -135,7 +135,7 @@ msgstr ""
 msgid "%{user} has shared a %{recipe} recipe with you!"
 msgstr ""
 
-#: app/views/users/show.html.haml:14
+#: app/views/users/show.html.haml:11
 msgid "%{user} still hasn't any recipe"
 msgstr ""
 
@@ -147,7 +147,7 @@ msgstr ""
 msgid "%{user}'s %{category} recipes"
 msgstr ""
 
-#: app/helpers/users_helper.rb:6 app/views/users/_feed.html.haml:14
+#: app/helpers/users_helper.rb:6 app/views/users/_feed.html.haml:16
 msgid "%{user}'s recipes"
 msgstr ""
 
@@ -155,7 +155,11 @@ msgstr ""
 msgid "%{user}'s recipes of %{category}"
 msgstr ""
 
-#: app/views/users/_follow.html.haml:18
+#: app/views/recipes/index.html.haml:5
+msgid "All recipes"
+msgstr ""
+
+#: app/views/users/_follow.html.haml:13
 msgid "Are you sure? You don't follow the recipes that he make."
 msgstr ""
 
@@ -181,7 +185,7 @@ msgid ""
 "I hope you enjoy it and can get a lot out of this."
 msgstr ""
 
-#: app/views/users/_follow.html.haml:9
+#: app/views/users/_follow.html.haml:4
 msgid "Follow it"
 msgstr ""
 
@@ -235,7 +239,7 @@ msgstr ""
 msgid "It looks like to be missing some data"
 msgstr ""
 
-#: app/views/users/_follow.html.haml:9
+#: app/views/users/_follow.html.haml:4
 msgid "Now you can follow the recipes that he make on your following tab. Ok?"
 msgstr ""
 
@@ -260,11 +264,11 @@ msgstr ""
 msgid "Sorry but you've exhausted all your invitations!"
 msgstr ""
 
-#: app/views/users/_follow.html.haml:18
+#: app/views/users/_follow.html.haml:13
 msgid "Stop following"
 msgstr ""
 
-#: app/views/home/index.html.haml:27
+#: app/views/home/index.html.haml:32
 msgid "Subscribe to the latest recipes"
 msgstr ""
 
@@ -301,7 +305,7 @@ msgstr ""
 msgid "What have you cooked today?"
 msgstr ""
 
-#: app/views/invitations/new.html.haml:7
+#: app/views/invitations/new.html.haml:8
 msgid ""
 "Write the address of the person you want to invite to rezets.com and we will "
 "send an email with the text you typed and a link so it can register. You can "
@@ -321,7 +325,7 @@ msgstr ""
 msgid "You can start by:"
 msgstr ""
 
-#: app/views/invitations/new.html.haml:12
+#: app/views/invitations/new.html.haml:10
 msgid ""
 "You have %{num_invitations} invitations to send to your friends which will "
 "remain %{remaining_invitations}."
@@ -341,11 +345,15 @@ msgstr ""
 msgid "about rezets.com"
 msgstr ""
 
-#: app/views/recipes/_email.html.haml:22
+#: app/views/users/edit.html.haml:39
+msgid "about you"
+msgstr ""
+
+#: app/views/recipes/_email.html.haml:18
 msgid "add a message?"
 msgstr ""
 
-#: app/views/categories/show.html.haml:16
+#: app/views/categories/show.html.haml:12
 msgid "add a recipe"
 msgstr ""
 
@@ -357,7 +365,7 @@ msgstr ""
 msgid "address of your page in rezets.com"
 msgstr ""
 
-#: app/views/categories/_sidebar.html.haml:18
+#: app/views/categories/_sidebar.html.haml:19
 #: app/views/categories/_sidebar.html.haml:22
 #: app/views/users/_sidebar.html.haml:11
 msgid "all"
@@ -367,7 +375,7 @@ msgstr ""
 msgid "amount"
 msgstr ""
 
-#: app/views/recipes/show.html.haml:29
+#: app/views/recipes/_action_links.html.haml:11
 msgid "are you sure?"
 msgstr ""
 
@@ -387,8 +395,12 @@ msgstr ""
 msgid "can include several comma-separated"
 msgstr ""
 
-#: app/views/invitations/new.html.haml:34 app/views/recipes/_form.html.haml:57
-#: app/views/recipes/_email.html.haml:33
+#: app/models/recipe.rb:24
+msgid "can't be blank"
+msgstr ""
+
+#: app/views/invitations/new.html.haml:32 app/views/recipes/_form.html.haml:57
+#: app/views/recipes/_email.html.haml:29
 msgid "cancel"
 msgstr ""
 
@@ -404,7 +416,7 @@ msgstr ""
 msgid "change"
 msgstr ""
 
-#: app/views/users/edit.html.haml:26
+#: app/views/users/edit.html.haml:42
 msgid "change password"
 msgstr ""
 
@@ -478,12 +490,12 @@ msgstr ""
 msgid "create and share recipes with your friends"
 msgstr ""
 
-#: app/views/recipes/show.html.haml:29
+#: app/views/recipes/_action_links.html.haml:11
 msgid "delete"
 msgstr ""
 
-#: app/views/user_mailer/recipe.text.html.haml:41
-#: app/views/recipes/_form.html.haml:49 app/views/recipes/show.html.haml:54
+#: app/views/user_mailer/recipe.text.html.haml:42
+#: app/views/recipes/_form.html.haml:49 app/views/recipes/show.html.haml:49
 msgid "directions"
 msgstr ""
 
@@ -496,7 +508,7 @@ msgstr ""
 msgid "eat"
 msgstr ""
 
-#: app/views/recipes/show.html.haml:25
+#: app/views/recipes/_action_links.html.haml:3
 msgid "edit"
 msgstr ""
 
@@ -511,7 +523,7 @@ msgstr ""
 #: app/views/invitations/index.html.haml:8
 #: app/views/invitations/new.html.haml:21 app/views/sessions/new.html.haml:10
 #: app/views/home/feedback.html.haml:9
-#: app/views/recipes/_action_links.html.haml:4
+#: app/views/recipes/_action_links.html.haml:7
 #: app/views/recipes/_email.html.haml:14 app/views/users/edit.html.haml:23
 #: app/views/users/new.html.haml:16
 msgid "email"
@@ -521,7 +533,7 @@ msgstr ""
 msgid "envoy"
 msgstr ""
 
-#: app/views/users/show.html.haml:15
+#: app/views/users/show.html.haml:12
 msgid "explore more recipes"
 msgstr ""
 
@@ -533,7 +545,7 @@ msgstr ""
 msgid "feedback from %{name}"
 msgstr ""
 
-#: app/views/shared/_footer.html.haml:10
+#: app/views/shared/_footer.html.haml:8
 msgid "follow us on %{twitter} and %{facebook}"
 msgstr ""
 
@@ -541,11 +553,11 @@ msgstr ""
 msgid "food"
 msgstr ""
 
-#: app/views/recipes/show.html.haml:42
+#: app/views/recipes/show.html.haml:36
 msgid "for %{num} people"
 msgstr ""
 
-#: app/views/home/index.html.haml:32
+#: app/views/home/index.html.haml:38
 msgid "freshly made recipes rezets.com"
 msgstr ""
 
@@ -558,7 +570,7 @@ msgid "ingredient"
 msgstr ""
 
 #: app/views/user_mailer/recipe.text.html.haml:24
-#: app/views/recipes/_form.html.haml:28 app/views/recipes/show.html.haml:39
+#: app/views/recipes/_form.html.haml:28 app/views/recipes/show.html.haml:33
 msgid "ingredients"
 msgstr ""
 
@@ -566,7 +578,11 @@ msgstr ""
 msgid "invite friends"
 msgstr ""
 
-#: app/views/recipes/_likes.html.haml:5 app/views/recipes/_likes.html.haml:10
+#: app/models/recipe.rb:25
+msgid "it is imperative that you put a really nice one ;)"
+msgstr ""
+
+#: app/views/recipes/_likes.html.haml:3 app/views/recipes/_likes.html.haml:9
 msgid "like?"
 msgstr ""
 
@@ -587,7 +603,7 @@ msgstr ""
 msgid "message"
 msgstr ""
 
-#: app/views/user_mailer/recipe.text.html.haml:42
+#: app/views/user_mailer/recipe.text.html.haml:43
 msgid "min"
 msgstr ""
 
@@ -624,8 +640,8 @@ msgstr ""
 msgid "number of people"
 msgstr ""
 
-#: app/views/user_mailer/recipe.text.html.haml:33
-#: app/views/recipe_ingredients/_recipe_ingredient.html.haml:8
+#: app/views/user_mailer/recipe.text.html.haml:34
+#: app/views/recipe_ingredients/_recipe_ingredient.html.haml:9
 msgid "of"
 msgstr ""
 
@@ -637,13 +653,13 @@ msgstr ""
 msgid "opt"
 msgstr ""
 
-#: app/views/user_mailer/recipe.text.html.haml:38
-#: app/views/recipe_ingredients/_recipe_ingredient.html.haml:12
+#: app/views/user_mailer/recipe.text.html.haml:39
+#: app/views/recipe_ingredients/_recipe_ingredient.html.haml:14
 msgid "optional"
 msgstr ""
 
 #: app/views/invitations/new.html.haml:31 app/views/recipes/_form.html.haml:56
-#: app/views/recipes/_email.html.haml:32
+#: app/views/recipes/_email.html.haml:28
 msgid "or"
 msgstr ""
 
@@ -692,12 +708,12 @@ msgstr ""
 msgid "recipe sent"
 msgstr ""
 
-#: app/views/shared/_header.html.haml:5 app/views/recipes/index.html.haml:4
+#: app/views/shared/_header.html.haml:5
 #: app/views/categories/_sidebar.html.haml:2
 msgid "recipes"
 msgstr ""
 
-#: app/views/categories/show.html.haml:6 app/views/users/show.html.haml:15
+#: app/views/users/show.html.haml:12
 msgid "recipes by categories"
 msgstr ""
 
@@ -705,7 +721,7 @@ msgstr ""
 msgid "remember me on this computer"
 msgstr ""
 
-#: app/views/recipes/_ingredient.html.haml:14
+#: app/views/recipes/_ingredient.html.haml:16
 msgid "remove"
 msgstr ""
 
@@ -721,7 +737,7 @@ msgstr ""
 msgid "rookies"
 msgstr ""
 
-#: app/views/users/edit.html.haml:29
+#: app/views/users/edit.html.haml:45
 msgid "save"
 msgstr ""
 
@@ -790,11 +806,11 @@ msgstr ""
 msgid "subject"
 msgstr ""
 
-#: app/views/users/_feed.html.haml:10
+#: app/views/users/_feed.html.haml:11
 msgid "subscribe to %{user}'s %{category} recipes"
 msgstr ""
 
-#: app/views/users/_feed.html.haml:8
+#: app/views/users/_feed.html.haml:9
 msgid "subscribe to %{user}'s recipes"
 msgstr ""
 
@@ -821,8 +837,12 @@ msgstr ""
 msgid "thanks for your help"
 msgstr ""
 
-#: app/views/users/_follow.html.haml:10
+#: app/views/users/_follow.html.haml:9
 msgid "to follow the recipes than he make."
+msgstr ""
+
+#: app/views/users/edit.html.haml:35
+msgid "twitter"
 msgstr ""
 
 #: app/views/recipes/_form.html.haml:34
@@ -833,7 +853,7 @@ msgstr ""
 msgid "update"
 msgstr ""
 
-#: app/views/user_mailer/recipe.text.html.haml:22
+#: app/views/user_mailer/recipe.text.html.haml:18
 msgid "updated %{time} ago"
 msgstr ""
 
@@ -845,7 +865,7 @@ msgstr ""
 msgid "user or password incorrect"
 msgstr ""
 
-#: app/views/categories/show.html.haml:15
+#: app/views/categories/show.html.haml:11
 msgid "we do not have any %{category} recipe"
 msgstr ""
 
@@ -853,20 +873,28 @@ msgstr ""
 msgid "you are following"
 msgstr ""
 
-#: app/views/categories/show.html.haml:16
+#: app/views/categories/show.html.haml:12
 msgid ""
 "you can %{add_recipe} yourself if you know some you want to share with your "
 "friends."
 msgstr ""
 
-#: app/views/recipes/_likes.html.haml:8
+#: app/views/recipes/_likes.html.haml:6
 msgid "you like"
+msgstr ""
+
+#: app/views/users/edit.html.haml:27
+msgid "your city"
 msgstr ""
 
 #: app/views/recipes/_email.html.haml:10
 msgid "your name"
 msgstr ""
 
-#: app/views/recipes/_recipe.html.haml:26
+#: app/views/users/edit.html.haml:31
+msgid "your website"
+msgstr ""
+
+#: app/views/recipes/_recipe.html.haml:24
 msgid "{category} recipes"
 msgstr ""
