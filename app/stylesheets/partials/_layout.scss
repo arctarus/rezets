@@ -7,7 +7,8 @@
 #header {
   .wrapper {position:relative}
   padding:0 0 .5em;
-  background:url('/images/bck_header.png') #33b300 bottom left repeat-x;
+  background: #33b300;
+  @include background-image(linear-gradient(#33b300, #336b00));
   @include append-bottom(2em);
   zoom:1;
   a {

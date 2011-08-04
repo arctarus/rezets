@@ -473,7 +473,13 @@ caption {
 /* line 7, ../../app/stylesheets/partials/_layout.scss */
 #header {
   padding: 0 0 .5em;
-  background: url("/images/bck_header.png") #33b300 bottom left repeat-x;
+  background: #33b300;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #33b300), color-stop(100%, #336b00));
+  background-image: -webkit-linear-gradient(#33b300, #336b00);
+  background-image: -moz-linear-gradient(#33b300, #336b00);
+  background-image: -o-linear-gradient(#33b300, #336b00);
+  background-image: -ms-linear-gradient(#33b300, #336b00);
+  background-image: linear-gradient(#33b300, #336b00);
   margin-bottom: 2em;
   zoom: 1;
 }
@@ -481,16 +487,16 @@ caption {
 #header .wrapper {
   position: relative;
 }
-/* line 13, ../../app/stylesheets/partials/_layout.scss */
+/* line 14, ../../app/stylesheets/partials/_layout.scss */
 #header a {
   text-decoration: none;
   color: #F3F3F3;
 }
-/* line 16, ../../app/stylesheets/partials/_layout.scss */
+/* line 17, ../../app/stylesheets/partials/_layout.scss */
 #header a:hover {
   color: #FFB800;
 }
-/* line 18, ../../app/stylesheets/partials/_layout.scss */
+/* line 19, ../../app/stylesheets/partials/_layout.scss */
 #header p.logo {
   font-family: 'Lobster', arial, serif;
   display: inline;
@@ -500,7 +506,7 @@ caption {
   text-shadow: 1px 1px 1px #555;
   line-height: 1em;
 }
-/* line 27, ../../app/stylesheets/partials/_layout.scss */
+/* line 28, ../../app/stylesheets/partials/_layout.scss */
 #header p.tagline {
   display: block;
   margin: 0 0 -0.8em 0;
@@ -510,7 +516,7 @@ caption {
   text-shadow: 1px 1px 1px #555;
 }
 
-/* line 37, ../../app/stylesheets/partials/_layout.scss */
+/* line 38, ../../app/stylesheets/partials/_layout.scss */
 .wrapper {
   width: 950px;
   margin: 0 auto;
@@ -518,7 +524,7 @@ caption {
   *zoom: 1;
 }
 
-/* line 42, ../../app/stylesheets/partials/_layout.scss */
+/* line 43, ../../app/stylesheets/partials/_layout.scss */
 ul.main-links {
   vertical-align: 12%;
   display: inline;
@@ -526,14 +532,14 @@ ul.main-links {
   padding-left: 40px;
   list-style: none;
 }
-/* line 48, ../../app/stylesheets/partials/_layout.scss */
+/* line 49, ../../app/stylesheets/partials/_layout.scss */
 ul.main-links li {
   display: inline;
   margin-right: 1.5em;
   text-shadow: 1px 1px 1px #555;
 }
 
-/* line 55, ../../app/stylesheets/partials/_layout.scss */
+/* line 56, ../../app/stylesheets/partials/_layout.scss */
 #logo {
   display: inline;
   float: left;
@@ -546,7 +552,7 @@ ul.main-links li {
   overflow-x: hidden;
 }
 
-/* line 60, ../../app/stylesheets/partials/_layout.scss */
+/* line 61, ../../app/stylesheets/partials/_layout.scss */
 .search {
   text-align: right;
   margin-top: 2.2em;
@@ -561,7 +567,7 @@ ul.main-links li {
 }
 
 /*=nav*/
-/* line 67, ../../app/stylesheets/partials/_layout.scss */
+/* line 68, ../../app/stylesheets/partials/_layout.scss */
 #nav {
   position: absolute;
   right: 0;
@@ -569,7 +575,7 @@ ul.main-links li {
   margin-bottom: 0;
   text-align: right;
 }
-/* line 73, ../../app/stylesheets/partials/_layout.scss */
+/* line 74, ../../app/stylesheets/partials/_layout.scss */
 #nav ul {
   background: #380;
   float: right;
@@ -583,7 +589,7 @@ ul.main-links li {
   -khtml-border-radius: 0px 0px 5px 5px;
   border-radius: 0px 0px 5px 5px;
 }
-/* line 80, ../../app/stylesheets/partials/_layout.scss */
+/* line 81, ../../app/stylesheets/partials/_layout.scss */
 #nav ul li {
   display: inline;
   margin: 0 .5em .5em 0;
@@ -591,14 +597,14 @@ ul.main-links li {
   padding-right: .5em;
   font-size: .9em;
 }
-/* line 86, ../../app/stylesheets/partials/_layout.scss */
+/* line 87, ../../app/stylesheets/partials/_layout.scss */
 #nav ul li.last {
   margin-right: 0;
   border-right: none;
   padding-right: 0;
 }
 
-/* line 95, ../../app/stylesheets/partials/_layout.scss */
+/* line 96, ../../app/stylesheets/partials/_layout.scss */
 #main {
   display: inline;
   float: left;
@@ -611,7 +617,7 @@ ul.main-links li {
   overflow-x: hidden;
 }
 
-/* line 99, ../../app/stylesheets/partials/_layout.scss */
+/* line 100, ../../app/stylesheets/partials/_layout.scss */
 #sidebar {
   display: inline;
   float: left;
@@ -622,18 +628,18 @@ ul.main-links li {
 * html #sidebar {
   overflow-x: hidden;
 }
-/* line 101, ../../app/stylesheets/partials/_layout.scss */
+/* line 102, ../../app/stylesheets/partials/_layout.scss */
 #sidebar h2 {
   font-size: 1.4em;
 }
-/* line 102, ../../app/stylesheets/partials/_layout.scss */
+/* line 103, ../../app/stylesheets/partials/_layout.scss */
 #sidebar ul {
   list-style: none;
   margin-bottom: 2em;
 }
 
 /*=footer*/
-/* line 106, ../../app/stylesheets/partials/_layout.scss */
+/* line 107, ../../app/stylesheets/partials/_layout.scss */
 #footer {
   margin-top: 2em;
   padding: 0 0 1em;
@@ -641,44 +647,44 @@ ul.main-links li {
   border-top: 1px solid #CCC;
   zoom: 1;
 }
-/* line 112, ../../app/stylesheets/partials/_layout.scss */
+/* line 113, ../../app/stylesheets/partials/_layout.scss */
 #footer .wrapper {
   max-width: 960px;
   min-width: 700px;
   padding: 1em 0;
 }
-/* line 113, ../../app/stylesheets/partials/_layout.scss */
+/* line 114, ../../app/stylesheets/partials/_layout.scss */
 #footer ul {
   list-style: none;
   margin-bottom: 2em;
 }
-/* line 116, ../../app/stylesheets/partials/_layout.scss */
+/* line 117, ../../app/stylesheets/partials/_layout.scss */
 #footer ul li {
   display: inline;
   margin-left: 1em;
   border-left: 1px dotted #CCC;
   padding-left: 1em;
 }
-/* line 118, ../../app/stylesheets/partials/_layout.scss */
+/* line 119, ../../app/stylesheets/partials/_layout.scss */
 #footer ul li.first {
   margin-left: 0;
   border-left: none;
   padding-left: 0;
 }
-/* line 121, ../../app/stylesheets/partials/_layout.scss */
+/* line 122, ../../app/stylesheets/partials/_layout.scss */
 #footer p, #footer li {
   font-size: .9em;
 }
 
 /*=recipe*/
-/* line 125, ../../app/stylesheets/partials/_layout.scss */
+/* line 126, ../../app/stylesheets/partials/_layout.scss */
 #recipe {
   width: 950px;
   margin: 0 auto;
   overflow: hidden;
   *zoom: 1;
 }
-/* line 128, ../../app/stylesheets/partials/_layout.scss */
+/* line 129, ../../app/stylesheets/partials/_layout.scss */
 #recipe #main {
   padding-right: 40px;
   display: inline;
@@ -690,7 +696,7 @@ ul.main-links li {
 * html #recipe #main {
   overflow-x: hidden;
 }
-/* line 132, ../../app/stylesheets/partials/_layout.scss */
+/* line 133, ../../app/stylesheets/partials/_layout.scss */
 #recipe #sidebar {
   display: inline;
   float: left;
@@ -702,12 +708,12 @@ ul.main-links li {
   overflow-x: hidden;
 }
 
-/* line 135, ../../app/stylesheets/partials/_layout.scss */
+/* line 136, ../../app/stylesheets/partials/_layout.scss */
 .avatar {
   vertical-align: middle;
 }
 
-/* line 136, ../../app/stylesheets/partials/_layout.scss */
+/* line 137, ../../app/stylesheets/partials/_layout.scss */
 .action {
   text-decoration: underline;
 }
