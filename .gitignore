@@ -1,8 +1,9 @@
 .bundle
 db/*.sqlite3
+config/config.yml
 config/database.yml
+config/s3.yml
 log/*.log
 tmp/**/*
-public/stylesheets/*
 public/system
 public/system/**/*

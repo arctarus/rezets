@@ -6,7 +6,7 @@ Rezets::Application.configure do
 
   # if APP_CONFIG['allow_outgoing_email']
   config.action_mailer.smtp_settings = {
-    :enable_starttls_auto  => APP_CONFIG['outgoing']['enable_starttls_auto'],
+    :enable_starttls_auto  => APP_CONFIG['outgoing']['tls'],
     :address               => APP_CONFIG['outgoing']['host'],
     :port                  => APP_CONFIG['outgoing']['port'],
     :domain                => APP_CONFIG['outgoing']['from'],
