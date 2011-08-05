@@ -13,11 +13,11 @@
   = link_to @recipe.category.name, category_url(@recipe.category)
   %br/
   = _('by')
-  = link_to image_tag(root_url + @recipe.author.avatar.url(:thumb), :alt => @recipe.author.name, :style => 'border:none; vertical-align:middle'), user_url(@recipe.author)
+  = link_to image_tag(@recipe.author.avatar.url(:thumb), :alt => @recipe.author.name, :style => 'border:none; vertical-align:middle'), user_url(@recipe.author)
   = link_to @recipe.author.name, user_url(@recipe.author)
   =_("updated %{time} ago") % {:time => distance_of_time_in_words_to_now(@recipe.updated_at)}
 
-= link_to image_tag(root_url + @recipe.photo.url(:large), :class => "photo", :alt => @recipe.name, :style => 'border:none'), |
+= link_to image_tag(@recipe.photo.url(:large), :class => "photo", :alt => @recipe.name, :style => 'border:none'), |
   user_recipe_url(@recipe.author,@recipe) |
 
 %p{:style => "margin-top:1em; font-size:1.3em;"}
