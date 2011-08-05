@@ -38,9 +38,5 @@ module Rezets
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password, :password_confirmation]
-
   end
 end
-
-Object.send(:include,FastGettext::Translation)
-FastGettext.add_text_domain('rezets',:path=>'locale')
