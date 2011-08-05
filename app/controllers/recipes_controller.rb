@@ -8,7 +8,7 @@ class RecipesController < ApplicationController
   def index
     @recipes = Recipe.order("likes_count desc, updated_at desc").
       paginate :per_page => 10, :page => params[:page]
-    @categories = Category.order("name asc")
+    @categories = Category.with_recipes.order("name asc")
   end
 
   # GET /recipes/1
