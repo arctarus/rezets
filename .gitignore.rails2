@@ -1,8 +1,0 @@
-public/system
-public/system/**/*
-public/sitemap_index.xml.gz
-public/sitemap1.xml.gz
-log/*.log
-tmp/**/*
-tmp/restart.txt
-config/database.yml

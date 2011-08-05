@@ -11,7 +11,7 @@ xml.rss :version => "2.0" do
         xml.category recipe.category.name
         xml.author recipe.author.name
         xml.description recipe.directions
-        xml.enclosure :url => request.protocol + request.host_with_port + recipe.photo(:large), :length => recipe.photo_file_size, :type => recipe.photo_content_type
+        xml.enclosure :url => recipe.photo(:large), :length => recipe.photo_file_size, :type => recipe.photo_content_type
         xml.pubDate recipe.created_at.to_s(:rfc822)
         xml.link user_recipe_url(recipe.author, recipe)
       end
