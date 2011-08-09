@@ -43,6 +43,7 @@ GEM
       mime-types
       xml-simple
     builder (2.1.2)
+    cancan (1.6.5)
     capistrano (2.6.0)
       highline
       net-scp (>= 1.0.0)
@@ -202,6 +203,7 @@ PLATFORMS
 DEPENDENCIES
   authlogic!
   aws-s3
+  cancan
   capistrano
   capybara
   compass
