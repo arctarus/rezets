@@ -1,5 +1,5 @@
 Rezets::Application.routes.draw do
-  
+
   resources :recipes
   resources :categories, :except => [:index]
   
@@ -24,6 +24,7 @@ Rezets::Application.routes.draw do
       resources :ingredients
       resources :comments
     end
+    resource :update_password, :only => [:new, :create]
   end
 
   resources :invitations

@@ -64,16 +64,6 @@ class UsersController < ApplicationController
     respond_with @user
   end
 
-  def changepassword
-    render :layout => 'application'
-  end
-
-  def updatepassword
-    if @user.update_attributes(params[:user])
-    end
-    respond_with @user
-  end
-
   def follow
     current_user.followings << @user
     render 'follow'
