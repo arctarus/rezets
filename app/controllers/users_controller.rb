@@ -29,24 +29,20 @@ class UsersController < ApplicationController
   end
 
   def new
-    @invitation = Invitation.find_by_token(params[:token])
-    if not @invitation.nil? and @invitation.created_at >= Time.now - 1.week
-      @user = User.new(:email => @invitation.email)
-      @user = User.new
-      render :layout => 'application'
-    else
-      render :layout => false, :file => '/public/404.html', :status => 404
-    end
+    @invitation = Invitation.find_by_token!(params[:token])
+    raise ActiveRecord::RecordNotFound if @invitation.expired?
+    @user = User.new(:email => @invitation.email)
+    render :layout => 'application'
   end
 
   def create
-    @invitation = Invitation.find_by_token(params[:invitation][:token])
+    @invitation = Invitation.find_by_token!(params[:invitation][:token])
     @user = User.new(params[:user])
     @user_session = UserSession.new({
       :email => params[:user][:email],
       :password => params[:user][:password]
     })
-    if not @invitation.nil? and @user.save and @user_session.save
+    if @user.save and @user_session.save
       @invitation.update_attributes({
         :updated_at => Time.now,
         :receiver_id => @user.id })
@@ -59,8 +55,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    if @user.update_attributes(params[:user])
-    end
+    @user.update_attributes(params[:user])
     respond_with @user
   end
 
