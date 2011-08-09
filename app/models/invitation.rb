@@ -12,4 +12,8 @@ class Invitation < ActiveRecord::Base
   def generate_token
     self.token = Digest::SHA1.hexdigest("--#{Time.now.to_s}--#{self.email}--")
   end
+
+  def expired?
+    created_at < 1.week.ago
+  end
 end
