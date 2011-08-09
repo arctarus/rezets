@@ -1,14 +1,11 @@
 class UsersController < ApplicationController
+  load_and_authorize_resource :find_by => :slug
   respond_to :html
   before_filter :require_user, :only => [:edit, :update, :changepassword, :updatepassword]
   before_filter :require_no_user, :only => [:new, :create]
-  before_filter :find_user, :only => [:show, :edit, :update,
-    :changepassword, :updatepassword, :follow, :unfollow,
-    :following, :likes]
-  before_filter :ensure_himself, :only => [:edit, :update, :changepassword, :updatepassword]
 
   def index
-    @users = User.featured.paginate :per_page => 12, :page => params[:page]
+    @users = @users.featured.paginate :per_page => 12, :page => params[:page]
     render :layout => 'application'
   end
 
@@ -17,8 +14,6 @@ class UsersController < ApplicationController
     render :action => :index, :layout => 'application'
   end
 
-  # GET /user/arctarus
-  # GET /user/arctarus.xml
   def show
     conditions = { :user_recipes => { :user_id => @user.id } }
     @total_recipes = Recipe.joins(:user_recipes).where(conditions).count
@@ -33,8 +28,6 @@ class UsersController < ApplicationController
     @categories = Category.joins(:recipes).where({:recipes => { :author_id => @user.id }}).uniq
   end
 
-  # GET /users/new
-  # GET /users/new.xml
   def new
     @invitation = Invitation.find_by_token(params[:token])
     if not @invitation.nil? and @invitation.created_at >= Time.now - 1.week
@@ -61,13 +54,10 @@ class UsersController < ApplicationController
     respond_with @user
   end
 
-  # GET /users/arctarus/profile
   def edit
     render :layout => 'application'
   end
 
-  # PUT /users/arctarus
-  # PUT /users/arctarus/1.xml
   def update
     if @user.update_attributes(params[:user])
     end
@@ -102,16 +92,6 @@ class UsersController < ApplicationController
   def likes
     @recipes = @user.likes.order("updated_at asc").paginate :per_page => 10, :page => params[:page]
     render 'following'
-  end
-
-  private
-
-  def find_user
-    @user = User.find_by_slug params[:id]
-  end
-
-  def ensure_himself
-    raise ActiveRecord::RecordNotFound if current_user != @user
   end
 
 end
