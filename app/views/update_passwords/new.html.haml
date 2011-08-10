@@ -5,7 +5,7 @@
     %h2= _('It looks like to be missing some data')
     %p= _('Reviews the form before continuing')
 
-= form_for :@user, :url => user_update_password_path(@user) do |f|
+= form_for :user, :url => user_update_password_path(@user) do |f|
 
   .field
     = f.label :password, _("password")

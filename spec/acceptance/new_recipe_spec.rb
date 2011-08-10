@@ -8,8 +8,8 @@ feature "New Recipe", %q{
 
   # Given
   background do
-    @user = Factory :user
-    @category = Factory :category, :name => 'carne'
+    @user = sample :user
+    @category = sample :category, :name => 'carne'
     login_as @user
   end
 

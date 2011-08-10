@@ -2,5 +2,5 @@
   %h1= _("Welcome to rezets.com!")
   %p= _("If you're here because you are one of the lucky ones who have been invited to enjoy this new service.")
   %p= _("As you can see we are walking in underwear so I would ask you if you saw a little something that does not work or you do not like something we have know.")
-  %p= raw(_("To start enjoying rezets.com simply %{create_recipe}.") % {:create_recipe => link_to(_("create a new recipe"), new_recipe_path)})
+  %p= raw(_("To start enjoying rezets.com simply %{create_recipe}.") % { :create_recipe => link_to(_("create a new recipe"), new_user_recipe_path(user))})
   %p= _("Thanks!")
