@@ -49,7 +49,7 @@ module RecipesHelper
   end
 
   def facebook_sharer_url(recipe)
-    "http://www.facebook.com/sharer.php?u=#{recipe_url(recipe)}&t=" + 
+    "http://www.facebook.com/sharer.php?u=#{user_recipe_url(recipe.author, recipe)}&t=" + 
     _("%{recipe} recipe by %{author}") % {
       :recipe => recipe.name.downcase,
       :author => recipe.author.name }
