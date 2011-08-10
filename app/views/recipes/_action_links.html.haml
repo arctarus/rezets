@@ -5,7 +5,6 @@
   %li= link_to_print @recipe
   %li#send-email= link_to _('email'), email_user_recipe_path(@recipe.author, @recipe), :remote => :true
   %li= link_to_twitter @recipe
-  %li= link_to_facebook @recipe
 
   - if @recipe.author? current_user
     %li.delete= link_to _('delete'), user_recipe_path(@recipe.author, @recipe),
