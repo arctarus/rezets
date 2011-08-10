@@ -3,5 +3,5 @@ Factory.define :user do |user|
   user.email { Faker::Internet.email }
   user.password "123456"
   user.password_confirmation "123456"
-  user.slug { Faker::Name.name.parameterize }
+  user.slug {|u| u.name.parameterize }
 end

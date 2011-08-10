@@ -15,5 +15,5 @@
         %td= i.email
         %td= distance_of_time_in_words_to_now i.created_at
         %td= distance_of_time_in_words_to_now i.updated_at
-        %td= i.receiver.name unless i.receiver.nil?
+        %td= link_to i.receiver.name, i.receiver unless i.receiver.nil?
   = will_paginate @invitations
