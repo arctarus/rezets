@@ -9,5 +9,12 @@ class Ability
 
     can :read, Recipe
     can :manage, Recipe, :author_id => user.id
+
+    can [:read, :create], Invitation, :sender_id => user.id
+
+    # admin
+    if user.id == 1
+      can :manage, Invitation
+    end
  end
 end
