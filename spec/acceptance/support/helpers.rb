@@ -16,6 +16,10 @@ module HelperMethods
     page.should have_content(text)
   end
 
+  def sample(name, *args)
+    Factory name.to_sym, *args
+  end
+
   def sample_number(num = 10)
     (rand(num)+1).to_s
   end
