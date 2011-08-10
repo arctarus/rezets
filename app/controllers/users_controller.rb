@@ -70,8 +70,8 @@ class UsersController < ApplicationController
   end
 
   def following
-    @recipes = @user.followings.map(&:recipes).flatten.
-      sort_by{|r| r.updated_at }.reverse.paginate :per_page => 10, :page => params[:page]
+    @recipes = Recipe.where(:author_id => @user.followings.map(&:id)).
+      order("updated_at desc").paginate :per_page => 10, :page => params[:page]
   end
 
   def likes
