@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_user_session, :current_user
 # before_filter :set_gettext_locale
   rescue_from ActiveRecord::RecordNotFound, :with => :page_not_found
+  rescue_from CanCan::AccessDenied, :with => :access_denied
 
   protected
 
@@ -11,6 +12,12 @@ class ApplicationController < ActionController::Base
     render  :layout   => false,
             :file     => "/public/404.html", 
             :status   => 404
+  end
+
+  def access_denied(exception)
+    render  :layout   => false,
+            :file     => "/public/403.html", 
+            :status   => 403
   end
 
   private

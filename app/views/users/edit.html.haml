@@ -39,7 +39,7 @@
     = f.label :about, _("about you") 
     = f.text_area :about, :class => :text
 
-  %p= link_to _("change password"), changepassword_user_path
+  %p= link_to _("change password"), new_user_update_password_path(@user)
 
   %p#submit
     = f.submit _("save")

@@ -34,6 +34,10 @@ class User < ActiveRecord::Base
   has_many :likes, :through => :recipe_likes,
                    :source => :recipe
 
+
+  attr_accessible :name, :email, :slug, :avatar, :city, :website, :twitter, :about, 
+    :password, :password_confirmation
+
   validates_presence_of :email, :slug, :name
   validates_uniqueness_of :slug
 

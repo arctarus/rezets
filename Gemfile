@@ -8,13 +8,11 @@ gem 'mysql2', '~>0.2.6'
 # gem 'mongrel', '>=1.2.0.pre2'
 gem 'passenger'
 
-# Deploy with Capistrano
-gem 'capistrano'
-
 gem 'will_paginate'
 gem "paperclip"
 gem 'aws-s3'
-gem "authlogic", :git => 'git://github.com/odorcicd/authlogic.git', :branch => 'rails3'
+gem 'authlogic'
+gem 'cancan'
 
 gem 'haml-rails'
 gem 'compass'

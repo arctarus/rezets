@@ -1,8 +1,9 @@
 - title _("new invitation")
 
 %h1= _("send invitations")
-- if current_user.id == 1
+- if can? :read, Invitation
   %p= link_to _("see all invitations"), invitations_path
+
 - if @remaining_invitations > 0 or current_user.id == 1
   %p= _("Write the address of the person you want to invite to rezets.com and we will send an email with the text you typed and a link so it can register. You can customize the message included below and tell your friends because you like rezets.com.")
 
