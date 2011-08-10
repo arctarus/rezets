@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   load_and_authorize_resource :find_by => :slug
   respond_to :html
-  before_filter :require_user, :only => [:edit, :update, :changepassword, :updatepassword]
+  before_filter :require_user, :only => [:edit, :update]
   before_filter :require_no_user, :only => [:new, :create]
 
   def index
