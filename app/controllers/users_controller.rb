@@ -47,7 +47,7 @@ class UsersController < ApplicationController
         :updated_at => Time.now,
         :receiver_id => @user.id })
     end
-    respond_with @user
+    respond_with @user, :location => @user
   end
 
   def edit
