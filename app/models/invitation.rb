@@ -16,4 +16,9 @@ class Invitation < ActiveRecord::Base
   def expired?
     created_at < 1.week.ago
   end
+
+  def accepted_by(user)
+    update_attributes :updated_at => Time.now,
+                      :receiver => user
+  end
 end

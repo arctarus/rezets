@@ -6,12 +6,11 @@ class UsersController < ApplicationController
 
   def index
     @users = @users.featured.paginate :per_page => 12, :page => params[:page]
-    render :layout => 'application'
   end
 
   def rookies
     @users = User.rookies.paginate :per_page => 12, :page => params[:page]
-    render :action => :index, :layout => 'application'
+    render :index
   end
 
   def show
@@ -32,26 +31,19 @@ class UsersController < ApplicationController
     @invitation = Invitation.find_by_token!(params[:token])
     raise ActiveRecord::RecordNotFound if @invitation.expired?
     @user = User.new(:email => @invitation.email)
-    render :layout => 'application'
   end
 
   def create
     @invitation = Invitation.find_by_token!(params[:invitation][:token])
     @user = User.new(params[:user])
-    @user_session = UserSession.new({
-      :email => params[:user][:email],
-      :password => params[:user][:password]
-    })
-    if @user.save and @user_session.save
-      @invitation.update_attributes({
-        :updated_at => Time.now,
-        :receiver_id => @user.id })
+    if @user.save
+      @invitation.accepted_by @user
+      @user.authenticate!
     end
     respond_with @user, :location => @user
   end
 
   def edit
-    render :layout => 'application'
   end
 
   def update

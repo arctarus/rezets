@@ -62,4 +62,8 @@ class User < ActiveRecord::Base
     slug
   end
 
+  def authenticate!
+    UserSession.create! :email => email, :password => password
+  end
+
 end
