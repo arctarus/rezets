@@ -16,7 +16,7 @@ class UsersController < ApplicationController
   def show
     conditions = { :user_recipes => { :user_id => @user.id } }
     @total_recipes = Recipe.joins(:user_recipes).where(conditions).count
-    unless params[:category_id].nil?
+    if params[:category_id]
       @category = Category.find_by_slug params[:category_id]
       conditions[:category_id] = @category.id
     end
@@ -51,24 +51,9 @@ class UsersController < ApplicationController
     respond_with @user
   end
 
-  def follow
-    current_user.followings << @user
-    render 'follow'
-  end
-
-  def unfollow
-    current_user.follow_followings.find_by_following_id(@user.id).destroy
-    render 'follow'
-  end
-
-  def following
-    @recipes = Recipe.where(:author_id => @user.followings.map(&:id)).
-      order("updated_at desc").paginate :per_page => 10, :page => params[:page]
-  end
-
   def likes
     @recipes = @user.likes.order("updated_at asc").paginate :per_page => 10, :page => params[:page]
-    render 'following'
+    render 'follows/index'
   end
 
 end
