@@ -6,11 +6,12 @@ class UsersController < ApplicationController
 
   def index
     @users = @users.featured.paginate :per_page => 12, :page => params[:page]
+    render :layout => 'application'
   end
 
   def rookies
     @users = User.rookies.paginate :per_page => 12, :page => params[:page]
-    render :index
+    render :index, :layout => 'application'
   end
 
   def show
@@ -31,6 +32,7 @@ class UsersController < ApplicationController
     @invitation = Invitation.find_by_token!(params[:token])
     raise ActiveRecord::RecordNotFound if @invitation.expired?
     @user = User.new(:email => @invitation.email)
+    render :layout => 'application'
   end
 
   def create
@@ -39,21 +41,19 @@ class UsersController < ApplicationController
     if @user.save
       @invitation.accepted_by @user
       @user.authenticate!
+      redirect_to @user
+    else
+      render :new, :layout => 'application'
     end
-    respond_with @user, :location => @user
   end
 
   def edit
+    render :layout => 'application'
   end
 
   def update
     @user.update_attributes(params[:user])
     respond_with @user
-  end
-
-  def likes
-    @recipes = @user.likes.order("updated_at asc").paginate :per_page => 10, :page => params[:page]
-    render 'follows/index'
   end
 
 end
