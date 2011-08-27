@@ -8,4 +8,4 @@
         = link_to_unless @user.followings.blank?, raw(n_("%{num} following", "%{num} followings", @user.followings.size) % {:num => "<strong>#{@user.followings.size}</strong>"}), user_follows_path(@user)
     %li
       %h2
-        = link_to_unless @user.likes.blank?, raw(n_("%{num} like", "%{num} likes", @user.likes.size) % {:num => "<strong>#{@user.likes.size}</strong>"}), likes_user_path(@user)
+        = link_to_unless @user.likes.blank?, raw(n_("%{num} like", "%{num} likes", @user.likes.size) % {:num => "<strong>#{@user.likes.size}</strong>"}), user_likes_path(@user)

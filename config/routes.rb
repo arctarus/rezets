@@ -5,9 +5,6 @@ Rezets::Application.routes.draw do
   
   resources :users do
     get :rookies, :on => :collection
-    member do
-      get :likes
-    end
     resources :recipes do
       member do
         get :email
@@ -20,6 +17,7 @@ Rezets::Application.routes.draw do
     end
     resources :categories
     resources :follows, :only => [:index, :create, :destroy]
+    resources :likes, :only => [:index]
     resource :update_password, :only => [:new, :create]
   end
 
