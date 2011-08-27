@@ -1,11 +1,8 @@
 - unless @recipes.blank?
   %ul.user-nav
     %li
-      %h2
-        = link_to_unless controller.action_name == 'show', raw(n_("%{num} recipe", "%{num} recipes", @user.recipes.size) % {:num => "<strong>#{@user.recipes.size}</strong>"}), @user
+      = nav_link_unless @user.recipes.blank?, num_recipes(@user.recipes.size), @user
     %li
-      %h2
-        = link_to_unless @user.followings.blank?, raw(n_("%{num} following", "%{num} followings", @user.followings.size) % {:num => "<strong>#{@user.followings.size}</strong>"}), user_follows_path(@user)
+      = nav_link_unless @user.followings.blank?, num_follows(@user.followings.size), user_follows_path(@user)
     %li
-      %h2
-        = link_to_unless @user.likes.blank?, raw(n_("%{num} like", "%{num} likes", @user.likes.size) % {:num => "<strong>#{@user.likes.size}</strong>"}), user_likes_path(@user)
+      = nav_link_unless @user.likes.blank?, num_likes(@user.likes.size), user_likes_path(@user)
