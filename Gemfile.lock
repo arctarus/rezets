@@ -59,6 +59,7 @@ GEM
     diff-lcs (1.1.2)
     erubis (2.6.6)
       abstract (>= 1.0.0)
+    escape_utils (0.2.3)
     factory_girl (2.0.5)
     factory_girl_rails (1.1.0)
       factory_girl (~> 2.0.0)
@@ -190,6 +191,7 @@ DEPENDENCIES
   capybara
   compass
   database_cleaner
+  escape_utils
   factory_girl_rails
   fancy-buttons
   fast_gettext

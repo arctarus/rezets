@@ -25,6 +25,7 @@ gem 'fast_gettext'
 gem 'gettext_i18n_rails'
 
 gem 'twitter'
+gem 'escape_utils'
 
 group :development, :test do
   gem 'rspec-rails'
