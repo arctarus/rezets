@@ -9,9 +9,8 @@
       = _("to follow the recipes than he make.")
   - else
     %p
-      = user
       = _("You are following it.")
-      = link_to _("Stop following"), user_follow_path(user), 
+      = link_to _("Stop following"), user_follow_path(user, current_user), 
         :remote  => true, 
         :method  => :delete,
         :class   => :action,
