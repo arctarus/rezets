@@ -33,4 +33,6 @@ group :development, :test do
   gem 'steak'
   gem 'factory_girl_rails'
   gem 'ffaker'
+  gem 'database_cleaner'
+  gem 'selenium-client'
 end

@@ -1,5 +1,5 @@
-- title user_title(@user,@category, @recipes.current_page)
-- meta_description user_title(@user,@category, @recipes.current_page)
+- title user_title(@user, @category, @recipes.current_page)
+- meta_description user_title(@user, @category, @recipes.current_page)
 - meta_keywords [@user.name]
 
 - content_for :sidebar do
@@ -9,8 +9,8 @@
   - if current_user.nil? or @user != current_user
     .msg.blank
       %h2= _("%{user} still hasn't any recipe") % {:user => @user.name}
-      %p= raw(("you can %{explore} or search %{bycategory}.") % {                  |
-          :explore => link_to(_("explore more recipes"), recipes_path),        |
+      %p= raw(("you can %{explore} or search %{bycategory}.") % {               |
+          :explore => link_to(_("explore more recipes"), recipes_path),         |
           :bycategory => link_to(_("recipes by categories"), categories_path)}) |
   - else
     = render 'welcome', :user => @user
@@ -23,4 +23,4 @@
     = render @recipes
   = will_paginate @recipes
 
-  = render :partial => 'feed'
+  = render 'feed'

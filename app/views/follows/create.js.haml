@@ -1,1 +1,1 @@
-$("follow").update("#{escape_javascript(render :partial => 'follow', :locals => {:user => @user})}");
+$("follow").update("#{escape_javascript(render 'users/follow', :user => @user)}");

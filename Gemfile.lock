@@ -55,6 +55,7 @@ GEM
       fssm (>= 0.2.7)
       sass (~> 3.1)
     daemon_controller (0.2.6)
+    database_cleaner (0.6.7)
     diff-lcs (1.1.2)
     erubis (2.6.6)
       abstract (>= 1.0.0)
@@ -151,6 +152,7 @@ GEM
       sexp_processor (~> 3.0)
     rubyzip (0.9.4)
     sass (3.1.7)
+    selenium-client (1.2.18)
     selenium-webdriver (2.5.0)
       childprocess (>= 0.2.1)
       ffi (>= 1.0.7)
@@ -187,6 +189,7 @@ DEPENDENCIES
   cancan
   capybara
   compass
+  database_cleaner
   factory_girl_rails
   fancy-buttons
   fast_gettext
@@ -202,6 +205,7 @@ DEPENDENCIES
   rake (= 0.9.2)
   rspec-rails
   ruby_parser
+  selenium-client
   steak
   twitter
   will_paginate

@@ -47,6 +47,15 @@ module HelperMethods
       fill_in 'recipe_new_recipe_ingredients_attributes__name', :with => args[:name]
     end
   end
+
+  def confirm_dialog(message = nil)
+    alert = page.driver.browser.switch_to.alert
+    if message.nil? || alert.text == message
+      alert.accept
+    else
+      alert.dismiss
+    end
+  end
 end
 
 RSpec.configuration.include HelperMethods, :type => :acceptance

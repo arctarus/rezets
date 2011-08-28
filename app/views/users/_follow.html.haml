@@ -1,17 +1,18 @@
-- unless current_user.nil?
+- if current_user
   - if not current_user.followings.include?(user)
     %p
-      = link_to _("Follow it"), follow_user_path,
+      = link_to _("Follow it."), user_follows_path(user),
         :remote  => true,
-        :method  => :put, 
+        :method  => :post, 
         :class   => :action,
         :confirm => _("Now you can follow the recipes that he make on your following tab. Ok?")
       = _("to follow the recipes than he make.")
   - else
     %p
+      = user
       = _("You are following it.")
-      = link_to _("Stop following"), unfollow_user_path, 
+      = link_to _("Stop following"), user_follow_path(user), 
         :remote  => true, 
-        :method  => :put,
+        :method  => :delete,
         :class   => :action,
         :confirm => _("Are you sure? You don't follow the recipes that he make.")
