@@ -1,3 +1,4 @@
-== Welcome to Rezets
+Welcome to Rezets
+=================
 
 Share your recipes!
