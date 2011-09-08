@@ -1,9 +1,9 @@
 require 'acceptance/acceptance_helper'
 
 feature 'Follow a user', %q{
-  In order to ...
-  As a ...
-  I want ...
+  In order to see what other users cook
+  As a user
+  I want follow other users
 } do
 
   background do
