@@ -1,13 +1,28 @@
 require 'acceptance/acceptance_helper'
 
 feature 'Send feedback', %q{
-  In order to ...
-  As a ...
-  I want ...
+  In order to contact with rezets creators
+  As a guess
+  I want to send feedback
 } do
 
-  scenario 'first scenario' do
-    true.should == true
+  scenario 'filling all fields' do
+    visit homepage
+    click_link _('contact')
+    fill_in _('name'), :with => sample_name
+    fill_in _('email'), :with => sample_email
+    fill_in _('message'), :with => sample_paragraphs
+    click_button _('send')
+    should_be_on homepage
+  end
+
+  scenario 'forget email' do
+    visit homepage
+    click_link _('contact')
+    fill_in _('name'), :with => sample_name
+    fill_in _('message'), :with => sample_paragraphs
+    click_button _('send')
+    should_be_on feedback_path
   end
 
 end

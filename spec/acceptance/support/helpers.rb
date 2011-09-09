@@ -28,6 +28,10 @@ module HelperMethods
     Faker::Name.name
   end
 
+  def sample_email
+    Faker::Internet.email
+  end
+
   def sample_sentence(num = 10)
     Faker::Lorem.sentence(rand(num)+1)
   end
