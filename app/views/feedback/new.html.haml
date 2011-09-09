@@ -1,7 +1,6 @@
-- title _("contact with us")
+%h1= title _("contact with us")
 
-%h1= _("contact with us")
-= form_tag feedback_path do
+= form_tag feedback_index_path do
   .field
     = label_tag "feedback[name]", _("name")
     = text_field_tag "feedback[name]", nil, :size => 30, :maxlength => 50

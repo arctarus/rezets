@@ -22,7 +22,7 @@ feature 'Send feedback', %q{
     fill_in _('name'), :with => sample_name
     fill_in _('message'), :with => sample_paragraphs
     click_button _('send')
-    should_be_on feedback_path
+    should_be_on feedback_index_path
   end
 
 end

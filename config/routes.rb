@@ -23,7 +23,8 @@ Rezets::Application.routes.draw do
 
   resources :invitations, :only => [:index, :new, :create]
   resource :session, :path_names => { :new => "login", :destroy => "logout" }
-
+  resources :feedback, :only => [:new, :create]
+ 
   match 'login' => 'sessions#new', :as => :login
   match 'logout' => 'sessions#destroy', :as => :logout
 
@@ -33,8 +34,6 @@ Rezets::Application.routes.draw do
 
   match "/users/new/:token" => "users#new"
   match "/about"    => "home#about",    :as => :about
-  match "/feedback" => "home#feedback", :as => :feedback, :via => :get
-  match "/feedback" => "home#send_feedback", :as => :feedback, :via => :post
   match "/search"   => "home#search",   :as => :search
   match "/feed"     => "home#feed",     :as => :feed
 
