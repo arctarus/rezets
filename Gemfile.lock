@@ -162,6 +162,11 @@ GEM
       rubyzip
     sexp_processor (3.0.6)
     simple_oauth (0.1.5)
+    simplecov (0.4.2)
+      simplecov-html (~> 0.4.4)
+    simplecov-html (0.4.5)
+    simplecov-rcov (0.2.3)
+      simplecov (>= 0.4.1)
     spruz (0.2.13)
     steak (2.0.0)
       capybara (>= 1.0.0)
@@ -210,6 +215,8 @@ DEPENDENCIES
   rspec-rails
   ruby_parser
   selenium-client
+  simplecov
+  simplecov-rcov
   steak
   twitter
   will_paginate

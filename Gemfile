@@ -36,4 +36,6 @@ group :development, :test do
   gem 'ffaker'
   gem 'database_cleaner'
   gem 'selenium-client'
+  gem 'simplecov'
+  gem 'simplecov-rcov'
 end
