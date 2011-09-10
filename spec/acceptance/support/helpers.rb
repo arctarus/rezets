@@ -60,6 +60,7 @@ module HelperMethods
       alert.dismiss
     end
   end
+<<<<<<< HEAD
 
   def last_mail
     ActionMailer::Base.deliveries.last
@@ -68,6 +69,8 @@ module HelperMethods
   def clear_mails
     ActionMailer::Base.deliveries.clear
   end
+=======
+>>>>>>> 688013b73bad8d3e10bc4f1df9f61f65646d3481
 end
 
 RSpec.configuration.include HelperMethods, :type => :acceptance
