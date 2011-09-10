@@ -12,6 +12,12 @@ module MailForm
     attribute_method_prefix 'clear_'
     attribute_method_suffix '?'
 
+    def initialize(attributes = {})
+      attributes.each do |attr, value|
+        self.send("#{attr}=", value)
+      end unless attributes.blank?
+    end
+
     def self.attributes(*names)
       attr_accessor *names
       define_attribute_methods names
@@ -27,6 +33,14 @@ module MailForm
     
     def persisted?
       false
+    end
+
+    def deliver
+      if valid?
+        MailForm::Notifier.contact(self).deliver
+      else
+        false
+      end
     end
 
     protected

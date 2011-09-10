@@ -59,7 +59,7 @@ describe FeedbackMail do
       ActiveModel::Lint::Tests.public_instance_methods.map(&:to_s).grep(/^test/)
 
     active_model_lint_tests.each do |m|
-      example m.gsub('_',' ') do
+      example m.gsub('_',' ').gsub('test ','') do
         send m
       end
     end
@@ -94,4 +94,24 @@ describe FeedbackMail do
     end
   end
 
+  describe "delivers an email" do
+    before :each do
+      ActionMailer::Base.deliveries.clear
+      feedback_mail.email = Faker::Internet.email
+      feedback_mail.deliver
+      @mail = ActionMailer::Base.deliveries.last
+    end
+
+    it "usign action mailer" do
+      ActionMailer::Base.deliveries.should have(1).item
+    end
+
+    it "with from attribute get from feedback email" do
+      @mail.from.should == [feedback_mail.email]
+    end
+
+    it "with feedback mail in the body" do
+      @mail.body.encoded.should include(feedback_mail.email)
+    end
+  end
 end

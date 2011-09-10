@@ -1,13 +1,21 @@
 %h1= title _("contact with us")
 
-= form_tag feedback_index_path do
+- if @feedback_mail.errors.any?
+  .error
+    %h2= _('It looks like to be missing some date')
+    %p= _('Reviews the form before continuing')
+
+
+= form_for @feedback_mail, :url => feedback_index_path do |f|
+
   .field
-    = label_tag "feedback[name]", _("name")
-    = text_field_tag "feedback[name]", nil, :size => 30, :maxlength => 50
+    = f.label :name, _("name")
+    = f.text_field :name, :size => 30, :maxlength => 50
   .field
-    = label_tag "feedback[email]", _("email")
-    = text_field_tag "feedback[email]", nil, :size => 30, :maxlength => 50
+    = f.label :email, _("email")
+    = f.text_field :email, :size => 30, :maxlength => 50
   .field
-    = label_tag "feedback[message]", _("message")
-    = text_area_tag "feedback[message]", nil
-  %p#submit= submit_tag _("send")
+    = f.label :message, _("message")
+    = f.text_area :message
+
+  %p.submit= f.submit _("send")

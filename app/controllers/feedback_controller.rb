@@ -1,12 +1,17 @@
 class FeedbackController < ApplicationController
 
   def new
+    @feedback_mail = FeedbackMail.new
   end
 
   def create
-    UserMailer.feedback(params[:feedback]).deliver
-    flash[:notice] = _("thanks for your help")
-    redirect_to root_url
+    @feedback_mail = FeedbackMail.new(params[:feedback_mail])
+
+    if @feedback_mail.deliver
+      redirect_to root_url, :notice => _("thanks for your help")
+    else
+      render 'new'
+    end
   end
 
 end
