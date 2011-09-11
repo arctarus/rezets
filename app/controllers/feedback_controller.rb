@@ -1,16 +1,16 @@
 class FeedbackController < ApplicationController
 
   def new
-    @feedback_mail = FeedbackMail.new
+    @feedback_form = FeedbackForm.new
   end
 
   def create
-    @feedback_mail = FeedbackMail.new(params[:feedback_mail])
+    @feedback_form = FeedbackForm.new(params[:feedback_form])
 
-    if @feedback_mail.deliver
+    if @feedback_form.deliver
       redirect_to root_url, :notice => _("thanks for your help")
     else
-      render 'new'
+      render :new
     end
   end
 

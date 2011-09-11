@@ -1,3 +1,8 @@
-Hello
-- @mail_form.attributes.each do |key, value|
-  #{@mail_form.class.human_attribute_name(key)}: #{value}
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+  %body
+    %p= _("%{user} with email %{email} tell us:") % { :user => @mail_form.name, :email => @mail_form.email}
+    .body
+      = simple_format @mail_form.message

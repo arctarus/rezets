@@ -1,4 +1,4 @@
-class FeedbackMail < MailForm::Base
+class FeedbackForm < MailForm::Base
   attributes :name, :email, :message
   validates_presence_of :name, :email, :message
 

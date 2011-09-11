@@ -1,12 +1,12 @@
 %h1= title _("contact with us")
 
-- if @feedback_mail.errors.any?
+- if @feedback_form.errors.any?
   .error
-    %h2= _('It looks like to be missing some date')
+    %h2= _('It looks like to be missing some data')
     %p= _('Reviews the form before continuing')
 
 
-= form_for @feedback_mail, :url => feedback_index_path do |f|
+= form_for @feedback_form, :url => feedback_index_path do |f|
 
   .field
     = f.label :name, _("name")

@@ -1,50 +1,50 @@
 require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
-describe FeedbackMail do
-  let(:feedback_mail) { FeedbackMail.new }
+describe FeedbackForm do
+  let(:feedback_form) { FeedbackForm.new }
 
   describe "attribute accessors" do
     it "has name as attribute" do
-      feedback_mail.name = "User"
-      feedback_mail.name.should == "User"
+      feedback_form.name = "User"
+      feedback_form.name.should == "User"
     end
 
     it "has email as attribute" do
-      feedback_mail.email = "user@test.com"
-      feedback_mail.email.should == "user@test.com"
+      feedback_form.email = "user@test.com"
+      feedback_form.email.should == "user@test.com"
     end
     
     it "has message as attribute" do
-      feedback_mail.message = "hola que tal"
-      feedback_mail.message.should == "hola que tal"
+      feedback_form.message = "hola que tal"
+      feedback_form.message.should == "hola que tal"
     end
   end
 
   describe "clean attributes" do
     it "clear name usign clear_name" do
-      feedback_mail.name = "User"
-      feedback_mail.clear_name
-      feedback_mail.name.should be_nil
+      feedback_form.name = "User"
+      feedback_form.clear_name
+      feedback_form.name.should be_nil
     end
 
     it "clear email usign clear_email" do
-      feedback_mail.name = "user@test.com"
-      feedback_mail.clear_email
-      feedback_mail.email.should be_nil
+      feedback_form.name = "user@test.com"
+      feedback_form.clear_email
+      feedback_form.email.should be_nil
     end
   end
 
   describe "ask if attribute is present" do
     it "name" do
-      feedback_mail.name?.should be_false
-      feedback_mail.name = "User"
-      feedback_mail.name?.should be_true
+      feedback_form.name?.should be_false
+      feedback_form.name = "User"
+      feedback_form.name?.should be_true
     end
 
     it "email" do
-      feedback_mail.email?.should be_false
-      feedback_mail.email = "user@test.com"
-      feedback_mail.email?.should be_true
+      feedback_form.email?.should be_false
+      feedback_form.email = "user@test.com"
+      feedback_form.email?.should be_true
     end
   end
 
@@ -65,40 +65,42 @@ describe FeedbackMail do
     end
 
     def model
-      feedback_mail
+      feedback_form
     end
 
     it "expose singular name" do
-      model.class.model_name.singular.should == "feedback_mail"
+      model.class.model_name.singular.should == "feedback_form"
     end
 
     it "expose human name" do
-      model.class.model_name.human.should == "Feedback mail"
+      model.class.model_name.human.should == "Feedback form"
     end
 
     it "use I18n" do
       begin
         I18n.backend.store_translations :es, 
-        :activemodel => { :models => { :feedback_mail => 'My Feedback Mail' } }
-        model.class.model_name.human.should == "My Feedback Mail"
+        :activemodel => { :models => { :feedback_form => 'My Feedback Form' } }
+        model.class.model_name.human.should == "My Feedback Form"
       ensure
         I18n.reload!
       end
     end
 
     it "retrieve all attributes values" do
-      feedback_mail.name = "User"
-      feedback_mail.email = "user@test.com"
-      feedback_mail.attributes["name"].should == "User"
-      feedback_mail.attributes["email"].should == "user@test.com"
+      feedback_form.name = "User"
+      feedback_form.email = "user@test.com"
+      feedback_form.attributes["name"].should == "User"
+      feedback_form.attributes["email"].should == "user@test.com"
     end
   end
 
   describe "delivers an email" do
     before :each do
       ActionMailer::Base.deliveries.clear
-      feedback_mail.email = Faker::Internet.email
-      feedback_mail.deliver
+      feedback_form.email = Faker::Internet.email
+      feedback_form.name = Faker::Name.name
+      feedback_form.message = Faker::Lorem.paragraphs
+      feedback_form.deliver
       @mail = ActionMailer::Base.deliveries.last
     end
 
@@ -107,11 +109,11 @@ describe FeedbackMail do
     end
 
     it "with from attribute get from feedback email" do
-      @mail.from.should == [feedback_mail.email]
+      @mail.from.should == [feedback_form.email]
     end
 
     it "with feedback mail in the body" do
-      @mail.body.encoded.should include(feedback_mail.email)
+      @mail.body.encoded.should include(feedback_form.email)
     end
   end
 end
