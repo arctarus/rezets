@@ -1,27 +1,18 @@
 class InvitationsController < ApplicationController
+  load_and_authorize_resource
   respond_to :html
   before_filter :require_user, :only => [:new, :create]
 
-  # GET /invitations
-  # GET /invitations.xml
   def index
-    if current_user.id == 1
-      @invitations = Invitation.order('created_at desc').
-        paginate :page => params[:page]
-    else
-      page_not_found
-    end
+    @invitations = @invitations.order('created_at desc').
+      paginate :page => params[:page]
   end
 
-  # GET /invitations/new
-  # GET /invitations/new.xml
   def new
     @invitation = current_user.invitations_sent.new(params[:invitation])
     @remaining_invitations = 10 - Invitation.where(:sender_id => current_user.id).count
   end
 
-  # POST /invitations
-  # POST /invitations.xml
   def create
     @invitation = current_user.invitations_sent.new(params[:invitation])
     if @invitation.save

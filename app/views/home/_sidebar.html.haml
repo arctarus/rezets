@@ -17,5 +17,5 @@
           %p.meta
             = _("%{num} recipes") % {:num => user.recipes.size}
             %span.ft= '|'
-            = link_to n_("%{num} follower", "%{num} followers", user.followers.size) % {:num => user.followers.size}
+            = link_to_unless user.followings.size == 0, n_("%{num} following", "%{num} followings", user.followings.size) % {:num => user.followers.size}, user_follows_path(user)
 

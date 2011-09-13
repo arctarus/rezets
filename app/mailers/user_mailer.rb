@@ -3,15 +3,6 @@ class UserMailer < ActionMailer::Base
   default :from => 'rezets.com@gmail.com',
           :reply_to => 'rezets.com@gmail.com'
  
-  def feedback(feedback)
-    @name     = feedback["name"]
-    @message  = feedback["message"]
-    mail  :to       => 'rezets.com@gmail.com',
-          :from     => feedback['email'],
-          :reply_to => feedback["email"],
-          :subject  => _("feedback from %{name}") % {:name => feedback['name']}
-  end 
-
   def invitation(invitation, tmpl, user)
     @user       = user
     @invitation = invitation

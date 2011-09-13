@@ -2,38 +2,40 @@
 - meta_description @recipe.title
 - meta_keywords @recipe.ingredients.map(&:name) << @recipe.category.name
 
-.hrecipe
-  = link_to image_tag(@recipe.author.avatar.url(:medium), :alt => "", :width => "50px"),
-    @recipe.author, :style => "float:left; margin-right:1em"
+%div{:itemscope => '', :itemtype => 'http://schema.org/Recipe'}
+  = link_to image_tag(@recipe.author.avatar.url(:medium), :alt => "", :width => "50px"), @recipe.author, :style => "float:left; margin-right:1em"
+
   .meta
-    %h1.fn= link_to h(@recipe.name), user_recipe_path(@recipe.author,@recipe), |
-      :title => _("%{recipe} recipe by %{author}") % { |
-      :recipe => @recipe.name.downcase, :author => @recipe.author.name} |
+    %h1{:itemprop => 'name'}
+      = link_to h(@recipe.name), user_recipe_path(@recipe.author,@recipe),
+        :title => _("%{recipe} recipe by %{author}") % {:recipe => @recipe.name.downcase, :author => @recipe.author.name}
 
     %p
-      %span.author= link_to @recipe.author.name, @recipe.author, :class => "url fn"
+      %span{:itemprop => 'author'}= link_to @recipe.author.name, @recipe.author
+
       %span.ft
         |
+
       %span.category= link_to @recipe.category.name, @recipe.category, 
         :title => _("%{category} recipes") % {:category => @recipe.category.name}
+
       %span.ft
         |
-      %span.published= distance_of_time_in_words_to_now @recipe.created_at
+
+      %span{:itemprop => 'datePublished', :content => I18n.l(@recipe.created_at, :format => '%Y-%m-%d')}
+        = distance_of_time_in_words_to_now @recipe.created_at
 
   = render :partial => 'action_links'
 
-  = image_tag @recipe.photo.url(:large),  
-    :class => "photo",                    
-    :alt   => @recipe.title,              
-    :title => @recipe.title               
+  = recipe_image_tag @recipe
 
   - unless @recipe.recipe_ingredients.blank?
     #recipe-ingredients
       %h2
         = _("ingredients")
         - unless @recipe.num_persons.blank?
-          %span.num-persons
-            (#{(_("for %{num} people") % {:num => "<span class=\"yield\">#{@recipe.num_persons}</span>"}).html_safe})
+          %span{:itemprop => 'recipeYield'}
+            (#{_("for %{num} people") % {:num => @recipe.num_persons}})
 
       - if @recipe.recipe_ingredients.size <=  5
         %ul.ingredients
@@ -46,13 +48,11 @@
 
   %h2.clear
     = _("directions")
-    - unless @recipe.cook_time.blank?
-      %span.duration
-        (
-        %span.value-title{:title => @recipe.cook_time}>= _("%{time} min") % {:time => @recipe.cook_time}
-        )
+    - if @recipe.cook_time
+      %span{:itemprop => 'cookTime', :content => "PT#{@recipe.cook_time}M"}
+        (#{_("%{time} min") % {:time => @recipe.cook_time}})
 
-  .instructions
-    = simple_format(@recipe.directions)
+  %div{:itemprop => 'recipeInstructions'}
+    = simple_format @recipe.directions
 
   = render :partial => "comments", :locals => {:recipe => @recipe}

@@ -49,7 +49,7 @@ module RecipesHelper
   end
 
   def facebook_sharer_url(recipe)
-    "http://www.facebook.com/sharer.php?u=#{recipe_url(recipe)}&t=" + 
+    "http://www.facebook.com/sharer.php?u=#{user_recipe_url(recipe.author, recipe)}&t=" + 
     _("%{recipe} recipe by %{author}") % {
       :recipe => recipe.name.downcase,
       :author => recipe.author.name }
@@ -57,6 +57,14 @@ module RecipesHelper
 
   def email_send
     render :partial => 'email_send'
+  end
+
+  def recipe_image_tag(recipe)
+    image_tag recipe.photo.url(:large),
+      :class    => "photo",
+      :alt      => recipe.title,
+      :title    => recipe.title,
+      :itemprop => 'image'
   end
 
 end

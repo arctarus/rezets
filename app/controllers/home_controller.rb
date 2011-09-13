@@ -15,15 +15,6 @@ class HomeController < ApplicationController
   def about
   end
 
-  def feedback
-  end
-
-  def send_feedback
-    UserMailer.feedback(params[:feedback]).deliver
-    flash[:notice] = _("thanks for your help")
-    redirect_to root_url
-  end
-  
   def search
   end
 

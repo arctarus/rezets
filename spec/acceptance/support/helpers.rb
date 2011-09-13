@@ -16,12 +16,20 @@ module HelperMethods
     page.should have_content(text)
   end
 
+  def sample(name, *args)
+    Factory name.to_sym, *args
+  end
+
   def sample_number(num = 10)
     (rand(num)+1).to_s
   end
 
   def sample_name
     Faker::Name.name
+  end
+
+  def sample_email
+    Faker::Internet.email
   end
 
   def sample_sentence(num = 10)
@@ -42,6 +50,23 @@ module HelperMethods
       fill_in 'recipe_new_recipe_ingredients_attributes__value_type', :with => args[:unit]
       fill_in 'recipe_new_recipe_ingredients_attributes__name', :with => args[:name]
     end
+  end
+
+  def confirm_dialog(message = nil)
+    alert = page.driver.browser.switch_to.alert
+    if message.nil? || alert.text == message
+      alert.accept
+    else
+      alert.dismiss
+    end
+  end
+
+  def last_mail
+    ActionMailer::Base.deliveries.last
+  end
+
+  def clear_mails
+    ActionMailer::Base.deliveries.clear
   end
 end
 
