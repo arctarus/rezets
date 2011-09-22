@@ -1,0 +1,9 @@
+%div[comment]
+  = link_to image_tag(comment.user.avatar.url(:medium), :class => "avatar", :alt => ""), comment.user
+  .inner-comment
+    %h3= link_to comment.user.name, comment.user
+    = simple_format comment.body
+    %p.created-time
+      %abbr.timestamp{:title => Time.current}
+        = _("%{time} ago") % {:time => distance_of_time_in_words_to_now(comment.updated_at) }
+

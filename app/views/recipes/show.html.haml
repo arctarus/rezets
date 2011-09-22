@@ -25,7 +25,7 @@
       %span{:itemprop => 'datePublished', :content => I18n.l(@recipe.created_at, :format => '%Y-%m-%d')}
         = distance_of_time_in_words_to_now @recipe.created_at
 
-  = render :partial => 'action_links'
+  = render :partial => 'recipes/action_links'
 
   = recipe_image_tag @recipe
 
@@ -55,4 +55,11 @@
   %div{:itemprop => 'recipeInstructions'}
     = simple_format @recipe.directions
 
-  = render :partial => "comments", :locals => {:recipe => @recipe}
+  - if current_user or @recipe.comments.any?
+    .comments
+      %h2= _("comments")
+      - if @recipe.comments.any?
+        = render @recipe.comments.reject(&:new_record?)
+
+      - if current_user
+        = render 'comments/new', :recipe => @recipe, :comment => @comment

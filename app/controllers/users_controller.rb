@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   load_and_authorize_resource :find_by => :slug
-  respond_to :html
+  respond_to :html, :rss
   before_filter :require_user, :only => [:edit, :update]
   before_filter :require_no_user, :only => [:new, :create]
 
@@ -25,7 +25,7 @@ class UsersController < ApplicationController
     @recipes = Recipe.joins(:user_recipes).where(conditions).order(order).
       includes(:category, :recipe_ingredients => :ingredient).
       paginate(:page => params[:page], :per_page => 10)
-    @categories = Category.joins(:recipes).where({:recipes => { :author_id => @user.id }}).uniq
+    @categories = Category.by_author(@user)
   end
 
   def new

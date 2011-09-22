@@ -1,7 +1,7 @@
 %ul#action-links.action-links
   - if @recipe.author? current_user
     %li.edit= link_to _('edit'), edit_user_recipe_path(@recipe.author, @recipe)
-  %li#like= render :partial => 'likes', :locals => {:recipe => @recipe, :author => @recipe.author}
+  %li#like= render 'recipes/likes', :recipe => @recipe, :author => @recipe.author
   %li= link_to_print @recipe
   %li#send-email= link_to _('email'), email_user_recipe_path(@recipe.author, @recipe), :remote => :true
   %li= link_to_twitter @recipe
