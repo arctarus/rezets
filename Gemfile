@@ -38,5 +38,5 @@ group :development, :test do
   gem 'selenium-client'
   gem 'simplecov'
   gem 'simplecov-rcov'
-  gem 'metrical'
+# gem 'metrical'
 end
