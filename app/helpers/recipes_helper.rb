@@ -59,4 +59,12 @@ module RecipesHelper
     render :partial => 'email_send'
   end
 
+  def recipe_image_tag(recipe)
+    image_tag recipe.photo.url(:large),
+      :class    => "photo",
+      :alt      => recipe.title,
+      :title    => recipe.title,
+      :itemprop => 'image'
+  end
+
 end

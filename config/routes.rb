@@ -5,12 +5,6 @@ Rezets::Application.routes.draw do
   
   resources :users do
     get :rookies, :on => :collection
-    member do
-      get :following
-      get :likes
-      put :follow
-      put :unfollow
-    end
     resources :recipes do
       member do
         get :email
@@ -22,12 +16,15 @@ Rezets::Application.routes.draw do
       resources :comments
     end
     resources :categories
+    resources :follows, :only => [:index, :create, :destroy]
+    resources :likes, :only => [:index]
     resource :update_password, :only => [:new, :create]
   end
 
   resources :invitations, :only => [:index, :new, :create]
   resource :session, :path_names => { :new => "login", :destroy => "logout" }
-
+  resources :feedback, :only => [:new, :create]
+ 
   match 'login' => 'sessions#new', :as => :login
   match 'logout' => 'sessions#destroy', :as => :logout
 
@@ -37,8 +34,6 @@ Rezets::Application.routes.draw do
 
   match "/users/new/:token" => "users#new"
   match "/about"    => "home#about",    :as => :about
-  match "/feedback" => "home#feedback", :as => :feedback, :via => :get
-  match "/feedback" => "home#send_feedback", :as => :feedback, :via => :post
   match "/search"   => "home#search",   :as => :search
   match "/feed"     => "home#feed",     :as => :feed
 

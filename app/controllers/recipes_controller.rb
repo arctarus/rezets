@@ -3,67 +3,52 @@ class RecipesController < ApplicationController
   before_filter :require_user, :except => [:index, :show, :email, :email_send]
   before_filter :find_recipe, :except => [:index, :new, :create, :edit, :update, :destroy]
 
-  # GET /recipes
-  # GET /recipes.xml
   def index
     @recipes = Recipe.order("likes_count desc, updated_at desc").
       paginate :per_page => 10, :page => params[:page]
     @categories = Category.with_recipes.order("name asc")
   end
 
-  # GET /recipes/1
-  # GET /recipes/1.xml
   def show
     @recipes_same_author = Recipe.by_author(@recipe.author.id).not_in(@recipe.id).limit(3)
     @recipes_same_category = Recipe.by_category(@recipe.category.id).
       not_in(@recipes_same_author.map(&:id).push(@recipe.id)).limit(3)
     @print = params[:print].to_i == 1
+    @comment = @recipe.comments.build
     render :layout => 'recipe'
   end
 
-  # GET /recipes/new
-  # GET /recipes/new.xml
   def new
     @recipe = current_user.authorings.new
     @recipe.recipe_ingredients.build
   end
 
-  # POST /recipes
-  # POST /recipes.xml
   def create
     @recipe = current_user.authorings.new(params[:recipe])
     @recipe.users << current_user
-    if @recipe.save
-    end
+    @recipe.save
     respond_with @recipe, :location => current_user
   end
 
-  # GET /recipes/1/edit
   def edit
     @recipe = current_user.authorings.find(params[:id])
   end
 
-  # PUT /recipes/1
-  # PUT /recipes/1.xml
   def update
     @recipe = current_user.authorings.find(params[:id])
-    @recipe.updated_at = Time.now
-    if @recipe.update_attributes(params[:recipe])
-    else
+    @recipe.updated_at = Time.current
+    unless @recipe.update_attributes(params[:recipe])
       @categories = Category.all
     end
     respond_with @recipe, :location => current_user
   end
 
-  # DELETE /recipes/1
-  # DELETE /recipes/1.xml
   def destroy
     @recipe = current_user.recipes.find(params[:id], :include => :ingredients)
     @recipe.destroy
     respond_with @author
   end
 
-  # GET /user/arctarus/recipes/1-perdices/email
   def email
     if request.xhr?
       render :update do |page|
@@ -78,7 +63,6 @@ class RecipesController < ApplicationController
     end
   end
 
-  # POST /user/arctarus/recipes/1-perdices/email
   def email_send
     if request.xhr?
       if (current_user.nil? and params[:email][:name].blank?) or params[:email][:recipients].blank?

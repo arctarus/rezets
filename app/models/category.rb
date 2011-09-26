@@ -6,14 +6,20 @@ class Category < ActiveRecord::Base
 
   scope :with_recipes, 
     where('id in (select category_id from recipes group by category_id)')
-  
-  scope :author
+
+  scope :by_author, lambda {|author|
+    joins(:recipes).
+    where(:recipes => { :author_id => author.id }).
+    group('categories.id').
+    order('categories.name')
+  }
 
   def to_param
     slug
   end
 
-  # before_save
+  private
+
   def slugify_name
     self.slug = name.parameterize 
   end

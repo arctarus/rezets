@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   load_and_authorize_resource :find_by => :slug
-  respond_to :html
+  respond_to :html, :rss
   before_filter :require_user, :only => [:edit, :update]
   before_filter :require_no_user, :only => [:new, :create]
 
@@ -11,13 +11,13 @@ class UsersController < ApplicationController
 
   def rookies
     @users = User.rookies.paginate :per_page => 12, :page => params[:page]
-    render :action => :index, :layout => 'application'
+    render :index, :layout => 'application'
   end
 
   def show
     conditions = { :user_recipes => { :user_id => @user.id } }
     @total_recipes = Recipe.joins(:user_recipes).where(conditions).count
-    unless params[:category_id].nil?
+    if params[:category_id]
       @category = Category.find_by_slug params[:category_id]
       conditions[:category_id] = @category.id
     end
@@ -25,7 +25,7 @@ class UsersController < ApplicationController
     @recipes = Recipe.joins(:user_recipes).where(conditions).order(order).
       includes(:category, :recipe_ingredients => :ingredient).
       paginate(:page => params[:page], :per_page => 10)
-    @categories = Category.joins(:recipes).where({:recipes => { :author_id => @user.id }}).uniq
+    @categories = Category.by_author(@user)
   end
 
   def new
@@ -38,16 +38,13 @@ class UsersController < ApplicationController
   def create
     @invitation = Invitation.find_by_token!(params[:invitation][:token])
     @user = User.new(params[:user])
-    @user_session = UserSession.new({
-      :email => params[:user][:email],
-      :password => params[:user][:password]
-    })
-    if @user.save and @user_session.save
-      @invitation.update_attributes({
-        :updated_at => Time.now,
-        :receiver_id => @user.id })
+    if @user.save
+      @invitation.accepted_by @user
+      @user.authenticate!
+      redirect_to @user
+    else
+      render :new, :layout => 'application'
     end
-    respond_with @user
   end
 
   def edit
@@ -57,26 +54,6 @@ class UsersController < ApplicationController
   def update
     @user.update_attributes(params[:user])
     respond_with @user
-  end
-
-  def follow
-    current_user.followings << @user
-    render 'follow'
-  end
-
-  def unfollow
-    current_user.follow_followings.find_by_following_id(@user.id).destroy
-    render 'follow'
-  end
-
-  def following
-    @recipes = Recipe.where(:author_id => @user.followings.map(&:id)).
-      order("updated_at desc").paginate :per_page => 10, :page => params[:page]
-  end
-
-  def likes
-    @recipes = @user.likes.order("updated_at asc").paginate :per_page => 10, :page => params[:page]
-    render 'following'
   end
 
 end

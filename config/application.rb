@@ -38,5 +38,10 @@ module Rezets
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password, :password_confirmation]
+
+    config.generators do |g|
+      g.test_framework :rspec, :fixture => false, :view_specs => false, :routing_specs => false
+      g.fixture_replacement :factory_girl, :dir => "spec/factories"
+    end
   end
 end

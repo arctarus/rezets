@@ -1,25 +1,4 @@
-- unless current_user.nil? and recipe.comments.blank?
-  .comments
-    %h2= _("comments")
-    - unless recipe.comments.blank?
-      - recipe.comments.each do |comment|
-        %div[comment]
-          = link_to image_tag(comment.user.avatar.url(:medium), :class => "avatar", :alt => ""), comment.user
-          .inner-comment
-            %h3= link_to comment.user.name, comment.user
-            = simple_format(h(comment.body))
-            %p.created-time
-              %abbr.timestamp{:title => Time.now}
-                = _("%{time} ago") % {:time => distance_of_time_in_words_to_now(comment.updated_at) }
+%h2= _("comments")
+- unless recipe.comments.blank?
+  = render recipe.comments
 
-    - unless current_user.nil?
-      #comment-new.comment
-        = link_to image_tag(current_user.avatar.url(:medium), :class => "avatar", :alt => ""), current_user
-        .inner-comment
-          = form_for recipe.comments.new, :url => user_recipe_comments_path(current_user,recipe) do |f|
-            .field
-              = f.label :body, current_user.name
-              = error_messages_for :body
-              = f.text_area :body
-            %p#submit
-              = f.submit _('make a comment')

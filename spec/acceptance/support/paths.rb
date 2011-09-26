@@ -5,8 +5,12 @@ module NavigationHelpers
     "/"
   end
 
+  def users_page
+    "/users"
+  end
+
   def user_path(user)
-    "/users/#{user.to_param}"
+    "#{users_page}/#{user.to_param}"
   end
 
   def edit_user_path(user)
@@ -15,6 +19,10 @@ module NavigationHelpers
 
   def user_update_password(user)
     "#{user_path(user)}/update_password"
+  end
+
+  def new_user_page(invitation)
+    "#{users_page}/new/#{invitation.token}"
   end
 end
 
