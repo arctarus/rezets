@@ -20,7 +20,6 @@ gem 'fancy-buttons'
 
 # i18n
 gem 'gettext'
-#gem 'ruby_parser', '~> 2.0.4'
 gem 'fast_gettext'
 gem 'gettext_i18n_rails'
 
@@ -36,7 +35,8 @@ group :development, :test do
   gem 'ffaker'
   gem 'database_cleaner'
   gem 'selenium-client'
-# gem 'simplecov'
-# gem 'simplecov-rcov'
-# gem 'metrical'
+  gem 'ruby_parser', '~> 2.0.4'
+  gem 'simplecov'
+  gem 'simplecov-rcov'
+  gem 'metrical'
 end
