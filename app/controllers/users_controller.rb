@@ -25,7 +25,7 @@ class UsersController < ApplicationController
     @recipes = Recipe.joins(:user_recipes).where(conditions).order(order).
       includes(:category, :recipe_ingredients => :ingredient).
       paginate(:page => params[:page], :per_page => 10)
-    @categories = Category.by_author(@user)
+    @categories = Category.by_author(@user).uniq
   end
 
   def new
