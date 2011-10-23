@@ -63,8 +63,7 @@ module RecipesHelper
     image_tag recipe.photo.url(:large),
       :class    => "photo",
       :alt      => recipe.title,
-      :title    => recipe.title,
-      :itemprop => 'image'
+      :title    => recipe.title
   end
 
 end
