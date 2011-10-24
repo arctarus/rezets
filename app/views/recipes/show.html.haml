@@ -57,7 +57,7 @@
   - if current_user or @recipe.comments.size > 1
     .comments
       %h2= _("comments")
-      - if @recipe.comments > 1
+      - if @recipe.comments.size > 1
         = render @recipe.comments.reject(&:new_record?)
 
       - if current_user
