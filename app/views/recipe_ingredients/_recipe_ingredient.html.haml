@@ -1,12 +1,17 @@
 - ri = recipe_ingredient
+
 - unless ri.blank?
   %li.ingredient
-    - unless ri.value.blank?
-      %span.value= round ri.value
-    - unless ri.value_type.blank?
-      %span.type= h ri.value_type
-      %span.ft= _("of")
-    = ri.ingredient.name
+
+    - if ri.value or ri.value_type
+      %span.amount
+        = round ri.value if ri.value
+        = ri.value_type
+      - unless ri.value_type.blank?
+        %span.ft= _("of")
+
+    %span.name= ri.ingredient.name
+
     %span{:title => ri.comment}= truncate ri.comment, :length => 30
     - if ri.optional
       %span.ft (#{_("optional")})
