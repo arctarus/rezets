@@ -24,7 +24,7 @@ gem 'escape_utils'
 # in production environments by default.
 group :assets do
   gem 'sass-rails', "  ~> 3.1.0"
-  gem 'compass'
+  gem 'compass', '~> 0.12.alpha'
   gem 'fancy-buttons'
 
   gem 'therubyracer'
