@@ -99,7 +99,7 @@ describe FeedbackForm do
       ActionMailer::Base.deliveries.clear
       feedback_form.email = Faker::Internet.email
       feedback_form.name = Faker::Name.name
-      feedback_form.message = Faker::Lorem.paragraphs
+      feedback_form.message = Faker::Lorem.paragraphs.join
       feedback_form.deliver
       @mail = ActionMailer::Base.deliveries.last
     end
