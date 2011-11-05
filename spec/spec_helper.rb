@@ -10,6 +10,9 @@ require 'rspec/rails'
 # in spec/support/ and its subdirectories.
 Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 
+# Fix for use FactoryGirl with Authlogic
+User.acts_as_authentic_config[:maintain_sessions] = false
+
 RSpec.configure do |config|
   # == Mock Framework
   #
