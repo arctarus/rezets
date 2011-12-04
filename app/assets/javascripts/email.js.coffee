@@ -15,7 +15,7 @@ class Email
 
   insert_container: ->
     if $(@container).size() <= 0
-      @action.before "<div id=\"email-container\"><p>#{@ai()}</p></div>"
+      @action.before "<div id=\"email-container\"><p>#{@ai('cargando...')}</p></div>"
 
   style_container: ->
     position = $("#send-email").position()
@@ -50,9 +50,7 @@ class Email
     $('.done a').click @close
     @load_view()
 
-  ai: ->
-    chunk = new Array()
-    chunk.push '<span id="ajax-indicator" class="ajax-indicator">'
-    chunk.push '<img src="/assets/ajax-indicator.gif" alt="" />'
-    chunk.push 'enviando...</span>'
-    chunk.join('')
+  ai: (text = 'enviando...') ->
+    "<span id=\"ajax-indicator\" class=\"ajax-indicator\">
+    <img src=\"/assets/ajax-indicator.gif\" alt=\"#{text}\" />
+    #{text}</span>"

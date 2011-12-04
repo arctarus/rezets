@@ -16,7 +16,11 @@ class EmailRecipeForm < MailForm::Base
   end
 
   def name
-    @name.present? ? @name : @user.name
+    if @name.present?
+      @name
+    elsif @user
+      @user.name
+    end
   end
 
 end
