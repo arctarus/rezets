@@ -21,7 +21,7 @@ module RecipesHelper
   end
 
   def email(recipe)
-    render :partial => 'email', :locals => { :recipe => recipe }
+    render 'email', :recipe => recipe
   end
 
   def link_to_print(recipe)
@@ -55,15 +55,19 @@ module RecipesHelper
       :author => recipe.author.name }
   end
 
-  def email_send
-    render :partial => 'email_send'
-  end
-
   def recipe_image_tag(recipe)
     image_tag recipe.photo.url(:large),
       :class    => "photo",
       :alt      => recipe.title,
       :title    => recipe.title
+  end
+
+  def join_recipients(recipients)
+    if recipients.nil?
+      ""
+    else
+      recipients.join('; ')
+    end
   end
 
 end

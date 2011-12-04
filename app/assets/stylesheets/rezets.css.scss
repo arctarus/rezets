@@ -137,7 +137,7 @@ ul.user-nav {
 
 .feed-link {
   padding:.2px 0 2px 20px; 
-  background:url('/images/feed16.png') top left no-repeat}
+  background:image-url('feed16.png') top left no-repeat}
 
 /*=comments*/
 .comment {
@@ -212,7 +212,6 @@ span.new {font-weight:bold; background:#ffeeaa}
   p.close-email-container {position:relative; float:right; left:4%}
   p.close-email-container a {text-decoration:underline}
   p.error {background:none; margin-bottom:0; border:0; padding:0}
-  .ajax-indicator {position:absolute; margin-top:3px; margin-left:67px}
   .ajax-indicator img {vertical-align:middle}
   textarea {width:21em; height:8em}
 }
