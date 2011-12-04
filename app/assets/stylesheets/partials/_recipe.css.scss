@@ -41,17 +41,18 @@ ul.action-links {
   li a {padding:1px 0 1px 18px}
 }
 
-.edit {background:url('/images/action-links.png') top left no-repeat}
-.delete {background:url('/images/action-links.png') 0 -50px no-repeat}
-.print {background:url('/images/action-links.png') 0 -100px no-repeat}
-#send-email {background:url('/images/action-links.png') 0 -150px no-repeat}
-.twitter {background:url('/images/action-links.png') 0 -200px no-repeat}
-.facebook {background:url('/images/action-links.png') 0 -400px no-repeat}
-#feed {background:url('/images/action-links.png') 0 -250px no-repeat}
-#prev {background:url('/images/action-links.png') 0 -300px no-repeat}
-#next {background:url('/images/action-links.png') 0 -350px no-repeat}
-.unlike {background:url('/images/action-links.png') 0 -450px no-repeat}
-.like {background:url('/images/action-links.png') 0 -500px no-repeat}
+$action-links-sprite: image-url('action-links.png');
+.edit {background:$action-links-sprite top left no-repeat}
+.delete {background:$action-links-sprite 0 -50px no-repeat}
+.print {background:$action-links-sprite 0 -100px no-repeat}
+#send-email {background:$action-links-sprite 0 -150px no-repeat}
+.twitter {background:$action-links-sprite 0 -200px no-repeat}
+.facebook {background:$action-links-sprite 0 -400px no-repeat}
+#feed {background:$action-links-sprite 0 -250px no-repeat}
+#prev {background:$action-links-sprite 0 -300px no-repeat}
+#next {background:$action-links-sprite 0 -350px no-repeat}
+.unlike {background:$action-links-sprite 0 -450px no-repeat}
+.like {background:$action-links-sprite 0 -500px no-repeat}
 p.like {padding-left:20px}
 
 #sidebar {
