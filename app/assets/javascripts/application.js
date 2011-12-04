@@ -3,4 +3,9 @@
 //= require_self
 //= require_tree .
 
-jQuery('textarea').autoResize();
+$(function() {
+  $('textarea').autoResize();
+  $('.new-window').click(function(){
+    window.open($(this).attr('href'));
+  });
+});

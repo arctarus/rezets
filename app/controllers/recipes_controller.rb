@@ -13,9 +13,16 @@ class RecipesController < ApplicationController
     @recipes_same_author = Recipe.by_author(@recipe.author.id).not_in(@recipe.id).limit(3)
     @recipes_same_category = Recipe.by_category(@recipe.category.id).
       not_in(@recipes_same_author.map(&:id).push(@recipe.id)).limit(3)
-    @print = params[:print].to_i == 1
     @comment = @recipe.comments.build
     render :layout => 'recipe'
+  end
+
+  def print
+    @recipes_same_author = Recipe.by_author(@recipe.author.id).not_in(@recipe.id).limit(3)
+    @recipes_same_category = Recipe.by_category(@recipe.category.id).
+      not_in(@recipes_same_author.map(&:id).push(@recipe.id)).limit(3)
+    @comment = @recipe.comments.build
+    render layout: 'recipe', action: 'show'
   end
 
   def new

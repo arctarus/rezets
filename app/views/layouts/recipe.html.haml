@@ -12,14 +12,15 @@
       %meta{:content => content_for(:meta_keywords), :name => "keywords"}
 
     = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Lobster'
-    - if @print
+    - if controller.action_name == 'print'
       = stylesheet_link_tag 'print', :media => 'print'
+      = stylesheet_link_tag 'print', :media => 'screen'
       :css
         @print {
           .print {display:none}
         }
       :javascript
-        document.observe('dom:loaded', function(){print();});
+        $(document).ready(function(){print();});
     - else
       = stylesheet_link_tag 'rezets.css', :media => 'screen, projection'
       = stylesheet_link_tag 'print.css', :media => 'print'
