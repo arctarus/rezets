@@ -46,14 +46,15 @@ class Recipe < ActiveRecord::Base
       :secret_access_key => ENV['S3_SECRET']
     },
     :processors => [:watermark],
-    :path       => Rails.root.join("public/system/:class/:id/:attachment/:style/:slug.:extension",
+    :path       => Rails.root.join("public/system/:class/:id/:attachment/:style/:slug.:extension").to_s,
     :url        => "/system/:class/:id/:attachment/:style/:slug.:extension",
     :styles     => {
       :large  => {
         :geometry       => "500x375#",
-        :watermark_path => Rails.root.join("public/images/watermark.png",
+        :watermark_path => Rails.root.join("public/images/watermark.png").to_s,
         :position       => "center",
-        :watermark      => "30x100"},
+        :watermark      => "30x100"
+      },
       :medium => "310x240#",
       :thumb  => "100x100#" }
     
@@ -67,6 +68,14 @@ class Recipe < ActiveRecord::Base
 
   scope :not_in, lambda {|recipes_ids|
     where("recipes.id not in (?)",recipes_ids)}
+
+  scope :user_page, lambda {|user, order|
+    order = order == "name" ? "name asc" : "updated_at desc"
+    joins(:user_recipes).
+    where({:user_recipes => { :user_id => user.id}}).
+    order(order).
+    includes(:category, :recipe_ingredients => :ingredient)
+  }
 
   def new_recipe_ingredients_attributes=(ri_attr)
     recipe_ingredients.build(ri_attr)

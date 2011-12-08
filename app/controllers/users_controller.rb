@@ -15,15 +15,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    conditions = { :user_recipes => { :user_id => @user.id } }
-    @total_recipes = Recipe.joins(:user_recipes).where(conditions).count
-    if params[:category_id]
-      @category = Category.find_by_slug params[:category_id]
-      conditions[:category_id] = @category.id
-    end
-    order = params[:order] != "name" ? "updated_at desc" : "name asc" 
-    @recipes = Recipe.joins(:user_recipes).where(conditions).order(order).
-      includes(:category, :recipe_ingredients => :ingredient).
+    @recipes = Recipe.user_page(@user, params[:order]).
       paginate(:page => params[:page], :per_page => 10)
     @categories = Category.by_author(@user).uniq
   end
