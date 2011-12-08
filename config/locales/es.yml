@@ -3,7 +3,12 @@
 # contributors:
 #  - Tsutomu Kuroda - http://github.com/kuroda (t-kuroda@oiax.jp)
 
-"es":
+es:
+  will_paginate:
+    previous_label: "&#8592;"
+    next_label: "&#8594;"
+    page_gap: "&hellip;"
+
   # Action View
   number:
     # Used in number_with_delimiter()
