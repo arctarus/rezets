@@ -5,7 +5,8 @@
 
 $(function() {
   $('textarea').autoResize();
-  $('.new-window').click(function(){
+  $('.new-window').click(function(e){
+    e.preventDefault();
     window.open($(this).attr('href'));
   });
 });

@@ -25,7 +25,9 @@ module RecipesHelper
   end
 
   def link_to_print(recipe)
-    link_to _('print'), print_user_recipe_path(recipe.author,recipe), class: 'action-link print new-window'
+    link_to _('print'), print_user_recipe_path(recipe.author,recipe), 
+      class: 'action-link print new-window',
+      rel: 'nofollow'
   end
 
   def link_to_twitter(recipe)
