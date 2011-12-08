@@ -2,7 +2,7 @@ source 'http://rubygems.org'
 
 gem 'rails', '~>3.1.1'
 gem 'rake', '~>0.9.2'
-gem 'mysql2', '~>0.3'
+gem 'pg'
 
 gem 'will_paginate'
 gem "paperclip"
