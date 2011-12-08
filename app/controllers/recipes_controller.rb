@@ -1,6 +1,6 @@
 class RecipesController < ApplicationController
   respond_to :html
-  before_filter :require_user, :except => [:index, :show, :email, :email_send]
+  before_filter :require_user, :except => [:index, :show, :email, :email_send, :print]
   before_filter :find_recipe, :except => [:index, :new, :create, :edit, :update, :destroy]
 
   def index
