@@ -10,13 +10,13 @@ class ApplicationController < ActionController::Base
 
   def page_not_found
     render  :layout   => false,
-            :file     => "/public/404.html", 
+            :file     => "public/404.html", 
             :status   => 404
   end
 
   def access_denied(exception)
     render  :layout   => false,
-            :file     => "/public/403.html", 
+            :file     => "public/403.html", 
             :status   => 403
   end
 

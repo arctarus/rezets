@@ -53,6 +53,7 @@ module HelperMethods
   end
 
   def confirm_dialog(message = nil)
+    return if Capybara.javascript_driver == :webkit
     alert = page.driver.browser.switch_to.alert
     if message.nil? || alert.text == message
       alert.accept
