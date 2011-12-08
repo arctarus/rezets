@@ -3,13 +3,13 @@ source 'http://rubygems.org'
 gem 'rails', '~>3.1.1'
 gem 'rake', '~>0.9.2'
 gem 'pg'
+gem 'thin'
 
 gem 'will_paginate'
 gem "paperclip"
 gem 'aws-s3'
 gem 'authlogic'
 gem 'cancan'
-
 gem 'haml-rails'
 
 # i18n
