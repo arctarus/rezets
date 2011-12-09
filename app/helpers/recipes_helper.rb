@@ -21,13 +21,13 @@ module RecipesHelper
   end
 
   def email(recipe)
-    render :partial => 'email', :locals => { :recipe => recipe }
+    render 'email', :recipe => recipe
   end
 
   def link_to_print(recipe)
-    link_to_function _('print'), "window.open(this.href)",
-      :href => user_recipe_path(recipe.author,recipe, :print => 1),
-      :class => 'action-link print'
+    link_to _('print'), print_user_recipe_path(recipe.author,recipe), 
+      class: 'action-link print new-window',
+      rel: 'nofollow'
   end
 
   def link_to_twitter(recipe)
@@ -55,15 +55,19 @@ module RecipesHelper
       :author => recipe.author.name }
   end
 
-  def email_send
-    render :partial => 'email_send'
-  end
-
   def recipe_image_tag(recipe)
     image_tag recipe.photo.url(:large),
       :class    => "photo",
       :alt      => recipe.title,
       :title    => recipe.title
+  end
+
+  def join_recipients(recipients)
+    if recipients.nil?
+      ""
+    else
+      recipients.join('; ')
+    end
   end
 
 end

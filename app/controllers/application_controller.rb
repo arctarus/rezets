@@ -5,18 +5,19 @@ class ApplicationController < ActionController::Base
 # before_filter :set_gettext_locale
   rescue_from ActiveRecord::RecordNotFound, :with => :page_not_found
   rescue_from CanCan::AccessDenied, :with => :access_denied
+  before_filter :ensure_domain
 
   protected
 
   def page_not_found
     render  :layout   => false,
-            :file     => "/public/404.html", 
+            :file     => "public/404.html", 
             :status   => 404
   end
 
   def access_denied(exception)
     render  :layout   => false,
-            :file     => "/public/403.html", 
+            :file     => "public/403.html", 
             :status   => 403
   end
 
@@ -58,5 +59,11 @@ class ApplicationController < ActionController::Base
     redirect_to(session[:return_to] || default)
     session[:return_to] = nil
   end  
+
+  def ensure_domain
+    if request.env['HTTP_HOST'] != APP_CONFIG['app_domain']
+      redirect_to "http://#{APP_CONFIG['app_domain']}", :status => 301
+    end
+  end
 
 end

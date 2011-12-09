@@ -827,11 +827,11 @@ msgstr "entrar"
 
 #: app/views/sessions/new.html.haml:1
 msgid "sign in on rezets.com"
-msgstr "darte de alta en rezets.com"
+msgstr "entrar en rezets.com"
 
 #: app/views/user_mailer/invitation.html.haml:11
 msgid "sign up rezets.com"
-msgstr "darte de alta en rezets.com"
+msgstr "crear una cuenta en rezets.com"
 
 #: app/views/invitations/new.html.haml:24
 msgid "subject"

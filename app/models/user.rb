@@ -41,6 +41,10 @@ class User < ActiveRecord::Base
   validates_presence_of :email, :slug, :name
   validates_uniqueness_of :slug
 
+  Paperclip.interpolates :slug do |attachment, style|
+    attachment.instance.slug
+  end
+
   has_attached_file :avatar, 
     :storage => :s3,
     :bucket  => ENV['S3_BUCKET'],
@@ -48,6 +52,7 @@ class User < ActiveRecord::Base
       :access_key_id => ENV['S3_KEY'],
       :secret_access_key => ENV['S3_SECRET']
     },
+    :path => Rails.root.join('public/system/:attachment/:id/:style/:filename').to_s,
     :styles => {
       :thumb  => "20x20#",
       :medium => "50x50#",

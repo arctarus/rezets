@@ -1,6 +1,6 @@
 class RecipesController < ApplicationController
   respond_to :html
-  before_filter :require_user, :except => [:index, :show, :email, :email_send]
+  before_filter :require_user, :except => [:index, :show, :email, :email_send, :print]
   before_filter :find_recipe, :except => [:index, :new, :create, :edit, :update, :destroy]
 
   def index
@@ -13,9 +13,16 @@ class RecipesController < ApplicationController
     @recipes_same_author = Recipe.by_author(@recipe.author.id).not_in(@recipe.id).limit(3)
     @recipes_same_category = Recipe.by_category(@recipe.category.id).
       not_in(@recipes_same_author.map(&:id).push(@recipe.id)).limit(3)
-    @print = params[:print].to_i == 1
     @comment = @recipe.comments.build
     render :layout => 'recipe'
+  end
+
+  def print
+    @recipes_same_author = Recipe.by_author(@recipe.author.id).not_in(@recipe.id).limit(3)
+    @recipes_same_category = Recipe.by_category(@recipe.category.id).
+      not_in(@recipes_same_author.map(&:id).push(@recipe.id)).limit(3)
+    @comment = @recipe.comments.build
+    render layout: 'recipe', action: 'show'
   end
 
   def new
@@ -50,44 +57,18 @@ class RecipesController < ApplicationController
   end
 
   def email
-    if request.xhr?
-      render :update do |page|
-        page << "if (!$('email-container')){"
-        page.insert_html :before, 'action-links', 
-          "<div id=\"email-container\"></div>"
-        page.insert_html :top, 'email-container', email(@recipe)
-        page << "}"
-        page << "var cos = $('send-email').positionedOffset();"
-        page << "$('email-container').setStyle({left:cos[0] + 'px'})";
-      end
-    end
+    @email_recipe_form = EmailRecipeForm.new
+    render :layout => false
   end
 
   def email_send
-    if request.xhr?
-      if (current_user.nil? and params[:email][:name].blank?) or params[:email][:recipients].blank?
-        render :update do |page|
-          page.select('#email-container p.error').each do |error|
-            error.remove
-          end
-          page.remove "ajax-indicator"
-          if current_user.nil? and params[:email][:name].blank?
-            page.insert_html :before, 'email_name',
-              '<p class="error">' + _("please, enter your name") + '</p>'
-          end
-          if params[:email][:recipients].blank?
-            page.insert_html :before, 'email_recipients',
-              '<p class="error">' + _("please, enter the email address for a friend") + '</p>'
-          end
-        end
-      else
-        UserMailer.recipe(@recipe, params[:email], current_user).deliver
-        render :update do |page|
-          page.replace_html "send-email-wrapper", email_send
-        end
-      end
+    @email_recipe_form = EmailRecipeForm.new(params[:email_recipe_form])
+    @email_recipe_form.recipe = @recipe
+    @email_recipe_form.user = current_user
+    if @email_recipe_form.deliver
+      render layout: false
     else
-      redirect_to user_recipe_path(@recipe.author,@recipe)
+      render 'email', layout: false
     end
   end
 
@@ -101,10 +82,11 @@ class RecipesController < ApplicationController
   end
 
   private
-    def find_recipe
-      recipe_id = params[:id].split("-").first
-      @author = User.find_by_slug params[:user_id]
-      @recipe = @author.recipes.find(recipe_id, :include => :ingredients)
-    end
+
+  def find_recipe
+    recipe_id = params[:id].split("-").first
+    @author = User.find_by_slug params[:user_id]
+    @recipe = @author.recipes.find(recipe_id, :include => :ingredients)
+  end
 
 end

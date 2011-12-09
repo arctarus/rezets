@@ -29,14 +29,12 @@ class UserMailer < ActionMailer::Base
       :subject => @title
   end
 
-  def recipe(recipe, email, current_user)
-   recipients = email['recipients'].split(';').map(&:strip)
-   @recipe = recipe
-   user_name = email[:name].blank? ? current_user.name : email[:name]
-   @user_name = current_user.nil? ? user_name : current_user.name
-   @message = email['message']
-   mail :to => recipients,
-        :subject => _("%{user} has sent you a %{recipe} recipe") % {:user => user_name, :recipe => recipe.name.downcase},
+  def recipe(email)
+    @recipe = email.recipe
+    @user_name = email.name
+    @message = email.message
+    mail :to => email.recipients,
+      :subject => _("%{user} has sent you a %{recipe} recipe") % {:user => email.name, :recipe => email.recipe.name.downcase},
   end
 
 end

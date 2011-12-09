@@ -11,7 +11,7 @@ class Recipe < ActiveRecord::Base
   has_many :comments
   belongs_to :category
 
-  belongs_to :author, :foreign_key => "author_id",
+  belongs_to :author, :foreign_key => :author_id,
                       :class_name => "User",
                       :counter_cache => true
 
@@ -23,7 +23,6 @@ class Recipe < ActiveRecord::Base
 
   validates_presence_of :name, :directions, :category, :author, :message => _("can't be blank")
   validates_presence_of :photo_file_name, :message => _("it is imperative that you put a really nice one ;)")
-# validates_attachment_dimensions :image, :minimum => 300, :maximum => 900
   validates_length_of :name, :minimum => 5
 
   after_update :save_recipe_ingredients
@@ -47,28 +46,36 @@ class Recipe < ActiveRecord::Base
       :secret_access_key => ENV['S3_SECRET']
     },
     :processors => [:watermark],
-    :path       => "#{Rails.root.to_s}/public/system/:class/:id/:attachment/:style/:slug.:extension",
+    :path       => Rails.root.join("public/system/:class/:id/:attachment/:style/:slug.:extension").to_s,
     :url        => "/system/:class/:id/:attachment/:style/:slug.:extension",
     :styles     => {
       :large  => {
         :geometry       => "500x375#",
-        :watermark_path => "#{Rails.root.to_s}/public/images/watermark.png",
+        :watermark_path => Rails.root.join("public/images/watermark.png").to_s,
         :position       => "center",
-        :watermark      => "30x100"},
+        :watermark      => "30x100"
+      },
       :medium => "310x240#",
       :thumb  => "100x100#" }
     
   scope :by_author, lambda {|author_id|
-    where("author_id = ?", author_id).
+    where(author_id: author_id).
     order("created_at desc")}
 
   scope :by_category, lambda {|category_id|
-    where("category_id = ?", category_id).
+    where(category_id: category_id).
     order("created_at desc")}
 
   scope :not_in, lambda {|recipes_ids|
     where("recipes.id not in (?)",recipes_ids)}
- 
+
+  scope :user_page, lambda {|user, order|
+    order = order == "name" ? "name asc" : "updated_at desc"
+    joins(:user_recipes).
+    where({:user_recipes => { :user_id => user.id}}).
+    order(order).
+    includes(:category, :recipe_ingredients => :ingredient)
+  }
 
   def new_recipe_ingredients_attributes=(ri_attr)
     recipe_ingredients.build(ri_attr)

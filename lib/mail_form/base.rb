@@ -37,10 +37,14 @@ module MailForm
 
     def deliver
       if valid?
-        MailForm::Notifier.contact(self).deliver
+        mail.deliver
       else
         false
       end
+    end
+
+    def mail
+      MailForm::Notifier.contact(self)
     end
 
     protected

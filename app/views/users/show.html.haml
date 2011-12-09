@@ -3,17 +3,13 @@
 - meta_keywords [@user.name]
 
 - content_for :sidebar do
-  = render :partial => 'users/sidebar'
+  = render 'users/sidebar', user: @user, categories: @categories
 
 - if @recipes.empty?
-  - if current_user.nil? or @user != current_user
-    .msg.blank
-      %h2= _("%{user} still hasn't any recipe") % {:user => @user.name}
-      %p= raw(("you can %{explore} or search %{bycategory}.") % {               |
-          :explore => link_to(_("explore more recipes"), recipes_path),         |
-          :bycategory => link_to(_("recipes by categories"), categories_path)}) |
+  - if not current_user or @user != current_user
+    = render 'blank_recipes', user: @user
   - else
-    = render 'welcome', :user => @user
+    = render 'welcome', user: @user
 
 - else
   - if current_user == @user

@@ -1,37 +1,28 @@
 %p.close-email-container
-  = link_to_function image_tag('close.png', :alt => _('close')), "$('email-container').remove();", :title => _('close')
+  = link_to image_tag('close.png', alt:_('close')), title: _('close')
 
 #send-email-wrapper
   %p.title.send-email= _("send by email")
-  = form_tag email_send_user_recipe_path(recipe.author,recipe), :id => 'send-email-form', :remote => true do
+  = form_for @email_recipe_form, url: email_send_user_recipe_path(recipe.author,recipe), id: 'send-email-form', remote: true do |f|
 
     - if current_user.blank?
       .field
-        = label_tag "email[name]", _("your name")
-        = text_field_tag "email[name]", nil, :size => 30, :maxlength => 50, :class => :text, :required => true
+        = f.label :name, _("your name")
+        = f.text_field :name, size:30, maxlength:50, class: :text, required: false
 
     .field
-      = label_tag "email[recipients]", _("email")
+      = f.label :recipients, _("email")
       %p.hint= _("can include several comma-separated")
-      = text_field_tag "email[recipients]", nil, :size => 30, :class => :text, :required => true
+      = f.text_field :recipients, size: 30, class: :text,
+        required: false, value: join_recipients(@email_recipe_form.recipients)
 
-    %p= link_to_function _("add a message?"),                        |
-        "$('email-message').show();$('add-email-message').remove()", |
-        :id => 'add-email-message'                                   |
+    %p= link_to _("add a message?"), '#', id: 'add-email-message'
 
-    #email-message.field{:style => "display:none"}
-      = label_tag "email[message]", _("message")
-      = text_area_tag "email[message]", nil
+    #email-message.field{style:"display:none"}
+      = f.label :message, _("message")
+      = f.text_area :message
 
     %p#submit
-      = submit_tag _("send")
+      = f.submit _("send")
       %span.ft= _('or')
-      = link_to_function _("cancel"),     |
-        "$('email-container').remove();", |
-        :class => 'cancel-form'           |
-
-    %script{:type => 'text/javascript'}
-      :plain
-        $('send-email-form').observe('submit', function(){
-         $('submit').down().insert({after:'<span id=\"ajax-indicator\" class=\"ajax-indicator\">#{image_tag 'ajax-indicator.gif', :alt => ''} enviando...</span>'});
-        });
+      = link_to _("cancel"), @email, class: 'cancel-form'

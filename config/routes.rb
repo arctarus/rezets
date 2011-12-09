@@ -7,6 +7,7 @@ Rezets::Application.routes.draw do
     get :rookies, :on => :collection
     resources :recipes do
       member do
+        get :print
         get :email
         post :email_send
         put :like
