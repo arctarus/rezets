@@ -52,7 +52,7 @@ class User < ActiveRecord::Base
       :access_key_id => ENV['S3_KEY'],
       :secret_access_key => ENV['S3_SECRET']
     },
-    :path => Rails.root.join('public/system/:attachment/:id/:style/:slug.:extension').to_s,
+    :path => Rails.root.join('public/system/:attachment/:id/:style/:filename.:extension').to_s,
     :styles => {
       :thumb  => "20x20#",
       :medium => "50x50#",
