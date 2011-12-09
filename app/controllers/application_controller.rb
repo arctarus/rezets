@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
 # before_filter :set_gettext_locale
   rescue_from ActiveRecord::RecordNotFound, :with => :page_not_found
   rescue_from CanCan::AccessDenied, :with => :access_denied
+  before_filter :ensure_domain
 
   protected
 
@@ -58,5 +59,11 @@ class ApplicationController < ActionController::Base
     redirect_to(session[:return_to] || default)
     session[:return_to] = nil
   end  
+
+  def ensure_domain
+    if request.env['HTTP_HOST'] != APP_CONFIG['app_domain']
+      redirect_to "http://#{APP_CONFIG['app_domain']}", :status => 301
+    end
+  end
 
 end
