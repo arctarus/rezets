@@ -1,10 +1,9 @@
 - content_for :sidebar do
-  = render :partial => "sidebar"
+  = render 'sidebar', :user => @user, :categories => @categories
 
 - if @user.nil?
   - content_for :top do
     %h1= title _("%{category} recipes") % {:category => @category.name}
-
 
 - if @recipes.blank?
   .msg.blank

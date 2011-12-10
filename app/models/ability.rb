@@ -9,6 +9,7 @@ class Ability
 
     can :read, Recipe
     can :manage, Recipe, author_id: user.id
+    can :read, Category
 
     can [:read, :create], Invitation, sender_id: user.id
 

@@ -16,7 +16,7 @@ Rezets::Application.routes.draw do
       resources :ingredients
       resources :comments
     end
-    resources :categories
+    resources :categories, :only => [:show]
     resources :follows, :only => [:index, :create, :destroy]
     resources :likes, :only => [:index]
     resource :update_password, :only => [:new, :create]

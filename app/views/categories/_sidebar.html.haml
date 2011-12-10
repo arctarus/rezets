@@ -1,24 +1,20 @@
-- content_for :sidebar do
-  %h3= _("recipes")
-  %ul
-    - for category in @categories
-      %li
-        - if @user
-          = link_to_unless_current category.name, [@user,category],
-            :title => _("%{category} recipes") % {:category => h(category.name)}
-          %span.counter
-            (#{@user.recipes.where(:category_id => category.id).size})
-        - else
-          = link_to_unless_current category.name, category,
-            :title => _("%{category} recipes") % {:category => h(category.name)}
-          %span.counter
-            (#{category.recipes.size})
+%h3= _("Recipes")
+%ul
+  - for category in categories
     %li
-      - if @user
-        = link_to_unless_current _("all"), @user
-        %span.counter
-          (#{@user.recipes.size})
+      - if user
+        = link_to_unless_current category.name, [user,category],
+          :title => _("%{category} recipes") % {:category => category.name}
+        %span.counter (#{user.recipes.by_category(category.id).count})
       - else
-        = link_to_unless_current _("all"), recipes_path
-        %span.counter
-          (#{Recipe.count})
+        = link_to_unless_current category.name, category,
+          :title => _("%{category} recipes") % {:category => category.name}
+        %span.counter (#{category.recipes.size})
+  %li
+    - if user
+      = link_to_unless_current _("all"), user
+      %span.counter (#{user.recipes.size})
+    - else
+      = link_to_unless_current _("all"), recipes_path
+      %span.counter
+        (#{Recipe.count})

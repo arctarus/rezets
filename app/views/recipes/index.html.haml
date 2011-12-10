@@ -1,8 +1,8 @@
-- content_for :sidebar do
-  = render :partial => "categories/sidebar"
-
 - content_for :top do
   %h1= title _("All recipes")
+
+- content_for :sidebar do
+  = render "categories/sidebar", user: nil, categories: @categories
 
 %ul.recipes
   = render @recipes

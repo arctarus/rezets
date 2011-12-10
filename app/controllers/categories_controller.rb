@@ -1,22 +1,19 @@
 class CategoriesController < ApplicationController
   respond_to :html, :xml, :json
+  load_and_authorize_resource :user, find_by: :slug
+  load_and_authorize_resource :category, through: :user, find_by: :slug, shallow: true
 
-  # GET /categories/1
-  # GET /categories/1.xml
   def show
-    @user = User.find_by_slug(params[:user_id]) if params[:user_id]
-    @category = Category.find_by_slug(params[:id])
-
     if @user
-      @recipes = @user.recipes.where(:category_id => @category.id).
+      @recipes = @user.recipes.by_category(@category.id).
         order("updated_at desc").
         paginate(:page => params[:page], :per_page => 10)
-      @categories = Category.joins(:recipes).where({:recipes => { :author_id => @user.id }}).uniq
+      @categories = @user.categories
     else
-      @recipes = Recipe.where(:category_id => @category.id).
+      @recipes = Recipe.by_category(@category.id).
         order("likes_count desc, updated_at desc").
         paginate(:page => params[:page], :per_page => 10)
-      @categories = Category.with_recipes.order("name asc")
+      @categories = Category.with_recipes.order(:name)
     end
 
     respond_with @category do |format|

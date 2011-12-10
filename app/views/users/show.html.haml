@@ -3,7 +3,7 @@
 - meta_keywords [@user.name]
 
 - content_for :sidebar do
-  = render 'users/sidebar', user: @user, categories: @categories
+  = render 'users/sidebar', user: @user
 
 - if @recipes.empty?
   - if not current_user or @user != current_user
