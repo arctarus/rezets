@@ -61,7 +61,7 @@ class ApplicationController < ActionController::Base
   end  
 
   def ensure_domain
-    unless request_from_app_domain?
+    if Rails.env == 'production' and not request_from_app_domain?
       redirect_to "#{request.protocol}#{APP_CONFIG['app_domain']}#{request.fullpath}", :status => 301
     end
   end
