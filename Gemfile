@@ -33,6 +33,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'backbone-rails'
 
 group :development, :test do
   gem 'rspec-rails'

@@ -40,6 +40,8 @@ GEM
       builder
       mime-types
       xml-simple
+    backbone-rails (0.5.3.1)
+      rails (>= 3.0.0)
     builder (3.0.0)
     cancan (1.6.7)
     capybara (1.1.2)
@@ -295,6 +297,7 @@ PLATFORMS
 DEPENDENCIES
   authlogic
   aws-s3
+  backbone-rails
   cancan
   capybara
   capybara-webkit
