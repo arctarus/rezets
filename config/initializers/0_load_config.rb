@@ -1,4 +1,4 @@
-if Rails.env == 'production'
+if Rails.env != 'production'
   APP_CONFIG = YAML.load_file(Rails.root.join("config/config.yml"))[Rails.env]
 else
   APP_CONFIG = {
