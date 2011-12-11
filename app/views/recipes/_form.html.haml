@@ -24,7 +24,7 @@
     = f.label :num_persons, _("number of people")
     = f.text_field :num_persons, :required => true, :class => "number", :maxlength => 3
 
-  %fieldset.ingredients
+  %fieldset#ingredients.ingredients
     %legend= _("ingredients")
     %table#recipe_ingredients
       %thead
