@@ -1,4 +1,12 @@
-require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
+require 'spec_helper'
 
 describe IngredientsController do
+
+  describe "GET 'index'" do
+    it "returns http success" do
+      get 'index'
+      response.should be_success
+    end
+  end
+
 end

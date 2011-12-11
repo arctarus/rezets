@@ -10,6 +10,7 @@ class Ability
     can :read, Recipe
     can :manage, Recipe, author_id: user.id
     can :read, Category
+    can :read, Ingredient
 
     can [:read, :create], Invitation, sender_id: user.id
 
@@ -21,6 +22,7 @@ class Ability
     # admin
     if user.id == 1
       can :manage, Invitation
+      can :manage, Ingredient
     end
  end
 end

@@ -2,6 +2,7 @@ Rezets::Application.routes.draw do
 
   resources :recipes, :only => [:index]
   resources :categories, :except => [:index]
+  resources :ingredients, :only => [:index]
   
   resources :users do
     get :rookies, :on => :collection
