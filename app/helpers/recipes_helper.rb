@@ -2,7 +2,7 @@ module RecipesHelper
 
   def add_ingredient_link(name, url)
     template = render(:partial => 'ingredient', :object => RecipeIngredient.new)
-    js = "$(\"recipe_ingredients_body\").insert({bottom: \"#{escape_javascript(template)}\"}); return false;"
+    js = "$(\"#recipe_ingredients_body\").append(\"#{escape_javascript(template)}\"); return false;"
     link_to name, '#', :remote => true, :onclick => js
   end
 
