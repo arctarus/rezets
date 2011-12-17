@@ -10,7 +10,7 @@
   window.Pantry = new Ingredients;
 
   window.IngredientView = Backbone.View.extend({
-    tag: 'li',
+    tagName: 'li',
     className: 'ingredient',
 
     initialize: function(){
@@ -26,9 +26,9 @@
     }
   });
 
-  window.IngredientsListView = Backbone.View.extend({
-    tag: 'ul',
-    className: 'ingredients',
+  window.PantryView = Backbone.View.extend({
+    tagName: 'fieldset',
+    id: 'ingredients',
 
     initialize: function(){
       _.bindAll(this, 'render');
@@ -40,22 +40,21 @@
       var $ingredients,
           collection = this.collection;
 
-      $(this.el).html(this.template({}));
-      $ingredients = $('.ingredients-list');
+      $(this.el).css({border:'1px solid red'});
+      $('#ingredients').html(this.template({}));
+      $ingredients = $('#ingredients ul.ingredients-list');
       collection.each(function(ingredient){
-        var view = new IngredientView({
-          model:ingredient
-        });
+        var view = new IngredientView({ model: ingredient });
         $ingredients.append(view.render().el);
       });
       return this;
     }
   });
 
+
   $(function(){
+    var pantryView = new PantryView({collection:window.Pantry});
     window.Pantry.fetch();
-    ingredientListView = new IngredientsListView({collection:Pantry.models});
-    ingredientListView.render().el;
   });
 
 })(jQuery);
