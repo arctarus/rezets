@@ -1,5 +1,5 @@
 class RecipesController < ApplicationController
-  respond_to :html, :json, :print
+  respond_to :html, :json
   before_filter :require_user, :except => [:index, :show, :email, :email_send, :print]
 
   load_and_authorize_resource :user, :find_by => :slug
@@ -16,10 +16,14 @@ class RecipesController < ApplicationController
     @recipes_same_author = @user.recipes.rejecting(@recipe).limit(3)
     @recipes_same_category = @category.recipes.rejecting([*@recipes_same_author, @recipe]).limit(3)
     @comment = @recipe.comments.build
-    respond_with @recipe 
+    respond_with @recipe do |format|
+      format.html { render :layout => 'recipe' }
+    end
   end
 
   def print
+    @comment = @recipe.comments.build
+    render :layout => 'print'
   end
 
   def new

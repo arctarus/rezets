@@ -1,0 +1,33 @@
+!!! 5
+%html{:lang => "es"}
+  %head
+    %title= title
+    %meta{:content => "text/html;charset=UTF-8", "http-equiv" => "content-type"}/
+    %meta{:content => "index,follow", :name => "robots"}/
+
+    - if content_for? :meta_description
+      %meta{:content => content_for(:meta_description), :name => "description"}
+
+    - if content_for? :meta_keywords
+      %meta{:content => content_for(:meta_keywords), :name => "keywords"}
+
+    = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Lobster'
+    = stylesheet_link_tag 'print', :media => 'print'
+    = stylesheet_link_tag 'print', :media => 'screen'
+    :css
+      @print {
+        .print {display:none}
+      }
+    :javascript
+      $(document).ready(function(){print();});
+    = javascript_include_tag :application
+
+  %body
+    #header
+      .wrapper
+        = render :partial => "shared/header"
+    #recipe
+      #main
+        = yield
+
+    = render :partial => "shared/scripts"
