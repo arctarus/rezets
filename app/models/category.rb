@@ -13,6 +13,8 @@ class Category < ActiveRecord::Base
     order('categories.name')
   }
 
+  scope :grouped, group('categories.id')
+
   def to_param
     slug
   end

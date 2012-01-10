@@ -4,19 +4,17 @@ class Ability
   def initialize(user)
     user ||= User.new # guest user (not logged in)
 
-    can [:read, :following, :likes], User
-    can :manage, User, id: user.id
-
-    can :read, Recipe
-    can :manage, Recipe, author_id: user.id
+    can [:create, :read, :following, :likes], User
+    can [:read, :print, :email, :email_send], Recipe
     can :read, Category
     can :read, Ingredient
-
-    can [:read, :create], Invitation, sender_id: user.id
 
     # logged
     if not user.new_record?
       can [:follow, :unfollow], User
+      can :manage, User, id: user.id
+      can :manage, Recipe, author_id: user.id
+      can [:read, :create], Invitation, sender_id: user.id
     end
 
     # admin

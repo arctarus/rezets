@@ -32,7 +32,7 @@ class Recipe < ActiveRecord::Base
 
   accepts_nested_attributes_for :recipe_ingredients, 
     :allow_destroy => :true,
-    :reject_if => proc { |attrs| attrs.all? { |k,v| v.blank? } }
+    :reject_if => :all_blank
 
   Paperclip.interpolates :slug do |attachment, style|
     attachment.instance.slug
@@ -57,7 +57,9 @@ class Recipe < ActiveRecord::Base
       },
       :medium => "310x240#",
       :thumb  => "100x100#" }
-    
+
+  scope :index, order("likes_count desc, updated_at desc")
+
   scope :by_author, lambda {|author_id|
     where(author_id: author_id).
     order("created_at desc")}
@@ -66,16 +68,20 @@ class Recipe < ActiveRecord::Base
     where(category_id: category_id).
     order("created_at desc")}
 
-  scope :not_in, lambda {|recipes_ids|
-    where("recipes.id not in (?)",recipes_ids)}
+  scope :rejecting, lambda {|recipes|
+    recipes = recipes.map(&:id) if recipes.is_a? Array
+    where("recipes.id not in (?)",recipes)}
 
-  scope :user_page, lambda {|user, order|
+  scope :user_page, lambda {|order|
     order = order == "name" ? "name asc" : "updated_at desc"
-    joins(:user_recipes).
-    where({:user_recipes => { :user_id => user.id}}).
     order(order).
     includes(:category, :recipe_ingredients => :ingredient)
   }
+
+  def self.find_by_url!(url)
+    id = url.split('-', 2).first
+    find(id)
+  end
 
   def new_recipe_ingredients_attributes=(ri_attr)
     recipe_ingredients.build(ri_attr)

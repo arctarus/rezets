@@ -6,5 +6,5 @@
         = link_to_unless_current category.name, [user, category]
         %span.counter (#{category.recipes.by_author(user.id).count})
     %li
-      = link_to_unless_current _("all"), @user
+      = link_to_unless_current _("all"), user
       %span.counter (#{user.recipes.count})

@@ -1,28 +1,25 @@
 class RecipesController < ApplicationController
-  respond_to :html
+  respond_to :html, :json, :print
   before_filter :require_user, :except => [:index, :show, :email, :email_send, :print]
-  before_filter :find_recipe, :except => [:index, :new, :create, :edit, :update, :destroy]
+
+  load_and_authorize_resource :user, :find_by => :slug
+  load_and_authorize_resource :recipe, :find_by => :url, :through => :user
 
   def index
-    @recipes = Recipe.order("likes_count desc, updated_at desc").
-      paginate :per_page => 10, :page => params[:page]
     @categories = Category.with_recipes.order("name asc")
+    @recipes = Recipe.index.paginate :per_page => 10, 
+                                     :page => params[:page]
   end
 
   def show
-    @recipes_same_author = Recipe.by_author(@recipe.author.id).not_in(@recipe.id).limit(3)
-    @recipes_same_category = Recipe.by_category(@recipe.category.id).
-      not_in(@recipes_same_author.map(&:id).push(@recipe.id)).limit(3)
+    @category = @recipe.category
+    @recipes_same_author = @user.recipes.rejecting(@recipe).limit(3)
+    @recipes_same_category = @category.recipes.rejecting([*@recipes_same_author, @recipe]).limit(3)
     @comment = @recipe.comments.build
-    render :layout => 'recipe'
+    respond_with @recipe 
   end
 
   def print
-    @recipes_same_author = Recipe.by_author(@recipe.author.id).not_in(@recipe.id).limit(3)
-    @recipes_same_category = Recipe.by_category(@recipe.category.id).
-      not_in(@recipes_same_author.map(&:id).push(@recipe.id)).limit(3)
-    @comment = @recipe.comments.build
-    render layout: 'recipe', action: 'show'
   end
 
   def new
@@ -43,7 +40,6 @@ class RecipesController < ApplicationController
 
   def update
     @recipe = current_user.authorings.find(params[:id])
-    @recipe.updated_at = Time.current
     unless @recipe.update_attributes(params[:recipe])
       @categories = Category.all
     end
@@ -53,7 +49,7 @@ class RecipesController < ApplicationController
   def destroy
     @recipe = current_user.recipes.find(params[:id], :include => :ingredients)
     @recipe.destroy
-    respond_with @author
+    respond_with @recipe, :location => @user
   end
 
   def email
@@ -62,9 +58,11 @@ class RecipesController < ApplicationController
   end
 
   def email_send
-    @email_recipe_form = EmailRecipeForm.new(params[:email_recipe_form])
-    @email_recipe_form.recipe = @recipe
-    @email_recipe_form.user = current_user
+    args = params[:email_recipe_form].merge(
+      :recipe => @recipe, 
+      :user   => current_user)
+
+    @email_recipe_form = EmailRecipeForm.new(args)
     if @email_recipe_form.deliver
       render layout: false
     else
@@ -79,14 +77,6 @@ class RecipesController < ApplicationController
   def unlike
     current_user.recipe_likes.find_by_recipe_id(@recipe.id).destroy
     render 'like'
-  end
-
-  private
-
-  def find_recipe
-    recipe_id = params[:id].split("-").first
-    @author = User.find_by_slug params[:user_id]
-    @recipe = @author.recipes.find(recipe_id, :include => :ingredients)
   end
 
 end
