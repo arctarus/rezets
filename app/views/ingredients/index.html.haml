@@ -1,0 +1,7 @@
+%h1= _('Ingredients')
+
+%ul.cloud
+  - @ingredients.each do |ingredient|
+    %li
+      = ingredient.name
+      = ingredient.count

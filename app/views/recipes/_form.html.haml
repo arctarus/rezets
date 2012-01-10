@@ -6,7 +6,6 @@
       %p= _('Reviews the form before continuing')
 
   .field
-    = error_messages_for :name
     = f.text_field :name, :maxlength => 255, :required => true, :class => [:text,:title]
 
   .field
@@ -24,7 +23,7 @@
     = f.label :num_persons, _("number of people")
     = f.text_field :num_persons, :required => true, :class => "number", :maxlength => 3
 
-  %fieldset.ingredients
+  %fieldset#ingredients.ingredients
     %legend= _("ingredients")
     %table#recipe_ingredients
       %thead
@@ -47,7 +46,6 @@
 
   .field
     = f.label :directions, _("directions")
-    = error_messages_for :directions
     = f.text_area :directions, :required => true
 
   %p#submit

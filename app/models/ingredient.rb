@@ -5,7 +5,7 @@ class Ingredient < ActiveRecord::Base
   scope :most_popular, 
     select('count(ingredients.id) count, ingredients.*').
     joins(:recipe_ingredients).
-    group('id'). 
+    group('ingredients.id'). 
     order('count desc')
 
   def to_param

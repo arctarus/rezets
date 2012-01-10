@@ -7,3 +7,21 @@
 // body { @include blueprint-print(true); }
 
 #header, #footer, #sidebar, #action-links, #like, .comments {display:none}
+a.avatar {
+  float:left;
+  margin-right:1em;
+}
+
+.hrecipe {
+  h1 {
+    margin:0;
+    line-height:1.2em;
+  }
+  .meta {
+    margin-left:64px;
+
+    p { margin:0 0 .5em 0 }
+  }
+
+  .photo { margin-top:2em }
+}
