@@ -14,7 +14,9 @@ class RecipeIngredient < ActiveRecord::Base
   end
 
   def destroy_ingredient_if_not_use_it
-    ingredient.destroy if not ingredient.nil? and ingredient.recipes.blank?
+    if ingredient and ingredient.recipe_ingredients.blank?
+      ingredient.destroy
+    end
   end
 
 end
