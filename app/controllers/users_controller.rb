@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  load_and_authorize_resource :find_by => :slug
+  load_and_authorize_resource :find_by => :slug, :except => [:new, :create]
   respond_to :html, :rss
   layout 'application', :except => :show
 
@@ -21,6 +21,7 @@ class UsersController < ApplicationController
   def show
     @recipes = @user.recipes.user_page(params[:order]).
       paginate :page => params[:page], :per_page => 10
+    @categories = Category.by_author(@user).uniq
     render :layout => 'users'
   end
 
