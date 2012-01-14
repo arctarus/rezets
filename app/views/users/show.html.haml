@@ -1,19 +1,12 @@
 - title user_title(@user, @category, @recipes.current_page)
 - meta_description user_title(@user, @category, @recipes.current_page)
 - meta_keywords [@user.name]
-
-- content_for :sidebar do
-  = render 'users/sidebar', user: @user
+- user_categories_sidebar(@user, @categories)
 
 - if @recipes.empty?
-  - if not current_user or @user != current_user
-    = render 'blank_recipes', user: @user
-  - else
-    = render 'welcome', user: @user
-
+  = welcome_or_blank(@user, current_user)
 - else
-  - if current_user == @user
-    %p= link_to _('create a new recipe'), new_user_recipe_path(current_user)
+  = link_to_new_recipe @user
 
   %ul.recipes
     = render @recipes
