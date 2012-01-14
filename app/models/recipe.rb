@@ -58,7 +58,9 @@ class Recipe < ActiveRecord::Base
       :medium => "310x240#",
       :thumb  => "100x100#" }
 
-  scope :index, order("likes_count desc, updated_at desc")
+  scope :most_popular, order("likes_count desc, updated_at desc")
+
+  scope :freshly_made, order("updated_at desc").limit(8)
 
   scope :by_author, lambda {|author_id|
     where(author_id: author_id).

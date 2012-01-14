@@ -1,20 +1,23 @@
 class RecipesController < ApplicationController
+  load_and_authorize_resource :only => :index
+  
+  load_and_authorize_resource :user, :find_by => :slug, :except => [:index]
+  load_and_authorize_resource :recipe, :find_by => :url, :through => :user, :except => [:index]
+
   respond_to :html, :json
   before_filter :require_user, :except => [:index, :show, :email, :email_send, :print]
 
-  load_and_authorize_resource :user, :find_by => :slug
-  load_and_authorize_resource :recipe, :find_by => :url, :through => :user
 
   def index
     @categories = Category.with_recipes.order("name asc")
-    @recipes = Recipe.index.paginate :per_page => 10, 
-                                     :page => params[:page]
+    @recipes = Recipe.most_popular.paginate :per_page => 10, 
+                                            :page => params[:page]
   end
 
   def show
     @category = @recipe.category
-    @recipes_same_author = @user.recipes.rejecting(@recipe).limit(3)
-    @recipes_same_category = @category.recipes.rejecting([*@recipes_same_author, @recipe]).limit(3)
+    @recipes_same_author = @user.recipes.rejecting(@recipe).order('created_at desc').limit(3)
+    @recipes_same_category = @category.recipes.rejecting([*@recipes_same_author, @recipe]).order('created_at desc').limit(3)
     @comment = @recipe.comments.build
     respond_with @recipe do |format|
       format.html { render :layout => 'recipe' }
