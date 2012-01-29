@@ -78,11 +78,11 @@ class RecipesController < ApplicationController
   end
 
   def like
-    current_user.likes << @recipe
+    current_user.like @recipe
   end
 
   def unlike
-    current_user.recipe_likes.find_by_recipe_id(@recipe.id).destroy
+    current_user.unlike @recipe
     render 'like'
   end
 

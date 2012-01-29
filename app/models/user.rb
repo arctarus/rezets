@@ -75,4 +75,13 @@ class User < ActiveRecord::Base
     UserSession.create! :email => email, :password => password
   end
 
+  def like(recipe)
+    likes << recipe unless likes.include? recipe
+  end
+
+  def unlike(recipe)
+    rl = recipe_likes.find_by_recipe_id(recipe.id)
+    rl.destroy if rl
+  end
+
 end

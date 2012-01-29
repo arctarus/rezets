@@ -7,8 +7,7 @@ class UserMailer < ActionMailer::Base
     @user       = user
     @invitation = invitation
     @message    = mail["message"]
-    mail  :to       => invitation.email,
-          :subject  => tmpl['subject']
+    mail :to => invitation.email, :subject => tmpl['subject']
   end
 
   def comment_recipe(comment, user)
@@ -25,8 +24,7 @@ class UserMailer < ActionMailer::Base
       @title = _("%{user} has commented on %{author}'s %{recipe} recipe") % {:user => @comment.user.name,
         :recipe => @comment.recipe.name.downcase, :author => comment.recipe.author.name}
     end
-    mail :to => @user.email,
-      :subject => @title
+    mail :to => @user.email, :subject => @title
   end
 
   def recipe(email)
@@ -34,7 +32,9 @@ class UserMailer < ActionMailer::Base
     @user_name = email.name
     @message = email.message
     mail :to => email.recipients,
-      :subject => _("%{user} has sent you a %{recipe} recipe") % {:user => email.name, :recipe => email.recipe.name.downcase},
+         :subject => _("%{user} has sent you a %{recipe} recipe") % {
+          :user => email.name,
+          :recipe => email.recipe.name.downcase}
   end
 
 end
