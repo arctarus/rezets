@@ -19,6 +19,7 @@ class Ability
   def logged
     can :manage, User, id: @user.id
     can :manage, Recipe, author_id: @user.id
+    can [:like, :unlike], Recipe
     can [:read, :create], Invitation, sender_id: @user.id
   end
 
