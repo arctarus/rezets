@@ -3,7 +3,7 @@
 - meta_keywords @recipe.ingredients.map(&:name) << @recipe.category.name
 
 .hrecipe
-  = link_to image_tag(@recipe.author.avatar.url(:medium), alt:"", width:"50px", height:"50px"), @recipe.author, class:'avatar'
+  = link_to image_tag(@recipe.author.avatar.url(:medium), :alt => "", :width => "50px", :height => "50px"), @recipe.author, :class => 'avatar'
 
   .meta
     .item

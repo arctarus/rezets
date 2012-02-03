@@ -1,28 +1,28 @@
 %p.close-email-container
-  = link_to image_tag('close.png', alt:_('close')), title: _('close')
+  = link_to image_tag('close.png', :alt => _('close')), :title => _('close')
 
 #send-email-wrapper
   %p.title.send-email= _("send by email")
-  = form_for @email_recipe_form, url: email_send_user_recipe_path(recipe.author,recipe), id: 'send-email-form', remote: true do |f|
+  = form_for @email_recipe_form, :url => email_send_user_recipe_path(recipe.author,recipe),:id => 'send-email-form', :remote => true do |f|
 
     - if current_user.blank?
       .field
         = f.label :name, _("your name")
-        = f.text_field :name, size:30, maxlength:50, class: :text, required: false
+        = f.text_field :name, :size => 30, :maxlength => 50, :class => :text, :required => false
 
     .field
       = f.label :recipients, _("email")
       %p.hint= _("can include several comma-separated")
-      = f.text_field :recipients, size: 30, class: :text,
-        required: false, value: join_recipients(@email_recipe_form.recipients)
+      = f.text_field :recipients, :size => 30, :class => :text,
+        :required => false, :value => join_recipients(@email_recipe_form.recipients)
 
-    %p= link_to _("add a message?"), '#', id: 'add-email-message'
+    %p= link_to _("add a message?"), '#', :id => 'add-email-message'
 
-    #email-message.field{style:"display:none"}
+    #email-message.field{:style => "display:none"}
       = f.label :message, _("message")
       = f.text_area :message
 
     %p#submit
       = f.submit _("send")
       %span.ft= _('or')
-      = link_to _("cancel"), @email, class: 'cancel-form'
+      = link_to _("cancel"), @email, :class => 'cancel-form'

@@ -14,7 +14,7 @@ gem 'cancan'
 gem 'haml-rails'
 
 # i18n
-gem 'gettext', :git => 'git://github.com/mutoh/gettext.git'
+gem 'gettext', :git => 'git://github.com/cameel/gettext.git'
 gem 'fast_gettext'
 gem 'gettext_i18n_rails'
 gem 'escape_utils'
