@@ -119,7 +119,12 @@ class Recipe < ActiveRecord::Base
 
   def title
     _("%{recipe} recipe by %{author}") % {
-      :recipe => name.downcase, :author => author.name}
+      recipe: name.downcase, 
+      author: author.name}
+  end
+
+  def author_and_commenters_except(user)
+    User.where(id: comments.map(&:user_id) + [author_id] - [user.id])
   end
   
   private

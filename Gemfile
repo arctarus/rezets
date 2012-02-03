@@ -23,7 +23,8 @@ gem 'escape_utils'
 # in production environments by default.
 group :assets do
   gem 'sass-rails', "  ~> 3.2.3"
-  gem 'compass', '~> 0.12.alpha'
+  gem 'compass-rails'
+  gem 'compass'
 
   gem 'therubyracer'
   gem 'coffee-rails', "~> 3.2.1"
