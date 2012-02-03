@@ -11,21 +11,23 @@ gem 'aws-s3'
 gem 'aws-sdk'
 gem 'authlogic'
 gem 'cancan'
-gem 'haml-rails'
 
 # i18n
-gem 'gettext', :git => 'git://github.com/mutoh/gettext.git'
+gem 'gettext', :git => 'git://github.com/cameel/gettext.git'
 gem 'fast_gettext'
 gem 'gettext_i18n_rails'
 gem 'escape_utils'
 
+gem 'heroku'
+gem 'haml-rails'
+gem 'compass-rails'
+gem 'compass'
+gem 'sass-rails', "  ~> 3.2.3"
+
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails', "  ~> 3.2.3"
-  gem 'compass-rails'
-  gem 'compass'
-
   gem 'therubyracer'
   gem 'coffee-rails', "~> 3.2.1"
   gem 'uglifier', ">= 1.0.3"

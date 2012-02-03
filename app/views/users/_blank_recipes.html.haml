@@ -1,5 +1,5 @@
 .msg.blank
-  %h2= _("%{user} still hasn't any recipe") % {user: user.name}
+  %h2= _("%{user} still hasn't any recipe") % {:user => user.name}
   %p= raw(("you can %{explore} or search %{bycategory}.") % {               |
       :explore => link_to(_("explore more recipes"), recipes_path),         |
       :bycategory => link_to(_("recipes by categories"), categories_path)}) |

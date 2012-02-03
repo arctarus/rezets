@@ -24,12 +24,12 @@
 
     = javascript_include_tag :application
 
-    %script{id:'ingredient-list-template', type:'text/template'}
+    %script{:id =>'ingredient-list-template', :type => 'text/template'}
       :plain
         <ul class="ingredients-list">
         </ul>
 
-    %script{id:'ingredient-template', type:'text/template'}
+    %script{:id =>'ingredient-template', :type => 'text/template'}
       :plain
         <li><%= name %></li>
 
