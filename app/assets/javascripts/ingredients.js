@@ -54,7 +54,7 @@
 
   $(function(){
     var pantryView = new PantryView({collection:window.Pantry});
-    window.Pantry.fetch();
+//  window.Pantry.fetch();
   });
 
 })(jQuery);

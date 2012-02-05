@@ -1,8 +1,9 @@
 //= require jquery
 //= require jquery_ujs
-// require backbone-rails
-//= require_self
+//= require backbone-rails
+//= require_tree ./plugins
 //= require_tree .
+//= require_self
 
 $(function() {
   $('textarea').autoResize();
