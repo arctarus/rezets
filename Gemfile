@@ -12,6 +12,11 @@ gem 'aws-sdk'
 gem 'authlogic'
 gem 'cancan'
 
+# sitemap generator
+gem 'sitemap_generator', '> 2.0.1.pre'
+gem 'carrierwave'
+gem 'fog'
+
 # i18n
 gem 'gettext', :git => 'git://github.com/cameel/gettext.git'
 gem 'fast_gettext'

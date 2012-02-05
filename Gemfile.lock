@@ -63,6 +63,8 @@ GEM
     capybara-webkit (0.8.0)
       capybara (>= 1.0.0, < 1.2)
       json
+    carrierwave (0.5.8)
+      activesupport (~> 3.0)
     childprocess (0.3.0)
       ffi (~> 1.0.6)
     chunky_png (1.2.5)
@@ -86,6 +88,7 @@ GEM
     erubis (2.7.0)
     escape_utils (0.2.4)
     eventmachine (0.12.10)
+    excon (0.9.5)
     execjs (1.3.0)
       multi_json (~> 1.0)
     factory_girl (2.5.0)
@@ -96,6 +99,17 @@ GEM
     fast_gettext (0.6.4)
     ffaker (1.12.1)
     ffi (1.0.11)
+    fog (1.1.2)
+      builder
+      excon (~> 0.9.0)
+      formatador (~> 0.2.0)
+      mime-types
+      multi_json (~> 1.0.3)
+      net-scp (~> 1.0.4)
+      net-ssh (>= 2.1.3)
+      nokogiri (~> 1.5.0)
+      ruby-hmac
+    formatador (0.2.1)
     fssm (0.2.8.1)
     gettext_i18n_rails (0.4.3)
       fast_gettext
@@ -138,6 +152,9 @@ GEM
     mime-types (1.17.2)
     multi_json (1.0.4)
     multi_xml (0.4.1)
+    net-scp (1.0.4)
+      net-ssh (>= 1.99.1)
+    net-ssh (2.3.0)
     nokogiri (1.5.0)
     paperclip (2.5.2)
       activerecord (>= 2.3.0)
@@ -188,6 +205,7 @@ GEM
       activesupport (>= 3.0)
       railties (>= 3.0)
       rspec (~> 2.8.0)
+    ruby-hmac (0.4.0)
     ruby_parser (2.0.6)
       sexp_processor (~> 3.0)
     rubyzip (0.9.5)
@@ -208,6 +226,8 @@ GEM
     simplecov-html (0.5.3)
     simplecov-rcov (0.2.3)
       simplecov (>= 0.4.1)
+    sitemap_generator (3.0.0)
+      builder
     spork (0.9.0)
     sprockets (2.1.2)
       hike (~> 1.2)
@@ -249,6 +269,7 @@ DEPENDENCIES
   cancan
   capybara
   capybara-webkit
+  carrierwave
   coffee-rails (~> 3.2.1)
   compass
   compass-rails
@@ -257,6 +278,7 @@ DEPENDENCIES
   factory_girl_rails
   fast_gettext
   ffaker
+  fog
   gettext!
   gettext_i18n_rails
   guard-spork
@@ -275,6 +297,7 @@ DEPENDENCIES
   sass-rails (~> 3.2.3)
   simplecov
   simplecov-rcov
+  sitemap_generator (> 2.0.1.pre)
   spork (~> 0.9.0.rc)
   steak
   therubyracer

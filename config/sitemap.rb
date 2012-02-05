@@ -22,18 +22,18 @@ SitemapGenerator::Sitemap.add_links do |sitemap|
 
   # recipes
   sitemap.add recipes_path, :priority => 0.7
-  Recipe.all.each do |r|
-    sitemap.add recipe_path(r), :lastmod => r.updated_at
+  Recipe.find_each do |r|
+    sitemap.add user_recipe_path(r.author, r), :lastmod => r.updated_at
   end
 
   # users
-  User.all(:include => :recipes).each do |u|
+  User.find_each(:include => :recipes) do |u|
     sitemap.add user_path(u), :lastmod => u.recipes.last.updated_at unless u.recipes.blank?
   end
 
   sitemap.add categories_path, :priority => 0.7
   # categories
-  Category.all(:include => :recipes).each do |c|
+  Category.find_each(:include => :recipes) do |c|
     sitemap.add category_path(c), :lastmod => c.recipes.last.updated_at unless c.recipes.blank?
   end
   
