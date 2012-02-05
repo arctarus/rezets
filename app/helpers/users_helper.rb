@@ -53,4 +53,9 @@ module UsersHelper
     n_("%{num} like", "%{num} likes", num) % {:num => num}
   end
 
+  def link_to_user_avatar(user, size = :medium)
+    link_to image_tag(user.avatar.url(size),
+      class: 'avatar', alt:''), user
+  end
+
 end
