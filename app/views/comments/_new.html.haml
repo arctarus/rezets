@@ -1,10 +1,9 @@
 #comment-new.comment
-  = link_to image_tag(current_user.avatar.url(:medium), :class => "avatar", :alt => ""), current_user
+  = link_to_user_avatar(current_user)
   .inner-comment
-    = form_for comment, :url => [recipe.author,recipe, comment] do |f|
+    = form_for [recipe.author,recipe, comment] do |f|
       .field
         = f.label :body, current_user.name
-        = f.text_area :body
-        -#, :required => true
-      %p#submit
-        = f.submit _('make a comment')
+        = f.text_area :body, :required => true
+      .actions
+        = f.submit _('Make a comment')

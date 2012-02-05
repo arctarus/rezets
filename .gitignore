@@ -9,3 +9,4 @@ tmp/**/*
 public/assets
 public/system
 public/system/**/*
+public/sitemap*

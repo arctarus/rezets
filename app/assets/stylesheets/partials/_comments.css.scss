@@ -1,0 +1,35 @@
+.comment {
+  margin-top:3em;
+  .avatar {
+    float:left; 
+    margin-right:.8em;
+  }
+  h3 {margin-bottom:.5em}
+}
+.inner-comment {
+  margin-left:61px;
+
+  p.created-time {
+    margin-top:.5em;
+    text-decoration:none;
+    color:#666;
+  }
+}
+
+
+#comment-new {
+  margin-bottom:3em;
+  
+  label {
+    font-weight:normal;
+    font-size:1.5em; 
+    color:#380;
+  }
+  
+  textarea {
+    height:2em;
+    width:34em
+  }
+  
+  div.field {margin:0}
+}
