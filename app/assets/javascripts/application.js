@@ -1,6 +1,7 @@
 //= require jquery
 //= require jquery_ujs
-//= require backbone-rails
+//= require underscore
+//= require backbone
 //= require_tree ./plugins
 //= require_tree .
 //= require_self
