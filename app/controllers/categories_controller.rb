@@ -5,14 +5,14 @@ class CategoriesController < ApplicationController
 
   def show
     if @user
-      @recipes = @user.recipes.by_category(@category.id).
-        order("updated_at desc").
-        paginate(:page => params[:page], :per_page => 10)
       @categories = @user.categories
+      @recipes = @user.recipes.where(category_id: @category.id).
+                               order("updated_at desc").
+                               paginate(page: params[:page], per_page: 10)
     else
       @recipes = Recipe.by_category(@category.id).
-        order("likes_count desc, updated_at desc").
-        paginate(:page => params[:page], :per_page => 10)
+                        order("likes_count desc, updated_at desc").
+                        paginate(:page => params[:page], :per_page => 10)
       @categories = Category.with_recipes.order(:name)
     end
 
