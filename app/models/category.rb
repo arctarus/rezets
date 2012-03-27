@@ -9,7 +9,7 @@ class Category < ActiveRecord::Base
 
   scope :by_author, lambda {|author|
     joins(:recipes).
-    where(:recipes => { :author_id => author.id }).
+    where(recipes: { author_id: author.id })
   }
 
   scope :grouped, group('categories.id')
