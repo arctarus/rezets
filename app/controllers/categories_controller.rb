@@ -12,7 +12,7 @@ class CategoriesController < ApplicationController
     else
       @recipes = Recipe.by_category(@category.id).
                         order("likes_count desc, updated_at desc").
-                        paginate(:page => params[:page], :per_page => 10)
+                        paginate(page: params[:page], per_page: 10)
       @categories = Category.with_recipes.order(:name)
     end
 
