@@ -58,7 +58,9 @@ class Recipe < ActiveRecord::Base
       :medium => "310x240#",
       :thumb  => "100x100#" }
 
-  scope :most_popular, order("likes_count desc, updated_at desc")
+  scope :most_popular, 
+    includes(:category, :ingredients , :likes, :author).
+    order("likes_count desc, updated_at desc")
 
   scope :freshly_made, order("updated_at desc").limit(8)
 
@@ -67,8 +69,9 @@ class Recipe < ActiveRecord::Base
     order("created_at desc")}
 
   scope :by_category, lambda {|category_id|
+    includes(:category, :ingredients , :likes, :author).
     where(category_id: category_id).
-    order("created_at desc")}
+    order("likes_count, updated_at desc")}
 
   scope :rejecting, lambda {|recipes|
     recipes = recipes.map(&:id) if recipes.is_a? Array

@@ -1,8 +1,7 @@
 //= require jquery
 //= require jquery_ujs
-//= require backbone-rails
 //= require_tree ./plugins
-//= require_tree .
+//= require email
 //= require_self
 
 $(function() {

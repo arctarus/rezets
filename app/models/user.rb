@@ -6,8 +6,7 @@ class User < ActiveRecord::Base
   has_many :user_recipes, :dependent => :destroy
   has_many :recipes, :through => :user_recipes
   has_many :categories, :through => :recipes,
-                        :group   => 'categories.id',
-                        :order   => 'categories.name'
+                        :group   => 'categories.id'
 
   has_many :authorings, :foreign_key => 'author_id',
                         :class_name => 'Recipe'
