@@ -151,6 +151,7 @@ GEM
     mime-types (1.17.2)
     multi_json (1.0.4)
     multi_xml (0.4.1)
+    mysql2 (0.3.11)
     net-scp (1.0.4)
       net-ssh (>= 1.99.1)
     net-ssh (2.3.0)
@@ -289,6 +290,7 @@ DEPENDENCIES
   jquery-rails
   launchy
   libnotify
+  mysql2
   paperclip
   pg
   rails (~> 3.2.0)
