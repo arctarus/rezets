@@ -1,3 +1,3 @@
 %li
   = link_to_unless_current category.name, [user, category]
-  %span.counter (#{category.recipes.by_author(user.id).count})
+  %span.counter (#{Recipe.where(:category_id => category.id, :author_id => user.id).count})
