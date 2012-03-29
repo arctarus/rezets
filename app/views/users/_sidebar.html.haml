@@ -1,7 +1,7 @@
 - unless categories.blank?
   %h3= _("categories")
   %ul
-    = render :partial => 'category', :collection => categories, :locals => { :user => user }
+    = render :partial => 'users/category', :collection => categories, :locals => { :user => user }
     %li
       = link_to_unless_current _("all"), user
       %span.counter (#{user.recipes.size})

@@ -1,5 +1,5 @@
 - content_for :sidebar do
-  = render 'sidebar', :user => @user, :categories => @categories
+  = render 'users/sidebar', :user => @user, :categories => @categories
 
 - unless @user
   - content_for :top do

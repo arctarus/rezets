@@ -5,14 +5,7 @@ class Category < ActiveRecord::Base
   before_update :slugify_name
 
   scope :with_recipes, 
-    where('id in (select category_id from recipes group by category_id)')
-
-  scope :by_author, lambda {|author|
-    joins(:recipes).
-    where(recipes: { author_id: author.id })
-  }
-
-  scope :grouped, group('categories.id')
+    where(id: Recipe.select(:category_id).group(:category_id))
 
   def to_param
     slug

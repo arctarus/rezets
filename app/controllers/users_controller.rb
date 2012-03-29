@@ -21,7 +21,7 @@ class UsersController < ApplicationController
   def show
     @recipes = @user.recipes.user_page(params[:order]).
       paginate :page => params[:page], :per_page => 10
-    @categories = Category.by_author(@user).uniq
+    @categories = @user.categories.order(:name)
     render :layout => 'users'
   end
 
