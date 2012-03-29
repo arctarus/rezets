@@ -5,7 +5,7 @@ class CategoriesController < ApplicationController
 
   def show
     if @user
-      @categories = @user.categories.order('categories.name')
+      @categories = @user.categories.order(:name)
       @recipes = @user.authorings.by_category(@category.id)
     else
       @categories = Category.with_recipes.order(:name)

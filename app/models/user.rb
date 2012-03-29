@@ -5,8 +5,6 @@ class User < ActiveRecord::Base
 
   has_many :user_recipes, :dependent => :destroy
   has_many :recipes, :through => :user_recipes
-  has_many :categories, :through => :recipes,
-                        :group   => 'categories.id'
 
   has_many :authorings, :foreign_key => 'author_id',
                         :class_name => 'Recipe'
@@ -65,6 +63,11 @@ class User < ActiveRecord::Base
                    order("recipes_count desc, followers_count desc")
   scope :rookies, where("recipes_count between 1 and 2").
                   order("recipes_count desc, followers_count desc")
+
+  def categories
+    categories_ids = recipes.map(&:category_id).uniq
+    Category.where(id: categories_ids)
+  end
 
   def to_param
     slug
