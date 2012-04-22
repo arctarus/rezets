@@ -2,7 +2,7 @@ source 'http://rubygems.org'
 
 gem 'rails', '~>3.2.0'
 gem 'rake', '~>0.9.2'
-gem 'pg', :group => :production
+gem 'pg'
 gem 'thin'
 
 gem 'will_paginate'
@@ -42,7 +42,7 @@ gem 'jquery-rails'
 gem 'rails-backbone'
 
 group :development, :test do
-  gem 'mysql2'
+# gem 'mysql2'
   gem 'rspec-rails'
   gem 'capybara'
   gem 'launchy'
