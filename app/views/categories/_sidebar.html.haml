@@ -1,19 +1,19 @@
 %h3= _("Recipes")
 %ul
-  - for category in categories
+  - categories.each do |category|
     %li
       - if user
         = link_to_unless_current category.name, [user,category],
           :title => _("%{category} recipes") % {:category => category.name}
-        %span.counter (#{user.recipes.by_category(category.id).count})
+        %span.counter (#{Recipe.where(:category_id => category.id, :author_id => user.id).count})
       - else
         = link_to_unless_current category.name, category,
           :title => _("%{category} recipes") % {:category => category.name}
-        %span.counter (#{category.recipes.size})
+        %span.counter (#{Recipe.where(:category_id => category.id).count})
   %li
     - if user
       = link_to_unless_current _("all"), user
-      %span.counter (#{user.recipes.size})
+      %span.counter (#{user.recipes.count})
     - else
       = link_to_unless_current _("all"), recipes_path
       %span.counter
