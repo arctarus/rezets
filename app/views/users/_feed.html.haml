@@ -1,17 +1,7 @@
-- if @user == current_user
-  - if @category.nil?
-    %p= link_to _("subscribe to your own recipes"), user_path(@user, :format => :rss), :class => "feed-link"
-  - else
-    %p= link_to _("subscribe to your own %{category} recipes") % {:category => @category.name}, user_category_path(@category, @user, :format => :rss), :class => "feed-link"
+- if user == current_user
+  %p= link_to _("subscribe to your own recipes"), user_path(user, :format => :rss), :class => "feed-link"
 - else
-  - if @category.nil?
-    %p= link_to _("subscribe to %{user}'s recipes") % {:user => @user.name}, user_path(@user, :format => :rss), :class => "feed-link"
-  - else
-    %p= link_to _("subscribe to %{user}'s %{category} recipes") % {:user => @user.name, :category => @category.name}, user_category_path(@category, @user, :format => :rss), :class => "feed-link"
+  %p= link_to _("subscribe to %{user}'s recipes") % {:user => user.name}, user_path(@user, :format => :rss), :class => "feed-link"
 
 - content_for :feed do
-  - if @category.nil?
-    = auto_discovery_link_tag :atom, user_path(@user, :format => :rss), {:title => _("%{user}'s recipes") % {:user => @user.name} }
-  - else
-    = auto_discovery_link_tag :atom, category_user_path(@category, @user, :format => :rss), 
-      {:title => _("%{user}'s recipes of %{category}") % {:user => @user.name, :category => @category.name} }
+  = auto_discovery_link_tag :atom, user_path(@user, :format => :rss), {:title => _("%{user}'s recipes") % {:user => @user.name} }
