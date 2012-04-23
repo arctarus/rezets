@@ -14,7 +14,14 @@ class CategoriesController < ApplicationController
     @recipes = @recipes.paginate(:page => params[:page], :per_page => 10)
 
     respond_with @category do |format|
-      format.html { render :layout => 'users' if @user }
+      if @user
+        format.html { 
+          render :template => 'users/show',
+                 :layout   => 'users'
+        }
+      else
+        format.html
+      end
     end
   end
 

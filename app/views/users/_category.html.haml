@@ -1,8 +1,3 @@
 %li
-  - if user
-    = link_to_unless_current category.name, [user, category]
-    %span.counter (#{Recipe.where(:category_id => category.id, :author_id => user.id).count})
-  - else
-    = link_to_unless_current category.name, category
-    %span.counter (#{Recipe.where(:category_id => category.id).count})
-
+  = link_to_unless_current category.name, [user, category]
+  %span.counter (#{Recipe.where(:category_id => category.id, :author_id => user.id).count})
