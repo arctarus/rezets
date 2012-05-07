@@ -23,7 +23,8 @@
         = distance_of_time_in_words_to_now @recipe.created_at
         %span.value-title{:title => I18n.l(@recipe.created_at, :format => '%Y-%m-%d')}
 
-  = render :partial => 'recipes/action_links'
+  = render 'recipes/add_this'
+  = render 'recipes/action_links'
 
   = recipe_image_tag @recipe
 
