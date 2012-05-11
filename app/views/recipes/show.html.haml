@@ -1,65 +1,53 @@
-- title @recipe.title
-- meta_description @recipe.title
-- meta_keywords @recipe.ingredients.map(&:name) << @recipe.category.name
+- cache @recipe.cache_key do
+  - title @recipe.title
+  - meta_description @recipe.title
+  - meta_keywords @recipe.ingredients.map(&:name) << @recipe.category.name
 
-.hrecipe
-  = link_to image_tag(@recipe.author.avatar.url(:medium), :alt => "", :width => "50px", :height => "50px"), @recipe.author, :class => 'avatar'
+  .hrecipe
+    = link_to image_tag(@recipe.author.avatar.url(:medium), :alt => "", :width => "50px", :height => "50px"), @recipe.author, :class => 'avatar'
 
-  .meta
-    .item
-      %h1.fn
-        = link_to @recipe.name, user_recipe_path(@recipe.author,@recipe), :title => @recipe.title
+    .meta
+      .item
+        %h1.fn
+          = link_to @recipe.name, user_recipe_path(@recipe.author,@recipe), :title => @recipe.title
 
-    %p
-      = link_to @recipe.author.name, @recipe.author, :class => :author
-      %span.ft
-        |
-      %span.category= link_to @recipe.category.name, @recipe.category, 
-        :title => _("%{category} recipes") % {:category => @recipe.category.name}
+      %p
+        = link_to @recipe.author.name, @recipe.author, :class => :author
+        %span.ft
+          |
+        %span.category= link_to @recipe.category.name, @recipe.category, 
+          :title => _("%{category} recipes") % {:category => @recipe.category.name}
 
-      %span.ft
-        |
-      %span.published
-        = distance_of_time_in_words_to_now @recipe.created_at
-        %span.value-title{:title => I18n.l(@recipe.created_at, :format => '%Y-%m-%d')}
+        %span.ft
+          |
+        %span.published
+          = distance_of_time_in_words_to_now @recipe.created_at
+          %span.value-title{:title => I18n.l(@recipe.created_at, :format => '%Y-%m-%d')}
 
-  = render 'recipes/add_this'
-  = render 'recipes/action_links'
+    = render 'recipes/add_this'
+    = render 'recipes/action_links'
 
-  = recipe_image_tag @recipe
+    = recipe_image_tag @recipe
 
-  - if @recipe.recipe_ingredients.any?
-    #recipe-ingredients
-      %h2
-        = _("ingredients")
-        - unless @recipe.num_persons.blank?
-          %span.yield
-            (#{_("for %{num} people") % {:num => @recipe.num_persons}})
+    - unless @recipe.recipe_ingredients.count.zero?
+      = render 'recipe_ingredients', :recipe => @recipe
 
-      - if @recipe.recipe_ingredients.size <=  5
-        %ul.ingredients
-          = render @recipe.recipe_ingredients
-      - else
-        - group_size = (@recipe.recipe_ingredients.size + 1) / 2
-        - @recipe.recipe_ingredients.in_groups_of(group_size).each_with_index do |ri_group, i|
-          %ul.ingredients{:class => i == 1 && 'last'}
-            = render :partial => 'recipe_ingredients/recipe_ingredient', :collection => ri_group
+    %h2.clear
+      = _("directions")
+      - if @recipe.cook_time
+        %span.cooktime
+          (#{_("%{time} min") % {:time => @recipe.cook_time}})
+          %span.value-title{:title =>"PT#{@recipe.cook_time}M"}
 
-  %h2.clear
-    = _("directions")
-    - if @recipe.cook_time
-      %span.cooktime
-        (#{_("%{time} min") % {:time => @recipe.cook_time}})
-        %span.value-title{:title =>"PT#{@recipe.cook_time}M"}
+    .instructions
+      = simple_format @recipe.directions
 
-  .instructions
-    = simple_format @recipe.directions
-
-  - if current_user or @recipe.comments.size > 1
+  - if @recipe.comments.count > 1
     .comments
       %h2= _("comments")
-      - if @recipe.comments.size > 1
-        = render @recipe.comments.reject(&:new_record?)
+      = render @recipe.comments.includes(:user).reject(&:new_record?)
 
-      - if current_user
-        = render 'comments/new', :recipe => @recipe, :comment => @comment
+- if current_user
+  - if @recipe.comments.count.zero?
+    %h2= _("comments")
+  = render 'comments/new', :recipe => @recipe, :comment => @comment
