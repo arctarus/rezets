@@ -42,7 +42,7 @@ gem 'jquery-rails'
 gem 'rails-backbone'
 
 group :development, :test do
-# gem 'mysql2'
+  gem 'mysql2'
   gem 'rspec-rails'
   gem 'capybara'
   gem 'launchy'

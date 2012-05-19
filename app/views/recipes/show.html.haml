@@ -1,9 +1,9 @@
-- cache @recipe.cache_key do
-  - title @recipe.title
-  - meta_description @recipe.title
-  - meta_keywords @recipe.ingredients.map(&:name) << @recipe.category.name
+- title @recipe.title
+- meta_description @recipe.title
+- meta_keywords @recipe.ingredients.map(&:name) << @recipe.category.name
 
-  .hrecipe
+.hrecipe
+  - cache [@recipe.cache_key,'header'].join('-') do
     = link_to image_tag(@recipe.author.avatar.url(:medium), :alt => "", :width => "50px", :height => "50px"), @recipe.author, :class => 'avatar'
 
     .meta
@@ -24,9 +24,13 @@
           = distance_of_time_in_words_to_now @recipe.created_at
           %span.value-title{:title => I18n.l(@recipe.created_at, :format => '%Y-%m-%d')}
 
-    = render 'recipes/add_this'
     = add_this(@recipe)
 
+
+  = render 'recipes/action_links'
+
+
+  - cache [@recipe.cache_key,'body'].join('-') do
     = recipe_image_tag @recipe
 
     - unless @recipe.recipe_ingredients.count.zero?

@@ -21,7 +21,7 @@ module RecipesHelper
   end
 
   def email(recipe)
-    render 'email', :recipe => recipe
+    render 'email', recipe: recipe
   end
 
   def link_to_print(recipe)
@@ -31,23 +31,23 @@ module RecipesHelper
   end
 
   def add_this(recipe)
-    render 'recipes/action_links', 
-      :url         => user_recipe_url(recipe.author, recipe),
-      :title       => recipe.title,
-      :description => add_this_description(recipe)
+    render 'recipes/add_this', 
+      url: user_recipe_url(recipe.author, recipe),
+      title: add_this_description(recipe),
+      description: recipe.title
   end
 
   def add_this_description(recipe)
     _("tasty and substance %{recipe} recipe %{url}") % {
-      :recipe => recipe.name.downcase, 
-      :url => user_recipe_url(recipe.author,recipe)}
+      recipe: recipe.name.downcase, 
+      url: user_recipe_url(recipe.author,recipe)}
   end
 
   def recipe_image_tag(recipe)
     image_tag recipe.photo.url(:large),
-      :class    => "photo",
-      :alt      => recipe.title,
-      :title    => recipe.title
+      class: "photo",
+      alt: recipe.title,
+      title: recipe.title
   end
 
   def join_recipients(recipients)
