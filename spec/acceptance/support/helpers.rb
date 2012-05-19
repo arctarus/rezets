@@ -17,7 +17,7 @@ module HelperMethods
   end
 
   def sample(name, *args)
-    Factory name.to_sym, *args
+    FactoryGirl.create name.to_sym, *args
   end
 
   def sample_number(num = 10)

@@ -85,7 +85,8 @@ class Recipe < ActiveRecord::Base
 
   def self.find_by_url!(url)
     id = url.split('-', 2).first
-    find(id)
+    find(id, :include => [
+      {:recipe_ingredients => :ingredient}])
   end
 
   def new_recipe_ingredients_attributes=(ri_attr)

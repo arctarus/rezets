@@ -7,7 +7,7 @@
         .data
           %p.name= link_to recipe.name, user_recipe_path(recipe.author, recipe), :title => recipe.title
           %p.category= link_to recipe.category.name, category_path(recipe.category), :title => _("%{category} recipes") % {:category => recipe.category.name}
-          - unless recipe.likes.length == 0
+          - unless recipe.likes_count.zero?
             %p.like= _("%{num} people like it") % {:num => recipe.likes.size}
               
 - unless @recipes_same_category.blank?
@@ -22,6 +22,6 @@
             = image_tag recipe.author.avatar.url(:thumb), :class => 'avatar'
             = link_to recipe.author.name, user_path(recipe.author), :title => _("%{author}'s recipes") % {:author => recipe.author.name}
 
-          - unless recipe.likes.blank?
+          - unless recipe.likes_count.zero?
             %p.like= _("%{num} people like it") % {:num => recipe.likes.size}
 
