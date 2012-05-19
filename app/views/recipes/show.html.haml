@@ -25,7 +25,7 @@
           %span.value-title{:title => I18n.l(@recipe.created_at, :format => '%Y-%m-%d')}
 
     = render 'recipes/add_this'
-    = render 'recipes/action_links'
+    = add_this(@recipe)
 
     = recipe_image_tag @recipe
 

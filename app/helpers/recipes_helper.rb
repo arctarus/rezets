@@ -1,7 +1,7 @@
 module RecipesHelper
 
   def add_ingredient_link(name, url)
-    template = render(:partial => 'ingredient', :object => RecipeIngredient.new)
+    template = render :partial => 'ingredient', :object => RecipeIngredient.new
     js = "$(\"#recipe_ingredients_body\").append(\"#{escape_javascript(template)}\"); return false;"
     link_to name, '#', :remote => true, :onclick => js
   end
@@ -30,29 +30,17 @@ module RecipesHelper
       rel: 'nofollow'
   end
 
-  def link_to_twitter(recipe)
-    link_to "twitter", "http://twitter.com/home?status=#{twitter_status_example(recipe)}",
-      :class => 'action-link twitter',
-      :title => _('share recipe on twitter')
+  def add_this(recipe)
+    render 'recipes/action_links', 
+      :url         => user_recipe_url(recipe.author, recipe),
+      :title       => recipe.title,
+      :description => add_this_description(recipe)
   end
 
-  def twitter_status_example(recipe)
+  def add_this_description(recipe)
     _("tasty and substance %{recipe} recipe %{url}") % {
       :recipe => recipe.name.downcase, 
       :url => user_recipe_url(recipe.author,recipe)}
-  end
-
-  def link_to_facebook(recipe)
-    link_to "facebook", facebook_sharer_url(recipe), 
-      :class => 'action-link facebook', 
-      :title => _('share recipe on facebook')
-  end
-
-  def facebook_sharer_url(recipe)
-    "http://www.facebook.com/sharer.php?u=#{user_recipe_url(recipe.author, recipe)}&t=" + 
-    _("%{recipe} recipe by %{author}") % {
-      :recipe => recipe.name.downcase,
-      :author => recipe.author.name }
   end
 
   def recipe_image_tag(recipe)
@@ -63,11 +51,7 @@ module RecipesHelper
   end
 
   def join_recipients(recipients)
-    if recipients.nil?
-      ""
-    else
-      recipients.join('; ')
-    end
+    Array(recipients).join('; ')
   end
 
 end
