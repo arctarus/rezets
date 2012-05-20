@@ -3,34 +3,30 @@
 - meta_keywords @recipe.ingredients.map(&:name) << @recipe.category.name
 
 .hrecipe
-  - cache [@recipe.cache_key,'header'].join('-') do
-    = link_to image_tag(@recipe.author.avatar.url(:medium), :alt => "", :width => "50px", :height => "50px"), @recipe.author, :class => 'avatar'
+  = link_to image_tag(@recipe.author.avatar.url(:medium), :alt => "", :width => "50px", :height => "50px"), @recipe.author, :class => 'avatar'
 
-    .meta
-      .item
-        %h1.fn
-          = link_to @recipe.name, user_recipe_path(@recipe.author,@recipe), :title => @recipe.title
+  .meta
+    .item
+      %h1.fn
+        = link_to @recipe.name, user_recipe_path(@recipe.author,@recipe), :title => @recipe.title
 
-      %p
-        = link_to @recipe.author.name, @recipe.author, :class => :author
-        %span.ft
-          |
-        %span.category= link_to @recipe.category.name, @recipe.category, 
-          :title => _("%{category} recipes") % {:category => @recipe.category.name}
+    %p
+      = link_to @recipe.author.name, @recipe.author, :class => :author
+      %span.ft
+        |
+      %span.category= link_to @recipe.category.name, @recipe.category, 
+        :title => _("%{category} recipes") % {:category => @recipe.category.name}
 
-        %span.ft
-          |
-        %span.published
-          = distance_of_time_in_words_to_now @recipe.created_at
-          %span.value-title{:title => I18n.l(@recipe.created_at, :format => '%Y-%m-%d')}
+      %span.ft
+        |
+      %span.published
+        = distance_of_time_in_words_to_now @recipe.created_at
+        %span.value-title{:title => I18n.l(@recipe.created_at, :format => '%Y-%m-%d')}
 
-    = add_this(@recipe)
-
-
+  = add_this(@recipe)
   = render 'recipes/action_links'
 
-
-  - cache [@recipe.cache_key,'body'].join('-') do
+  - cache @recipe.cache_key do
     = recipe_image_tag @recipe
 
     - unless @recipe.recipe_ingredients.count.zero?
@@ -38,20 +34,17 @@
 
     %h2.clear
       = _("directions")
-      - if @recipe.cook_time
-        %span.cooktime
-          (#{_("%{time} min") % {:time => @recipe.cook_time}})
-          %span.value-title{:title =>"PT#{@recipe.cook_time}M"}
+      = recipe_cook_time(@recipe)
 
     .instructions
       = simple_format @recipe.directions
 
-  - if @recipe.comments.count > 1
+  - if @comments.reject(&:new_record?).count > 1
     .comments
       %h2= _("comments")
-      = render @recipe.comments.includes(:user).reject(&:new_record?)
+      = render @comments.reject(&:new_record?)
 
 - if current_user
-  - if @recipe.comments.count.zero?
+  - if @comments.count.zero?
     %h2= _("comments")
   = render 'comments/new', :recipe => @recipe, :comment => @comment

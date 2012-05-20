@@ -54,4 +54,9 @@ module RecipesHelper
     Array(recipients).join('; ')
   end
 
+  def recipe_cook_time(recipe)
+    return if @recipe.cook_time.blank?
+    render 'recipes/cook_time', :cook_time => @recipe.cook_time
+  end
+
 end

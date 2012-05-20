@@ -8,7 +8,7 @@ class Recipe < ActiveRecord::Base
   has_many :users,              :through => :user_recipes
   has_many :recipe_ingredients, :dependent => :destroy
   has_many :ingredients,        :through => :recipe_ingredients
-  has_many :comments
+  has_many :comments,           :include => :user
   belongs_to :category
 
   belongs_to :author, :foreign_key => :author_id,
