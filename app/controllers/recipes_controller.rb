@@ -27,7 +27,6 @@ class RecipesController < ApplicationController
       order('created_at desc').
       limit(3)
 
-    @comments = @recipe.comments
     @comment = @recipe.comments.build
 
     respond_with @recipe do |format|
