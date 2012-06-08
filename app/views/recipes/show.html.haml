@@ -26,10 +26,10 @@
   = add_this(@recipe)
   = render 'recipes/action_links'
 
-  - cache @recipe.cache_key do
+  - cache @recipe do
     = recipe_image_tag @recipe
 
-    - if @recipe.recipe_ingredients.count > 0
+    - if @recipe.recipe_ingredients.any?
       = render 'recipe_ingredients', :recipe => @recipe
 
     %h2.clear
@@ -39,12 +39,12 @@
     .instructions
       = simple_format @recipe.directions
 
-  - if @recipe.comments.reject(&:new_record?).count > 1
-    .comments
-      %h2= _("comments")
-      = render @recipe.comments.reject(&:new_record?)
+    - if @recipe.comments.reject(&:new_record?).any?
+      .comments
+        %h2= _("comments")
+        = render @recipe.comments.reject(&:new_record?)
 
 - if current_user
-  - if @recipe.comments.count.zero?
+  - if @recipe.comments.any?
     %h2= _("comments")
   = render 'comments/new', :recipe => @recipe, :comment => @comment
