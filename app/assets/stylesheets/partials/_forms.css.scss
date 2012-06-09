@@ -19,7 +19,7 @@ form {
     input.title {width:500px; font-size:1.6em}
     textarea {width:500px; height:100px; }
 
-    input[type=text], input.text, textarea {
+    input[type=text], input[type=password], input.text, textarea {
       padding:5px;
       border:1px solid #CCC;
       @include border-radius(3px);
@@ -71,21 +71,28 @@ form {
 
     input {
       @include border-radius;
-      border:1px solid #CCC;
-      @include box-shadow(#666 1px 1px 1px);
-      padding: 5px 10px;
+      border:1px solid darken($success-color, 5%);
+      padding: .5em 2em;
       cursor: pointer;
       font-weight: bold;
-      color: $success-color;
-      @include background-image(linear-gradient(#eee, #ccc));
+      color: white;
+      font-size: 1.2em;
+      background-color: $success-color;
 
       &:hover {
-        @include background-image(linear-gradient(white, #ddd));
+        background-color: lighten($success-color, 5%);
       }
 
       &:active {
-        @include box-shadow(inset #666 1px 1px 1px);
+        background-color: darken($success-color, 5%);
+        @include box-shadow(inset darken($success-color, 10%) 1px 1px 3px);
       }
     }
+  }
+}
+
+.new_user_session {
+  .field {
+    margin: 1em 0 0;
   }
 }

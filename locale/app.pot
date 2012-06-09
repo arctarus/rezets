@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: version 0.0.1\n"
-"POT-Creation-Date: 2012-06-09 10:22+0200\n"
+"POT-Creation-Date: 2012-06-09 13:20+0200\n"
 "PO-Revision-Date: 2009-11-09 22:31+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -125,6 +125,9 @@ msgstr ""
 msgid "Category"
 msgstr ""
 
+msgid "Come on in"
+msgstr ""
+
 msgid "Comments"
 msgstr ""
 
@@ -138,6 +141,9 @@ msgid "Editing %{recipe}"
 msgstr ""
 
 msgid "Editing recipe"
+msgstr ""
+
+msgid "Email"
 msgstr ""
 
 msgid "Failed to send the invitation"
@@ -206,10 +212,16 @@ msgstr ""
 msgid "Number of people"
 msgstr ""
 
+msgid "Password"
+msgstr ""
+
 msgid "Preparation time"
 msgstr ""
 
 msgid "Recipes"
+msgstr ""
+
+msgid "Remember me on this computer"
 msgstr ""
 
 msgid "Reviews the form before continuing"
@@ -222,6 +234,12 @@ msgid "Sent invitations"
 msgstr ""
 
 msgid "Share your recipes and discover lots of them."
+msgstr ""
+
+msgid "Sign in"
+msgstr ""
+
+msgid "Sign in on rezets.com"
 msgstr ""
 
 msgid "Sorry but you've exhausted all your invitations!"
@@ -252,6 +270,9 @@ msgid "Today featured recipes"
 msgstr ""
 
 msgid "Update"
+msgstr ""
+
+msgid "User or password incorrect"
 msgstr ""
 
 msgid "Welcome to rezets.com!"
@@ -342,9 +363,6 @@ msgid "chefs"
 msgstr ""
 
 msgid "close"
-msgstr ""
-
-msgid "come on in"
 msgstr ""
 
 msgid "comment"
@@ -509,9 +527,6 @@ msgstr ""
 msgid "recipes by categories"
 msgstr ""
 
-msgid "remember me on this computer"
-msgstr ""
-
 msgid "remove"
 msgstr ""
 
@@ -551,12 +566,6 @@ msgstr ""
 msgid "share your recipes"
 msgstr ""
 
-msgid "sign in"
-msgstr ""
-
-msgid "sign in on rezets.com"
-msgstr ""
-
 msgid "sign up rezets.com"
 msgstr ""
 
@@ -575,7 +584,7 @@ msgstr ""
 msgid "subscribe to your own recipes"
 msgstr ""
 
-msgid "tasty and substance %{recipe} recipe %{url}"
+msgid "tasty and substance %{recipe} recipe"
 msgstr ""
 
 msgid "thank you very much to publicize rezets.com your friends, thanks to you today we are a little larger. When you say we have more invitations will inform you of this."
@@ -597,9 +606,6 @@ msgid "updated %{time} ago"
 msgstr ""
 
 msgid "user"
-msgstr ""
-
-msgid "user or password incorrect"
 msgstr ""
 
 msgid "we do not have any %{category} recipe"

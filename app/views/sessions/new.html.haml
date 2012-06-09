@@ -1,22 +1,22 @@
-- title _("sign in on rezets.com")
+- title _("Sign in on rezets.com")
 
 #login
-  %h1= _("sign in")
+  %h1= _("Sign in")
   - unless @user_session.errors.empty?
-    %p.error= _("user or password incorrect")
+    %p.error= _("User or password incorrect")
 
   = form_for @user_session, :url => session_path do |f|
     .field
-      = f.label :email, _("email")
+      = f.label :email, _("Email")
       = f.text_field :email
 
     .field
-      = f.label :password, _("password")
+      = f.label :password, _("Password")
       = f.password_field :password
 
     .checkbox
       = f.check_box :remember_me
-      = f.label :remember_me, _("remember me on this computer")
+      = f.label :remember_me, _("Remember me on this computer")
 
     %p#submit
-      = f.submit _("come on in")
+      = f.submit _("Come on in")

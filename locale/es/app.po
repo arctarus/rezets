@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: version 0.0.1\n"
-"POT-Creation-Date: 2012-06-09 10:22+0200\n"
-"PO-Revision-Date: 2012-06-09 10:26+0100\n"
+"POT-Creation-Date: 2012-06-09 13:20+0200\n"
+"PO-Revision-Date: 2012-06-09 13:21+0100\n"
 "Last-Translator: Gabriel Ortuño <arctarusnet@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -124,6 +124,9 @@ msgstr "No puede quedar en blanco"
 msgid "Category"
 msgstr "Categoría"
 
+msgid "Come on in"
+msgstr "Entrar"
+
 msgid "Comments"
 msgstr "Comentarios"
 
@@ -137,7 +140,10 @@ msgid "Editing %{recipe}"
 msgstr "Editando %{recipe}"
 
 msgid "Editing recipe"
-msgstr "Editando %{recipe}"
+msgstr "Editando recipe"
+
+msgid "Email"
+msgstr "Email"
 
 msgid "Failed to send the invitation"
 msgstr "Error al enviar la invitación"
@@ -214,11 +220,17 @@ msgstr "Ahora puedes seguir las recetas que hace en tu pestaña de siguiendo, Ok
 msgid "Number of people"
 msgstr "Número de personas"
 
+msgid "Password"
+msgstr "Contraseña"
+
 msgid "Preparation time"
 msgstr "Tiempo de preparación"
 
 msgid "Recipes"
 msgstr "Recetas"
+
+msgid "Remember me on this computer"
+msgstr "Recordarme en este ordenador"
 
 msgid "Reviews the form before continuing"
 msgstr "Revisa el formulario antes de continuar"
@@ -231,6 +243,12 @@ msgstr "Invitaciones enviadas"
 
 msgid "Share your recipes and discover lots of them."
 msgstr "Comparte tus recetas y descubre montones de ellas."
+
+msgid "Sign in"
+msgstr "Iniciar sesión"
+
+msgid "Sign in on rezets.com"
+msgstr "Iniciar sesión en rezets.com"
 
 msgid "Sorry but you've exhausted all your invitations!"
 msgstr "¡lo sentimos pero has agotado todas tus invitaciones!"
@@ -261,6 +279,9 @@ msgstr "Recetas destacadas de hoy"
 
 msgid "Update"
 msgstr "Actualizar"
+
+msgid "User or password incorrect"
+msgstr "Usuario o password incorrecto"
 
 msgid "Welcome to rezets.com!"
 msgstr "¡Bienvenido a rezets.com!"
@@ -351,9 +372,6 @@ msgstr "cocineros"
 
 msgid "close"
 msgstr "cerrar"
-
-msgid "come on in"
-msgstr "adelante"
 
 msgid "comment"
 msgstr "comentario"
@@ -517,9 +535,6 @@ msgstr "recetas"
 msgid "recipes by categories"
 msgstr "recetas por categorías"
 
-msgid "remember me on this computer"
-msgstr "recordarme en este ordenador"
-
 msgid "remove"
 msgstr "eliminar"
 
@@ -559,12 +574,6 @@ msgstr "enviar invitación"
 msgid "share your recipes"
 msgstr "comparte tus recetas"
 
-msgid "sign in"
-msgstr "entrar"
-
-msgid "sign in on rezets.com"
-msgstr "entrar en rezets.com"
-
 msgid "sign up rezets.com"
 msgstr "crear una cuenta en rezets.com"
 
@@ -583,8 +592,8 @@ msgstr "suscribirse a tus propias recetas de %{category}"
 msgid "subscribe to your own recipes"
 msgstr "suscribirse a tus propias recetas"
 
-msgid "tasty and substance %{recipe} recipe %{url}"
-msgstr "receta de %{recipe} rica y con fundamento %{url}"
+msgid "tasty and substance %{recipe} recipe"
+msgstr "Receta de %{recipe} rica y con fundamento %{url}"
 
 msgid "thank you very much to publicize rezets.com your friends, thanks to you today we are a little larger. When you say we have more invitations will inform you of this."
 msgstr "muchas gracias por dar a conocer rezets.com a tus amigos, gracias a ti hoy somos un poquito más grandes. Cuando pongamos dispongamos de más invitaciones te informaremos de ello."
@@ -606,9 +615,6 @@ msgstr "actualizado hace %{time}"
 
 msgid "user"
 msgstr "usuario"
-
-msgid "user or password incorrect"
-msgstr "usuario o password incorrecto"
 
 msgid "we do not have any %{category} recipe"
 msgstr "todavía no tenemos ninguna receta de %{category}"
@@ -633,3 +639,4 @@ msgstr "tu página web"
 
 msgid "{category} recipes"
 msgstr "recetas de %{category}"
+
