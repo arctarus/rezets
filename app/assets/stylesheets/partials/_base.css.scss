@@ -7,17 +7,48 @@ $blueprint-grid-margin: 10px;
 $blueprint-font-size:14px;
 $blueprint-font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 
+// Use this to calculate the width based on the total width.
+// Or you can set $blueprint-grid-width to a fixed value and unset $blueprint-container-size -- it will be calculated for you.
+$blueprint-grid-width: ($blueprint-container-size + $blueprint-grid-margin) / $blueprint-grid-columns - $blueprint-grid-margin;
+
+$fb-font-size: $blueprint-font-size;
+
+$primary-color: #380;
+$secondary-color: #FFB800;
+
+$font-color:     #333333;
+$quiet-color:    lighten($font-color, 20%);
+$loud-color:     darken($font-color, 13.33%);
+$header-color:   darken($font-color, 6.67%);
+$alt-text-color: #666666;
+$blueprint-background-color: #eeeeee;
+$blueprint-border-color: #ddd;
+
 $link-color:#04A;
 $link-hover-color: lighten($link_color,30%);
 $link-focus-color: $link-color;
 $link-active-color: $link-color;
 $link-visited-color: $link-color;
 
-// Use this to calculate the width based on the total width.
-// Or you can set $blueprint-grid-width to a fixed value and unset $blueprint-container-size -- it will be calculated for you.
-$blueprint-grid-width: ($blueprint-container-size + $blueprint-grid-margin) / $blueprint-grid-columns - $blueprint-grid-margin;
+$feedback-border-color: #dddddd;
+$success-color:         $primary-color;
+$success-bg-color:      #e6efc2;
+$success-border-color:  #c6d880;
+$notice-color:          #514721;
+$notice-bg-color:       #fff6bf;
+$notice-border-color:   #ffd324;
+$info-color:            #205791;
+$info-bg-color:         #d5edf8;
+$info-border-color:     #92cae4;
+$error-color:           #8a1f11;
+$error-bg-color:        #fbe3e4;
+$error-border-color:    #fbc2c4;
 
-$fb-font-size: $blueprint-font-size;
+$highlight-color:        #FFB800;
+$added-color:             white;
+$added-bg-color:        #006600;
+$removed-color:           white;
+$removed-bg-color:      #990000;
 
 @import "compass/utilities";
 @import "blueprint/reset";
@@ -25,8 +56,11 @@ $fb-font-size: $blueprint-font-size;
 @import "blueprint/typography";
 
 @import "compass/css3/border-radius";
+@import "compass/css3/box-shadow";
 
 @include blueprint-utilities;
 @include blueprint-debug;
 @include blueprint-interaction;
 @include blueprint-typography;
+
+$camera-icon-url: image-url('camera.png');

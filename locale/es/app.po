@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: version 0.0.1\n"
-"POT-Creation-Date: 2012-02-03 20:49+0100\n"
-"PO-Revision-Date: 2011-08-02 19:29+0100\n"
+"POT-Creation-Date: 2012-06-09 10:22+0200\n"
+"PO-Revision-Date: 2012-06-09 10:26+0100\n"
 "Last-Translator: Gabriel Ortuño <arctarusnet@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -109,9 +109,6 @@ msgstr "recetas de %{user} de %{category}"
 msgid "%{user}'s recipes"
 msgstr "recetas de %{user}"
 
-msgid "%{user}'s recipes of %{category}"
-msgstr "recetas de %{user} de %{category}"
-
 msgid "All recipes"
 msgstr "Todas las recetas"
 
@@ -123,6 +120,24 @@ msgstr "Como verás todavía andamos en paños menores así que te rogaría que 
 
 msgid "Can't be blank"
 msgstr "No puede quedar en blanco"
+
+msgid "Category"
+msgstr "Categoría"
+
+msgid "Comments"
+msgstr "Comentarios"
+
+msgid "Create"
+msgstr "Crear"
+
+msgid "Directions"
+msgstr "Instrucciones"
+
+msgid "Editing %{recipe}"
+msgstr "Editando %{recipe}"
+
+msgid "Editing recipe"
+msgstr "Editando %{recipe}"
 
 msgid "Failed to send the invitation"
 msgstr "Error al enviar la invitación"
@@ -175,20 +190,41 @@ msgstr "Ingredientes"
 msgid "Invitation send successfully to %{email}"
 msgstr "Invitación enviada con éxito a %{email}"
 
+msgid "It is imperative that you put a really nice one ;)"
+msgstr "Es obligatorio que pongas una realmente bonita ;)"
+
 msgid "It looks like there is a problem"
 msgstr "Parece que hay un problema"
 
 msgid "It looks like to be missing some data"
 msgstr "Parece que has olvidado algún dato"
 
+msgid "Make a comment"
+msgstr "Comentar"
+
+msgid "Minutes"
+msgstr "Minutos"
+
+msgid "New recipe"
+msgstr "Receta nueva"
+
 msgid "Now you can follow the recipes that he make on your following tab. Ok?"
 msgstr "Ahora puedes seguir las recetas que hace en tu pestaña de siguiendo, Ok?"
+
+msgid "Number of people"
+msgstr "Número de personas"
+
+msgid "Preparation time"
+msgstr "Tiempo de preparación"
 
 msgid "Recipes"
 msgstr "Recetas"
 
 msgid "Reviews the form before continuing"
 msgstr "Revisa el formulario antes de continuar"
+
+msgid "Select photo"
+msgstr "Elegir foto"
 
 msgid "Sent invitations"
 msgstr "Invitaciones enviadas"
@@ -214,11 +250,17 @@ msgstr "¡Gracias!"
 msgid "There was also another reason to start a project. I needed to learn web development environment and have a battlefield where you can make and unmake as I please without worrying about consequences, and since by that time had some wonderful colleagues who offered to teach me what I knew I opted for using %{ror} to develop my idea."
 msgstr "Hubo también otra razón para iniciar un proyecto. Necesitaba aprender un entorno de desarrollo web y tener un campo de batalla donde se poder hacer y deshacer a mi antojo sin preocuparse de las consecuencias, y ya que por aquel entonces había algunos compañeros maravillosos que se ofreció a enseñarme lo que sabían opté por usar %{ror} para desarrollar mi idea."
 
+msgid "Title"
+msgstr "Título"
+
 msgid "To start enjoying rezets.com simply %{create_recipe}."
 msgstr "Para comenzar a disfrutar de rezets.com sólo tienes %{create_recipe}."
 
 msgid "Today featured recipes"
 msgstr "Recetas destacadas de hoy"
+
+msgid "Update"
+msgstr "Actualizar"
 
 msgid "Welcome to rezets.com!"
 msgstr "¡Bienvenido a rezets.com!"
@@ -240,6 +282,9 @@ msgstr "Puedes empezar por:"
 
 msgid "You have %{num_invitations} invitations to send to your friends which will remain %{remaining_invitations}."
 msgstr "Tienes %{num_invitations} invitaciones para enviar a tus amigos de la cuales te quedan %{remaining_invitations}"
+
+msgid "You have to select a photo"
+msgstr "Tienes que selecionar una foto"
 
 msgid "You must be logged in to access this page"
 msgstr "Debes estar logado para acceder a esta página"
@@ -286,17 +331,11 @@ msgstr "por"
 msgid "can include several comma-separated"
 msgstr "puedes incluir varios separados por punto y coma"
 
-msgid "can't be blank"
-msgstr "no puede quedar vacío"
-
 msgid "cancel"
 msgstr "cancelar"
 
 msgid "categories"
 msgstr "categorías"
-
-msgid "category"
-msgstr "categoría"
 
 msgid "change"
 msgstr "cambiar"
@@ -346,9 +385,6 @@ msgstr "cocinar"
 msgid "cooking"
 msgstr "cocinar"
 
-msgid "create"
-msgstr "crear"
-
 msgid "create a new recipe"
 msgstr "crear una receta nueva"
 
@@ -372,9 +408,6 @@ msgstr "editar"
 
 msgid "edit profile"
 msgstr "editar perfil"
-
-msgid "editing %{recipe}"
-msgstr "editando %{recipe}"
 
 msgid "email"
 msgstr "email"
@@ -412,9 +445,6 @@ msgstr "ingredientes"
 msgid "invite friends"
 msgstr "invitar amigos"
 
-msgid "it is imperative that you put a really nice one ;)"
-msgstr "es obligatorio que pongas una realmente bonita ;)"
-
 msgid "like?"
 msgstr "¿te gusta?"
 
@@ -424,17 +454,11 @@ msgstr "entrar"
 msgid "logout"
 msgstr "salir"
 
-msgid "make a comment"
-msgstr "comentar"
-
 msgid "message"
 msgstr "mensaje"
 
 msgid "min"
 msgstr "min"
-
-msgid "minutes"
-msgstr "minutos"
 
 msgid "name"
 msgstr "nombre"
@@ -445,17 +469,11 @@ msgstr "nuevo comentario"
 msgid "new invitation"
 msgstr "nueva invitación"
 
-msgid "new recipe"
-msgstr "receta nueva"
-
 msgid "next %{ico}"
 msgstr "siguiente %{ico}"
 
 msgid "now you can,"
 msgstr "ahora puedes,"
-
-msgid "number of people"
-msgstr "número de personas"
 
 msgid "of"
 msgstr "de"
@@ -480,12 +498,6 @@ msgstr "página %{num}"
 
 msgid "password"
 msgstr "contraseña"
-
-msgid "photo"
-msgstr "foto"
-
-msgid "preparation time"
-msgstr "tiempo de preparación"
 
 msgid "print"
 msgstr "imprimir"
@@ -544,12 +556,6 @@ msgstr "invitaciones enviadas"
 msgid "send invite"
 msgstr "enviar invitación"
 
-msgid "share recipe on facebook"
-msgstr "compartir receta en facebook"
-
-msgid "share recipe on twitter"
-msgstr "compartir receta en twitter"
-
 msgid "share your recipes"
 msgstr "comparte tus recetas"
 
@@ -594,9 +600,6 @@ msgstr "twitter"
 
 msgid "unit"
 msgstr "unidad"
-
-msgid "update"
-msgstr "actualizar"
 
 msgid "updated %{time} ago"
 msgstr "actualizado hace %{time}"
