@@ -38,9 +38,8 @@ module RecipesHelper
   end
 
   def add_this_description(recipe)
-    _("tasty and substance %{recipe} recipe %{url}") % {
-      recipe: recipe.name.downcase, 
-      url: user_recipe_url(recipe.author,recipe)}
+    _("tasty and substance %{recipe} recipe") % {
+      recipe: recipe.name.downcase }
   end
 
   def recipe_image_tag(recipe)
