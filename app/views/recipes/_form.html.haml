@@ -1,56 +1,64 @@
-= form_for [@recipe.author,@recipe], :html => { :multipart => true } do |f|
+= form_for [@recipe.author, @recipe], :html => { :class => :recipe, :multipart => true } do |f|
 
-  - unless @recipe.errors.empty?
+  - if @recipe.errors.any?
     .error
       %h2= _('It looks like to be missing some data')
       %p= _('Reviews the form before continuing')
 
   .field
-    = f.text_field :name, :maxlength => 255, :required => true, :class => [:text,:title]
+    = f.label :name, _('Title')
+    = f.text_field :name, :autofocus => true,
+                          :placeholder => _('Title'),
+                          :maxlength => 255,
+                          :required => true, :class => [:text,:title]
 
-  .field
-    = f.label :category_id, _("category")
-    = f.select :category_id, Category.order("name asc").collect {|c| [c.name,c.id] }
-
-  .field
-    = f.label :photo, _("photo")
-    - unless @recipe.photo.url == "/photos/original/missing.png"
-      = image_tag @recipe.photo.url(:medium)
-      %br
+  .file
+    = f.label :photo, _("Select photo")
     = f.file_field :photo
+    - if @recipe.has_photo?
+      %span.filename= @recipe.photo_file_name
+      = image_tag @recipe.photo.url(:medium), :title => @recipe.title,
+                                              :class => :image
+    - else
+      %span.filename= _('You have to select a photo')
+
 
   .field
-    = f.label :num_persons, _("number of people")
+    = f.label :category_id, _("Category")
+    = f.select :category_id, categories_options_for_select
+
+  .field
+    = f.label :num_persons, _("Number of people")
     = f.text_field :num_persons, :required => true, :class => "number", :maxlength => 3
 
   %fieldset#ingredients.ingredients
-    %legend= _("ingredients")
-    %table#recipe_ingredients
-      %thead
-        %tr
-          %th= _("opt")
-          %th= _("amount")
-          %th= _("unit")
-          %th= _("ingredient")
-          %th= _("comment")
-          %th
-      %tbody#recipe_ingredients_body
-        = render :partial => "ingredient", :collection => @recipe.recipe_ingredients
+    %legend= _("Ingredients")
+    .field
+      %table#recipe_ingredients
+        %thead
+          %tr
+            %th= _("opt")
+            %th= _("amount")
+            %th= _("unit")
+            %th= _("ingredient")
+            %th= _("comment")
+            %th
+        %tbody#recipe_ingredients_body
+          = render :partial => "ingredient", :collection => @recipe.recipe_ingredients
 
     %p#addingredient= add_ingredient_link _("add new ingredient"), '#'
 
   .field
-    = f.label :cook_time, _("preparation time")
+    = f.label :cook_time, _("Preparation time")
     = f.text_field :cook_time, :class => "number", :maxlength => 3, :required => true
-    %span.ft= _("minutes")
+    %span.ft= _("Minutes")
 
   .field
-    = f.label :directions, _("directions")
+    = f.label :directions, _("Directions")
     = f.text_area :directions, :required => true
 
   %p#submit
-    - submit_value = @recipe.new_record? ? _("create") : _("update")
-    = f.submit submit_value
+    = f.submit submit_value(@recipe)
     %span.fr= _("or")
     = link_to _("cancel"), current_user, :confirm => "you will go out and lose form data that you saved, Are you sure?"
 

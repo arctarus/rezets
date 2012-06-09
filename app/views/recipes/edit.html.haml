@@ -1,2 +1,4 @@
-%h1= title _("editing %{recipe}") % {:recipe => @recipe.name.downcase}
+- title _("Editing %{recipe}") % {:recipe => @recipe.name}
+
+%h1= _('Editing recipe')
 = render "form"

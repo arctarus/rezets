@@ -1,22 +1,91 @@
 /*=forms*/
-textarea {font-size:1.3em}
-fieldset {margin:1em 0}
-legend {font-weight:bold}
-.error {
-  h2 {color:#333}
-  p {margin-bottom:0}
-}
 
-p.validation-error {margin-bottom:0; color:#8A1F11}
-div.field {
-  margin:1em 0;
-  p.hint {color:#666}
-  label {display:block; font-weight:bold}
-  input.title {width:26em; font-size:1.6em}
-  textarea {width:38em; height:200px; padding:.2em}
+form {
+
+  textarea {font-size:1.3em}
+  fieldset {margin:1em 0}
+  legend {font-weight:bold}
+
+  .error {
+    h2 {color:#333}
+    p {margin-bottom:0}
+  }
+  p.validation-error {margin-bottom:0; color:#8A1F11}
+
+  .field {
+    margin:2em 0;
+    p.hint {color:#666}
+    label {display:block; font-weight:bold}
+    input.title {width:500px; font-size:1.6em}
+    textarea {width:500px; height:100px; }
+
+    input[type=text], input.text, textarea {
+      padding:5px;
+      border:1px solid #CCC;
+      @include border-radius(3px);
+      @include box-shadow(inset 1px 1px 2px #666);
+      outline:none;
+    }
+
+    input:focus, textarea:focus {
+      border-color: $highlight-color;
+      @include box-shadow(inset 1px 1px 2px darken($highlight-color, 20%));
+    }
+  }
+
+  .file {
+    margin: 1em 0;
+
+    input { 
+      position: absolute;
+      top:-100px;
+      left:-100px;
+      z-index:999;
+    }
+
+    label {
+      border: 1px solid $primary-color;
+      @include border-radius;
+      padding: .5em .5em .5em 2em;
+      background: $camera-icon-url no-repeat .5em .6em;
+      cursor: pointer;
+      margin-right:.5em;
+    }
+
+    img { margin-top: 1em; display:block }
+  }
+
+  div.checkbox {
+    label {display:inline; font-weight:normal}
+    input {margin-left:0; vertical-align:middle}
+  }
+
+  .ingredients {
+    .field {
+      margin-bottom:0;
+    }
+  }
+
+  #submit {
+    margin-top:2em;
+
+    input {
+      @include border-radius;
+      border:1px solid #CCC;
+      @include box-shadow(#666 1px 1px 1px);
+      padding: 5px 10px;
+      cursor: pointer;
+      font-weight: bold;
+      color: $success-color;
+      @include background-image(linear-gradient(#eee, #ccc));
+
+      &:hover {
+        @include background-image(linear-gradient(white, #ddd));
+      }
+
+      &:active {
+        @include box-shadow(inset #666 1px 1px 1px);
+      }
+    }
+  }
 }
-div.checkbox {
-  label {display:inline; font-weight:normal}
-  input {margin-left:0; vertical-align:middle}
-}
-p#submit {margin-top:2em}

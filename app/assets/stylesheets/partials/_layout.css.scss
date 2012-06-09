@@ -8,13 +8,13 @@
   .wrapper {position:relative}
   padding:0 0 .5em;
   background: #33b300;
-  @include background-image(linear-gradient(#33b300, #336b00));
+  @include background-image(linear-gradient(lighten($primary-color, 10%), darken($primary-color, 10%)));
   @include append-bottom(2em);
   zoom:1;
   a {
     text-decoration:none;
     color:#F3F3F3;
-    &:hover {color:#FFB800}
+    &:hover {color: $secondary-color}
   }
   p.logo {
     font-family: 'Lobster', arial, serif;

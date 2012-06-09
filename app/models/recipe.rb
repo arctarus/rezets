@@ -21,8 +21,8 @@ class Recipe < ActiveRecord::Base
   has_many :likes, :through => :user_likes,
                    :source => :user
 
-  validates_presence_of :name, :directions, :category, :author, :message => _("can't be blank")
-  validates_presence_of :photo_file_name, :message => _("it is imperative that you put a really nice one ;)")
+  validates_presence_of :name, :directions, :category, :author, :message => _("Can't be blank")
+  validates_presence_of :photo_file_name, :message => _("It is imperative that you put a really nice one ;)")
   validates_length_of :name, :minimum => 5
 
   after_update :save_recipe_ingredients
@@ -129,6 +129,10 @@ class Recipe < ActiveRecord::Base
 
   def author_and_commenters_except(user)
     User.where(id: comments.map(&:user_id) + [author_id] - [user.id])
+  end
+
+  def has_photo?
+    self.photo.url != "/photos/original/missing.png"
   end
   
   private

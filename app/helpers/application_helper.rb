@@ -23,6 +23,10 @@ module ApplicationHelper
     end
   end
 
+  def submit_value(model)
+    model.new_record? ? _("Create") : _("Update")
+  end
+
   def blog_url
     "http://blog.rezets.com"
   end
