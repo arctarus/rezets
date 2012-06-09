@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: version 0.0.1\n"
-"POT-Creation-Date: 2012-02-03 20:49+0100\n"
+"POT-Creation-Date: 2012-06-09 10:22+0200\n"
 "PO-Revision-Date: 2009-11-09 22:31+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -110,9 +110,6 @@ msgstr ""
 msgid "%{user}'s recipes"
 msgstr ""
 
-msgid "%{user}'s recipes of %{category}"
-msgstr ""
-
 msgid "All recipes"
 msgstr ""
 
@@ -123,6 +120,24 @@ msgid "As you can see we are walking in underwear so I would ask you if you saw 
 msgstr ""
 
 msgid "Can't be blank"
+msgstr ""
+
+msgid "Category"
+msgstr ""
+
+msgid "Comments"
+msgstr ""
+
+msgid "Create"
+msgstr ""
+
+msgid "Directions"
+msgstr ""
+
+msgid "Editing %{recipe}"
+msgstr ""
+
+msgid "Editing recipe"
 msgstr ""
 
 msgid "Failed to send the invitation"
@@ -167,19 +182,40 @@ msgstr ""
 msgid "Invitation send successfully to %{email}"
 msgstr ""
 
+msgid "It is imperative that you put a really nice one ;)"
+msgstr ""
+
 msgid "It looks like there is a problem"
 msgstr ""
 
 msgid "It looks like to be missing some data"
 msgstr ""
 
+msgid "Make a comment"
+msgstr ""
+
+msgid "Minutes"
+msgstr ""
+
+msgid "New recipe"
+msgstr ""
+
 msgid "Now you can follow the recipes that he make on your following tab. Ok?"
+msgstr ""
+
+msgid "Number of people"
+msgstr ""
+
+msgid "Preparation time"
 msgstr ""
 
 msgid "Recipes"
 msgstr ""
 
 msgid "Reviews the form before continuing"
+msgstr ""
+
+msgid "Select photo"
 msgstr ""
 
 msgid "Sent invitations"
@@ -206,10 +242,16 @@ msgstr ""
 msgid "There was also another reason to start a project. I needed to learn web development environment and have a battlefield where you can make and unmake as I please without worrying about consequences, and since by that time had some wonderful colleagues who offered to teach me what I knew I opted for using %{ror} to develop my idea."
 msgstr ""
 
+msgid "Title"
+msgstr ""
+
 msgid "To start enjoying rezets.com simply %{create_recipe}."
 msgstr ""
 
 msgid "Today featured recipes"
+msgstr ""
+
+msgid "Update"
 msgstr ""
 
 msgid "Welcome to rezets.com!"
@@ -231,6 +273,9 @@ msgid "You can start by:"
 msgstr ""
 
 msgid "You have %{num_invitations} invitations to send to your friends which will remain %{remaining_invitations}."
+msgstr ""
+
+msgid "You have to select a photo"
 msgstr ""
 
 msgid "You must be logged in to access this page"
@@ -278,16 +323,10 @@ msgstr ""
 msgid "can include several comma-separated"
 msgstr ""
 
-msgid "can't be blank"
-msgstr ""
-
 msgid "cancel"
 msgstr ""
 
 msgid "categories"
-msgstr ""
-
-msgid "category"
 msgstr ""
 
 msgid "change"
@@ -338,9 +377,6 @@ msgstr ""
 msgid "cooking"
 msgstr ""
 
-msgid "create"
-msgstr ""
-
 msgid "create a new recipe"
 msgstr ""
 
@@ -363,9 +399,6 @@ msgid "edit"
 msgstr ""
 
 msgid "edit profile"
-msgstr ""
-
-msgid "editing %{recipe}"
 msgstr ""
 
 msgid "email"
@@ -404,9 +437,6 @@ msgstr ""
 msgid "invite friends"
 msgstr ""
 
-msgid "it is imperative that you put a really nice one ;)"
-msgstr ""
-
 msgid "like?"
 msgstr ""
 
@@ -416,16 +446,10 @@ msgstr ""
 msgid "logout"
 msgstr ""
 
-msgid "make a comment"
-msgstr ""
-
 msgid "message"
 msgstr ""
 
 msgid "min"
-msgstr ""
-
-msgid "minutes"
 msgstr ""
 
 msgid "name"
@@ -437,16 +461,10 @@ msgstr ""
 msgid "new invitation"
 msgstr ""
 
-msgid "new recipe"
-msgstr ""
-
 msgid "next %{ico}"
 msgstr ""
 
 msgid "now you can,"
-msgstr ""
-
-msgid "number of people"
 msgstr ""
 
 msgid "of"
@@ -471,12 +489,6 @@ msgid "page %{num}"
 msgstr ""
 
 msgid "password"
-msgstr ""
-
-msgid "photo"
-msgstr ""
-
-msgid "preparation time"
 msgstr ""
 
 msgid "print"
@@ -536,12 +548,6 @@ msgstr ""
 msgid "send invite"
 msgstr ""
 
-msgid "share recipe on facebook"
-msgstr ""
-
-msgid "share recipe on twitter"
-msgstr ""
-
 msgid "share your recipes"
 msgstr ""
 
@@ -585,9 +591,6 @@ msgid "twitter"
 msgstr ""
 
 msgid "unit"
-msgstr ""
-
-msgid "update"
 msgstr ""
 
 msgid "updated %{time} ago"
