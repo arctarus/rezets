@@ -9,10 +9,11 @@ class Recipe < ActiveRecord::Base
   has_many :recipe_ingredients, :dependent => :destroy
   has_many :ingredients,        :through => :recipe_ingredients
   has_many :comments,           :include => :user
-  belongs_to :category
+  belongs_to :category,         :touch => true
 
   belongs_to :author, :foreign_key => :author_id,
                       :class_name => "User",
+                      :touch => true,
                       :counter_cache => true
 
   has_many :user_likes, :foreign_key => :recipe_id, 
@@ -133,6 +134,23 @@ class Recipe < ActiveRecord::Base
 
   def has_photo?
     self.photo.url != "/photos/original/missing.png"
+  end
+
+  def recipes_same_category(n = 3)
+    @recipes_same_category ||= Recipe.
+      where(:category_id => self.category_id).
+      rejecting([*self.recipes_same_author, self]).
+      includes(:author).
+      order('created_at desc').
+      limit(n)
+  end
+
+  def recipes_same_author(n = 3)
+    @recipes_same_author ||= self.author.recipes.
+      rejecting(self).
+      includes(:author, :category).
+      order('created_at desc').
+      limit(n)
   end
   
   private

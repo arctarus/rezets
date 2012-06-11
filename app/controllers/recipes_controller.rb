@@ -15,17 +15,7 @@ class RecipesController < ApplicationController
   end
 
   def show
-    @recipes_same_author = @user.recipes.
-                                 rejecting(@recipe).
-                                 includes(:author, :category).
-                                 order('created_at desc').
-                                 limit(3)
-    @recipes_same_category = Recipe.
-      where(:category_id => @recipe.category_id).
-      rejecting([*@recipes_same_author, @recipe]).
-      includes(:author).
-      order('created_at desc').
-      limit(3)
+
 
     @comment = @recipe.comments.build
 
