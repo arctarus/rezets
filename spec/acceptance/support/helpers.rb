@@ -2,9 +2,9 @@ module HelperMethods
 
   def login_as(user)
     visit login_path
-    fill_in _('email'), :with => user.email
-    fill_in _('password'), :with => user.password
-    click_button _('come on in')
+    fill_in _('Email'), :with => user.email
+    fill_in _('Password'), :with => user.password
+    click_button _('Come on in')
   end
 
   def should_be_on(page_path)
