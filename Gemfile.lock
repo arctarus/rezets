@@ -168,6 +168,7 @@ GEM
       net-ssh (>= 1.99.1)
     net-ssh (2.5.2)
     netrc (0.7.4)
+    newrelic_rpm (3.3.5)
     nokogiri (1.5.3)
     paperclip (3.0.4)
       activemodel (>= 3.0.0)
@@ -308,6 +309,7 @@ DEPENDENCIES
   launchy
   libnotify
   mysql2
+  newrelic_rpm
   paperclip
   pg
   rails (~> 3.2.0)
