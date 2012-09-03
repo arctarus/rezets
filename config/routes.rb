@@ -4,9 +4,9 @@ Rezets::Application.routes.draw do
   resources :categories, :except => [:index]
   resources :ingredients, :only => [:index]
   
-  resources :users do
+  resources :users, :except => [:show] do
     get :rookies, :on => :collection
-    resources :recipes do
+    resources :recipes, :except => [:show] do
       member do
         get :print
         get :email
@@ -38,6 +38,11 @@ Rezets::Application.routes.draw do
   match "/about"    => "home#about",    :as => :about
   match "/search"   => "home#search",   :as => :search
   match "/feed"     => "home#feed",     :as => :feed
+
+  get ':id', :to => 'users#show', :as => :user
+  put ':id', :to => 'users#update'
+  get ':user_id/:id', :to => 'recipes#show', :as => :user_recipe
+  put ':user_id/:id', :to => 'recipes#update'
 
   # See how all your routes lay out with "rake routes"
 
