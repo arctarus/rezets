@@ -39,6 +39,9 @@ Rezets::Application.routes.draw do
   match "/search"   => "home#search",   :as => :search
   match "/feed"     => "home#feed",     :as => :feed
 
+  match '/users/:id' => redirect('/%{id}')
+  match '/users/:user_id/recipes/:id' => redirect('/%{user_id}/%{id}')
+
   get ':id', :to => 'users#show', :as => :user
   put ':id', :to => 'users#update'
   get ':user_id/:id', :to => 'recipes#show', :as => :user_recipe
