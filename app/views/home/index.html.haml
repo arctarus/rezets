@@ -29,7 +29,7 @@
           :category => link_to(recipe.category.name, recipe.category)}) |
 
 
-%p= link_to _("Subscribe to the latest recipes"), feed_path, :class => "feed-link"
+%p= link_to _("Subscribe to the latest recipes"), 'http://feeds.feedburner.com/rezetscom', :class => "feed-link"
 
 - content_for :sidebar do
   = render :partial => 'sidebar'
