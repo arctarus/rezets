@@ -15,9 +15,13 @@ class RecipesController < ApplicationController
   end
 
   def show
-
-
-    @comment = @recipe.comments.build
+    if params[:id] != @recipe.to_param
+      headers["Status"] = "301 Moved Permanently"
+      redirect_to user_recipe_path(@recipe.author, @recipe)
+      return
+    else
+      @comment = @recipe.comments.build(:user => current_user)
+    end
 
     respond_with @recipe do |format|
       format.html { render :layout => 'recipe' }
