@@ -7,9 +7,7 @@ class CommentsController < ApplicationController
   before_filter :require_user
 
   def create
-    @comment = current_user.comments.
-      new_with_recipe(params[:comment], @recipe)
-    if @comment.save
+    if @comment = CreateComment.new(current_user, @recipe, params[:comment]).call
       redirect_to [@user, @recipe]
     else
       @category = @recipe.category
