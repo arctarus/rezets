@@ -1,12 +1,12 @@
 %h2
   %span= _("Recipes")
-- unless @categories.blank?
+
+- if @categories.present?
   %ul
     - @categories.each do |category|
-      %li
-        = link_to category.name, category
+      %li= link_to category.name, category
 
-- unless @users.empty?
+- if @users.present?
   .users
     %h2= _("Featured users")
     %ul.featured-users

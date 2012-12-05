@@ -1,5 +1,5 @@
-- title 'rezets.com - ' + _('share your recipes')
-- meta_description _("create and share recipes with your friends")
+- title "rezets.com - " + _('share your recipes')
+- meta_description _("Create and share recipes with your friends")
 - meta_keywords [_("recipe"), _("cook"), _("cooking"), _("eat"), _("food")]
 
 - content_for :top do
@@ -9,31 +9,14 @@
 
 .featured-recipes
   %h2= _("Today featured recipes")
-  %ul
-    - @recipes.each do |recipe|
-      %li{:class => cycle(nil,"last")}
-        %h3= link_to h(recipe.name), user_recipe_path(recipe.author,recipe), :title => recipe.title
-        %p.user
-          = image_tag recipe.author.avatar.url(:thumb), :class  => "avatar", 
-                                                        :alt    => recipe.author.name, 
-                                                        :title  => recipe.author.name,
-                                                        :width  => '20px',
-                                                        :height => '20px'
-
-          = link_to h(recipe.author.name), recipe.author
-
-        %p= link_to image_tag(recipe.photo.url(:medium), :class  => 'photo', :alt => recipe.name, :width => '310px', :height => '240px'), user_recipe_path(recipe.author,recipe)
-
-        %p.created= raw(_("%{time} ago in %{category}") % { |
-          :time => distance_of_time_in_words_to_now(recipe.created_at), |
-          :category => link_to(recipe.category.name, recipe.category)}) |
+  - cache ['home', 'most_popular', @recipes] do
+    %ul= render :partial => 'recipe', :collection => @recipes
 
 
 %p= link_to _("Subscribe to the latest recipes"), 'http://feeds.feedburner.com/rezetscom', :class => "feed-link"
 
 - content_for :sidebar do
-  = render :partial => 'sidebar'
+  = render 'sidebar'
 
 - content_for :feed do
   = auto_discovery_link_tag :atom, {:action => :feed}, {:title => _("freshly made recipes rezets.com")}
-
