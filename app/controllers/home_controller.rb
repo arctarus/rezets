@@ -1,10 +1,12 @@
 class HomeController < ApplicationController
   respond_to :html, :except => :feed
 
+  caches_page :feed
+
   def index
-    @recipes = Recipe.freshly_made
+    @recipes    = Recipe.freshly_made
     @categories = Category.with_recipes.order("name asc")
-    @users = User.featured.limit(8)
+    @users      = User.featured.limit(8)
   end
 
   def feed

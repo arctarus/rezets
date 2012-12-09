@@ -12,7 +12,7 @@ feature 'User signup', %q{
   end
 
   scenario 'fill fields correctly' do
-    visit new_user_page(@invitation)
+    visit new_user_path(:token => @invitation.token)
 
     fill_in _('name'),              :with => sample_name
     fill_in _('password'),          :with => '123456'
@@ -28,13 +28,13 @@ feature 'User signup', %q{
   end
 
   scenario 'forgot fill one field' do
-    visit new_user_page(@invitation)
+    visit new_user_path(:token => @invitation.token)
 
     fill_in _('name'),              :with => sample_name
     fill_in _('password'),          :with => '123456'
     fill_in _('address of your page in rezets.com'), :with => sample_name.parameterize
     click_button _('continue')
-    should_be_on users_page
+    should_be_on users_path
     should_see _('It looks like to be missing some data')
   end
 

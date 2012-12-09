@@ -1,0 +1,17 @@
+- cache ['home', recipe] do
+  %li{:class => cycle(nil,"last")}
+    %h3= link_to recipe.name, user_recipe_path(recipe.author,recipe), :title => recipe.title
+    %p.user
+      = image_tag recipe.author.avatar.url(:thumb), :class  => "avatar", 
+                                                    :alt    => recipe.author.name, 
+                                                    :title  => recipe.author.name,
+                                                    :width  => '20px',
+                                                    :height => '20px'
+
+      = link_to recipe.author.name, recipe.author
+
+    %p= link_to image_tag(recipe.photo.url(:medium), :class  => 'photo', :alt => recipe.name, :width => '310px', :height => '240px'), user_recipe_path(recipe.author,recipe)
+
+    %p.created= raw(_("%{time} ago in %{category}") % { |
+      :time => distance_of_time_in_words_to_now(recipe.created_at), |
+      :category => link_to(recipe.category.name, recipe.category)}) |

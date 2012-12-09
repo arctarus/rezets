@@ -59,11 +59,12 @@ class Recipe < ActiveRecord::Base
       :medium => "310x240#",
       :thumb  => "100x100#" }
 
-  scope :most_popular, 
+  scope :most_popular,
     includes(:category, :ingredients , :likes, :author).
     order("likes_count desc, updated_at desc")
 
-  scope :freshly_made, order("updated_at desc").limit(8)
+  scope :freshly_made,
+    includes([:category, :author]).order("updated_at desc").limit(8)
 
   scope :by_author, lambda {|author_id|
     where(author_id: author_id).
@@ -88,6 +89,10 @@ class Recipe < ActiveRecord::Base
     id = url.split('-', 2).first
     find(id, :include => [
       {:recipe_ingredients => :ingredient}])
+  end
+
+  def self.cache_key
+    "recipes/#{maximum(:updated_at).utc.to_s(:number)}"
   end
 
   def new_recipe_ingredients_attributes=(ri_attr)

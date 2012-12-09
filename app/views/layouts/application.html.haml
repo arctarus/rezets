@@ -1,5 +1,5 @@
 !!! 5
-%html{:lang => "es"}
+%html{:lang => I18n.locale}
   %head
     %title= title
     %meta{:content => "text/html;charset=UTF-8", "http-equiv" => "content-type"}/
@@ -24,21 +24,12 @@
 
     = javascript_include_tag :application
 
-    %script{:id =>'ingredient-list-template', :type => 'text/template'}
-      :plain
-        <ul class="ingredients-list">
-        </ul>
-
-    %script{:id =>'ingredient-template', :type => 'text/template'}
-      :plain
-        <li><%= name %></li>
-
   %body
     #header
       .wrapper
-        #nav= render :partial => "shared/nav"
-        = render :partial => "shared/header"
-        = render :partial => "shared/search"
+        #nav= render "shared/nav"
+        = render "shared/header"
+        = render "shared/search"
 
     #wrapper
 
@@ -57,6 +48,6 @@
           = yield :sidebar
 
     #footer
-      = render :partial => "shared/footer"
+      = render "shared/footer"
 
-    = render :partial => "shared/scripts"
+    = render "shared/scripts"

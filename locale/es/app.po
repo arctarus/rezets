@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: version 0.0.1\n"
-"POT-Creation-Date: 2012-06-09 13:20+0200\n"
-"PO-Revision-Date: 2012-06-09 13:21+0100\n"
+"POT-Creation-Date: 2012-12-05 15:52+0100\n"
+"PO-Revision-Date: 2012-12-05 15:52+0100\n"
 "Last-Translator: Gabriel Ortuño <arctarusnet@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -132,6 +132,9 @@ msgstr "Comentarios"
 
 msgid "Create"
 msgstr "Crear"
+
+msgid "Create and share recipes with your friends"
+msgstr "Crea y comparte recetas con tus amigos"
 
 msgid "Directions"
 msgstr "Instrucciones"
@@ -405,9 +408,6 @@ msgstr "cocinar"
 
 msgid "create a new recipe"
 msgstr "crear una receta nueva"
-
-msgid "create and share recipes with your friends"
-msgstr "crea y comparte recetas con tus amigos"
 
 msgid "delete"
 msgstr "borrar"

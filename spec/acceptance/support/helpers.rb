@@ -1,7 +1,11 @@
 module HelperMethods
 
+  def ensure_on(path)
+    visit(path) unless current_path == path
+  end
+
   def login_as(user)
-    visit login_path
+    ensure_on login_path
     fill_in _('Email'), :with => user.email
     fill_in _('Password'), :with => user.password
     click_button _('Come on in')

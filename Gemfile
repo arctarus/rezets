@@ -59,4 +59,6 @@ group :development, :test do
   gem 'ruby_parser', '~> 2.0.4'
   gem 'simplecov'
   gem 'simplecov-rcov'
+  gem 'churn'
+  gem 'reek'
 end
