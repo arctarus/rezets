@@ -12,10 +12,8 @@ class CreateComment
     @comment = @commenter.comment_a_recipe(@recipe, @comment_attrs)
     if @comment.save
       notify_recipe_authors_and_commenters
-      @comment
-    else
-      false
     end
+    @comment
   end
 
   private

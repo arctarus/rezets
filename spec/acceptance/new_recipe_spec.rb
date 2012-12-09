@@ -5,9 +5,11 @@ feature "New Recipe", %q{
   As a user
   I want to create a new recipe
 } do
-
+  
   # Given
   background do
+    Recipe.any_instance.stub(:save_attached_files).and_return(true)
+
     @user = sample :user
     @category = sample :category, :name => 'carne'
     login_as @user
@@ -22,17 +24,17 @@ feature "New Recipe", %q{
     # When
     click_link _("create a new recipe")
     fill_in "recipe_name", :with => recipe_name
-    select category_name, :from => _("category")
-    attach_file _("photo"), image_path("recipe.jpg")
-    fill_in _("number of people"), :with => sample_number
+    select category_name, :from => _("Category")
+    attach_file _("Select photo"), image_path("recipe.jpg")
+    fill_in _("Number of people"), :with => sample_number
     
     fill_in_ingredient_with :value => sample_number, 
                             :unit => ingredient_unit, 
                             :name => ingredient_name
 
-    fill_in _("preparation time"), :with => sample_number(60)
-    fill_in _("directions"), :with => sample_paragraphs
-    click_button _("create")
+    fill_in _("Preparation time"), :with => sample_number(60)
+    fill_in _("Directions"), :with => sample_paragraphs
+    click_button _("Create")
 
     # Then
     should_be_on user_path(@user)

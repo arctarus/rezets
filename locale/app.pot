@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: version 0.0.1\n"
-"POT-Creation-Date: 2012-06-09 13:20+0200\n"
+"POT-Creation-Date: 2012-12-05 15:52+0100\n"
 "PO-Revision-Date: 2009-11-09 22:31+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -132,6 +132,9 @@ msgid "Comments"
 msgstr ""
 
 msgid "Create"
+msgstr ""
+
+msgid "Create and share recipes with your friends"
 msgstr ""
 
 msgid "Directions"
@@ -396,9 +399,6 @@ msgid "cooking"
 msgstr ""
 
 msgid "create a new recipe"
-msgstr ""
-
-msgid "create and share recipes with your friends"
 msgstr ""
 
 msgid "delete"

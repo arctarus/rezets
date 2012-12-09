@@ -1,4 +1,4 @@
 %h2= _("Comments")
 
-- unless recipe.comments.blank?
+- if recipe.comments.any?
   = render recipe.comments

@@ -1,13 +1,16 @@
 class CommentsController < ApplicationController
+  layout 'recipe'
+  respond_to :html, :json
+
   load_and_authorize_resource :user, :find_by => :slug
   load_and_authorize_resource :recipe, :find_by => :url, :through => :user
-  respond_to :html, :json
-  layout 'recipe'
 
   before_filter :require_user
 
   def create
-    if @comment = CreateComment.new(current_user, @recipe, params[:comment]).call
+    @comment = CreateComment.new(current_user, @recipe, params[:comment]).call
+
+    if @comment.valid?
       redirect_to [@user, @recipe]
     else
       @category = @recipe.category
