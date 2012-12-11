@@ -23,7 +23,6 @@ gem 'fast_gettext'
 gem 'gettext_i18n_rails'
 gem 'escape_utils'
 
-gem 'heroku'
 gem 'haml-rails'
 gem 'compass-rails'
 gem 'compass'

@@ -5,7 +5,6 @@ class ApplicationController < ActionController::Base
 # before_filter :set_gettext_locale
   rescue_from ActiveRecord::RecordNotFound, :with => :page_not_found
   rescue_from CanCan::AccessDenied, :with => :access_denied
-  before_filter :ensure_domain
 
   protected
 
@@ -59,15 +58,5 @@ class ApplicationController < ActionController::Base
     redirect_to(session[:return_to] || default)
     session[:return_to] = nil
   end  
-
-  def ensure_domain
-    if Rails.env == 'production' and not request_from_app_domain?
-      redirect_to "#{request.protocol}#{APP_CONFIG['app_domain']}#{request.fullpath}", :status => 301
-    end
-  end
-
-  def request_from_app_domain?
-    request.host == APP_CONFIG['app_domain']
-  end
 
 end

@@ -133,14 +133,6 @@ GEM
       activesupport (~> 3.0)
       haml (~> 3.0)
       railties (~> 3.0)
-    heroku (2.26.3)
-      heroku-api (~> 0.2.1)
-      launchy (>= 0.3.2)
-      netrc (~> 0.7.2)
-      rest-client (~> 1.6.1)
-      rubyzip
-    heroku-api (0.2.1)
-      excon (~> 0.13.3)
     hike (1.2.1)
     httparty (0.8.3)
       multi_json (~> 1.0)
@@ -179,7 +171,6 @@ GEM
     net-scp (1.0.4)
       net-ssh (>= 1.99.1)
     net-ssh (2.5.2)
-    netrc (0.7.4)
     newrelic_rpm (3.3.5)
     nokogiri (1.5.3)
     paperclip (3.0.4)
@@ -229,8 +220,6 @@ GEM
       ruby2ruby (~> 1.2.5)
       ruby_parser (~> 2.0)
       sexp_processor (~> 3.0)
-    rest-client (1.6.7)
-      mime-types (>= 1.16)
     ripper_ruby_parser (0.0.8)
       sexp_processor (~> 3.0)
     rspec (2.10.0)
@@ -327,7 +316,6 @@ DEPENDENCIES
   gettext_i18n_rails
   guard-spork
   haml-rails
-  heroku
   jquery-rails
   launchy
   libnotify
