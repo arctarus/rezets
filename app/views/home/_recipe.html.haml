@@ -1,5 +1,5 @@
-- cache ['home', recipe] do
-  %li{:class => cycle(nil,"last")}
+%li{:class => cycle('odd','even')}
+  - cache ['home', recipe] do
     %h3= link_to recipe.name, user_recipe_path(recipe.author,recipe), :title => recipe.title
     %p.user
       = image_tag recipe.author.avatar.url(:thumb), :class  => "avatar", 
