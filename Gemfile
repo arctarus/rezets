@@ -11,6 +11,7 @@ gem 'aws-s3'
 gem 'aws-sdk'
 gem 'authlogic'
 gem 'cancan'
+gem 'rack-rewrite'
 
 # sitemap generator
 gem 'sitemap_generator', '> 2.0.1.pre'
@@ -37,9 +38,7 @@ group :assets do
   gem 'coffee-rails', "~> 3.2.1"
   gem 'uglifier', ">= 1.0.3"
 end
-
 gem 'jquery-rails'
-gem 'rails-backbone'
 
 group :development, :test do
   gem 'mysql2'
