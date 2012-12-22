@@ -1,10 +1,10 @@
 SitemapGenerator::Sitemap.default_host = APP_CONFIG['app_domain']
-SitemapGenerator::Sitemap.sitemaps_host = "http://s3.amazonaws.com/#{S3_CREDENTIALS['bucket']}/"
+SitemapGenerator::Sitemap.sitemaps_host = "http://s3.amazonaws.com/#{ENV['S3_BUCKET']}/"
 SitemapGenerator::Sitemap.public_path = 'tmp/'
 SitemapGenerator::Sitemap.sitemaps_path = 'sitemaps/'
 SitemapGenerator::Sitemap.adapter = SitemapGenerator::S3Adapter.new(
-  aws_access_key_id: S3_CREDENTIALS['access_key_id'],
-  aws_secret_access_key: S3_CREDENTIALS['secret_access_key'],
+  aws_access_key_id: ENV['S3_KEY'],
+  aws_secret_access_key: ENV['S3_SECRET'],
   fog_provider: 'AWS',
   fog_directory: 'rezets'
 )
