@@ -4,6 +4,8 @@ gem 'rails', '~>3.2.0'
 gem 'rake', '~>0.9.2'
 gem 'pg'
 gem 'thin'
+gem 'capistrano'
+gem 'rvm-capistrano'
 
 gem 'will_paginate'
 gem "paperclip"
@@ -14,8 +16,7 @@ gem 'cancan'
 gem 'rack-rewrite'
 
 # sitemap generator
-gem 'sitemap_generator', '> 2.0.1.pre'
-gem 'carrierwave'
+gem 'sitemap_generator'
 gem 'fog'
 
 # i18n

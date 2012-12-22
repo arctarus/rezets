@@ -1,5 +1,13 @@
-# Set the host name for URL creation
-SitemapGenerator::Sitemap.default_host = "http://rezets.com"
+SitemapGenerator::Sitemap.default_host = APP_CONFIG['app_domain']
+SitemapGenerator::Sitemap.sitemaps_host = "http://s3.amazonaws.com/#{S3_CREDENTIALS['bucket']}/"
+SitemapGenerator::Sitemap.public_path = 'tmp/'
+SitemapGenerator::Sitemap.sitemaps_path = 'sitemaps/'
+SitemapGenerator::Sitemap.adapter = SitemapGenerator::S3Adapter.new(
+  aws_access_key_id: S3_CREDENTIALS['access_key_id'],
+  aws_secret_access_key: S3_CREDENTIALS['secret_access_key'],
+  fog_provider: 'AWS',
+  fog_directory: 'rezets'
+)
 
 SitemapGenerator::Sitemap.add_links do |sitemap|
   # Put links creation logic here.
@@ -28,13 +36,13 @@ SitemapGenerator::Sitemap.add_links do |sitemap|
 
   # users
   User.find_each(:include => :recipes) do |u|
-    sitemap.add user_path(u), :lastmod => u.recipes.last.updated_at unless u.recipes.blank?
+    sitemap.add user_path(u), :lastmod => u.recipes.last.updated_at if u.recipes.present?
   end
 
   sitemap.add categories_path, :priority => 0.7
   # categories
   Category.find_each(:include => :recipes) do |c|
-    sitemap.add category_path(c), :lastmod => c.recipes.last.updated_at unless c.recipes.blank?
+    sitemap.add category_path(c), :lastmod => c.recipes.last.updated_at if c.recipes.present?
   end
   
 end

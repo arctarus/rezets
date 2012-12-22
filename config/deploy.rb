@@ -1,10 +1,6 @@
 require './config/deploy/capistrano_database'
 
-# Add RVM's lib directory to the load path.
-$:.unshift(File.expand_path('./lib', ENV['rvm_path']))
-
 # Load RVM's capistrano plugin.
-require 'rvm/capistrano'
 require 'bundler/capistrano'
 
 # Set it to the ruby + gemset of your app, e.g:
@@ -42,6 +38,11 @@ role :db, '67.23.21.106', :primary => true
 # If you are using Passenger mod_rails uncomment this:
 # if you're still using the script/reapear helper you will need
 # these http://github.com/rails/irs_process_scripts
+
+after "deploy", "refresh_sitemaps"
+task :refresh_sitemaps do
+  run "cd #{latest_release} && RAILS_ENV=#{rails_env} rake sitemap:refresh"
+end
 
 namespace :deploy do
   [:start, :stop].each do |t|
