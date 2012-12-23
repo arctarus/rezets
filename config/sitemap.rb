@@ -2,6 +2,7 @@ SitemapGenerator::Sitemap.default_host = APP_CONFIG['app_domain']
 SitemapGenerator::Sitemap.sitemaps_host = "http://s3.amazonaws.com/#{ENV['S3_BUCKET']}/"
 SitemapGenerator::Sitemap.public_path = 'tmp/'
 SitemapGenerator::Sitemap.sitemaps_path = 'sitemaps/'
+SitemapGenerator::Sitemap.include_index = false
 SitemapGenerator::Sitemap.adapter = SitemapGenerator::S3Adapter.new(
   aws_access_key_id: ENV['S3_KEY'],
   aws_secret_access_key: ENV['S3_SECRET'],
@@ -9,7 +10,7 @@ SitemapGenerator::Sitemap.adapter = SitemapGenerator::S3Adapter.new(
   fog_directory: 'rezets'
 )
 
-SitemapGenerator::Sitemap.add_links do |sitemap|
+SitemapGenerator::Sitemap.create do
   # Put links creation logic here.
   #
   # The root path '/' and sitemap index file are added automatically.
@@ -22,27 +23,27 @@ SitemapGenerator::Sitemap.add_links do |sitemap|
   #           :lastmod => Time.now, :host => default_host
 
   # statics
-  sitemap.add '/about', :priority => 0.7
-  sitemap.add '/feedback', :priority => 0.7
-  sitemap.add '/search', :priority => 0.7
-  sitemap.add '/feed', :priority => 0.7
-  sitemap.add '/locale', :priority => 0.7
+  add '/about', :priority => 0.7
+  add '/feedback', :priority => 0.7
+  add '/search', :priority => 0.7
+  add '/feed', :priority => 0.7
+  add '/locale', :priority => 0.7
 
   # recipes
-  sitemap.add recipes_path, :priority => 0.7
+  add recipes_path, :priority => 0.7
   Recipe.find_each do |r|
-    sitemap.add user_recipe_path(r.author, r), :lastmod => r.updated_at
+    add user_recipe_path(r.author, r), :lastmod => r.updated_at
   end
 
   # users
   User.find_each(:include => :recipes) do |u|
-    sitemap.add user_path(u), :lastmod => u.recipes.last.updated_at if u.recipes.present?
+    add user_path(u), :lastmod => u.recipes.last.updated_at if u.recipes.present?
   end
 
-  sitemap.add categories_path, :priority => 0.7
+  add categories_path, :priority => 0.7
   # categories
   Category.find_each(:include => :recipes) do |c|
-    sitemap.add category_path(c), :lastmod => c.recipes.last.updated_at if c.recipes.present?
+    add category_path(c), :lastmod => c.recipes.last.updated_at if c.recipes.present?
   end
   
 end
