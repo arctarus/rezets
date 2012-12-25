@@ -25,7 +25,7 @@
 
   .field
     = f.label :category_id, _("Category")
-    = f.select :category_id, categories_options_for_select
+    = f.select :category_id, categories_options_for_select(@recipe.category)
 
   .field
     = f.label :num_persons, _("Number of people")
