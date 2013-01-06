@@ -23,7 +23,7 @@ feature 'Send recipe by email logged', %q{
     click_link _('add a message?')
     fill_in _('message'),   :with => @message
     click_button _('send')
-    wait_until { page.should have_content _('recipe sent') }
+    should_see _('recipe sent')
     last_mail.to.should == [@email]
   end
 

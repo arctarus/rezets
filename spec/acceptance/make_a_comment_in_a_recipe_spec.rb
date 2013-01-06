@@ -19,7 +19,7 @@ feature 'Make a comment in a recipe', %q{
     visit user_recipe_path(@author, @recipe)
     fill_in @user.name, :with => @comment
     click_button _('Make a comment')
-    within '.comment' do
+    within "#comment_1" do
       should_see @user.name
     end
     last_mail.to.should == [@author.email]

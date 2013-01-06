@@ -13,7 +13,7 @@ feature 'User see a category' do
 
   scenario 'example' do
     should_see @recipe.name
-    click_link @category.name
+    find('aside').click_link @category.name
     should_see @recipe.name
   end
 

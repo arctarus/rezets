@@ -14,8 +14,8 @@ feature 'Update password', %q{
   scenario 'valid password' do
     visit edit_user_path(@user)
     click_link _('change password')
-    fill_in _('password'),          :with => '123456'
-    fill_in _('confirm password'),  :with => '123456'
+    find('.password').set '123456'
+    find('.password-confirmation').set '123456'
     click_button _('change')
     should_be_on edit_user_path(@user)
   end
@@ -23,8 +23,8 @@ feature 'Update password', %q{
   scenario 'invalid password' do
     visit edit_user_path(@user)
     click_link _('change password')
-    fill_in _('password'),          :with => '123456'
-    fill_in _('confirm password'),  :with => '789012'
+    find('.password').set '123456'
+    find('.password-confirmation').set '789012'
     click_button _('change')
     should_be_on user_update_password_path(@user)
   end

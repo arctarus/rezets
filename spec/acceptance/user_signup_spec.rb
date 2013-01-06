@@ -15,8 +15,8 @@ feature 'User signup', %q{
     visit new_user_path(:token => @invitation.token)
 
     fill_in _('name'),              :with => sample_name
-    fill_in _('password'),          :with => '123456'
-    fill_in _('confirm password'),  :with => '123456'
+    find('.password').set '123456'
+    find('.password-confirmation').set '123456'
     fill_in _('address of your page in rezets.com'), :with => sample_name.parameterize
     click_button _('continue')
 
@@ -31,7 +31,7 @@ feature 'User signup', %q{
     visit new_user_path(:token => @invitation.token)
 
     fill_in _('name'),              :with => sample_name
-    fill_in _('password'),          :with => '123456'
+    find('.password').set '123456'
     fill_in _('address of your page in rezets.com'), :with => sample_name.parameterize
     click_button _('continue')
     should_be_on users_path
