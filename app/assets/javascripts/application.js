@@ -1,7 +1,9 @@
 //= require jquery
 //= require jquery_ujs
+//= require jquery.ui.all
 //= require_tree ./plugins
 //= require email
+//= require recipes
 //= require_self
 
 $(function() {
@@ -13,16 +15,3 @@ $(function() {
   
   FileInput.initialize();
 });
-
-var FileInput = {
-  initialize: function(){
-    $('input[type=file]').on('change', FileInput.open);
-  },
-  open: function(e) {
-    var $this = $(this);
-    var $label = $this.prev();
-    var path = $this.val().split('\\');
-    var filename = path[path.length-1];
-    $this.siblings('span.filename').html(filename);
-  }
-};

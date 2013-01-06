@@ -2,16 +2,20 @@
   @include container;
 //@include showgrid;
 }
-.wrapper { @include container }
 
-#header {
+.wrapper { 
+  @include container;
+//@include showgrid;
+}
+
+header {
   .wrapper {position:relative}
   padding:0 0 .5em;
   background: #33b300;
   @include background-image(linear-gradient(lighten($primary-color, 10%), darken($primary-color, 10%)));
   @include append-bottom(2em);
   zoom:1;
-  a {
+  a, a:visited, a:active {
     text-decoration:none;
     color:#F3F3F3;
     &:hover {color: $secondary-color}
@@ -35,19 +39,13 @@
   }
 }
 
-.wrapper { 
-  @include container;
-//@include showgrid;
-}
-
-
-ul.main-links {
+nav.main-links {
   vertical-align:12%;
   display:inline; 
   text-align:left; 
   @include prepend(1);
   list-style:none;
-  li {
+  p {
     display:inline;
     margin-right:1.5em;
     text-shadow:1px 1px 1px #555
@@ -66,20 +64,20 @@ ul.main-links {
 }
 
 /*=nav*/
-#nav {
+nav.global {
   position:absolute;
   right:0;
   height:26px;
   @include append-bottom(0);
   text-align:right;
-  ul {
+  div {
     background:#380;
     float:right;
     padding:.1em .5em;
     margin:0;
     list-style:none;
     @include border-radius(0px 0px 5px 5px);
-    li {
+    p {
       display: inline; 
       margin: 0 .5em .5em 0; 
       border-right: 1px dotted #CCC; 
@@ -98,14 +96,14 @@ ul.main-links {
   @include column(18);
     @include append(1);
 }
-#sidebar { 
+aside { 
   @include column(5, true);
   h2 {font-size:1.4em}
   ul {list-style:none; margin-bottom:2em}
 }
 
 /*=footer*/
-#footer {
+footer {
   @include prepend-top(2em);
   padding:0 0 1em;
   background:#EEE;
@@ -131,7 +129,7 @@ ul.main-links {
     @include append(1);
     @include column(14);
   }
-  #sidebar {@include column(9,true)}
+  aside {@include column(9,true)}
 }
 
 .avatar {vertical-align:middle}

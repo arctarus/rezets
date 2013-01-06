@@ -13,7 +13,7 @@
     %ul= render :partial => 'recipe', :collection => @recipes
 
 
-%p= link_to _("Subscribe to the latest recipes"), 'http://feeds.feedburner.com/rezetscom', :class => "feed-link"
+%p.clear= link_to _("Subscribe to the latest recipes"), 'http://feeds.feedburner.com/rezetscom', :class => "feed-link"
 
 - content_for :sidebar do
   = render 'sidebar'

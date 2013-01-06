@@ -1,6 +1,6 @@
 #recipe-ingredients
   %h2
-    = _("ingredients")
+    = _("Ingredients")
     - if recipe.num_persons.present?
       %span.yield
         (#{_("for %{num} people") % {:num => recipe.num_persons}})
@@ -12,4 +12,4 @@
     - group_size = (recipe.recipe_ingredients.size + 1) / 2
     - @recipe.recipe_ingredients.includes(:ingredient).in_groups_of(group_size).each_with_index do |ri_group, i|
       %ul.ingredients{:class => i == 1 && 'last'}
-        = render :partial => 'recipe_ingredients/recipe_ingredient', :collection => ri_group
+        = render ri_group

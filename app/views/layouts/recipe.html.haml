@@ -1,5 +1,5 @@
 !!! 5
-%html{:lang => "es"}
+%html{:lang => I18n.locale}
   %head
     %title= title
     %meta{:content => "text/html;charset=UTF-8", "http-equiv" => "content-type"}/
@@ -34,20 +34,20 @@
     <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4fa7f5a61bbd9a3b"></script>
 
   %body
-    #header
+    %header
       .wrapper
-        #nav= render :partial => "shared/nav"
-        = render :partial => "shared/header"
-        = render :partial => "shared/search"
+        #nav= render "shared/nav"
+        = render "shared/header"
+        = render "shared/search"
     #recipe
       #main
         - if notice
           %p#message.notice= notice
         = yield
-      #sidebar
-        = render :partial => "recipes/sidebar"
+      %aside
+        = render "recipes/sidebar"
 
-    #footer
-      = render :partial => "shared/footer"
+    %footer
+      = render "shared/footer"
 
-    = render :partial => "shared/scripts"
+    = render "shared/scripts"

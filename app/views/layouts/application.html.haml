@@ -15,19 +15,19 @@
       = yield :feed
 
     = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Lobster'
-    = stylesheet_link_tag 'application.css', :media => 'screen, projection'
-    = stylesheet_link_tag 'print.css', :media => 'print'
+    = stylesheet_link_tag :application, :media => 'screen, projection'
+    = stylesheet_link_tag :print, :media => 'print'
     /[if IE]
-      = stylesheet_link_tag 'ie.css', :media => 'screen, projection'
+      = stylesheet_link_tag :ie, :media => 'screen, projection'
     /[if lt IE 7]
-      = stylesheet_link_tag 'ie6.css', :media => 'screen, projection'
+      = stylesheet_link_tag :ie6, :media => 'screen, projection'
 
     = javascript_include_tag :application
 
   %body
-    #header
+    %header
       .wrapper
-        #nav= render "shared/nav"
+        = render "shared/nav"
         = render "shared/header"
         = render "shared/search"
 
@@ -44,10 +44,10 @@
         = yield
 
       - if content_for? :sidebar
-        #sidebar
+        %aside
           = yield :sidebar
 
-    #footer
+    %footer
       = render "shared/footer"
 
     = render "shared/scripts"

@@ -1,11 +1,12 @@
-- unless controller.controller_name == "sessions" and controller.action_name == "new"
-  %ul
-    - if current_user.nil?
-      %li.last= link_to _("login"), login_path
-    - else
-      %li
-        = link_to image_tag(current_user.avatar.url(:thumb), :class => 'avatar', :alt => ""), current_user
-        = link_to current_user.name, current_user
-      %li= link_to _("edit profile"), edit_user_path(current_user)
-      %li= link_to _("invite friends"), new_invitation_path
-      %li.last= link_to _("logout"), logout_path, :method => :delete
+- unless current_page?(login_path)
+  %nav.global
+    %div
+      - if current_user.nil?
+        %p.last= link_to _("login"), login_path
+      - else
+        %p
+          = link_to image_tag(current_user.avatar.url(:thumb), :class => 'avatar', :alt => ""), current_user
+          = link_to current_user.name, current_user
+        %p= link_to _("edit profile"), edit_user_path(current_user)
+        %p= link_to _("invite friends"), new_invitation_path
+        %p.last= link_to _("logout"), logout_path, :method => :delete

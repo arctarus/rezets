@@ -1,13 +1,13 @@
 - ri = recipe_ingredient
 
-- unless ri.blank?
+- if ri.present?
   %li.ingredient
 
     - if ri.value or ri.value_type
       %span.amount
         = round ri.value if ri.value
         = ri.value_type
-      - unless ri.value_type.blank?
+      - if ri.value_type.present?
         %span.ft= _("of")
 
     %span.name= ri.ingredient.name

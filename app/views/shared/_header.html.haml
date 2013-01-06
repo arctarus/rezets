@@ -1,7 +1,7 @@
 #logo
   %p.tagline= _("share your recipes")
   %p.logo= link_to "rezets.com", root_url
-  %ul.main-links
-    %li= link_to _("recipes"), recipes_path
-    %li.last= link_to _("chefs"), users_path
+  %nav.main-links
+    %p= link_to _("recipes"), recipes_path
+    %p.last= link_to _("chefs"), users_path
 

@@ -1,5 +1,5 @@
 !!! 5
-%html{:lang => "es"}
+%html{:lang => I18n.locale}
   %head
     %title= title
     %meta{:content => "text/html;charset=UTF-8", "http-equiv" => "content-type"}/
@@ -25,27 +25,27 @@
     = javascript_include_tag :application
 
   %body
-    #header
+    %header
       .wrapper
-        #nav= render :partial => "shared/nav"
-        = render :partial => "shared/header"
-        = render :partial => "shared/search"
+        #nav= render "shared/nav"
+        = render "shared/header"
+        = render "shared/search"
 
     #wrapper
       - if notice
         %p#message.notice= notice
  
-      = render :partial => 'users/vcard'
+      = render 'users/vcard'
 
       #main
-        = render :partial => 'users/nav'
+        = render 'users/nav'
         = yield
 
       - if content_for? :sidebar
-        #sidebar
+        %aside
           = content_for :sidebar
 
-    #footer
-      = render :partial => "shared/footer"
+    %footer
+      = render "shared/footer"
 
-    = render :partial => "shared/scripts"
+    = render "shared/scripts"
