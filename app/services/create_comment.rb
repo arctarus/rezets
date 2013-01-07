@@ -3,13 +3,13 @@ class CreateComment
   attr_reader :commenter, :recipe, :comment
 
   def initialize(user, recipe, comment_attrs)
-    @commenter = Commenter.new(user)
+    @commenter = user
     @recipe = recipe
     @comment_attrs = comment_attrs
   end
 
   def call
-    @comment = @commenter.comment_a_recipe(@recipe, @comment_attrs)
+    @comment = @commenter.comments.new(@comment_attrs.merge(:recipe => @recipe))
     if @comment.save
       notify_recipe_authors_and_commenters
     end

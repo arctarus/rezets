@@ -29,7 +29,6 @@
       /[if lt IE 7]
         = stylesheet_link_tag 'ie6.css', :media => 'screen, projection'
 
-    = javascript_include_tag :application
     <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
     <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4fa7f5a61bbd9a3b"></script>
 
@@ -50,4 +49,5 @@
     %footer
       = render "shared/footer"
 
+    = javascript_include_tag :application
     = render "shared/scripts"

@@ -7,3 +7,5 @@ FileInput =
     path = $this.val().split('\\')
     filename = path[path.length-1]
     $this.siblings('span.filename').html(filename)
+
+window.FileInput = FileInput
