@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '~>3.2.0'
+gem 'rails', :git => "git://github.com/rails/rails.git", :branch => "3-2-stable"
 gem 'rake'
 gem 'pg'
 gem 'thin'
@@ -29,8 +29,8 @@ gem 'haml-rails'
 gem 'compass-rails'
 gem 'compass'
 gem 'sass-rails', "~>3.2.3"
-gem 'newrelic_rpm'
-gem 'meta_request', "~>0.2.1"
+#gem 'newrelic_rpm'
+#gem 'meta_request', "~>0.2.1"
 
 
 # Gems used only for assets and not required
