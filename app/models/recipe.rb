@@ -76,8 +76,7 @@ class Recipe < ActiveRecord::Base
     order("likes_count, updated_at desc")}
 
   scope :rejecting, lambda {|recipes|
-    recipes = recipes.map(&:id) if recipes.is_a? Array
-    where("recipes.id not in (?)",recipes)}
+    where("recipes.id not in (?)", Array(recipes).map(&:id))}
 
   scope :user_page, lambda {|order|
     order = order == "name" ? "name asc" : "updated_at desc"
