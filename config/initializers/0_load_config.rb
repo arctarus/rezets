@@ -2,7 +2,7 @@ if Rails.env != 'production'
   APP_CONFIG = YAML.load_file(Rails.root.join("config/config.yml"))[Rails.env]
 else
   APP_CONFIG = {
-    'app_domain' => 'rezets.com',
+    'app_domain' => 'www.rezets.com',
     'allow_outgoing_email' => true,
     'outgoing' => {
       'tls'  => false,
