@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', :git => "git://github.com/rails/rails.git", :branch => "3-2-stable"
+gem 'rails', "~> 3.2.0"
 gem 'rake'
 gem 'pg'
 gem 'thin'
@@ -37,6 +37,7 @@ gem 'sass-rails', "~>3.2.3"
 # in production environments by default.
 group :assets do
   gem 'execjs'
+  gem 'therubyracer'
   gem 'coffee-rails', "~> 3.2.1"
   gem 'uglifier', ">= 1.0.3"
 end
