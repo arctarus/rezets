@@ -1,5 +1,7 @@
 source 'http://rubygems.org'
 
+ruby '2.1.4'
+
 gem 'rails', "~> 3.2.20"
 gem 'rake'
 gem 'pg'
