@@ -312,7 +312,7 @@ DEPENDENCIES
   paperclip
   pg
   rack-rewrite
-  rails (~> 3.2.0)
+  rails (~> 3.2.20)
   rake
   rb-inotify
   rspec-rails

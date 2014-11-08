@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', :git => "git://github.com/rails/rails.git", :branch => "3-2-stable"
+gem 'rails', "~> 3.2.20"
 gem 'rake'
 gem 'pg'
 gem 'thin'
