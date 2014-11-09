@@ -56,6 +56,4 @@ group :development, :test do
   gem 'rb-inotify'
   gem 'libnotify'
   gem 'ruby_parser'
-  gem 'simplecov'
-  gem 'simplecov-rcov'
 end

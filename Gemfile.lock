@@ -225,12 +225,6 @@ GEM
       multi_json (~> 1.0)
       rubyzip
     sexp_processor (3.2.0)
-    simplecov (0.6.4)
-      multi_json (~> 1.0)
-      simplecov-html (~> 0.5.3)
-    simplecov-html (0.5.3)
-    simplecov-rcov (0.2.3)
-      simplecov (>= 0.4.1)
     sitemap_generator (4.0.alpha)
       builder
     spork (0.9.2)
@@ -299,8 +293,6 @@ DEPENDENCIES
   rspec-rails
   ruby_parser
   sass-rails
-  simplecov
-  simplecov-rcov
   sitemap_generator
   spork
   steak
