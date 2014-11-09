@@ -73,7 +73,7 @@ class Recipe < ActiveRecord::Base
   scope :by_category, lambda {|category_id|
     includes(:category, :ingredients , :likes, :author).
     where(category_id: category_id).
-    order("likes_count, updated_at desc")}
+    order("likes_count desc, updated_at desc")}
 
   scope :rejecting, lambda {|recipes|
     where("recipes.id not in (?)", Array(recipes).map(&:id))}
