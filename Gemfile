@@ -6,8 +6,6 @@ gem 'rails', "~> 3.2.20"
 gem 'rake'
 gem 'pg'
 gem 'thin'
-gem 'capistrano'
-gem 'rvm-capistrano'
 
 gem 'will_paginate'
 gem "paperclip"
