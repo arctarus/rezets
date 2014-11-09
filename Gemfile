@@ -20,7 +20,7 @@ gem 'sitemap_generator'
 gem 'fog'
 
 # i18n
-gem 'gettext', :git => 'git://github.com/cameel/gettext.git'
+gem 'gettext'
 gem 'fast_gettext'
 gem 'gettext_i18n_rails'
 gem 'escape_utils'
