@@ -6,8 +6,6 @@ gem 'rails', "~> 3.2.20"
 gem 'rake'
 gem 'pg'
 gem 'thin'
-gem 'capistrano'
-gem 'rvm-capistrano'
 
 gem 'will_paginate'
 gem "paperclip"
@@ -22,7 +20,7 @@ gem 'sitemap_generator'
 gem 'fog'
 
 # i18n
-gem 'gettext', :git => 'git://github.com/cameel/gettext.git'
+gem 'gettext'
 gem 'fast_gettext'
 gem 'gettext_i18n_rails'
 gem 'escape_utils'
@@ -58,6 +56,4 @@ group :development, :test do
   gem 'rb-inotify'
   gem 'libnotify'
   gem 'ruby_parser'
-  gem 'simplecov'
-  gem 'simplecov-rcov'
 end
