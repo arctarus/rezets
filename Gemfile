@@ -30,9 +30,7 @@ gem 'escape_utils'
 gem 'haml-rails'
 gem 'compass-rails'
 gem 'compass'
-gem 'sass-rails', "~>3.2.3"
-#gem 'newrelic_rpm'
-#gem 'meta_request', "~>0.2.1"
+gem 'sass-rails'
 
 
 # Gems used only for assets and not required
