@@ -30,16 +30,13 @@ gem 'escape_utils'
 gem 'haml-rails'
 gem 'compass-rails'
 gem 'compass'
-gem 'sass-rails', "~>3.2.3"
-#gem 'newrelic_rpm'
-#gem 'meta_request', "~>0.2.1"
+gem 'sass-rails'
 
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
   gem 'execjs'
-  gem 'therubyracer'
   gem 'coffee-rails', "~> 3.2.1"
   gem 'uglifier', ">= 1.0.3"
 end
