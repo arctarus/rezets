@@ -30,6 +30,7 @@ gem 'compass-rails'
 gem 'compass'
 gem 'sass-rails'
 
+gem 'rollbar'
 
 gem 'quiet_assets'
 # Gems used only for assets and not required

@@ -192,6 +192,8 @@ GEM
       ffi (>= 0.5.0)
     rdoc (3.12.2)
       json (~> 1.4)
+    rollbar (2.7.1)
+      multi_json
     rspec (2.10.0)
       rspec-core (~> 2.10.0)
       rspec-expectations (~> 2.10.0)
@@ -287,6 +289,7 @@ DEPENDENCIES
   rails (~> 3.2.20)
   rake
   rb-inotify
+  rollbar
   rspec-rails
   ruby_parser
   sass-rails
