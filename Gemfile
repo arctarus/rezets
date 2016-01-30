@@ -31,6 +31,7 @@ gem 'compass'
 gem 'sass-rails'
 
 
+gem 'quiet_assets'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -42,15 +43,14 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 
 group :development, :test do
-  gem 'mysql2'
   gem 'rspec-rails'
-  gem 'capybara'
+  gem 'capybara', '~> 1.1.2'
   gem 'launchy'
   gem 'steak'
   gem 'factory_girl_rails'
   gem 'ffaker'
   gem 'database_cleaner'
-  gem 'capybara-webkit'
+  gem 'capybara-webkit', '~> 0.13.2'
   gem 'spork'
   gem 'guard-spork'
   gem 'rb-inotify'
