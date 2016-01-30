@@ -59,6 +59,8 @@ class Recipe < ActiveRecord::Base
       :medium => "310x240#",
       :thumb  => "100x100#" }
 
+  validates_attachment_content_type :photo, content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"]
+
   scope :most_popular,
     includes(:category, :ingredients , :likes, :author).
     order("likes_count desc, updated_at desc")
