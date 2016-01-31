@@ -13,6 +13,6 @@
   = will_paginate @recipes
 
   - if @category
-    = render 'users/category_feed', :user => @user, :category => @category
+    = render 'users/category_feed', user: @user, category: @category
   - else
-    = render 'users/feed', :user => @user
+    = render 'users/feed', user: @user
