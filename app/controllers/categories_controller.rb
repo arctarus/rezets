@@ -1,8 +1,8 @@
 class CategoriesController < ApplicationController
 
   def show
-    @user = User.where(slug: params[:user_id]).first
-    @category = Category.where(slug: params[:id]).first
+    @user = find_user
+    @category = find_category
 
     if @user.present?
       @categories = @user.categories.order(:name)
@@ -14,8 +14,16 @@ class CategoriesController < ApplicationController
 
     @recipes = @recipes.paginate(page: params[:page], per_page: 10)
 
-    if @user
-      render 'users/show', layout: 'users'
-    end
+    render "users/show", layout: "users" if @user
+  end
+
+  private
+
+  def find_user
+    User.find_by_slug(params[:user_id])
+  end
+
+  def find_category
+    Category.find_by_slug!(params[:id])
   end
 end
