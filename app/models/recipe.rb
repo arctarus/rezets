@@ -88,8 +88,10 @@ class Recipe < ActiveRecord::Base
 
   def self.find_by_url!(url)
     id = url.split('-', 2).first
-    find(id, :include => [
-      {:recipe_ingredients => :ingredient}])
+    where(id: id).includes(recipe_ingredients: :ingredient).first!
+  rescue ActiveRecord::StatementInvalid => exception
+    Rollbar.info(exception)
+    raise ActiveRecord::RecordNotFound
   end
 
   def self.cache_key
